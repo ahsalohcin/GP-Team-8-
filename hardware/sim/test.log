@@ -1,0 +1,22 @@
+Circuit: * Z:\home\winson\GP-Team-8-\hardware\sim\test.asc
+
+Direct Newton iteration for .op point succeeded.
+
+Date: Tue Oct 25 00:25:28 2016
+Total elapsed time: 0.301 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 42400
+traniter = 42395
+tranpoints = 13520
+accept = 9894
+rejected = 3626
+matrix size = 11
+fillins = 5
+solver = Normal
+Matrix Compiler1: 734 bytes object code size  0.6/0.3/[0.3]
+Matrix Compiler2: 895 bytes object code size  0.3/0.4/[0.3]
+
+
