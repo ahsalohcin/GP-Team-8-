@@ -9,6 +9,7 @@ int potentioPin = 14; //integer variable denoting the pin with the potentiometer
 int motorPin = 3; //likewise with motor, arbitrary pin number 1
 int brakePin = 4;
 int triggerPin = 9; // help when looking at O-scope
+int triggerPin2 = 10; // help when looking at O-scope
 int potentioValue = 0; //will be an integer between 0 and 1023
 int motorValue = 0;
 int brakeValue = 0;
@@ -28,7 +29,7 @@ int filtered[128];
 int threshhold = 350;
 unsigned int integrationPeriod = 50;
 unsigned int prevCameraTime = 0;
-void getline();
+void getline(int lineBuffer[]);
 int findcenter();
 
 //Calculates average of numsToAverage points around all elements in input
@@ -109,38 +110,37 @@ void loop() {
  Serial.print(brakeValue); 
 
  while(millis()- prevCameraTime < integrationPeriod) {}
- getline();
+ getline(out);
+ Serial.print("camera raw:");
+ for(int i=0; i<128; i++)  {
+    Serial.print(out[i]);
+    Serial.print(',');
+ }
+ Serial.println('\n');
  measuredMid = findcenter();
  steer(); 
 
  Serial.println(" ");
 }
 
-void getline()
-{
-  
+void getline(int lineBuffer[])
+{ 
+  digitalWrite(triggerPin2, HIGH);
   digitalWrite(SI, HIGH);
   digitalWrite(CL, HIGH);
-  out[0] = analogRead(AO);
+  lineBuffer[0] = analogRead(AO);
   digitalWrite(SI, LOW);
   digitalWrite(CL, LOW);
-  Serial.print(" Camera raw: ");
  int i;
   for (i=1;i<128;i++)
   {
     digitalWrite(CL, HIGH);
-    out[i] = analogRead(AO);
-    
-    if (out[i] > threshhold)
-      Serial.print(1);
-    else
-      Serial.print(0); 
-    
-    digitalWrite(CL, LOW);
+    lineBuffer[i] = analogRead(AO);
+   digitalWrite(CL, LOW);
     //Serial.print(out[i]);
     //Serial.print(" ");
   }
-  
+  digitalWrite(triggerPin2, LOW);
   prevCameraTime = millis();
 }
 
