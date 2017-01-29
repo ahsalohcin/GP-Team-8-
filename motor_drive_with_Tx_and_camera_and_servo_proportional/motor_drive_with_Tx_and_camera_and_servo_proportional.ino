@@ -31,6 +31,15 @@ unsigned int prevCameraTime = 0;
 void getline();
 int findcenter();
 
+//Calculates average of numsToAverage points around all elements in input
+// and stores each averaged point in result
+// input and result should be the same size.
+// input[]: Data to manipulate
+// arraySize: Size of input array
+// numsToAverage: Number of elements around point p to use to calculate the average
+// result[]: Array to return the results
+void averageElmenents(int input[], int arraySize, int numsToAverage,int result[]);
+
 //servo
 int servoPinIn = 18;
 int servoPinOut = 20;
@@ -174,4 +183,39 @@ void steer()
 
 }
 
+void averageElmenents(int input[], int arraySize, int numsToAverage, int result[])
+{
+  int sum;
+  int elementsUsed; //keep track of how many elements were used for sum
+  int average;
+
+  for(int i = 0; i < arraySize; i++)
+  {
+    sum = 0;
+    elementsUsed = 0;
+  
+    for(int j = 1; j <= numsToAverage; j++)
+    {
+      //check for valid index going to left of array
+      if((i-j) >= 0)
+      {
+        sum += input[i-j];
+        elementsUsed++;  
+      }
+
+      //check for valid index going to right of array
+      if((i+j) < arraySize)
+      {
+        sum += input[i+j];
+        elementsUsed++;
+      }
+    }// end of inner loop
+
+    //calculate average
+    average = sum / elementsUsed;
+    result[i] = average;
+    
+  } //end of outer loop
+  
+}
 
