@@ -40,6 +40,10 @@ int findcenter();
 // result[]: Array to return the results
 void averageElmenents(int input[], int arraySize, int numsToAverage,int result[]);
 
+//Calcualtes difference between adjencents elements of input and stores in result
+//result's size will be arraySize-1
+void diff(int input[], int arraySize, int result);
+
 //servo
 int servoPinIn = 18;
 int servoPinOut = 20;
@@ -217,5 +221,12 @@ void averageElmenents(int input[], int arraySize, int numsToAverage, int result[
     
   } //end of outer loop
   
+}
+
+
+void diff(int input[], int arraySize, int result[])
+{
+  for(int i = 1; i < arraySize; i++)
+    result[i-1] = input[i] - input[i-1];
 }
 
