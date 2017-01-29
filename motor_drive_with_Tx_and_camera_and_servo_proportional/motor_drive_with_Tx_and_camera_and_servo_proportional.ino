@@ -39,11 +39,15 @@ int findcenter();
 // arraySize: Size of input array
 // numsToAverage: Number of elements around point p to use to calculate the average
 // result[]: Array to return the results
-void averageElmenents(int input[], int arraySize, int numsToAverage,int result[]);
+void averageElements(int input[], int arraySize, int numsToAverage, double result[]);
 
 //Calcualtes difference between adjencents elements of input and stores in result
 //result's size will be arraySize-1
-void diff(int input[], int arraySize, int result);
+void diff(double input[], int arraySize, int result);
+
+//Finds max and min of input data, calculates center point bewtween max and min,
+//and returns the index of the calculated center point
+int center(double input[], int arraySize);
 
 //servo
 int servoPinIn = 18;
@@ -187,11 +191,11 @@ void steer()
 
 }
 
-void averageElmenents(int input[], int arraySize, int numsToAverage, int result[])
+void averageElements(int input[], int arraySize, int numsToAverage, double result[])
 {
-  int sum;
+  double sum;
   int elementsUsed; //keep track of how many elements were used for sum
-  int average;
+  double average;
 
   for(int i = 0; i < arraySize; i++)
   {
@@ -224,9 +228,34 @@ void averageElmenents(int input[], int arraySize, int numsToAverage, int result[
 }
 
 
-void diff(int input[], int arraySize, int result[])
+void diff(double input[], int arraySize, double result[])
 {
   for(int i = 1; i < arraySize; i++)
     result[i-1] = input[i] - input[i-1];
 }
 
+int center(double input[], int arraySize)
+{
+  //Index of max and min
+  int maxIndex = 0;
+  int minIndex = 0;
+  int maxValue = 0;
+  int minValue = 0;  
+
+  //Find max and min
+  for(int i = 0; i < arraySize; i++)
+  {
+    if(input[i] < minValue)
+    {
+      minValue = input[i];
+      minIndex = i;
+    }
+    else if(input[i] > maxValue)
+    {
+      maxValue = input[i];
+      maxIndex = i;
+    }
+  }
+
+  return (minIndex + maxIndex) / 2;
+}
