@@ -1,5 +1,6 @@
 #include <Servo.h>
 
+//
 // MOTORS
 //************************************************************************
   int potentioPin = 14; //integer variable denoting the pin with the potentiometer, gets assigned a value from 0-1023 for 0-5
