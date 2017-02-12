@@ -5972,6 +5972,11 @@ W = angled&lt;p&gt;
 <junction x="45.72" y="66.04"/>
 <pinref part="SUPPLY8" gate="GND" pin="GND"/>
 </segment>
+<segment>
+<pinref part="SV1" gate="G$1" pin="10"/>
+<wire x1="66.04" y1="226.06" x2="91.44" y2="226.06" width="0.1524" layer="91"/>
+<label x="86.36" y="226.06" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="5V" class="0">
 <segment>
@@ -5994,7 +5999,6 @@ W = angled&lt;p&gt;
 <segment>
 <pinref part="LSP1" gate="1" pin="MP"/>
 <wire x1="175.26" y1="215.9" x2="175.26" y2="195.58" width="0.1524" layer="91"/>
-<wire x1="175.26" y1="195.58" x2="157.48" y2="195.58" width="0.1524" layer="91"/>
 <label x="162.56" y="210.82" size="1.778" layer="95"/>
 </segment>
 <segment>
@@ -6083,6 +6087,19 @@ W = angled&lt;p&gt;
 <pinref part="LSP2" gate="1" pin="MP"/>
 <wire x1="187.96" y1="205.74" x2="187.96" y2="215.9" width="0.1524" layer="91"/>
 <label x="187.96" y="205.74" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="7_4V" class="0">
+<segment>
+<pinref part="SV1" gate="G$1" pin="1"/>
+<wire x1="66.04" y1="203.2" x2="91.44" y2="203.2" width="0.1524" layer="91"/>
+<label x="86.36" y="203.2" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="U$2" gate="A" pin="VIN"/>
+<wire x1="172.72" y1="167.64" x2="172.72" y2="172.72" width="0.1524" layer="91"/>
+<wire x1="172.72" y1="172.72" x2="157.48" y2="172.72" width="0.1524" layer="91"/>
+<label x="157.48" y="172.72" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
