@@ -2506,7 +2506,7 @@ design rules under a new name.</description>
 <element name="C4" library="resistor" package="C025-050X050" value="10uF" x="34.29" y="87.63"/>
 <element name="C5" library="resistor" package="C025-024X044" value="18 pF" x="52.07" y="21.59"/>
 <element name="C6" library="resistor" package="C025-024X044" value="18 pF" x="52.07" y="11.43" rot="MR0"/>
-<element name="D3" library="diode" package="TO220ABS" value="BYV32" x="25.4" y="63.5" rot="R90"/>
+<element name="D3" library="diode" package="TO220ABS" value="BYV32" x="-21.844" y="88.392" rot="R90"/>
 <element name="D4" library="diode" package="TO220ABS" value="BYV32" x="25.4" y="85.09" rot="R90"/>
 <element name="LSP3" library="solpad" package="SE14" value="SE14" x="3.81" y="60.96"/>
 <element name="LSP6" library="solpad" package="SE14" value="SE14" x="3.81" y="55.88"/>
@@ -2516,9 +2516,9 @@ design rules under a new name.</description>
 <attribute name="MANUFACTURER_PART_NUMBER" value="csd18502kcs_kcs_3" x="10.16" y="87.63" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="VENDOR" value="TEXAS INSTRUMENTS" x="10.16" y="87.63" size="1.778" layer="27" rot="R90" display="off"/>
 </element>
-<element name="U2" library="CSD18502KCS" package="KCS3" value="CSD18502KCS_KCS_3" x="16.51" y="87.63" rot="R90">
-<attribute name="MANUFACTURER_PART_NUMBER" value="csd18502kcs_kcs_3" x="16.51" y="87.63" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="VENDOR" value="TEXAS INSTRUMENTS" x="16.51" y="87.63" size="1.778" layer="27" rot="R90" display="off"/>
+<element name="U2" library="CSD18502KCS" package="KCS3" value="CSD18502KCS_KCS_3" x="16.764" y="87.63" rot="R90">
+<attribute name="MANUFACTURER_PART_NUMBER" value="csd18502kcs_kcs_3" x="16.764" y="87.63" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="VENDOR" value="TEXAS INSTRUMENTS" x="16.764" y="87.63" size="1.778" layer="27" rot="R90" display="off"/>
 </element>
 <element name="U3" library="MIC4604" package="SOIC-8_M" value="MIC4604YM" x="17.78" y="74.93" rot="MR270">
 <attribute name="MANUFACTURER_PART_NUMBER" value="mic4604ym" x="17.78" y="74.93" size="1.778" layer="28" rot="MR270" display="off"/>
@@ -2573,23 +2573,11 @@ design rules under a new name.</description>
 <attribute name="OC_NEWARK" value="unknown" x="21.59" y="55.88" size="1.778" layer="27" display="off"/>
 <attribute name="MF" value="" x="21.59" y="55.88" size="1.778" layer="27" display="off"/>
 </element>
-<element name="SV8" library="con-lsta" package="FE10" value="" x="69.85" y="55.88">
-<attribute name="OC_FARNELL" value="unknown" x="69.85" y="55.88" size="1.778" layer="27" display="off"/>
-<attribute name="MPN" value="" x="69.85" y="55.88" size="1.778" layer="27" display="off"/>
-<attribute name="OC_NEWARK" value="unknown" x="69.85" y="55.88" size="1.778" layer="27" display="off"/>
-<attribute name="MF" value="" x="69.85" y="55.88" size="1.778" layer="27" display="off"/>
-</element>
 <element name="SV3" library="con-lsta" package="FE10-2" value="" x="69.85" y="39.37">
 <attribute name="OC_FARNELL" value="unknown" x="69.85" y="39.37" size="1.778" layer="27" display="off"/>
 <attribute name="MPN" value="" x="69.85" y="39.37" size="1.778" layer="27" display="off"/>
 <attribute name="OC_NEWARK" value="unknown" x="69.85" y="39.37" size="1.778" layer="27" display="off"/>
 <attribute name="MF" value="" x="69.85" y="39.37" size="1.778" layer="27" display="off"/>
-</element>
-<element name="SV7" library="con-lsta" package="FE10-2" value="" x="69.85" y="91.44">
-<attribute name="OC_FARNELL" value="unknown" x="69.85" y="91.44" size="1.778" layer="27" display="off"/>
-<attribute name="MPN" value="" x="69.85" y="91.44" size="1.778" layer="27" display="off"/>
-<attribute name="OC_NEWARK" value="unknown" x="69.85" y="91.44" size="1.778" layer="27" display="off"/>
-<attribute name="MF" value="" x="69.85" y="91.44" size="1.778" layer="27" display="off"/>
 </element>
 <element name="LSP4" library="solpad" package="SE14" value="SE14" x="-36.83" y="105.41"/>
 <element name="LSP5" library="solpad" package="SE14" value="SE14" x="-36.83" y="80.01"/>
@@ -2609,13 +2597,13 @@ design rules under a new name.</description>
 <contactref element="TOP_FWD" pad="3"/>
 <contactref element="U2" pad="2"/>
 <contactref element="LSP3" pad="MP"/>
-<wire x1="10.16" y1="87.63" x2="16.51" y2="85.09" width="0" layer="19" extent="1-1"/>
-<wire x1="3.81" y1="60.96" x2="16.51" y2="85.09" width="0" layer="19" extent="1-1"/>
+<wire x1="10.16" y1="87.63" x2="16.764" y2="85.09" width="0" layer="19" extent="1-1"/>
+<wire x1="3.81" y1="60.96" x2="16.764" y2="85.09" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$2">
 <contactref element="U3" pad="8"/>
 <contactref element="U2" pad="1"/>
-<wire x1="15.875" y1="72.2757" x2="16.51" y2="82.55" width="0" layer="19" extent="16-16"/>
+<wire x1="15.875" y1="72.2757" x2="16.764" y2="82.55" width="0" layer="19" extent="16-16"/>
 </signal>
 <signal name="N$3">
 <contactref element="TOP_FWD" pad="1"/>
@@ -2635,8 +2623,8 @@ design rules under a new name.</description>
 <contactref element="C1" pad="2"/>
 <contactref element="D3" pad="C"/>
 <wire x1="35.56" y1="60.96" x2="35.56" y2="66.04" width="0" layer="19" extent="1-1"/>
-<wire x1="27.94" y1="63.5" x2="35.56" y2="66.04" width="0" layer="19" extent="1-1"/>
-<wire x1="17.145" y1="77.5843" x2="27.94" y2="63.5" width="0" layer="19" extent="16-16"/>
+<wire x1="-19.304" y1="88.392" x2="35.56" y2="66.04" width="0" layer="19" extent="1-1"/>
+<wire x1="17.145" y1="77.5843" x2="-19.304" y2="88.392" width="0" layer="19" extent="16-16"/>
 </signal>
 <signal name="N$8">
 <contactref element="U4" pad="3"/>
@@ -2852,13 +2840,13 @@ design rules under a new name.</description>
 <contactref element="LSP4" pad="MP"/>
 <wire x1="27.94" y1="82.55" x2="27.94" y2="87.63" width="0" layer="19" extent="1-1"/>
 <wire x1="28.575" y1="77.5843" x2="27.94" y2="82.55" width="0" layer="19" extent="16-16"/>
-<wire x1="27.94" y1="66.04" x2="28.575" y2="77.5843" width="0" layer="19" extent="16-16"/>
-<wire x1="27.94" y1="60.96" x2="27.94" y2="66.04" width="0" layer="19" extent="1-1"/>
-<wire x1="16.51" y1="63.5" x2="27.94" y2="66.04" width="0" layer="19" extent="1-1"/>
+<wire x1="-19.304" y1="90.932" x2="28.575" y2="77.5843" width="0" layer="19" extent="16-16"/>
+<wire x1="-19.304" y1="85.852" x2="-19.304" y2="90.932" width="0" layer="19" extent="1-1"/>
+<wire x1="16.51" y1="63.5" x2="-19.304" y2="90.932" width="0" layer="19" extent="1-1"/>
 <wire x1="15.875" y1="77.5843" x2="28.575" y2="77.5843" width="0" layer="19" extent="16-16"/>
 <wire x1="10.16" y1="85.09" x2="15.875" y2="77.5843" width="0" layer="19" extent="16-16"/>
 <wire x1="10.16" y1="92.71" x2="10.16" y2="85.09" width="0" layer="19" extent="1-1"/>
-<wire x1="-36.83" y1="105.41" x2="27.94" y2="60.96" width="0" layer="19" extent="1-1"/>
+<wire x1="-36.83" y1="105.41" x2="-19.304" y2="85.852" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="SW5">
 <contactref element="S1" pad="5"/>
@@ -2912,8 +2900,8 @@ design rules under a new name.</description>
 <contactref element="U6" pad="7"/>
 <contactref element="LSP5" pad="MP"/>
 <contactref element="C11" pad="-"/>
-<wire x1="16.51" y1="87.63" x2="33.02" y2="92.71" width="0" layer="19" extent="1-1"/>
-<wire x1="17.145" y1="72.2757" x2="16.51" y2="87.63" width="0" layer="19" extent="16-16"/>
+<wire x1="16.764" y1="87.63" x2="33.02" y2="92.71" width="0" layer="19" extent="1-1"/>
+<wire x1="17.145" y1="72.2757" x2="16.764" y2="87.63" width="0" layer="19" extent="16-16"/>
 <wire x1="29.845" y1="72.2757" x2="17.145" y2="72.2757" width="0" layer="19" extent="16-16"/>
 <wire x1="10.16" y1="60.96" x2="17.145" y2="72.2757" width="0" layer="19" extent="16-16"/>
 <wire x1="-36.83" y1="80.01" x2="10.16" y2="60.96" width="0" layer="19" extent="1-1"/>
@@ -2938,6 +2926,39 @@ design rules under a new name.</description>
 <contactref element="C9" pad="+"/>
 <contactref element="C7" pad="-"/>
 <wire x1="-33.338" y1="44.196" x2="-34.1" y2="25.4" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="N$33">
+<contactref element="SV4" pad="10"/>
+</signal>
+<signal name="N$34">
+<contactref element="SV4" pad="9"/>
+</signal>
+<signal name="N$35">
+<contactref element="SV4" pad="8"/>
+</signal>
+<signal name="N$36">
+<contactref element="SV4" pad="7"/>
+</signal>
+<signal name="N$37">
+<contactref element="SV4" pad="6"/>
+</signal>
+<signal name="N$38">
+<contactref element="SV4" pad="5"/>
+</signal>
+<signal name="N$39">
+<contactref element="SV4" pad="4"/>
+</signal>
+<signal name="N$40">
+<contactref element="SV4" pad="3"/>
+</signal>
+<signal name="N$41">
+<contactref element="SV4" pad="2"/>
+</signal>
+<signal name="N$42">
+<contactref element="SV4" pad="1"/>
+</signal>
+<signal name="N$20">
+<contactref element="SV3" pad="4"/>
 </signal>
 </signals>
 </board>

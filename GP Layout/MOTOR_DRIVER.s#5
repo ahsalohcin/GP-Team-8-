@@ -6137,11 +6137,6 @@ W = angled&lt;p&gt;
 <pinref part="SUPPLY8" gate="GND" pin="GND"/>
 </segment>
 <segment>
-<pinref part="SV1" gate="G$1" pin="10"/>
-<wire x1="55.88" y1="157.48" x2="81.28" y2="157.48" width="0.1524" layer="91"/>
-<label x="76.2" y="157.48" size="1.778" layer="95"/>
-</segment>
-<segment>
 <pinref part="SV3" gate="G$1" pin="5"/>
 <wire x1="266.7" y1="142.24" x2="236.22" y2="142.24" width="0.1524" layer="91"/>
 <label x="236.22" y="142.24" size="1.778" layer="95"/>
@@ -6159,6 +6154,15 @@ W = angled&lt;p&gt;
 <segment>
 <wire x1="281.94" y1="137.16" x2="307.34" y2="137.16" width="0.1524" layer="91"/>
 <label x="302.26" y="137.16" size="1.778" layer="95"/>
+</segment>
+<segment>
+<wire x1="55.88" y1="157.48" x2="81.28" y2="157.48" width="0.1524" layer="91"/>
+<label x="76.2" y="157.48" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="SV3" gate="G$1" pin="12"/>
+<wire x1="281.94" y1="149.86" x2="307.34" y2="149.86" width="0.1524" layer="91"/>
+<label x="302.26" y="149.86" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="5V" class="0">
@@ -6186,6 +6190,14 @@ W = angled&lt;p&gt;
 <pinref part="SV3" gate="G$1" pin="18"/>
 <wire x1="281.94" y1="157.48" x2="307.34" y2="157.48" width="0.1524" layer="91"/>
 <label x="304.8" y="157.48" size="1.778" layer="95"/>
+</segment>
+<segment>
+<wire x1="55.88" y1="152.4" x2="81.28" y2="152.4" width="0.1524" layer="91"/>
+<label x="76.2" y="152.4" size="1.778" layer="95"/>
+</segment>
+<segment>
+<wire x1="281.94" y1="142.24" x2="307.34" y2="142.24" width="0.1524" layer="91"/>
+<label x="302.26" y="142.24" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="7_4V_TOP" class="0">
@@ -6358,25 +6370,16 @@ W = angled&lt;p&gt;
 <label x="302.26" y="154.94" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="N$27" class="0">
-<segment>
-<pinref part="SV3" gate="G$1" pin="12"/>
-<wire x1="281.94" y1="149.86" x2="307.34" y2="149.86" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$28" class="0">
+<net name="REC_SERVO" class="0">
 <segment>
 <wire x1="281.94" y1="147.32" x2="307.34" y2="147.32" width="0.1524" layer="91"/>
+<label x="302.26" y="147.32" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="N$29" class="0">
+<net name="REC_MOTOR" class="0">
 <segment>
 <wire x1="281.94" y1="144.78" x2="307.34" y2="144.78" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$30" class="0">
-<segment>
-<wire x1="281.94" y1="142.24" x2="307.34" y2="142.24" width="0.1524" layer="91"/>
+<label x="302.26" y="144.78" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$31" class="0">
@@ -6582,6 +6585,12 @@ W = angled&lt;p&gt;
 <net name="N$72" class="0">
 <segment>
 <wire x1="241.3" y1="200.66" x2="266.7" y2="200.66" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="SERVO" class="0">
+<segment>
+<wire x1="55.88" y1="154.94" x2="81.28" y2="154.94" width="0.1524" layer="91"/>
+<label x="73.66" y="154.94" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
