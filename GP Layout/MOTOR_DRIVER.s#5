@@ -11476,6 +11476,7 @@ W = angled&lt;p&gt;
 <segment>
 <wire x1="281.94" y1="137.16" x2="307.34" y2="137.16" width="0.1524" layer="91"/>
 <label x="302.26" y="137.16" size="1.778" layer="95"/>
+<pinref part="SV3" gate="G$1" pin="2"/>
 </segment>
 <segment>
 <wire x1="55.88" y1="157.48" x2="81.28" y2="157.48" width="0.1524" layer="91"/>
@@ -11510,6 +11511,7 @@ W = angled&lt;p&gt;
 <segment>
 <wire x1="281.94" y1="142.24" x2="307.34" y2="142.24" width="0.1524" layer="91"/>
 <label x="302.26" y="142.24" size="1.778" layer="95"/>
+<pinref part="SV3" gate="G$1" pin="6"/>
 </segment>
 </net>
 <net name="7_4V_TOP" class="0">
@@ -11670,12 +11672,14 @@ W = angled&lt;p&gt;
 <segment>
 <wire x1="281.94" y1="147.32" x2="307.34" y2="147.32" width="0.1524" layer="91"/>
 <label x="302.26" y="147.32" size="1.778" layer="95"/>
+<pinref part="SV3" gate="G$1" pin="10"/>
 </segment>
 </net>
 <net name="REC_MOTOR" class="0">
 <segment>
 <wire x1="281.94" y1="144.78" x2="307.34" y2="144.78" width="0.1524" layer="91"/>
 <label x="302.26" y="144.78" size="1.778" layer="95"/>
+<pinref part="SV3" gate="G$1" pin="8"/>
 </segment>
 </net>
 <net name="N$33" class="0">
@@ -11753,6 +11757,7 @@ W = angled&lt;p&gt;
 </nets>
 </sheet>
 <sheet>
+<description>Power Schematic</description>
 <plain>
 <text x="38.1" y="243.84" size="1.778" layer="91">Battery  connections</text>
 </plain>
@@ -11847,7 +11852,6 @@ W = angled&lt;p&gt;
 <errors>
 <approved hash="113,1,193.571,130.071,FRAME1,,,,,"/>
 <approved hash="113,2,193.571,130.071,FRAME2,,,,,"/>
-<approved hash="113,3,193.571,130.071,FRAME3,,,,,"/>
 </errors>
 </schematic>
 </drawing>
