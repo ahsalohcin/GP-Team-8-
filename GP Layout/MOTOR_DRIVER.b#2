@@ -2387,6 +2387,26 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </package>
 </packages>
 </library>
+<library name="heatsink">
+<packages>
+<package name="HEATSINK">
+<wire x1="-9.91" y1="0" x2="9.91" y2="0" width="0.127" layer="51"/>
+<wire x1="-9.91" y1="0" x2="-9.91" y2="8.5" width="0.127" layer="51"/>
+<wire x1="-9.91" y1="8.5" x2="-22.225" y2="8.5" width="0.127" layer="51"/>
+<wire x1="-22.225" y1="8.5" x2="-22.225" y2="9.52" width="0.127" layer="51"/>
+<wire x1="-22.225" y1="9.52" x2="-8.89" y2="9.52" width="0.127" layer="51"/>
+<wire x1="-8.89" y1="9.52" x2="-8.89" y2="1.02" width="0.127" layer="51"/>
+<wire x1="-8.89" y1="1.02" x2="8.89" y2="1.02" width="0.127" layer="51"/>
+<wire x1="8.89" y1="1.02" x2="8.89" y2="9.52" width="0.127" layer="51"/>
+<wire x1="8.89" y1="9.52" x2="22.225" y2="9.52" width="0.127" layer="51"/>
+<wire x1="22.225" y1="9.52" x2="22.225" y2="8.5" width="0.127" layer="51"/>
+<wire x1="22.225" y1="8.5" x2="9.91" y2="8.5" width="0.127" layer="51"/>
+<wire x1="9.91" y1="8.5" x2="9.91" y2="0" width="0.127" layer="51"/>
+<text x="-21.7" y="9.8" size="1.27" layer="25">&gt;NAME</text>
+<text x="-15.8" y="9.8" size="1.27" layer="27">&gt;VALUE</text>
+</package>
+</packages>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -2683,6 +2703,10 @@ design rules under a new name.</description>
 </element>
 <element name="D1" library="diode" package="TO220ABS" value="BYV32" x="-84.074" y="-36.322"/>
 <element name="D2" library="diode" package="TO220ABS" value="BYV32" x="-84.074" y="-51.562"/>
+<element name="U$2" library="heatsink" package="HEATSINK" value="HEATSINK" x="-71.882" y="-73.406"/>
+<element name="U$4" library="heatsink" package="HEATSINK" value="HEATSINK" x="-71.882" y="-86.106"/>
+<element name="U$5" library="heatsink" package="HEATSINK" value="HEATSINK" x="-71.882" y="-98.806"/>
+<element name="U$6" library="heatsink" package="HEATSINK" value="HEATSINK" x="-71.882" y="-111.506"/>
 </elements>
 <signals>
 <signal name="MOTOR_HIGH">
