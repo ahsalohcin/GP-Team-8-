@@ -63,12 +63,15 @@ unsigned long int prevLoop;
 //************************************************************************
   int servoPinIn = 18;
   int servoPinOut = 20;
+  
   int servoValue; //0-180 for full range. is actually less because of the physical stops 
   int servoMid = 82;
   int servoRange = 35;
+  
   int servoValueMicro; //1000-2000 for full range. is actually less because of the physical stops 
-  int servoMidMicro = 1456;
-  int servoRangeMicro = 194;
+  int servoMidMicro = 1455; // 2/18 test: min 1140, max 1770 before running into mechanical stops
+  int servoRangeMicro = 315;
+  
   Servo myServo;
 
 // STEERING
@@ -77,8 +80,8 @@ unsigned long int prevLoop;
   double xCenter = 64.0;
   double xMeasured;  
   double kSteering = .546875; // 35/64 = .546875 for full range. will be adjusted later.
-  double kSteeringMicro =kSteering*2000.0/180.0; 
-  
+  double kSteeringMicro =  (double)(servoRangeMicro)/64.00;
+     
   void steerCamera(double xCenter, double xMeasured); // steers using camera input 
   void steerTx(); // steers using Tx input
 
@@ -149,14 +152,17 @@ void loop() {
     //print it
     /*
     Serial.print("camera raw: ");
+    
     for(int i=0; i<128; i++)  {
+      
       Serial.print(out[i]);
       Serial.print(",");
-      }*/
-
+      
+      }
+*/
      
   //Determine the center
-    averageElements(out,128,5,averaged);   
+    averageElements(out,128,3,averaged);   
     diff(averaged,128,differences);
     xMeasured = center(differences,127);
     Serial.print(" xMeasured: ");
@@ -166,7 +172,7 @@ void loop() {
     steerTx();
   
   //Proportional controller write to servo instead
-    //steerCamera(xCenter,xMeasured);
+    steerCamera(xCenter,xMeasured);
 
   //Speed Sensing
     Serial.print(" Speed data: ");
@@ -282,7 +288,6 @@ double center(double input[], int arraySize)
   return (minIndex + maxIndex) / 2.0;
 }
 
-
 void getPot()
 {
      potentioValue = analogRead(potentioPin); //value between 0 and 1023 
@@ -305,16 +310,14 @@ void steerTx()
 {
  //get data from Tx 
  servoValue = pulseIn(servoPinIn,HIGH, 25000);
- 
+ //servoValue = map(servoValue,1350,1730,1000,2000); was used for calibration
  //map to servo steering range
    // 0-180
       //servoValue = constrain( map( servoValue, 1830, 1160, servoMid - servoRange, servoMid + servoRange ), servoMid - servoRange, servoMid + servoRange );
       //myServo.write(servoValue); 
    //1000-2000
       //servoValue = constrain(map( servoValue,1830,1160,servoMidMicro - servoRangeMicro, servoMidMicro + servoRangeMicro), servoMidMicro - servoRangeMicro, servoMidMicro + servoRangeMicro );
-      myServo.writeMicroseconds(servoValue);
-     
- 
+ myServo.writeMicroseconds(servoValue);
  Serial.print(" servoValue: ");
  Serial.print(servoValue);
 }
@@ -329,6 +332,7 @@ void steerCamera(double xCenter, double xMeasured)
     myServo.write(steerValue);
   //1000-2000
     steerValue = servoMidMicro + kSteeringMicro*xError;
+    steerValue = constrain(steerValue,servoMidMicro-servoRangeMicro, servoMidMicro+servoRangeMicro);
     myServo.writeMicroseconds(steerValue);
   //does fullrange camera to fullrange servo
   //steerValue = constrain( map( xMeasured, 128, 0, servoMid - servoRange, servoMid + servoRange ), servoMid - servoRange, servoMid + servoRange );
