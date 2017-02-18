@@ -159,7 +159,7 @@ void loop() {
       Serial.print(",");
       
       }
-*/
+    */
      
   //Determine the center
     averageElements(out,128,3,averaged);   
@@ -169,7 +169,7 @@ void loop() {
     Serial.print(xMeasured);
     
   //Get Tx steering input and writes to servo
-    steerTx();
+    //steerTx();
   
   //Proportional controller write to servo instead
     steerCamera(xCenter,xMeasured);
@@ -192,7 +192,8 @@ void loop() {
     Serial.print(" wheelSpeed: ");
     Serial.print(wheelSpeedCopy);
   
-  //Print loop time    
+  //Print loop time
+    Serial.print(" Looptime: ");    
     Serial.println(millis()-prevLoop);
     prevLoop = millis();
 }
