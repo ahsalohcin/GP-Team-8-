@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="8.0.1">
+<eagle version="8.0.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -11090,8 +11090,8 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="C15" library="resistor" deviceset="CPOL-US" device="153CLV-1010"/>
 <part name="FUSE" library="minifuse" deviceset="FUSEHOLDER3588" device=""/>
 <part name="BIG_SWITCH" library="bigswitch" deviceset="BIGSWITCH" device=""/>
-<part name="R1" library="SparkFun-Resistors" deviceset="0.3OHM" device="-0805-1/8W-1%" value="2.8M"/>
-<part name="R2" library="SparkFun-Resistors" deviceset="0.3OHM" device="-0805-1/8W-1%" value="1.62M"/>
+<part name="R1" library="SparkFun-Resistors" deviceset="0.3OHM" device="-0805-1/8W-1%" value="9090"/>
+<part name="R2" library="SparkFun-Resistors" deviceset="0.3OHM" device="-0805-1/8W-1%" value="4750"/>
 <part name="SUPPLY2" library="supply2" deviceset="GND" device=""/>
 <part name="R3" library="SparkFun-Resistors" deviceset="0.3OHM" device="-0805-1/8W-1%" value="2.32M"/>
 <part name="R4" library="SparkFun-Resistors" deviceset="0.3OHM" device="-0805-1/8W-1%" value="1.15M"/>
@@ -11815,6 +11815,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <segment>
 <wire x1="55.88" y1="157.48" x2="81.28" y2="157.48" width="0.1524" layer="91"/>
 <label x="76.2" y="157.48" size="1.778" layer="95"/>
+<pinref part="SV1" gate="G$1" pin="10"/>
 </segment>
 <segment>
 <pinref part="SV3" gate="G$1" pin="12"/>
@@ -11841,6 +11842,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <segment>
 <wire x1="55.88" y1="152.4" x2="81.28" y2="152.4" width="0.1524" layer="91"/>
 <label x="76.2" y="152.4" size="1.778" layer="95"/>
+<pinref part="SV1" gate="G$1" pin="8"/>
 </segment>
 <segment>
 <wire x1="281.94" y1="142.24" x2="307.34" y2="142.24" width="0.1524" layer="91"/>
@@ -12080,6 +12082,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <segment>
 <wire x1="55.88" y1="154.94" x2="81.28" y2="154.94" width="0.1524" layer="91"/>
 <label x="73.66" y="154.94" size="1.778" layer="95"/>
+<pinref part="SV1" gate="G$1" pin="9"/>
 </segment>
 </net>
 <net name="N$20" class="0">
@@ -12238,6 +12241,8 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <errors>
 <approved hash="113,1,193.571,130.071,FRAME1,,,,,"/>
 <approved hash="113,2,193.571,130.071,FRAME2,,,,,"/>
+<approved hash="113,3,193.571,130.071,FRAME3,,,,,"/>
+<approved hash="113,4,193.571,130.071,FRAME4,,,,,"/>
 </errors>
 </schematic>
 </drawing>

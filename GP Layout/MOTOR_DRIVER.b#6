@@ -2634,12 +2634,12 @@ design rules under a new name.</description>
 <attribute name="COPYRIGHT" value="Copyright C 2015 Accelerated Designs. All rights reserved" x="-34.29" y="57.15" size="1.778" layer="27" display="off"/>
 </element>
 <element name="C8" library="resistor" package="C050-025X075" value="10uF" x="-13.97" y="59.69"/>
-<element name="C12" library="resistor" package="153CLV-1010" value="" x="-72.898" y="-54.102"/>
-<element name="C13" library="resistor" package="153CLV-1010" value="" x="-72.898" y="-66.802"/>
-<element name="C14" library="resistor" package="153CLV-1010" value="" x="-72.898" y="-79.502"/>
-<element name="C15" library="resistor" package="153CLV-1010" value="" x="-72.898" y="-92.202"/>
-<element name="FUSE" library="minifuse" package="FUSEHOLDER3588" value="" x="-75.438" y="-105.41"/>
-<element name="BIG_SWITCH" library="bigswitch" package="BIGSWITCH" value="" x="-105.156" y="-101.092"/>
+<element name="C12" library="resistor" package="153CLV-1010" value="" x="-68.834" y="38.1"/>
+<element name="C13" library="resistor" package="153CLV-1010" value="" x="-69.342" y="26.162"/>
+<element name="C14" library="resistor" package="153CLV-1010" value="" x="-68.834" y="12.7"/>
+<element name="C15" library="resistor" package="153CLV-1010" value="" x="-68.834" y="0"/>
+<element name="FUSE" library="minifuse" package="FUSEHOLDER3588" value="" x="-62.484" y="60.452" rot="R180"/>
+<element name="BIG_SWITCH" library="bigswitch" package="BIGSWITCH" value="" x="-66.04" y="82.042"/>
 </elements>
 <signals>
 <signal name="N$1">
@@ -2895,7 +2895,7 @@ design rules under a new name.</description>
 <contactref element="U4" pad="2"/>
 <contactref element="U6" pad="1"/>
 <contactref element="BIG_SWITCH" pad="GND"/>
-<wire x1="16.51" y1="63.5" x2="-100.506" y2="-101.092" width="0" layer="19" extent="1-1"/>
+<wire x1="16.51" y1="63.5" x2="-61.39" y2="82.042" width="0" layer="19" extent="1-1"/>
 <wire x1="15.875" y1="77.5843" x2="16.51" y2="63.5" width="0" layer="19" extent="16-16"/>
 <wire x1="10.16" y1="85.09" x2="15.875" y2="77.5843" width="0" layer="19" extent="16-16"/>
 <wire x1="10.16" y1="92.71" x2="10.16" y2="85.09" width="0" layer="19" extent="1-1"/>
@@ -2960,10 +2960,10 @@ design rules under a new name.</description>
 <contactref element="C13" pad="-"/>
 <contactref element="C14" pad="-"/>
 <contactref element="LSP5" pad="MP"/>
-<wire x1="-76.898" y1="-79.502" x2="-76.898" y2="-92.202" width="0" layer="19" extent="1-1"/>
-<wire x1="-76.898" y1="-66.802" x2="-76.898" y2="-79.502" width="0" layer="19" extent="1-1"/>
-<wire x1="-76.898" y1="-54.102" x2="-76.898" y2="-66.802" width="0" layer="19" extent="1-1"/>
-<wire x1="-36.83" y1="80.01" x2="-76.898" y2="-54.102" width="0" layer="19" extent="1-1"/>
+<wire x1="-72.834" y1="12.7" x2="-72.834" y2="0" width="0" layer="19" extent="1-1"/>
+<wire x1="-73.342" y1="26.162" x2="-72.834" y2="12.7" width="0" layer="19" extent="1-1"/>
+<wire x1="-72.834" y1="38.1" x2="-73.342" y2="26.162" width="0" layer="19" extent="1-1"/>
+<wire x1="-36.83" y1="80.01" x2="-72.834" y2="38.1" width="0" layer="19" extent="1-1"/>
 <wire x1="10.16" y1="60.96" x2="-36.83" y2="80.01" width="0" layer="19" extent="1-1"/>
 <wire x1="17.145" y1="72.2757" x2="10.16" y2="60.96" width="0" layer="19" extent="16-16"/>
 <wire x1="29.845" y1="72.2757" x2="17.145" y2="72.2757" width="0" layer="19" extent="16-16"/>
@@ -3012,8 +3012,8 @@ design rules under a new name.</description>
 <contactref element="LSP4" pad="MP"/>
 <contactref element="FUSE" pad="C"/>
 <contactref element="FUSE" pad="A"/>
-<wire x1="-80.398" y1="-102.38" x2="-80.398" y2="-108.44" width="0" layer="19" extent="1-1"/>
-<wire x1="-36.83" y1="105.41" x2="-80.398" y2="-102.38" width="0" layer="19" extent="1-1"/>
+<wire x1="-57.524" y1="57.422" x2="-57.524" y2="63.482" width="0" layer="19" extent="1-1"/>
+<wire x1="-36.83" y1="105.41" x2="-57.524" y2="57.422" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$21">
 <contactref element="FUSE" pad="D"/>
@@ -3023,12 +3023,12 @@ design rules under a new name.</description>
 <contactref element="C15" pad="+"/>
 <contactref element="C13" pad="+"/>
 <contactref element="C14" pad="+"/>
-<wire x1="-70.478" y1="-102.38" x2="-109.806" y2="-101.092" width="0" layer="19" extent="1-1"/>
-<wire x1="-70.478" y1="-108.44" x2="-70.478" y2="-102.38" width="0" layer="19" extent="1-1"/>
-<wire x1="-68.898" y1="-92.202" x2="-70.478" y2="-102.38" width="0" layer="19" extent="1-1"/>
-<wire x1="-68.898" y1="-79.502" x2="-68.898" y2="-92.202" width="0" layer="19" extent="1-1"/>
-<wire x1="-68.898" y1="-66.802" x2="-68.898" y2="-79.502" width="0" layer="19" extent="1-1"/>
-<wire x1="-68.898" y1="-54.102" x2="-68.898" y2="-66.802" width="0" layer="19" extent="1-1"/>
+<wire x1="-67.444" y1="57.422" x2="-70.69" y2="82.042" width="0" layer="19" extent="1-1"/>
+<wire x1="-67.444" y1="63.482" x2="-67.444" y2="57.422" width="0" layer="19" extent="1-1"/>
+<wire x1="-64.834" y1="0" x2="-67.444" y2="57.422" width="0" layer="19" extent="1-1"/>
+<wire x1="-64.834" y1="12.7" x2="-64.834" y2="0" width="0" layer="19" extent="1-1"/>
+<wire x1="-65.342" y1="26.162" x2="-64.834" y2="12.7" width="0" layer="19" extent="1-1"/>
+<wire x1="-64.834" y1="38.1" x2="-65.342" y2="26.162" width="0" layer="19" extent="1-1"/>
 </signal>
 </signals>
 </board>
