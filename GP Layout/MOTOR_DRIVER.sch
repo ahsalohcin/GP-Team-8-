@@ -11763,6 +11763,41 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <label x="223.52" y="149.86" size="1.778" layer="95"/>
 </segment>
 </net>
+<net name="CAMERA_SI_BACKUP" class="0">
+<segment>
+<pinref part="U$1" gate="G$1" pin="29"/>
+<wire x1="238.76" y1="116.84" x2="223.52" y2="116.84" width="0.1524" layer="91"/>
+<label x="215.9" y="116.84" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="CAMERA_CL_BACKUP" class="0">
+<segment>
+<pinref part="U$1" gate="G$1" pin="30"/>
+<wire x1="238.76" y1="114.3" x2="223.52" y2="114.3" width="0.1524" layer="91"/>
+<label x="215.9" y="114.3" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="CAMERA_A0_BACKUP" class="0">
+<segment>
+<pinref part="U$1" gate="G$1" pin="31/A12"/>
+<wire x1="238.76" y1="111.76" x2="223.52" y2="111.76" width="0.1524" layer="91"/>
+<label x="215.9" y="111.76" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="HALL1_BACKUP" class="0">
+<segment>
+<pinref part="U$1" gate="G$1" pin="39/A20"/>
+<wire x1="279.4" y1="124.46" x2="294.64" y2="124.46" width="0.1524" layer="91"/>
+<label x="287.02" y="124.46" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="HALL2_BACKUP" class="0">
+<segment>
+<pinref part="U$1" gate="G$1" pin="38/A19"/>
+<wire x1="279.4" y1="121.92" x2="294.64" y2="121.92" width="0.1524" layer="91"/>
+<label x="287.02" y="121.92" size="1.778" layer="95"/>
+</segment>
+</net>
 </nets>
 </sheet>
 <sheet>
@@ -11839,6 +11874,11 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pinref part="SV3" gate="G$1" pin="12"/>
 <wire x1="281.94" y1="149.86" x2="307.34" y2="149.86" width="0.1524" layer="91"/>
 <label x="302.26" y="149.86" size="1.778" layer="95"/>
+</segment>
+<segment>
+<wire x1="330.2" y1="144.78" x2="353.06" y2="144.78" width="0.1524" layer="91"/>
+<pinref part="SV4" gate="G$1" pin="4"/>
+<label x="340.36" y="144.78" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="5V" class="0">
@@ -11965,6 +12005,11 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="266.7" y1="147.32" x2="236.22" y2="147.32" width="0.1524" layer="91"/>
 <label x="236.22" y="147.32" size="1.778" layer="95"/>
 </segment>
+<segment>
+<wire x1="330.2" y1="147.32" x2="353.06" y2="147.32" width="0.1524" layer="91"/>
+<pinref part="SV4" gate="G$1" pin="5"/>
+<label x="340.36" y="147.32" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="CAMERA_CLK" class="0">
 <segment>
@@ -12040,46 +12085,39 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pinref part="SV4" gate="G$1" pin="8"/>
 </segment>
 </net>
-<net name="N$36" class="0">
+<net name="HALL2_BACKUP" class="0">
 <segment>
 <wire x1="330.2" y1="152.4" x2="353.06" y2="152.4" width="0.1524" layer="91"/>
 <pinref part="SV4" gate="G$1" pin="7"/>
+<label x="340.36" y="152.4" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="N$37" class="0">
+<net name="HALL1_BACKUP" class="0">
 <segment>
 <wire x1="330.2" y1="149.86" x2="353.06" y2="149.86" width="0.1524" layer="91"/>
 <pinref part="SV4" gate="G$1" pin="6"/>
+<label x="340.36" y="149.86" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="N$38" class="0">
-<segment>
-<wire x1="330.2" y1="147.32" x2="353.06" y2="147.32" width="0.1524" layer="91"/>
-<pinref part="SV4" gate="G$1" pin="5"/>
-</segment>
-</net>
-<net name="N$39" class="0">
-<segment>
-<wire x1="330.2" y1="144.78" x2="353.06" y2="144.78" width="0.1524" layer="91"/>
-<pinref part="SV4" gate="G$1" pin="4"/>
-</segment>
-</net>
-<net name="N$40" class="0">
+<net name="CAMERA_SI_BACKUP" class="0">
 <segment>
 <wire x1="330.2" y1="142.24" x2="353.06" y2="142.24" width="0.1524" layer="91"/>
 <pinref part="SV4" gate="G$1" pin="3"/>
+<label x="340.36" y="142.24" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="N$41" class="0">
+<net name="CAMERA_CL_BACKUP" class="0">
 <segment>
 <wire x1="330.2" y1="139.7" x2="353.06" y2="139.7" width="0.1524" layer="91"/>
 <pinref part="SV4" gate="G$1" pin="2"/>
+<label x="340.36" y="139.7" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="N$42" class="0">
+<net name="CAMERA_A0_BACKUP" class="0">
 <segment>
 <wire x1="330.2" y1="137.16" x2="353.06" y2="137.16" width="0.1524" layer="91"/>
 <pinref part="SV4" gate="G$1" pin="1"/>
+<label x="340.36" y="137.16" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="SERVO" class="0">

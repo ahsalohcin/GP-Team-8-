@@ -174,6 +174,8 @@
 <wire x1="-7.874" y1="2.3368" x2="-7.874" y2="-2.3368" width="0.1524" layer="21"/>
 <wire x1="-9.652" y1="0" x2="-9.906" y2="0" width="0.1524" layer="21" curve="-180"/>
 <wire x1="-9.906" y1="0" x2="-9.652" y2="0" width="0.1524" layer="21" curve="-180"/>
+<text x="-7.62" y="2.54" size="1.27" layer="25">&gt;NAME</text>
+<wire x1="-7.62" y1="1.27" x2="2.54" y2="1.27" width="0.127" layer="21"/>
 </package>
 </packages>
 <symbols>
@@ -11043,14 +11045,14 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </classes>
 <parts>
 <part name="TOP_FWD" library="CSD18502KCS" deviceset="CSD18502KCS_KCS_3" device=""/>
-<part name="U2" library="CSD18502KCS" deviceset="CSD18502KCS_KCS_3" device=""/>
+<part name="BOT_REVERSE" library="CSD18502KCS" deviceset="CSD18502KCS_KCS_3" device=""/>
 <part name="FRAME1" library="frames" deviceset="A3L-LOC" device=""/>
 <part name="U3" library="MIC4604" deviceset="MIC4604YM" device=""/>
 <part name="C1" library="resistor" deviceset="C-US" device="025-050X050" value="10uF"/>
 <part name="C2" library="resistor" deviceset="C-US" device="025-050X050" value="10uF"/>
 <part name="LSP3" library="solpad" deviceset="SE14" device=""/>
-<part name="U4" library="CSD18502KCS" deviceset="CSD18502KCS_KCS_3" device=""/>
-<part name="U5" library="CSD18502KCS" deviceset="CSD18502KCS_KCS_3" device=""/>
+<part name="TOP_REVERSE" library="CSD18502KCS" deviceset="CSD18502KCS_KCS_3" device=""/>
+<part name="BOT_FWD" library="CSD18502KCS" deviceset="CSD18502KCS_KCS_3" device=""/>
 <part name="U6" library="MIC4604" deviceset="MIC4604YM" device=""/>
 <part name="C3" library="resistor" deviceset="C-US" device="025-050X050" value="10uF"/>
 <part name="C4" library="resistor" deviceset="C-US" device="025-050X050" value="10uF"/>
@@ -11107,14 +11109,14 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </plain>
 <instances>
 <instance part="TOP_FWD" gate="A" x="124.46" y="210.82" rot="MR270"/>
-<instance part="U2" gate="A" x="124.46" y="114.3" rot="MR270"/>
+<instance part="BOT_REVERSE" gate="A" x="124.46" y="114.3" rot="MR270"/>
 <instance part="FRAME1" gate="G$1" x="0" y="0"/>
 <instance part="U3" gate="A" x="86.36" y="142.24" rot="MR0"/>
 <instance part="C1" gate="G$1" x="106.68" y="132.08" rot="R180"/>
 <instance part="C2" gate="G$1" x="116.84" y="132.08" rot="R180"/>
 <instance part="LSP3" gate="1" x="142.24" y="132.08" rot="R270"/>
-<instance part="U4" gate="A" x="243.84" y="213.36" rot="R270"/>
-<instance part="U5" gate="A" x="243.84" y="114.3" rot="R270"/>
+<instance part="TOP_REVERSE" gate="A" x="243.84" y="213.36" rot="R270"/>
+<instance part="BOT_FWD" gate="A" x="243.84" y="114.3" rot="R270"/>
 <instance part="U6" gate="A" x="281.94" y="142.24"/>
 <instance part="C3" gate="G$1" x="261.62" y="132.08" rot="MR180"/>
 <instance part="C4" gate="G$1" x="251.46" y="132.08" rot="MR180"/>
@@ -11134,7 +11136,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pinref part="U3" gate="A" pin="LO"/>
 <wire x1="30.48" y1="142.24" x2="15.24" y2="142.24" width="0.1524" layer="91"/>
 <wire x1="15.24" y1="142.24" x2="15.24" y2="119.38" width="0.1524" layer="91"/>
-<pinref part="U2" gate="A" pin="GATE"/>
+<pinref part="BOT_REVERSE" gate="A" pin="GATE"/>
 <wire x1="15.24" y1="119.38" x2="124.46" y2="119.38" width="0.1524" layer="91"/>
 <wire x1="124.46" y1="119.38" x2="124.46" y2="114.3" width="0.1524" layer="91"/>
 </segment>
@@ -11182,14 +11184,14 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pinref part="U6" gate="A" pin="LO"/>
 <wire x1="337.82" y1="142.24" x2="353.06" y2="142.24" width="0.1524" layer="91"/>
 <wire x1="353.06" y1="142.24" x2="353.06" y2="119.38" width="0.1524" layer="91"/>
-<pinref part="U5" gate="A" pin="GATE"/>
+<pinref part="BOT_FWD" gate="A" pin="GATE"/>
 <wire x1="353.06" y1="119.38" x2="243.84" y2="119.38" width="0.1524" layer="91"/>
 <wire x1="243.84" y1="119.38" x2="243.84" y2="114.3" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$10" class="0">
 <segment>
-<pinref part="U4" gate="A" pin="GATE"/>
+<pinref part="TOP_REVERSE" gate="A" pin="GATE"/>
 <wire x1="243.84" y1="213.36" x2="243.84" y2="218.44" width="0.1524" layer="91"/>
 <wire x1="243.84" y1="218.44" x2="279.4" y2="218.44" width="0.1524" layer="91"/>
 <wire x1="279.4" y1="218.44" x2="279.4" y2="137.16" width="0.1524" layer="91"/>
@@ -11251,14 +11253,14 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </net>
 <net name="GND_TOP" class="0">
 <segment>
-<pinref part="U2" gate="A" pin="SOURCE"/>
+<pinref part="BOT_REVERSE" gate="A" pin="SOURCE"/>
 <wire x1="127" y1="48.26" x2="127" y2="40.64" width="0.1524" layer="91"/>
 <pinref part="U3" gate="A" pin="VSS"/>
 <wire x1="30.48" y1="139.7" x2="12.7" y2="139.7" width="0.1524" layer="91"/>
 <wire x1="12.7" y1="139.7" x2="12.7" y2="40.64" width="0.1524" layer="91"/>
 <wire x1="12.7" y1="40.64" x2="127" y2="40.64" width="0.1524" layer="91"/>
 <junction x="127" y="40.64"/>
-<pinref part="U5" gate="A" pin="SOURCE"/>
+<pinref part="BOT_FWD" gate="A" pin="SOURCE"/>
 <wire x1="241.3" y1="48.26" x2="241.3" y2="40.64" width="0.1524" layer="91"/>
 <pinref part="U6" gate="A" pin="VSS"/>
 <wire x1="337.82" y1="139.7" x2="355.6" y2="139.7" width="0.1524" layer="91"/>
@@ -11291,7 +11293,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="86.36" y1="220.98" x2="86.36" y2="147.32" width="0.1524" layer="91"/>
 <junction x="127" y="220.98"/>
 <pinref part="U3" gate="A" pin="VDD"/>
-<pinref part="U4" gate="A" pin="DRAIN"/>
+<pinref part="TOP_REVERSE" gate="A" pin="DRAIN"/>
 <wire x1="86.36" y1="147.32" x2="86.36" y2="142.24" width="0.1524" layer="91"/>
 <wire x1="241.3" y1="220.98" x2="241.3" y2="213.36" width="0.1524" layer="91"/>
 <wire x1="241.3" y1="220.98" x2="281.94" y2="220.98" width="0.1524" layer="91"/>
@@ -11319,7 +11321,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <net name="MOTOR_HIGH_TOP" class="0">
 <segment>
 <pinref part="TOP_FWD" gate="A" pin="SOURCE"/>
-<pinref part="U2" gate="A" pin="DRAIN"/>
+<pinref part="BOT_REVERSE" gate="A" pin="DRAIN"/>
 <wire x1="127" y1="144.78" x2="127" y2="132.08" width="0.1524" layer="91"/>
 <pinref part="LSP3" gate="1" pin="MP"/>
 <wire x1="127" y1="132.08" x2="127" y2="114.3" width="0.1524" layer="91"/>
@@ -11330,8 +11332,8 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </net>
 <net name="MOTOR_LOW_TOP" class="0">
 <segment>
-<pinref part="U4" gate="A" pin="SOURCE"/>
-<pinref part="U5" gate="A" pin="DRAIN"/>
+<pinref part="TOP_REVERSE" gate="A" pin="SOURCE"/>
+<pinref part="BOT_FWD" gate="A" pin="DRAIN"/>
 <wire x1="241.3" y1="147.32" x2="241.3" y2="132.08" width="0.1524" layer="91"/>
 <pinref part="LSP6" gate="1" pin="MP"/>
 <wire x1="241.3" y1="132.08" x2="241.3" y2="114.3" width="0.1524" layer="91"/>
