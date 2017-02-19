@@ -10990,6 +10990,48 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </deviceset>
 </devicesets>
 </library>
+<library name="heatsink">
+<packages>
+<package name="HEATSINK">
+<wire x1="-9.91" y1="0" x2="9.91" y2="0" width="0.127" layer="51"/>
+<wire x1="-9.91" y1="0" x2="-9.91" y2="8.5" width="0.127" layer="51"/>
+<wire x1="-9.91" y1="8.5" x2="-22.225" y2="8.5" width="0.127" layer="51"/>
+<wire x1="-22.225" y1="8.5" x2="-22.225" y2="9.52" width="0.127" layer="51"/>
+<wire x1="-22.225" y1="9.52" x2="-8.89" y2="9.52" width="0.127" layer="51"/>
+<wire x1="-8.89" y1="9.52" x2="-8.89" y2="1.02" width="0.127" layer="51"/>
+<wire x1="-8.89" y1="1.02" x2="8.89" y2="1.02" width="0.127" layer="51"/>
+<wire x1="8.89" y1="1.02" x2="8.89" y2="9.52" width="0.127" layer="51"/>
+<wire x1="8.89" y1="9.52" x2="22.225" y2="9.52" width="0.127" layer="51"/>
+<wire x1="22.225" y1="9.52" x2="22.225" y2="8.5" width="0.127" layer="51"/>
+<wire x1="22.225" y1="8.5" x2="9.91" y2="8.5" width="0.127" layer="51"/>
+<wire x1="9.91" y1="8.5" x2="9.91" y2="0" width="0.127" layer="51"/>
+<text x="-21.7" y="9.8" size="1.27" layer="25">&gt;NAME</text>
+<text x="-15.8" y="9.8" size="1.27" layer="27">&gt;VALUE</text>
+</package>
+</packages>
+<symbols>
+<symbol name="HEATSINK">
+<wire x1="10.16" y1="0" x2="10.16" y2="2.54" width="0.254" layer="94"/>
+<wire x1="10.16" y1="2.54" x2="-10.16" y2="2.54" width="0.254" layer="94"/>
+<wire x1="-10.16" y1="2.54" x2="-10.16" y2="0" width="0.254" layer="94"/>
+<wire x1="-10.16" y1="0" x2="10.16" y2="0" width="0.254" layer="94"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="HEATSINK">
+<gates>
+<gate name="G$1" symbol="HEATSINK" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="HEATSINK">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -11053,6 +11095,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="R4" library="SparkFun-Resistors" deviceset="0.3OHM" device="-0805-1/8W-1%" value="1.15M"/>
 <part name="D1" library="diode" deviceset="BYV32" device=""/>
 <part name="D2" library="diode" deviceset="BYV32" device=""/>
+<part name="U$2" library="heatsink" deviceset="HEATSINK" device=""/>
+<part name="U$4" library="heatsink" deviceset="HEATSINK" device=""/>
+<part name="U$5" library="heatsink" deviceset="HEATSINK" device=""/>
+<part name="U$6" library="heatsink" deviceset="HEATSINK" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -11060,7 +11106,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <plain>
 </plain>
 <instances>
-<instance part="TOP_FWD" gate="A" x="124.46" y="213.36" rot="MR270"/>
+<instance part="TOP_FWD" gate="A" x="124.46" y="210.82" rot="MR270"/>
 <instance part="U2" gate="A" x="124.46" y="114.3" rot="MR270"/>
 <instance part="FRAME1" gate="G$1" x="0" y="0"/>
 <instance part="U3" gate="A" x="86.36" y="142.24" rot="MR0"/>
@@ -11075,6 +11121,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <instance part="LSP6" gate="1" x="226.06" y="132.08" rot="MR270"/>
 <instance part="D3" gate="1" x="106.68" y="147.32" rot="R180"/>
 <instance part="D4" gate="1" x="261.62" y="147.32" rot="MR180"/>
+<instance part="U$2" gate="G$1" x="134.62" y="177.8" rot="R90"/>
+<instance part="U$4" gate="G$1" x="134.62" y="81.28" rot="R90"/>
+<instance part="U$5" gate="G$1" x="236.22" y="81.28" rot="R90"/>
+<instance part="U$6" gate="G$1" x="236.22" y="180.34" rot="R90"/>
 </instances>
 <busses>
 </busses>
@@ -11092,7 +11142,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <net name="N$3" class="0">
 <segment>
 <pinref part="TOP_FWD" gate="A" pin="GATE"/>
-<wire x1="124.46" y1="213.36" x2="124.46" y2="218.44" width="0.1524" layer="91"/>
+<wire x1="124.46" y1="210.82" x2="124.46" y2="218.44" width="0.1524" layer="91"/>
 <wire x1="124.46" y1="218.44" x2="88.9" y2="218.44" width="0.1524" layer="91"/>
 <wire x1="88.9" y1="218.44" x2="88.9" y2="137.16" width="0.1524" layer="91"/>
 <pinref part="U3" gate="A" pin="HO"/>
@@ -11236,7 +11286,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pinref part="D3" gate="1" pin="A1"/>
 <wire x1="111.76" y1="147.32" x2="114.3" y2="147.32" width="0.1524" layer="91"/>
 <pinref part="TOP_FWD" gate="A" pin="DRAIN"/>
-<wire x1="127" y1="220.98" x2="127" y2="213.36" width="0.1524" layer="91"/>
+<wire x1="127" y1="220.98" x2="127" y2="210.82" width="0.1524" layer="91"/>
 <wire x1="127" y1="220.98" x2="86.36" y2="220.98" width="0.1524" layer="91"/>
 <wire x1="86.36" y1="220.98" x2="86.36" y2="147.32" width="0.1524" layer="91"/>
 <junction x="127" y="220.98"/>
@@ -11270,7 +11320,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <segment>
 <pinref part="TOP_FWD" gate="A" pin="SOURCE"/>
 <pinref part="U2" gate="A" pin="DRAIN"/>
-<wire x1="127" y1="147.32" x2="127" y2="132.08" width="0.1524" layer="91"/>
+<wire x1="127" y1="144.78" x2="127" y2="132.08" width="0.1524" layer="91"/>
 <pinref part="LSP3" gate="1" pin="MP"/>
 <wire x1="127" y1="132.08" x2="127" y2="114.3" width="0.1524" layer="91"/>
 <wire x1="139.7" y1="132.08" x2="127" y2="132.08" width="0.1524" layer="91"/>

@@ -11227,14 +11227,14 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="261.62" y1="144.78" x2="261.62" y2="139.7" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="LI_TOP" class="0">
+<net name="LI2_TOP" class="0">
 <segment>
 <pinref part="U6" gate="A" pin="HI"/>
 <wire x1="337.82" y1="134.62" x2="350.52" y2="134.62" width="0.1524" layer="91"/>
 <label x="342.9" y="134.62" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="HI_TOP" class="0">
+<net name="HI2_TOP" class="0">
 <segment>
 <pinref part="U6" gate="A" pin="LI"/>
 <wire x1="337.82" y1="137.16" x2="350.52" y2="137.16" width="0.1524" layer="91"/>
