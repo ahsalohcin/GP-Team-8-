@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="8.0.1">
+<eagle version="8.0.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -1831,6 +1831,8 @@ drill 1.4 mm</description>
 <wire x1="-7.874" y1="2.3368" x2="-7.874" y2="-2.3368" width="0.1524" layer="21"/>
 <wire x1="-9.652" y1="0" x2="-9.906" y2="0" width="0.1524" layer="21" curve="-180"/>
 <wire x1="-9.906" y1="0" x2="-9.652" y2="0" width="0.1524" layer="21" curve="-180"/>
+<text x="-7.62" y="2.54" size="1.27" layer="25">&gt;NAME</text>
+<wire x1="-7.62" y1="1.27" x2="2.54" y2="1.27" width="0.127" layer="21"/>
 </package>
 </packages>
 </library>
@@ -2608,11 +2610,11 @@ design rules under a new name.</description>
 <element name="LSP6" library="solpad" package="SE14" value="SE14" x="3.81" y="55.88"/>
 <element name="S1" library="smd-special" package="SMS-006" value="SWS006" x="83.82" y="16.51" rot="R90"/>
 <element name="U$1" library="Teensy356" package="TEENSY_3.5/3.6_BASIC" value="TEENSY_3.5/3.6_BASIC" x="38.1" y="16.51"/>
-<element name="TOP_FWD" library="CSD18502KCS" package="KCS3" value="CSD18502KCS_KCS_3" x="10.16" y="87.63" rot="R90">
-<attribute name="MANUFACTURER_PART_NUMBER" value="csd18502kcs_kcs_3" x="10.16" y="87.63" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="VENDOR" value="TEXAS INSTRUMENTS" x="10.16" y="87.63" size="1.778" layer="27" rot="R90" display="off"/>
+<element name="TOP_FWD" library="CSD18502KCS" package="KCS3" value="CSD18502KCS_KCS_3" x="10.668" y="87.63" rot="R90">
+<attribute name="MANUFACTURER_PART_NUMBER" value="csd18502kcs_kcs_3" x="10.668" y="87.63" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="VENDOR" value="TEXAS INSTRUMENTS" x="10.668" y="87.63" size="1.778" layer="27" rot="R90" display="off"/>
 </element>
-<element name="U2" library="CSD18502KCS" package="KCS3" value="CSD18502KCS_KCS_3" x="16.764" y="87.63" rot="R90">
+<element name="BOT_REVERSE" library="CSD18502KCS" package="KCS3" value="CSD18502KCS_KCS_3" x="16.764" y="87.63" rot="R90">
 <attribute name="MANUFACTURER_PART_NUMBER" value="csd18502kcs_kcs_3" x="16.764" y="87.63" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="VENDOR" value="TEXAS INSTRUMENTS" x="16.764" y="87.63" size="1.778" layer="27" rot="R90" display="off"/>
 </element>
@@ -2620,11 +2622,11 @@ design rules under a new name.</description>
 <attribute name="MANUFACTURER_PART_NUMBER" value="mic4604ym" x="17.78" y="74.93" size="1.778" layer="28" rot="MR270" display="off"/>
 <attribute name="VENDOR" value="Microchip" x="17.78" y="74.93" size="1.778" layer="28" rot="MR270" display="off"/>
 </element>
-<element name="U4" library="CSD18502KCS" package="KCS3" value="CSD18502KCS_KCS_3" x="16.51" y="60.96" rot="R270">
+<element name="TOP_REVERSE" library="CSD18502KCS" package="KCS3" value="CSD18502KCS_KCS_3" x="16.51" y="60.96" rot="R270">
 <attribute name="MANUFACTURER_PART_NUMBER" value="csd18502kcs_kcs_3" x="16.51" y="60.96" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="VENDOR" value="TEXAS INSTRUMENTS" x="16.51" y="60.96" size="1.778" layer="27" rot="R270" display="off"/>
 </element>
-<element name="U5" library="CSD18502KCS" package="KCS3" value="CSD18502KCS_KCS_3" x="10.16" y="60.96" rot="R270">
+<element name="BOT_FWD" library="CSD18502KCS" package="KCS3" value="CSD18502KCS_KCS_3" x="10.16" y="60.96" rot="R270">
 <attribute name="MANUFACTURER_PART_NUMBER" value="csd18502kcs_kcs_3" x="10.16" y="60.96" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="VENDOR" value="TEXAS INSTRUMENTS" x="10.16" y="60.96" size="1.778" layer="27" rot="R270" display="off"/>
 </element>
@@ -2689,10 +2691,10 @@ design rules under a new name.</description>
 <element name="C15" library="resistor" package="153CLV-1010" value="" x="-68.834" y="0"/>
 <element name="FUSE" library="minifuse" package="FUSEHOLDER3588" value="" x="-62.484" y="60.452" rot="R180"/>
 <element name="BIG_SWITCH" library="bigswitch" package="BIGSWITCH" value="" x="-66.04" y="82.042"/>
-<element name="R1" library="SparkFun-Resistors" package="0805" value="2.8M" x="-82.042" y="-29.21">
+<element name="R1" library="SparkFun-Resistors" package="0805" value="9090" x="-82.042" y="-29.21">
 <attribute name="PROD_ID" value="RES-11622" x="-82.042" y="-29.21" size="1.778" layer="27" display="off"/>
 </element>
-<element name="R2" library="SparkFun-Resistors" package="0805" value="1.62M" x="-85.598" y="-29.21">
+<element name="R2" library="SparkFun-Resistors" package="0805" value="4750" x="-85.598" y="-29.21">
 <attribute name="PROD_ID" value="RES-11622" x="-85.598" y="-29.21" size="1.778" layer="27" display="off"/>
 </element>
 <element name="R3" library="SparkFun-Resistors" package="0805" value="2.32M" x="-89.154" y="-29.21">
@@ -2703,10 +2705,10 @@ design rules under a new name.</description>
 </element>
 <element name="D1" library="diode" package="TO220ABS" value="BYV32" x="-84.074" y="-36.322"/>
 <element name="D2" library="diode" package="TO220ABS" value="BYV32" x="-84.074" y="-51.562"/>
-<element name="U$2" library="heatsink" package="HEATSINK" value="HEATSINK" x="-71.882" y="-73.406"/>
-<element name="U$4" library="heatsink" package="HEATSINK" value="HEATSINK" x="-71.882" y="-86.106"/>
-<element name="U$5" library="heatsink" package="HEATSINK" value="HEATSINK" x="-71.882" y="-98.806"/>
-<element name="U$6" library="heatsink" package="HEATSINK" value="HEATSINK" x="-71.882" y="-111.506"/>
+<element name="U$2" library="heatsink" package="HEATSINK" value="HEATSINK" x="7.62" y="85.344" rot="R90"/>
+<element name="U$4" library="heatsink" package="HEATSINK" value="HEATSINK" x="19.05" y="63.5" rot="R270"/>
+<element name="U$5" library="heatsink" package="HEATSINK" value="HEATSINK" x="13.208" y="85.344" rot="R270"/>
+<element name="U$6" library="heatsink" package="HEATSINK" value="HEATSINK" x="13.716" y="63.754" rot="R90"/>
 </elements>
 <signals>
 <signal name="MOTOR_HIGH">
@@ -2716,13 +2718,13 @@ design rules under a new name.</description>
 </signal>
 <signal name="N$2">
 <contactref element="U3" pad="8"/>
-<contactref element="U2" pad="1"/>
+<contactref element="BOT_REVERSE" pad="1"/>
 <wire x1="15.875" y1="72.2757" x2="16.764" y2="82.55" width="0" layer="19" extent="16-16"/>
 </signal>
 <signal name="N$3">
 <contactref element="TOP_FWD" pad="1"/>
 <contactref element="U3" pad="3"/>
-<wire x1="10.16" y1="82.55" x2="18.415" y2="77.5843" width="0" layer="19" extent="16-16"/>
+<wire x1="10.668" y1="82.55" x2="18.415" y2="77.5843" width="0" layer="19" extent="16-16"/>
 </signal>
 <signal name="N$4">
 <contactref element="U3" pad="4"/>
@@ -2751,11 +2753,11 @@ design rules under a new name.</description>
 </signal>
 <signal name="N$9">
 <contactref element="U6" pad="8"/>
-<contactref element="U5" pad="1"/>
+<contactref element="BOT_FWD" pad="1"/>
 <wire x1="10.16" y1="66.04" x2="28.575" y2="72.2757" width="0" layer="19" extent="16-16"/>
 </signal>
 <signal name="N$10">
-<contactref element="U4" pad="1"/>
+<contactref element="TOP_REVERSE" pad="1"/>
 <contactref element="U6" pad="3"/>
 <wire x1="16.51" y1="66.04" x2="31.115" y2="77.5843" width="0" layer="19" extent="16-16"/>
 </signal>
@@ -2797,11 +2799,13 @@ design rules under a new name.</description>
 <contactref element="C8" pad="2"/>
 <contactref element="SV3" pad="2"/>
 <contactref element="R2" pad="1"/>
-<wire x1="-37.084" y1="38.1" x2="-86.498" y2="-29.21" width="0" layer="19" extent="1-1"/>
-<wire x1="-29.464" y1="24.892" x2="-37.084" y2="38.1" width="0" layer="19" extent="1-1"/>
+<contactref element="SV1" pad="10"/>
+<wire x1="-29.464" y1="24.892" x2="-86.498" y2="-29.21" width="0" layer="19" extent="1-1"/>
+<wire x1="-37.084" y1="38.1" x2="-29.464" y2="24.892" width="0" layer="19" extent="1-1"/>
 <wire x1="12.7" y1="24.13" x2="-29.464" y2="24.892" width="0" layer="19" extent="1-1"/>
 <wire x1="10.16" y1="8.89" x2="12.7" y2="24.13" width="0" layer="19" extent="1-1"/>
-<wire x1="45.72" y1="24.13" x2="12.7" y2="24.13" width="0" layer="19" extent="1-1"/>
+<wire x1="33.02" y1="40.64" x2="12.7" y2="24.13" width="0" layer="19" extent="1-1"/>
+<wire x1="45.72" y1="24.13" x2="33.02" y2="40.64" width="0" layer="19" extent="1-1"/>
 <wire x1="53.34" y1="21.59" x2="45.72" y2="24.13" width="0" layer="19" extent="1-1"/>
 <wire x1="59.2074" y1="17.71" x2="53.34" y2="21.59" width="0" layer="19" extent="1-1"/>
 <wire x1="59.2074" y1="16.11" x2="59.2074" y2="17.71" width="0" layer="19" extent="1-1"/>
@@ -2879,6 +2883,8 @@ design rules under a new name.</description>
 </signal>
 <signal name="SERVO">
 <contactref element="U$1" pad="20/A6"/>
+<contactref element="SV1" pad="9"/>
+<wire x1="25.4" y1="24.13" x2="30.48" y2="40.64" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="BLT_RX">
 <contactref element="U$1" pad="7"/>
@@ -2912,11 +2918,13 @@ design rules under a new name.</description>
 <contactref element="U$3" pad="2"/>
 <contactref element="C8" pad="1"/>
 <contactref element="SV3" pad="6"/>
+<contactref element="SV1" pad="8"/>
 <wire x1="66.04" y1="40.64" x2="78.74" y2="38.1" width="0" layer="19" extent="1-1"/>
 <wire x1="63.5" y1="38.1" x2="66.04" y2="40.64" width="0" layer="19" extent="1-1"/>
 <wire x1="79.3242" y1="22.86" x2="78.74" y2="38.1" width="0" layer="19" extent="1-1"/>
-<wire x1="-34.544" y1="24.892" x2="63.5" y2="38.1" width="0" layer="19" extent="1-1"/>
-<wire x1="-34.544" y1="38.1" x2="-34.544" y2="24.892" width="0" layer="19" extent="1-1"/>
+<wire x1="27.94" y1="40.64" x2="63.5" y2="38.1" width="0" layer="19" extent="1-1"/>
+<wire x1="-34.544" y1="38.1" x2="27.94" y2="40.64" width="0" layer="19" extent="1-1"/>
+<wire x1="-34.544" y1="24.892" x2="-34.544" y2="38.1" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="3_3V">
 <contactref element="U$1" pad="3V3_LO"/>
@@ -2953,17 +2961,17 @@ design rules under a new name.</description>
 <contactref element="D3" pad="A1"/>
 <contactref element="TOP_FWD" pad="2"/>
 <contactref element="U3" pad="1"/>
-<contactref element="U4" pad="2"/>
+<contactref element="TOP_REVERSE" pad="2"/>
 <contactref element="U6" pad="1"/>
 <contactref element="BIG_SWITCH" pad="GND"/>
 <wire x1="16.51" y1="63.5" x2="-61.39" y2="82.042" width="0" layer="19" extent="1-1"/>
 <wire x1="15.875" y1="77.5843" x2="16.51" y2="63.5" width="0" layer="19" extent="16-16"/>
-<wire x1="10.16" y1="85.09" x2="15.875" y2="77.5843" width="0" layer="19" extent="16-16"/>
-<wire x1="10.16" y1="92.71" x2="10.16" y2="85.09" width="0" layer="19" extent="1-1"/>
+<wire x1="10.668" y1="85.09" x2="15.875" y2="77.5843" width="0" layer="19" extent="16-16"/>
+<wire x1="10.16" y1="92.71" x2="10.668" y2="85.09" width="0" layer="19" extent="1-1"/>
 <wire x1="28.575" y1="77.5843" x2="15.875" y2="77.5843" width="0" layer="19" extent="16-16"/>
 <wire x1="27.94" y1="82.55" x2="28.575" y2="77.5843" width="0" layer="19" extent="16-16"/>
 <wire x1="27.94" y1="87.63" x2="27.94" y2="82.55" width="0" layer="19" extent="1-1"/>
-<wire x1="27.94" y1="61.468" x2="10.16" y2="85.09" width="0" layer="19" extent="1-1"/>
+<wire x1="27.94" y1="61.468" x2="10.668" y2="85.09" width="0" layer="19" extent="1-1"/>
 <wire x1="27.94" y1="66.548" x2="27.94" y2="61.468" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="SW5">
@@ -3020,9 +3028,9 @@ design rules under a new name.</description>
 </signal>
 <signal name="GND_TOP">
 <contactref element="SV5" pad="10"/>
-<contactref element="U2" pad="3"/>
+<contactref element="BOT_REVERSE" pad="3"/>
 <contactref element="U3" pad="7"/>
-<contactref element="U5" pad="3"/>
+<contactref element="BOT_FWD" pad="3"/>
 <contactref element="U6" pad="7"/>
 <contactref element="C12" pad="-"/>
 <contactref element="C15" pad="-"/>
@@ -3129,16 +3137,16 @@ design rules under a new name.</description>
 </signal>
 <signal name="MOTOR_HIGH_TOP">
 <contactref element="TOP_FWD" pad="3"/>
-<contactref element="U2" pad="2"/>
+<contactref element="BOT_REVERSE" pad="2"/>
 <contactref element="LSP3" pad="MP"/>
 <contactref element="SV6" pad="3"/>
-<wire x1="10.16" y1="87.63" x2="16.764" y2="85.09" width="0" layer="19" extent="1-1"/>
+<wire x1="10.668" y1="87.63" x2="16.764" y2="85.09" width="0" layer="19" extent="1-1"/>
 <wire x1="3.81" y1="60.96" x2="16.764" y2="85.09" width="0" layer="19" extent="1-1"/>
 <wire x1="15.24" y1="55.88" x2="3.81" y2="60.96" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="MOTOR_LOW_TOP">
-<contactref element="U4" pad="3"/>
-<contactref element="U5" pad="2"/>
+<contactref element="TOP_REVERSE" pad="3"/>
+<contactref element="BOT_FWD" pad="2"/>
 <contactref element="LSP6" pad="MP"/>
 <contactref element="SV6" pad="4"/>
 <wire x1="17.78" y1="55.88" x2="16.51" y2="60.96" width="0" layer="19" extent="1-1"/>
