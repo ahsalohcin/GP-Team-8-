@@ -11921,18 +11921,11 @@ W = angled&lt;p&gt;
 <pinref part="U$1" gate="G$1" pin="20/A6"/>
 </segment>
 </net>
-<net name="BLT_RX" class="0">
+<net name="BLT_TX" class="0">
 <segment>
 <wire x1="238.76" y1="147.32" x2="223.52" y2="147.32" width="0.1524" layer="91"/>
 <label x="223.52" y="147.32" size="1.778" layer="95"/>
 <pinref part="U$1" gate="G$1" pin="7"/>
-</segment>
-</net>
-<net name="BLT_TX" class="0">
-<segment>
-<wire x1="238.76" y1="144.78" x2="223.52" y2="144.78" width="0.1524" layer="91"/>
-<label x="223.52" y="144.78" size="1.778" layer="95"/>
-<pinref part="U$1" gate="G$1" pin="8"/>
 </segment>
 </net>
 <net name="N$13" class="0">
@@ -12183,6 +12176,13 @@ W = angled&lt;p&gt;
 <pinref part="U$1" gate="G$1" pin="38/A19"/>
 <wire x1="279.4" y1="121.92" x2="294.64" y2="121.92" width="0.1524" layer="91"/>
 <label x="287.02" y="121.92" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="BLT_RX" class="0">
+<segment>
+<wire x1="238.76" y1="144.78" x2="223.52" y2="144.78" width="0.1524" layer="91"/>
+<label x="223.52" y="144.78" size="1.778" layer="95"/>
+<pinref part="U$1" gate="G$1" pin="8"/>
 </segment>
 </net>
 </nets>

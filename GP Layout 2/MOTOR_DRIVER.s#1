@@ -11706,13 +11706,13 @@ W = angled&lt;p&gt;
 <part name="GATE1" library="MIC4604" deviceset="MIC4604YM" device=""/>
 <part name="C1" library="resistor" deviceset="C-US" device="025-050X050" value="10uF"/>
 <part name="C2" library="resistor" deviceset="C-US" device="025-050X050" value="10uF"/>
-<part name="LSP3" library="solpad" deviceset="SE14" device=""/>
+<part name="MOTOR_POS" library="solpad" deviceset="SE14" device=""/>
 <part name="TOP_REV" library="CSD18502KCS" deviceset="CSD18502KCS_KCS_3" device=""/>
 <part name="BOT_FWD" library="CSD18502KCS" deviceset="CSD18502KCS_KCS_3" device=""/>
 <part name="GATE2" library="MIC4604" deviceset="MIC4604YM" device=""/>
 <part name="C3" library="resistor" deviceset="C-US" device="025-050X050" value="10uF"/>
 <part name="C4" library="resistor" deviceset="C-US" device="025-050X050" value="10uF"/>
-<part name="LSP6" library="solpad" deviceset="SE14" device=""/>
+<part name="MOTOR_NEG" library="solpad" deviceset="SE14" device=""/>
 <part name="FRAME2" library="frames" deviceset="A3L-LOC" device=""/>
 <part name="U$1" library="Teensy356" deviceset="TEENSY_3.5/3.6_BASIC" device=""/>
 <part name="U7" library="SparkFun-IC-Microcontroller" deviceset="ATMEGA328P_TQFP" device="" value="ATMEGA328P_TQFP"/>
@@ -11733,8 +11733,8 @@ W = angled&lt;p&gt;
 <part name="SV5" library="con-lsta" deviceset="FE10-1" device=""/>
 <part name="SV6" library="con-lsta" deviceset="FE10-1" device=""/>
 <part name="FRAME4" library="frames" deviceset="A3L-LOC" device=""/>
-<part name="LSP4" library="solpad" deviceset="SE14" device=""/>
-<part name="LSP5" library="solpad" deviceset="SE14" device=""/>
+<part name="BATT_HIGH" library="solpad" deviceset="SE14" device=""/>
+<part name="BATT_LOW" library="solpad" deviceset="SE14" device=""/>
 <part name="SUPPLY1" library="supply2" deviceset="GND" device=""/>
 <part name="C8" library="resistor" deviceset="C-US" device="050-025X075" value="10uF"/>
 <part name="C12" library="resistor" deviceset="CPOL-US" device="153CLV-1010"/>
@@ -11763,7 +11763,7 @@ W = angled&lt;p&gt;
 <part name="HALL1_B" library="con-lstb" deviceset="MA03-1" device=""/>
 <part name="HALL2_B" library="con-lstb" deviceset="MA03-1" device=""/>
 <part name="TXRX" library="con-lsta" deviceset="FE02-1" device=""/>
-<part name="MOTOR_LOW_TOP_B" library="solpad" deviceset="SE14" device=""/>
+<part name="MOTOR_NEG_B" library="solpad" deviceset="SE14" device=""/>
 <part name="TGPIO" library="con-lsta" deviceset="FE09-1" device=""/>
 </parts>
 <sheets>
@@ -11778,20 +11778,20 @@ W = angled&lt;p&gt;
 <instance part="GATE1" gate="A" x="86.36" y="142.24" rot="MR0"/>
 <instance part="C1" gate="G$1" x="106.68" y="132.08" rot="R180"/>
 <instance part="C2" gate="G$1" x="116.84" y="132.08" rot="R180"/>
-<instance part="LSP3" gate="1" x="142.24" y="132.08" rot="R270"/>
+<instance part="MOTOR_POS" gate="1" x="142.24" y="132.08" rot="R270"/>
 <instance part="TOP_REV" gate="A" x="243.84" y="213.36" rot="R270"/>
 <instance part="BOT_FWD" gate="A" x="243.84" y="114.3" rot="R270"/>
 <instance part="GATE2" gate="A" x="281.94" y="142.24"/>
 <instance part="C3" gate="G$1" x="261.62" y="132.08" rot="MR180"/>
 <instance part="C4" gate="G$1" x="251.46" y="132.08" rot="MR180"/>
-<instance part="LSP6" gate="1" x="226.06" y="132.08" rot="MR270"/>
+<instance part="MOTOR_NEG" gate="1" x="226.06" y="132.08" rot="MR270"/>
 <instance part="D3" gate="1" x="106.68" y="147.32" rot="R180"/>
 <instance part="D4" gate="1" x="261.62" y="147.32" rot="MR180"/>
 <instance part="U$2" gate="G$1" x="134.62" y="177.8" rot="R90"/>
 <instance part="U$4" gate="G$1" x="134.62" y="81.28" rot="R90"/>
 <instance part="U$5" gate="G$1" x="236.22" y="81.28" rot="R90"/>
 <instance part="U$6" gate="G$1" x="236.22" y="180.34" rot="R90"/>
-<instance part="MOTOR_LOW_TOP_B" gate="1" x="226.06" y="119.38" rot="MR270"/>
+<instance part="MOTOR_NEG_B" gate="1" x="226.06" y="111.76" rot="MR0"/>
 </instances>
 <busses>
 </busses>
@@ -11927,9 +11927,9 @@ W = angled&lt;p&gt;
 <wire x1="187.96" y1="22.86" x2="187.96" y2="40.64" width="0.1524" layer="91"/>
 <junction x="187.96" y="40.64"/>
 <label x="190.5" y="22.86" size="1.778" layer="95"/>
-<pinref part="MOTOR_LOW_TOP_B" gate="1" pin="MP"/>
-<wire x1="228.6" y1="119.38" x2="187.96" y2="119.38" width="0.1524" layer="91"/>
-<wire x1="187.96" y1="119.38" x2="187.96" y2="40.64" width="0.1524" layer="91"/>
+<pinref part="MOTOR_NEG_B" gate="1" pin="MP"/>
+<wire x1="226.06" y1="109.22" x2="187.96" y2="109.22" width="0.1524" layer="91"/>
+<wire x1="187.96" y1="109.22" x2="187.96" y2="40.64" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="7_4V_TOP" class="0">
@@ -11981,7 +11981,7 @@ W = angled&lt;p&gt;
 <pinref part="TOP_FWD" gate="A" pin="SOURCE"/>
 <pinref part="BOT_REV" gate="A" pin="DRAIN"/>
 <wire x1="127" y1="144.78" x2="127" y2="132.08" width="0.1524" layer="91"/>
-<pinref part="LSP3" gate="1" pin="MP"/>
+<pinref part="MOTOR_POS" gate="1" pin="MP"/>
 <wire x1="127" y1="132.08" x2="127" y2="114.3" width="0.1524" layer="91"/>
 <wire x1="139.7" y1="132.08" x2="127" y2="132.08" width="0.1524" layer="91"/>
 <junction x="127" y="132.08"/>
@@ -11993,11 +11993,11 @@ W = angled&lt;p&gt;
 <pinref part="TOP_REV" gate="A" pin="SOURCE"/>
 <pinref part="BOT_FWD" gate="A" pin="DRAIN"/>
 <wire x1="241.3" y1="147.32" x2="241.3" y2="132.08" width="0.1524" layer="91"/>
-<pinref part="LSP6" gate="1" pin="MP"/>
+<pinref part="MOTOR_NEG" gate="1" pin="MP"/>
 <wire x1="241.3" y1="132.08" x2="241.3" y2="114.3" width="0.1524" layer="91"/>
 <wire x1="228.6" y1="132.08" x2="241.3" y2="132.08" width="0.1524" layer="91"/>
 <junction x="241.3" y="132.08"/>
-<label x="228.6" y="134.62" size="1.778" layer="95"/>
+<label x="241.3" y="137.16" size="1.778" layer="95" rot="R180"/>
 </segment>
 </net>
 <net name="LI1_TOP" class="0">
@@ -12945,18 +12945,11 @@ W = angled&lt;p&gt;
 <label x="220.98" y="68.58" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="REC_MOTOR" class="0">
+<net name="REC_SERVO" class="0">
 <segment>
 <pinref part="REC" gate="1" pin="3"/>
 <wire x1="215.9" y1="91.44" x2="231.14" y2="91.44" width="0.1524" layer="91"/>
 <label x="226.06" y="91.44" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="REC_SERVO" class="0">
-<segment>
-<pinref part="REC" gate="1" pin="4"/>
-<wire x1="215.9" y1="93.98" x2="231.14" y2="93.98" width="0.1524" layer="91"/>
-<label x="226.06" y="93.98" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="REC_EXTRA1" class="0">
@@ -13045,6 +13038,13 @@ W = angled&lt;p&gt;
 <label x="139.7" y="78.74" size="1.778" layer="95"/>
 </segment>
 </net>
+<net name="REC_MOTOR" class="0">
+<segment>
+<pinref part="REC" gate="1" pin="4"/>
+<wire x1="215.9" y1="93.98" x2="231.14" y2="93.98" width="0.1524" layer="91"/>
+<label x="226.06" y="93.98" size="1.778" layer="95"/>
+</segment>
+</net>
 </nets>
 </sheet>
 <sheet>
@@ -13054,8 +13054,8 @@ W = angled&lt;p&gt;
 </plain>
 <instances>
 <instance part="FRAME4" gate="G$1" x="0" y="0"/>
-<instance part="LSP4" gate="1" x="12.7" y="226.06"/>
-<instance part="LSP5" gate="1" x="78.74" y="180.34"/>
+<instance part="BATT_HIGH" gate="1" x="12.7" y="226.06"/>
+<instance part="BATT_LOW" gate="1" x="78.74" y="180.34"/>
 <instance part="SUPPLY1" gate="GND" x="170.18" y="203.2"/>
 <instance part="C8" gate="G$1" x="198.12" y="210.82"/>
 <instance part="C12" gate="G$1" x="45.72" y="198.12"/>
@@ -13081,7 +13081,7 @@ W = angled&lt;p&gt;
 <wire x1="60.96" y1="193.04" x2="68.58" y2="193.04" width="0.1524" layer="91"/>
 <junction x="60.96" y="193.04"/>
 <label x="81.28" y="170.18" size="1.778" layer="95"/>
-<pinref part="LSP5" gate="1" pin="MP"/>
+<pinref part="BATT_LOW" gate="1" pin="MP"/>
 <wire x1="78.74" y1="177.8" x2="78.74" y2="170.18" width="0.1524" layer="91"/>
 <wire x1="78.74" y1="170.18" x2="60.96" y2="170.18" width="0.1524" layer="91"/>
 <wire x1="60.96" y1="170.18" x2="60.96" y2="193.04" width="0.1524" layer="91"/>
@@ -13097,7 +13097,7 @@ W = angled&lt;p&gt;
 </net>
 <net name="BATT_VOLTAGE" class="0">
 <segment>
-<pinref part="LSP4" gate="1" pin="MP"/>
+<pinref part="BATT_HIGH" gate="1" pin="MP"/>
 <wire x1="12.7" y1="223.52" x2="12.7" y2="220.98" width="0.1524" layer="91"/>
 <wire x1="12.7" y1="220.98" x2="20.32" y2="220.98" width="0.1524" layer="91"/>
 <pinref part="FUSE" gate="G$1" pin="VCC@C"/>
