@@ -4317,7 +4317,7 @@ design rules under a new name.</description>
 <element name="D4" library="diode" package="TO220ABS" value="BYV32" x="27.6" y="84.69" rot="R90"/>
 <element name="MOTOR_POS" library="solpad" package="SE14" value="SE14" x="6.51" y="66.86"/>
 <element name="MOTOR_NEG" library="solpad" package="SE14" value="SE14" x="6.51" y="61.68"/>
-<element name="S1" library="smd-special" package="SMS-006" value="SWS006" x="45.01" y="5.98"/>
+<element name="S1" library="smd-special" package="SMS-006" value="SWS006" x="74.98" y="19.99" rot="R270"/>
 <element name="U$1" library="Teensy356" package="TEENSY_3.5/3.6_BASIC" value="TEENSY_3.5/3.6_BASIC" x="32.104" y="21.318"/>
 <element name="TOP_FWD" library="CSD18502KCS" package="KCS3" value="CSD18502KCS_KCS_3" x="16.968" y="87.03" rot="R90">
 <attribute name="MANUFACTURER_PART_NUMBER" value="csd18502kcs_kcs_3" x="16.968" y="87.03" size="1.778" layer="27" rot="R90" display="off"/>
@@ -4400,11 +4400,11 @@ design rules under a new name.</description>
 <element name="U$5" library="heatsink" package="HEATSINK" value="HEATSINK" x="13.254" y="84.886" rot="R270"/>
 <element name="U$6" library="heatsink" package="HEATSINK" value="HEATSINK" x="13.394" y="63.364" rot="R270"/>
 <element name="VOLT_REG" library="v-reg-3" package="TO220S" value="LM1086TO220V" x="46.226" y="42.786"/>
-<element name="CAMERA" library="con-lsta" package="FE05-1" value="" x="80.222" y="9.45">
-<attribute name="MF" value="" x="80.222" y="9.45" size="1.778" layer="27" display="off"/>
-<attribute name="OC_FARNELL" value="unknown" x="80.222" y="9.45" size="1.778" layer="27" display="off"/>
-<attribute name="OC_NEWARK" value="unknown" x="80.222" y="9.45" size="1.778" layer="27" display="off"/>
-<attribute name="MPN" value="" x="80.222" y="9.45" size="1.778" layer="27" display="off"/>
+<element name="CAMERA" library="con-lsta" package="FE05-1" value="" x="78.222" y="9.45">
+<attribute name="MF" value="" x="78.222" y="9.45" size="1.778" layer="27" display="off"/>
+<attribute name="OC_FARNELL" value="unknown" x="78.222" y="9.45" size="1.778" layer="27" display="off"/>
+<attribute name="OC_NEWARK" value="unknown" x="78.222" y="9.45" size="1.778" layer="27" display="off"/>
+<attribute name="MPN" value="" x="78.222" y="9.45" size="1.778" layer="27" display="off"/>
 </element>
 <element name="CAMERA_B" library="con-lsta" package="FE05-1" value="" x="64.05" y="9.514" rot="R180">
 <attribute name="MF" value="" x="64.05" y="9.514" size="1.778" layer="27" rot="R180" display="off"/>
@@ -4491,17 +4491,17 @@ design rules under a new name.</description>
 <attribute name="MPN" value="" x="89" y="8" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="OC_NEWARK" value="unknown" x="89" y="8" size="1.778" layer="27" rot="R90" display="off"/>
 </element>
-<element name="3_3V" library="con-lsta" package="FE05-1" value="" x="81" y="2">
-<attribute name="OC_FARNELL" value="unknown" x="81" y="2" size="1.778" layer="27" display="off"/>
-<attribute name="MF" value="" x="81" y="2" size="1.778" layer="27" display="off"/>
-<attribute name="MPN" value="" x="81" y="2" size="1.778" layer="27" display="off"/>
-<attribute name="OC_NEWARK" value="unknown" x="81" y="2" size="1.778" layer="27" display="off"/>
+<element name="3_3V" library="con-lsta" package="FE05-1" value="" x="78" y="2">
+<attribute name="OC_FARNELL" value="unknown" x="78" y="2" size="1.778" layer="27" display="off"/>
+<attribute name="MF" value="" x="78" y="2" size="1.778" layer="27" display="off"/>
+<attribute name="MPN" value="" x="78" y="2" size="1.778" layer="27" display="off"/>
+<attribute name="OC_NEWARK" value="unknown" x="78" y="2" size="1.778" layer="27" display="off"/>
 </element>
-<element name="5V" library="con-lsta" package="FE05-1" value="" x="81" y="5">
-<attribute name="OC_FARNELL" value="unknown" x="81" y="5" size="1.778" layer="27" display="off"/>
-<attribute name="MF" value="" x="81" y="5" size="1.778" layer="27" display="off"/>
-<attribute name="MPN" value="" x="81" y="5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_NEWARK" value="unknown" x="81" y="5" size="1.778" layer="27" display="off"/>
+<element name="5V" library="con-lsta" package="FE05-1" value="" x="78" y="6">
+<attribute name="OC_FARNELL" value="unknown" x="78" y="6" size="1.778" layer="27" display="off"/>
+<attribute name="MF" value="" x="78" y="6" size="1.778" layer="27" display="off"/>
+<attribute name="MPN" value="" x="78" y="6" size="1.778" layer="27" display="off"/>
+<attribute name="OC_NEWARK" value="unknown" x="78" y="6" size="1.778" layer="27" display="off"/>
 </element>
 <element name="R9" library="rcl" package="R0805" value="" x="11" y="18"/>
 <element name="R10" library="rcl" package="R0805" value="" x="11" y="21"/>
@@ -4548,7 +4548,7 @@ design rules under a new name.</description>
 <contactref element="SV2" pad="6"/>
 <contactref element="S1" pad="8"/>
 <wire x1="24.46" y1="3.81" x2="18.51" y2="21.69" width="0" layer="19" extent="1-1"/>
-<wire x1="48.82" y1="10.4758" x2="24.46" y2="3.81" width="0" layer="19" extent="1-1"/>
+<wire x1="79.4758" y1="16.18" x2="24.46" y2="3.81" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$9">
 <contactref element="GATE2" pad="8"/>
@@ -4620,10 +4620,10 @@ design rules under a new name.</description>
 <wire x1="51.6294" y1="22.718" x2="51.6294" y2="21.118" width="0" layer="19" extent="1-1"/>
 <wire x1="47.04" y1="26.39" x2="51.6294" y2="22.718" width="0" layer="19" extent="1-1"/>
 <wire x1="47.2" y1="16.77" x2="51.6294" y2="21.118" width="0" layer="19" extent="1-1"/>
-<wire x1="46.28" y1="10.4758" x2="47.2" y2="16.77" width="0" layer="19" extent="1-1"/>
-<wire x1="43.74" y1="10.4758" x2="46.28" y2="10.4758" width="0" layer="19" extent="1-1"/>
-<wire x1="41.2" y1="10.4758" x2="43.74" y2="10.4758" width="0" layer="19" extent="1-1"/>
-<wire x1="38.66" y1="10.4758" x2="41.2" y2="10.4758" width="0" layer="19" extent="1-1"/>
+<wire x1="79.4758" y1="18.72" x2="47.2" y2="16.77" width="0" layer="19" extent="1-1"/>
+<wire x1="79.4758" y1="21.26" x2="79.4758" y2="18.72" width="0" layer="19" extent="1-1"/>
+<wire x1="79.4758" y1="23.8" x2="79.4758" y2="21.26" width="0" layer="19" extent="1-1"/>
+<wire x1="79.4758" y1="26.34" x2="79.4758" y2="23.8" width="0" layer="19" extent="1-1"/>
 <wire x1="39.724" y1="28.938" x2="47.04" y2="26.39" width="0" layer="19" extent="1-1"/>
 <wire x1="44.264" y1="36.508" x2="39.724" y2="28.938" width="0" layer="19" extent="1-1"/>
 <wire x1="43.686" y1="40.246" x2="44.264" y2="36.508" width="0" layer="19" extent="1-1"/>
@@ -4631,8 +4631,8 @@ design rules under a new name.</description>
 <wire x1="24.414" y1="33.51" x2="33.02" y2="40.64" width="0" layer="19" extent="1-1"/>
 <wire x1="25.302" y1="22.49" x2="24.414" y2="33.51" width="0" layer="19" extent="1-1"/>
 <wire x1="69.13" y1="9.514" x2="60.2146" y2="21.918" width="0" layer="19" extent="1-1"/>
-<wire x1="75.142" y1="9.45" x2="69.13" y2="9.514" width="0" layer="19" extent="1-1"/>
-<wire x1="89" y1="10.54" x2="75.142" y2="9.45" width="0" layer="19" extent="1-1"/>
+<wire x1="73.142" y1="9.45" x2="69.13" y2="9.514" width="0" layer="19" extent="1-1"/>
+<wire x1="89" y1="10.54" x2="73.142" y2="9.45" width="0" layer="19" extent="1-1"/>
 <wire x1="89" y1="13.08" x2="89" y2="10.54" width="0" layer="19" extent="1-1"/>
 <wire x1="89" y1="8" x2="89" y2="10.54" width="0" layer="19" extent="1-1"/>
 <wire x1="89" y1="5.46" x2="89" y2="8" width="0" layer="19" extent="1-1"/>
@@ -4681,12 +4681,12 @@ design rules under a new name.</description>
 <signal name="CAMERA_SI">
 <contactref element="U7" pad="11"/>
 <contactref element="CAMERA" pad="5"/>
-<wire x1="54.722" y1="17.2254" x2="85.302" y2="9.45" width="0" layer="19" extent="1-1"/>
+<wire x1="54.722" y1="17.2254" x2="83.302" y2="9.45" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="CAMERA_A0">
 <contactref element="U7" pad="23"/>
 <contactref element="CAMERA" pad="3"/>
-<wire x1="60.2146" y1="23.518" x2="80.222" y2="9.45" width="0" layer="19" extent="1-1"/>
+<wire x1="60.2146" y1="23.518" x2="78.222" y2="9.45" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="SERVO">
 <contactref element="SERVO" pad="3"/>
@@ -4732,12 +4732,12 @@ design rules under a new name.</description>
 <wire x1="49.344" y1="36.508" x2="83.158" y2="39.726" width="0" layer="19" extent="1-1"/>
 <wire x1="46.226" y1="40.246" x2="49.344" y2="36.508" width="0" layer="19" extent="1-1"/>
 <wire x1="21.874" y1="33.51" x2="46.226" y2="40.246" width="0" layer="19" extent="1-1"/>
-<wire x1="51.36" y1="10.4758" x2="49.344" y2="36.508" width="0" layer="19" extent="1-1"/>
-<wire x1="86.08" y1="5" x2="51.36" y2="10.4758" width="0" layer="19" extent="1-1"/>
-<wire x1="83.54" y1="5" x2="86.08" y2="5" width="0" layer="19" extent="1-1"/>
-<wire x1="81" y1="5" x2="83.54" y2="5" width="0" layer="19" extent="1-1"/>
-<wire x1="78.46" y1="5" x2="81" y2="5" width="0" layer="19" extent="1-1"/>
-<wire x1="75.92" y1="5" x2="78.46" y2="5" width="0" layer="19" extent="1-1"/>
+<wire x1="79.4758" y1="13.64" x2="49.344" y2="36.508" width="0" layer="19" extent="1-1"/>
+<wire x1="83.08" y1="6" x2="79.4758" y2="13.64" width="0" layer="19" extent="1-1"/>
+<wire x1="80.54" y1="6" x2="83.08" y2="6" width="0" layer="19" extent="1-1"/>
+<wire x1="78" y1="6" x2="80.54" y2="6" width="0" layer="19" extent="1-1"/>
+<wire x1="75.46" y1="6" x2="78" y2="6" width="0" layer="19" extent="1-1"/>
+<wire x1="72.92" y1="6" x2="75.46" y2="6" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="3_3V">
 <contactref element="U$1" pad="3V3_LO"/>
@@ -4757,14 +4757,14 @@ design rules under a new name.</description>
 <wire x1="80.586" y1="30.082" x2="80.586" y2="34.422" width="0" layer="19" extent="1-1"/>
 <wire x1="72.286" y1="34.402" x2="77.09" y2="41.066" width="0" layer="19" extent="1-1"/>
 <wire x1="72.086" y1="30.162" x2="72.286" y2="34.402" width="0" layer="19" extent="1-1"/>
-<wire x1="77.682" y1="9.45" x2="80.586" y2="30.082" width="0" layer="19" extent="1-1"/>
-<wire x1="66.59" y1="9.514" x2="77.682" y2="9.45" width="0" layer="19" extent="1-1"/>
+<wire x1="75.682" y1="9.45" x2="80.586" y2="30.082" width="0" layer="19" extent="1-1"/>
+<wire x1="66.59" y1="9.514" x2="75.682" y2="9.45" width="0" layer="19" extent="1-1"/>
 <wire x1="9.244" y1="28.938" x2="66.59" y2="9.514" width="0" layer="19" extent="1-1"/>
-<wire x1="86.08" y1="2" x2="9.244" y2="28.938" width="0" layer="19" extent="1-1"/>
-<wire x1="83.54" y1="2" x2="86.08" y2="2" width="0" layer="19" extent="1-1"/>
-<wire x1="81" y1="2" x2="83.54" y2="2" width="0" layer="19" extent="1-1"/>
-<wire x1="78.46" y1="2" x2="81" y2="2" width="0" layer="19" extent="1-1"/>
-<wire x1="75.92" y1="2" x2="78.46" y2="2" width="0" layer="19" extent="1-1"/>
+<wire x1="83.08" y1="2" x2="9.244" y2="28.938" width="0" layer="19" extent="1-1"/>
+<wire x1="80.54" y1="2" x2="83.08" y2="2" width="0" layer="19" extent="1-1"/>
+<wire x1="78" y1="2" x2="80.54" y2="2" width="0" layer="19" extent="1-1"/>
+<wire x1="75.46" y1="2" x2="78" y2="2" width="0" layer="19" extent="1-1"/>
+<wire x1="72.92" y1="2" x2="75.46" y2="2" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="M1_GPIO1">
 <contactref element="U7" pad="27"/>
@@ -4818,22 +4818,22 @@ design rules under a new name.</description>
 <signal name="SW4">
 <contactref element="S1" pad="4"/>
 <contactref element="U$1" pad="27"/>
-<wire x1="49.884" y1="13.698" x2="46.28" y2="1.4842" width="0" layer="19" extent="1-1"/>
+<wire x1="49.884" y1="13.698" x2="70.4842" y2="18.72" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="SW3">
 <contactref element="S1" pad="3"/>
 <contactref element="U$1" pad="26"/>
-<wire x1="47.344" y1="13.698" x2="43.74" y2="1.4842" width="0" layer="19" extent="1-1"/>
+<wire x1="47.344" y1="13.698" x2="70.4842" y2="21.26" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="SW2">
 <contactref element="S1" pad="2"/>
 <contactref element="U$1" pad="25"/>
-<wire x1="44.804" y1="13.698" x2="41.2" y2="1.4842" width="0" layer="19" extent="1-1"/>
+<wire x1="44.804" y1="13.698" x2="70.4842" y2="23.8" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="SW1">
 <contactref element="S1" pad="1"/>
 <contactref element="U$1" pad="24"/>
-<wire x1="42.264" y1="13.698" x2="38.66" y2="1.4842" width="0" layer="19" extent="1-1"/>
+<wire x1="42.264" y1="13.698" x2="70.4842" y2="26.34" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="5V_TEENSY">
 <contactref element="U$1" pad="VIN"/>
@@ -4842,7 +4842,7 @@ design rules under a new name.</description>
 <contactref element="U7" pad="4"/>
 <contactref element="U7" pad="18"/>
 <contactref element="U7" pad="29"/>
-<wire x1="60.2146" y1="19.518" x2="51.36" y2="1.4842" width="0" layer="19" extent="1-1"/>
+<wire x1="60.2146" y1="19.518" x2="70.4842" y2="13.64" width="0" layer="19" extent="1-1"/>
 <wire x1="55.522" y1="25.8106" x2="60.2146" y2="19.518" width="0" layer="19" extent="1-1"/>
 <wire x1="51.6294" y1="21.918" x2="55.522" y2="25.8106" width="0" layer="19" extent="1-1"/>
 <wire x1="51.6294" y1="20.318" x2="51.6294" y2="21.918" width="0" layer="19" extent="1-1"/>
@@ -4920,7 +4920,7 @@ design rules under a new name.</description>
 <signal name="EMF_SENSE_LOW">
 <contactref element="S1" pad="5"/>
 <contactref element="U$1" pad="18/A4/SDA"/>
-<wire x1="24.484" y1="28.938" x2="48.82" y2="1.4842" width="0" layer="19" extent="1-1"/>
+<wire x1="24.484" y1="28.938" x2="70.4842" y2="16.18" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="EMF_SENSE_HIGH">
 <contactref element="R3" pad="1"/>
@@ -4995,7 +4995,7 @@ design rules under a new name.</description>
 <signal name="CAMERA_CL">
 <contactref element="CAMERA" pad="4"/>
 <contactref element="U7" pad="12"/>
-<wire x1="55.522" y1="17.2254" x2="82.762" y2="9.45" width="0" layer="19" extent="1-1"/>
+<wire x1="55.522" y1="17.2254" x2="80.762" y2="9.45" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="CAMERA_SI_B">
 <contactref element="CAMERA_B" pad="5"/>
