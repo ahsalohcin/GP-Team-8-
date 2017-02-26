@@ -4490,11 +4490,17 @@ design rules under a new name.</description>
 <element name="LED2" library="Cree_XP" package="XP" value="CREE_XP" x="73" y="60"/>
 <element name="LED1_CONN2" library="con-lsta" package="FE02-1" value="" x="71" y="90" rot="R180"/>
 <element name="LED2_CONN2" library="con-lsta" package="FE02-1" value="" x="69" y="55" rot="R180"/>
-<element name="R12" library="resistor" package="R0603" value="10k" x="-30" y="-34"/>
-<element name="R13" library="resistor" package="R0603" value="10k" x="-30" y="-39"/>
-<element name="R14" library="resistor" package="R0603" value="10k" x="-30" y="-44"/>
-<element name="R15" library="resistor" package="R0603" value="10k" x="-30" y="-49"/>
-<element name="R16" library="resistor" package="R0603" value="10k" x="-30" y="-54"/>
+<element name="R12" library="resistor" package="R0603" value="10k" x="75" y="37"/>
+<element name="R13" library="resistor" package="R0603" value="10k" x="74" y="27"/>
+<element name="R14" library="resistor" package="R0603" value="10k" x="83" y="37"/>
+<element name="R15" library="resistor" package="R0603" value="10k" x="83" y="27"/>
+<element name="R16" library="resistor" package="R0603" value="10k" x="6" y="58"/>
+<element name="ATGPIO" library="con-lsta" package="FE10" value="" x="44" y="10">
+<attribute name="OC_FARNELL" value="unknown" x="44" y="10" size="1.778" layer="27" display="off"/>
+<attribute name="MF" value="" x="44" y="10" size="1.778" layer="27" display="off"/>
+<attribute name="MPN" value="" x="44" y="10" size="1.778" layer="27" display="off"/>
+<attribute name="OC_NEWARK" value="unknown" x="44" y="10" size="1.778" layer="27" display="off"/>
+</element>
 </elements>
 <signals>
 <signal name="MOTOR_HIGH">
@@ -4748,19 +4754,25 @@ design rules under a new name.</description>
 <wire x1="72.92" y1="2" x2="75.46" y2="2" width="0" layer="19" extent="1-1"/>
 <wire x1="66.59" y1="9.514" x2="75.682" y2="9.45" width="0" layer="19" extent="1-1"/>
 <wire x1="9.244" y1="28.938" x2="66.59" y2="9.514" width="0" layer="19" extent="1-1"/>
-<wire x1="-30.85" y1="-34" x2="9.244" y2="28.938" width="0" layer="19" extent="1-1"/>
-<wire x1="-30.85" y1="-39" x2="-30.85" y2="-34" width="0" layer="19" extent="1-1"/>
-<wire x1="-30.85" y1="-44" x2="-30.85" y2="-39" width="0" layer="19" extent="1-1"/>
-<wire x1="-30.85" y1="-49" x2="-30.85" y2="-44" width="0" layer="19" extent="1-1"/>
+<wire x1="74.15" y1="37" x2="9.244" y2="28.938" width="0" layer="19" extent="1-1"/>
+<wire x1="73.15" y1="27" x2="74.15" y2="37" width="0" layer="19" extent="1-1"/>
+<wire x1="82.15" y1="37" x2="73.15" y2="27" width="0" layer="19" extent="1-1"/>
+<wire x1="82.15" y1="27" x2="82.15" y2="37" width="0" layer="19" extent="1-1"/>
 </signal>
-<signal name="M1_GPIO1">
+<signal name="PC4">
 <contactref element="U7" pad="27"/>
+<contactref element="ATGPIO" pad="4"/>
+<wire x1="40.19" y1="10" x2="57.122" y2="25.8106" width="0" layer="19" extent="1-1"/>
 </signal>
-<signal name="M1_GPIO2">
+<signal name="PC5">
 <contactref element="U7" pad="28"/>
+<contactref element="ATGPIO" pad="5"/>
+<wire x1="42.73" y1="10" x2="56.322" y2="25.8106" width="0" layer="19" extent="1-1"/>
 </signal>
-<signal name="M1_GPIO3">
+<signal name="PB1">
 <contactref element="U7" pad="13"/>
+<contactref element="ATGPIO" pad="10"/>
+<wire x1="55.43" y1="10" x2="56.322" y2="17.2254" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="REC_MOTOR">
 <contactref element="U$1" pad="21/A7"/>
@@ -4868,7 +4880,7 @@ design rules under a new name.</description>
 <wire x1="28.045" y1="71.6757" x2="23.536" y2="81.97" width="0" layer="19" extent="16-16"/>
 <wire x1="34.245" y1="71.6757" x2="28.045" y2="71.6757" width="0" layer="19" extent="16-16"/>
 <wire x1="17.14" y1="65.64" x2="28.045" y2="71.6757" width="0" layer="19" extent="16-16"/>
-<wire x1="-30.85" y1="-54" x2="6.6" y2="55" width="0" layer="19" extent="1-1"/>
+<wire x1="5.15" y1="58" x2="6.6" y2="55" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="7_4V">
 <contactref element="VOLT_REG" pad="3"/>
@@ -4899,7 +4911,7 @@ design rules under a new name.</description>
 <wire x1="10.166" y1="58.4" x2="10.366" y2="70.5" width="0" layer="19" extent="1-1"/>
 <wire x1="24.808" y1="69.786" x2="10.366" y2="70.5" width="0" layer="19" extent="1-1"/>
 <wire x1="24.808" y1="75.846" x2="24.808" y2="69.786" width="0" layer="19" extent="1-1"/>
-<wire x1="-29.15" y1="-54" x2="10.166" y2="58.4" width="0" layer="19" extent="1-1"/>
+<wire x1="6.85" y1="58" x2="10.166" y2="58.4" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="BATT_VOLTAGE_SENSE">
 <contactref element="U$1" pad="17/A3"/>
@@ -4983,7 +4995,7 @@ design rules under a new name.</description>
 <contactref element="HALL1" pad="3"/>
 <contactref element="R12" pad="2"/>
 <wire x1="53.122" y1="25.8106" x2="77.366" y2="34.402" width="0" layer="19" extent="1-1"/>
-<wire x1="-29.15" y1="-34" x2="53.122" y2="25.8106" width="0" layer="19" extent="1-1"/>
+<wire x1="75.85" y1="37" x2="53.122" y2="25.8106" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="CAMERA_CL">
 <contactref element="CAMERA" pad="4"/>
@@ -5010,21 +5022,21 @@ design rules under a new name.</description>
 <contactref element="U7" pad="1"/>
 <contactref element="R13" pad="2"/>
 <wire x1="51.6294" y1="24.318" x2="77.166" y2="30.162" width="0" layer="19" extent="1-1"/>
-<wire x1="-29.15" y1="-39" x2="51.6294" y2="24.318" width="0" layer="19" extent="1-1"/>
+<wire x1="74.85" y1="27" x2="51.6294" y2="24.318" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="HALL1_B">
 <contactref element="HALL1_B" pad="3"/>
 <contactref element="U$1" pad="1/TX"/>
 <contactref element="R14" pad="2"/>
 <wire x1="9.244" y1="13.698" x2="85.666" y2="34.422" width="0" layer="19" extent="1-1"/>
-<wire x1="-29.15" y1="-44" x2="9.244" y2="13.698" width="0" layer="19" extent="1-1"/>
+<wire x1="83.85" y1="37" x2="9.244" y2="13.698" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="HALL2_B">
 <contactref element="HALL2_B" pad="3"/>
 <contactref element="U$1" pad="2"/>
 <contactref element="R15" pad="2"/>
 <wire x1="11.784" y1="13.698" x2="85.666" y2="30.082" width="0" layer="19" extent="1-1"/>
-<wire x1="-29.15" y1="-49" x2="11.784" y2="13.698" width="0" layer="19" extent="1-1"/>
+<wire x1="83.85" y1="27" x2="11.784" y2="13.698" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="REC_EXTRA1">
 <contactref element="REC" pad="5"/>
@@ -5208,6 +5220,44 @@ design rules under a new name.</description>
 <contactref element="LED2_CONN2" pad="1"/>
 <wire x1="74.85" y1="60" x2="74.08" y2="55" width="0" layer="19" extent="1-1"/>
 <wire x1="74.5" y1="60" x2="74.85" y2="60" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="PC1">
+<contactref element="U7" pad="24"/>
+<contactref element="ATGPIO" pad="1"/>
+<wire x1="60.2146" y1="24.318" x2="32.57" y2="10" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="PC2">
+<contactref element="U7" pad="25"/>
+<contactref element="ATGPIO" pad="2"/>
+<wire x1="35.11" y1="10" x2="58.722" y2="25.8106" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="PC3">
+<contactref element="U7" pad="26"/>
+<contactref element="ATGPIO" pad="3"/>
+<wire x1="37.65" y1="10" x2="57.922" y2="25.8106" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="ADC6">
+<contactref element="U7" pad="19"/>
+<contactref element="ATGPIO" pad="6"/>
+<wire x1="45.27" y1="10" x2="60.2146" y2="20.318" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="ADC7">
+<contactref element="U7" pad="22"/>
+<contactref element="ATGPIO" pad="7"/>
+<wire x1="47.81" y1="10" x2="60.2146" y2="22.718" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="PD4">
+<contactref element="U7" pad="2"/>
+<contactref element="ATGPIO" pad="8"/>
+<wire x1="50.35" y1="10" x2="51.6294" y2="23.518" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="PD5">
+<contactref element="U7" pad="9"/>
+<contactref element="ATGPIO" pad="9"/>
+<wire x1="52.89" y1="10" x2="53.122" y2="17.2254" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="PD6">
+<contactref element="U7" pad="10"/>
 </signal>
 </signals>
 </board>

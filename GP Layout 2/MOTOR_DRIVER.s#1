@@ -18342,6 +18342,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="R14" library="resistor" deviceset="R-US_" device="R0603" value="10k"/>
 <part name="R15" library="resistor" deviceset="R-US_" device="R0603" value="10k"/>
 <part name="R16" library="resistor" deviceset="R-US_" device="R0603" value="10k"/>
+<part name="ATGPIO" library="con-lsta" deviceset="FE10-1" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -18806,14 +18807,14 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <label x="284.48" y="162.56" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="M1_GPIO1" class="0">
+<net name="PC4" class="0">
 <segment>
 <pinref part="U7" gate="U$1" pin="PC4(ADC4/SDA)"/>
 <wire x1="134.62" y1="162.56" x2="149.86" y2="162.56" width="0.1524" layer="91"/>
 <label x="139.7" y="162.56" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="M1_GPIO2" class="0">
+<net name="PC5" class="0">
 <segment>
 <pinref part="U7" gate="U$1" pin="PC5(ADC5/SCL)"/>
 <wire x1="134.62" y1="160.02" x2="149.86" y2="160.02" width="0.1524" layer="91"/>
@@ -18834,7 +18835,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <label x="287.02" y="154.94" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="M1_GPIO3" class="0">
+<net name="PB1" class="0">
 <segment>
 <pinref part="U7" gate="U$1" pin="PB1(OC1A)"/>
 <wire x1="134.62" y1="124.46" x2="149.86" y2="124.46" width="0.1524" layer="91"/>
@@ -19171,6 +19172,62 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <label x="373.38" y="157.48" size="1.778" layer="95"/>
 </segment>
 </net>
+<net name="PC1" class="0">
+<segment>
+<pinref part="U7" gate="U$1" pin="PC1(ADC1)"/>
+<wire x1="134.62" y1="170.18" x2="149.86" y2="170.18" width="0.1524" layer="91"/>
+<label x="139.7" y="170.18" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="PC2" class="0">
+<segment>
+<pinref part="U7" gate="U$1" pin="PC2(ADC2)"/>
+<wire x1="134.62" y1="167.64" x2="149.86" y2="167.64" width="0.1524" layer="91"/>
+<label x="139.7" y="167.64" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="PC3" class="0">
+<segment>
+<pinref part="U7" gate="U$1" pin="PC3(ADC3)"/>
+<wire x1="134.62" y1="165.1" x2="149.86" y2="165.1" width="0.1524" layer="91"/>
+<label x="139.7" y="165.1" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="ADC6" class="0">
+<segment>
+<pinref part="U7" gate="U$1" pin="ADC6"/>
+<wire x1="134.62" y1="157.48" x2="149.86" y2="157.48" width="0.1524" layer="91"/>
+<label x="139.7" y="157.48" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="ADC7" class="0">
+<segment>
+<pinref part="U7" gate="U$1" pin="ADC7"/>
+<wire x1="134.62" y1="154.94" x2="149.86" y2="154.94" width="0.1524" layer="91"/>
+<label x="139.7" y="154.94" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="PD4" class="0">
+<segment>
+<pinref part="U7" gate="U$1" pin="PD4(XCK/T0)"/>
+<wire x1="134.62" y1="139.7" x2="149.86" y2="139.7" width="0.1524" layer="91"/>
+<label x="139.7" y="139.7" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="PD5" class="0">
+<segment>
+<pinref part="U7" gate="U$1" pin="PD5(T1)"/>
+<wire x1="134.62" y1="137.16" x2="149.86" y2="137.16" width="0.1524" layer="91"/>
+<label x="139.7" y="137.16" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="PD6" class="0">
+<segment>
+<pinref part="U7" gate="U$1" pin="PD6(AIN0)"/>
+<wire x1="134.62" y1="134.62" x2="149.86" y2="134.62" width="0.1524" layer="91"/>
+<label x="139.7" y="134.62" size="1.778" layer="95"/>
+</segment>
+</net>
 </nets>
 </sheet>
 <sheet>
@@ -19210,6 +19267,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <instance part="R13" gate="G$1" x="312.42" y="86.36" rot="R90"/>
 <instance part="R14" gate="G$1" x="360.68" y="104.14" rot="R90"/>
 <instance part="R15" gate="G$1" x="360.68" y="86.36" rot="R90"/>
+<instance part="ATGPIO" gate="G$1" x="162.56" y="66.04"/>
 </instances>
 <busses>
 </busses>
@@ -19802,6 +19860,76 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pinref part="TXRX" gate="G$1" pin="1"/>
 <wire x1="218.44" y1="73.66" x2="226.06" y2="73.66" width="0.1524" layer="91"/>
 <label x="223.52" y="73.66" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="PC1" class="0">
+<segment>
+<pinref part="ATGPIO" gate="G$1" pin="1"/>
+<wire x1="170.18" y1="55.88" x2="182.88" y2="55.88" width="0.1524" layer="91"/>
+<label x="175.26" y="55.88" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="PC2" class="0">
+<segment>
+<pinref part="ATGPIO" gate="G$1" pin="2"/>
+<wire x1="170.18" y1="58.42" x2="182.88" y2="58.42" width="0.1524" layer="91"/>
+<label x="175.26" y="58.42" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="PC3" class="0">
+<segment>
+<pinref part="ATGPIO" gate="G$1" pin="3"/>
+<wire x1="170.18" y1="60.96" x2="182.88" y2="60.96" width="0.1524" layer="91"/>
+<label x="175.26" y="60.96" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="PC4" class="0">
+<segment>
+<pinref part="ATGPIO" gate="G$1" pin="4"/>
+<wire x1="170.18" y1="63.5" x2="182.88" y2="63.5" width="0.1524" layer="91"/>
+<label x="175.26" y="63.5" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="PC5" class="0">
+<segment>
+<pinref part="ATGPIO" gate="G$1" pin="5"/>
+<wire x1="170.18" y1="66.04" x2="182.88" y2="66.04" width="0.1524" layer="91"/>
+<label x="175.26" y="66.04" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="ADC6" class="0">
+<segment>
+<pinref part="ATGPIO" gate="G$1" pin="6"/>
+<wire x1="170.18" y1="68.58" x2="182.88" y2="68.58" width="0.1524" layer="91"/>
+<label x="175.26" y="68.58" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="ADC7" class="0">
+<segment>
+<pinref part="ATGPIO" gate="G$1" pin="7"/>
+<wire x1="170.18" y1="71.12" x2="182.88" y2="71.12" width="0.1524" layer="91"/>
+<label x="175.26" y="71.12" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="PD4" class="0">
+<segment>
+<pinref part="ATGPIO" gate="G$1" pin="8"/>
+<wire x1="170.18" y1="73.66" x2="182.88" y2="73.66" width="0.1524" layer="91"/>
+<label x="175.26" y="73.66" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="PD5" class="0">
+<segment>
+<pinref part="ATGPIO" gate="G$1" pin="9"/>
+<wire x1="170.18" y1="76.2" x2="182.88" y2="76.2" width="0.1524" layer="91"/>
+<label x="175.26" y="76.2" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="PB1" class="0">
+<segment>
+<pinref part="ATGPIO" gate="G$1" pin="10"/>
+<wire x1="170.18" y1="78.74" x2="182.88" y2="78.74" width="0.1524" layer="91"/>
+<label x="175.26" y="78.74" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>

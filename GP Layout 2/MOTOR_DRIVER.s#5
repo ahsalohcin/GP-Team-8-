@@ -15964,6 +15964,56 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </deviceset>
 </devicesets>
 </library>
+<library name="Cree_XP">
+<packages>
+<package name="XP">
+<smd name="THERMAL" x="0" y="0" dx="1.3" dy="3.3" layer="1"/>
+<smd name="POSITIVE" x="-1.5" y="0" dx="0.5" dy="3.3" layer="1"/>
+<smd name="NEGATIVE" x="1.5" y="0" dx="0.5" dy="3.3" layer="1"/>
+<smd name="NEGATIVE1" x="1.85" y="0" dx="0.4" dy="0.5" layer="1"/>
+<smd name="POSITIVE1" x="-1.85" y="0" dx="0.4" dy="0.5" layer="1"/>
+<text x="-2.54" y="2.54" size="1.27" layer="25">&gt;NAME</text>
+</package>
+</packages>
+<symbols>
+<symbol name="CREE_XP">
+<wire x1="-2.54" y1="2.54" x2="-2.54" y2="0" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="0" x2="-2.54" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="-2.54" x2="0" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="0" y1="-2.54" x2="2.54" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="2.54" y1="-2.54" x2="2.54" y2="0" width="0.254" layer="94"/>
+<wire x1="2.54" y1="0" x2="2.54" y2="2.54" width="0.254" layer="94"/>
+<wire x1="2.54" y1="2.54" x2="-2.54" y2="2.54" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="0" x2="-5.08" y2="0" width="0.254" layer="94"/>
+<wire x1="2.54" y1="0" x2="5.08" y2="0" width="0.254" layer="94"/>
+<wire x1="0" y1="-2.54" x2="0" y2="-5.08" width="0.254" layer="94"/>
+<pin name="POSITIVE" x="-5.08" y="0" visible="off" length="point"/>
+<pin name="NEGATIVE" x="5.08" y="0" visible="off" length="point"/>
+<pin name="THERMAL" x="0" y="-5.08" visible="off" length="point"/>
+<text x="-5.08" y="0" size="3.81" layer="94" align="bottom-right">+</text>
+<text x="-2.54" y="2.54" size="1.778" layer="95">&gt;NAME</text>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="CREE_XP">
+<gates>
+<gate name="G$1" symbol="CREE_XP" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="XP">
+<connects>
+<connect gate="G$1" pin="NEGATIVE" pad="NEGATIVE NEGATIVE1"/>
+<connect gate="G$1" pin="POSITIVE" pad="POSITIVE POSITIVE1"/>
+<connect gate="G$1" pin="THERMAL" pad="THERMAL"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -16053,8 +16103,8 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="SV4" library="con-lsta" deviceset="FE04-1" device=""/>
 <part name="SV7" library="con-lsta" deviceset="FE04-1" device=""/>
 <part name="SV8" library="con-lsta" deviceset="FE04-1" device=""/>
-<part name="LED1" library="con-lsta" deviceset="FE02-1" device=""/>
-<part name="LED2" library="con-lsta" deviceset="FE02-1" device=""/>
+<part name="LED1_CONN" library="con-lsta" deviceset="FE02-1" device=""/>
+<part name="LED2_CONN" library="con-lsta" deviceset="FE02-1" device=""/>
 <part name="SV9" library="con-lsta" deviceset="FE02-1" device=""/>
 <part name="GROUND" library="con-lsta" deviceset="FE05-1" device=""/>
 <part name="3_3V" library="con-lsta" deviceset="FE05-1" device=""/>
@@ -16066,6 +16116,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="D2" library="SparkFun-LED" deviceset="LED" device="0603"/>
 <part name="D5" library="SparkFun-LED" deviceset="LED" device="0603"/>
 <part name="TXRX" library="con-lsta" deviceset="FE02-1" device=""/>
+<part name="LED1" library="Cree_XP" deviceset="CREE_XP" device=""/>
+<part name="LED2" library="Cree_XP" deviceset="CREE_XP" device=""/>
+<part name="LED1_CONN2" library="con-lsta" deviceset="FE02-1" device=""/>
+<part name="LED2_CONN2" library="con-lsta" deviceset="FE02-1" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -17564,8 +17618,12 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <instance part="R7" gate="G$1" x="330.2" y="99.06" rot="R90"/>
 <instance part="T2" gate="G$1" x="289.56" y="111.76" rot="MR0"/>
 <instance part="R8" gate="G$1" x="287.02" y="195.58" rot="R90"/>
-<instance part="LED1" gate="G$1" x="259.08" y="195.58"/>
-<instance part="LED2" gate="G$1" x="322.58" y="195.58"/>
+<instance part="LED1_CONN" gate="G$1" x="259.08" y="195.58"/>
+<instance part="LED2_CONN" gate="G$1" x="322.58" y="195.58"/>
+<instance part="LED1" gate="G$1" x="259.08" y="218.44" rot="R270"/>
+<instance part="LED2" gate="G$1" x="314.96" y="215.9" rot="R270"/>
+<instance part="LED1_CONN2" gate="G$1" x="238.76" y="218.44"/>
+<instance part="LED2_CONN2" gate="G$1" x="297.18" y="218.44"/>
 </instances>
 <busses>
 </busses>
@@ -17690,7 +17748,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <segment>
 <pinref part="LED_DRIVER2" gate="A" pin="DRAIN"/>
 <wire x1="266.7" y1="180.34" x2="266.7" y2="193.04" width="0.1524" layer="91"/>
-<pinref part="LED1" gate="G$1" pin="1"/>
+<pinref part="LED1_CONN" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="N$13" class="0">
@@ -17727,7 +17785,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <segment>
 <pinref part="LED_DRIVER1" gate="A" pin="DRAIN"/>
 <wire x1="330.2" y1="180.34" x2="330.2" y2="193.04" width="0.1524" layer="91"/>
-<pinref part="LED2" gate="G$1" pin="1"/>
+<pinref part="LED2_CONN" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="7_4V_TOP2" class="0">
@@ -17737,7 +17795,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="223.52" y1="205.74" x2="266.7" y2="205.74" width="0.1524" layer="91"/>
 <wire x1="266.7" y1="205.74" x2="266.7" y2="195.58" width="0.1524" layer="91"/>
 <label x="231.14" y="208.28" size="1.778" layer="95" rot="R180"/>
-<pinref part="LED1" gate="G$1" pin="2"/>
+<pinref part="LED1_CONN" gate="G$1" pin="2"/>
 </segment>
 <segment>
 <pinref part="R8" gate="G$1" pin="2"/>
@@ -17745,7 +17803,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="287.02" y1="205.74" x2="330.2" y2="205.74" width="0.1524" layer="91"/>
 <wire x1="330.2" y1="205.74" x2="330.2" y2="195.58" width="0.1524" layer="91"/>
 <label x="294.64" y="208.28" size="1.778" layer="95" rot="R180"/>
-<pinref part="LED2" gate="G$1" pin="2"/>
+<pinref part="LED2_CONN" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="GND_TOP2" class="0">
@@ -17766,6 +17824,42 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="304.8" y1="76.2" x2="287.02" y2="76.2" width="0.1524" layer="91"/>
 <wire x1="287.02" y1="76.2" x2="287.02" y2="106.68" width="0.1524" layer="91"/>
 <label x="292.1" y="78.74" size="1.778" layer="95" rot="R180"/>
+</segment>
+</net>
+<net name="LED1HI" class="0">
+<segment>
+<pinref part="LED1" gate="G$1" pin="POSITIVE"/>
+<wire x1="259.08" y1="223.52" x2="246.38" y2="223.52" width="0.1524" layer="91"/>
+<label x="248.92" y="223.52" size="1.778" layer="95"/>
+<pinref part="LED1_CONN2" gate="G$1" pin="2"/>
+<wire x1="246.38" y1="218.44" x2="246.38" y2="223.52" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="LED1LO" class="0">
+<segment>
+<pinref part="LED1" gate="G$1" pin="NEGATIVE"/>
+<wire x1="259.08" y1="213.36" x2="246.38" y2="213.36" width="0.1524" layer="91"/>
+<label x="248.92" y="213.36" size="1.778" layer="95"/>
+<pinref part="LED1_CONN2" gate="G$1" pin="1"/>
+<wire x1="246.38" y1="213.36" x2="246.38" y2="215.9" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="LED2HI" class="0">
+<segment>
+<pinref part="LED2" gate="G$1" pin="POSITIVE"/>
+<wire x1="314.96" y1="220.98" x2="304.8" y2="220.98" width="0.1524" layer="91"/>
+<label x="304.8" y="220.98" size="1.778" layer="95"/>
+<pinref part="LED2_CONN2" gate="G$1" pin="2"/>
+<wire x1="304.8" y1="220.98" x2="304.8" y2="218.44" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="LED2LO" class="0">
+<segment>
+<pinref part="LED2" gate="G$1" pin="NEGATIVE"/>
+<wire x1="314.96" y1="210.82" x2="304.8" y2="210.82" width="0.1524" layer="91"/>
+<label x="304.8" y="210.82" size="1.778" layer="95"/>
+<pinref part="LED2_CONN2" gate="G$1" pin="1"/>
+<wire x1="304.8" y1="215.9" x2="304.8" y2="210.82" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>

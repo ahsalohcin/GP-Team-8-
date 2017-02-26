@@ -13513,8 +13513,8 @@ W = angled&lt;p&gt;
 <library name="bigswitch">
 <packages>
 <package name="BIGSWITCH">
-<smd name="VCC" x="-4.65" y="0" dx="1.778" dy="8.89" layer="1"/>
-<smd name="GND" x="4.65" y="0" dx="1.778" dy="8.89" layer="1"/>
+<smd name="VCC" x="-4.65" y="0" dx="1.778" dy="8.89" layer="16"/>
+<smd name="GND" x="4.65" y="0" dx="1.778" dy="8.89" layer="16"/>
 <wire x1="-4.25" y1="-5" x2="-4.25" y2="5" width="0.127" layer="51"/>
 <wire x1="-4.25" y1="-5" x2="-5.05" y2="-5" width="0.127" layer="51"/>
 <wire x1="-5.05" y1="-5" x2="-5.05" y2="5" width="0.127" layer="51"/>
@@ -13537,7 +13537,7 @@ W = angled&lt;p&gt;
 <wire x1="-12.2" y1="35.1" x2="-12.2" y2="22.4" width="0.127" layer="51"/>
 <text x="-11.2" y="32.8" size="1.27" layer="25">&gt;NAME</text>
 <text x="-11.3" y="30.6" size="1.27" layer="27">&gt;VALUE</text>
-<smd name="NC" x="13.97" y="0" dx="1.778" dy="8.89" layer="1"/>
+<smd name="NC" x="13.97" y="0" dx="1.778" dy="8.89" layer="16"/>
 </package>
 </packages>
 <symbols>

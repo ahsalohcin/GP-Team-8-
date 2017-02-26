@@ -18337,10 +18337,11 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="LED2" library="Cree_XP" deviceset="CREE_XP" device=""/>
 <part name="LED1_CONN2" library="con-lsta" deviceset="FE02-1" device=""/>
 <part name="LED2_CONN2" library="con-lsta" deviceset="FE02-1" device=""/>
-<part name="R12" library="resistor" deviceset="R-US_" device="R0603"/>
-<part name="R13" library="resistor" deviceset="R-US_" device="R0603"/>
-<part name="R14" library="resistor" deviceset="R-US_" device="R0603"/>
-<part name="R15" library="resistor" deviceset="R-US_" device="R0603"/>
+<part name="R12" library="resistor" deviceset="R-US_" device="R0603" value="10k"/>
+<part name="R13" library="resistor" deviceset="R-US_" device="R0603" value="10k"/>
+<part name="R14" library="resistor" deviceset="R-US_" device="R0603" value="10k"/>
+<part name="R15" library="resistor" deviceset="R-US_" device="R0603" value="10k"/>
+<part name="R16" library="resistor" deviceset="R-US_" device="R0603" value="10k"/>
 </parts>
 <sheets>
 <sheet>
@@ -19813,7 +19814,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <instances>
 <instance part="FRAME4" gate="G$1" x="0" y="0"/>
 <instance part="BATT_HIGH" gate="1" x="12.7" y="226.06"/>
-<instance part="BATT_LOW" gate="1" x="78.74" y="180.34"/>
+<instance part="BATT_LOW" gate="1" x="78.74" y="165.1" rot="R180"/>
 <instance part="SUPPLY1" gate="GND" x="170.18" y="203.2"/>
 <instance part="C8" gate="G$1" x="198.12" y="210.82"/>
 <instance part="C12" gate="G$1" x="45.72" y="198.12"/>
@@ -19839,6 +19840,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <instance part="LED2" gate="G$1" x="314.96" y="215.9" rot="R270"/>
 <instance part="LED1_CONN2" gate="G$1" x="238.76" y="218.44"/>
 <instance part="LED2_CONN2" gate="G$1" x="297.18" y="218.44"/>
+<instance part="R16" gate="G$1" x="88.9" y="195.58" rot="R90"/>
 </instances>
 <busses>
 </busses>
@@ -19856,9 +19858,13 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <junction x="60.96" y="193.04"/>
 <label x="81.28" y="170.18" size="1.778" layer="95"/>
 <pinref part="BATT_LOW" gate="1" pin="MP"/>
-<wire x1="78.74" y1="177.8" x2="78.74" y2="170.18" width="0.1524" layer="91"/>
+<wire x1="78.74" y1="167.64" x2="78.74" y2="170.18" width="0.1524" layer="91"/>
 <wire x1="78.74" y1="170.18" x2="60.96" y2="170.18" width="0.1524" layer="91"/>
 <wire x1="60.96" y1="170.18" x2="60.96" y2="193.04" width="0.1524" layer="91"/>
+<pinref part="R16" gate="G$1" pin="1"/>
+<wire x1="88.9" y1="190.5" x2="88.9" y2="170.18" width="0.1524" layer="91"/>
+<wire x1="88.9" y1="170.18" x2="78.74" y2="170.18" width="0.1524" layer="91"/>
+<junction x="78.74" y="170.18"/>
 </segment>
 </net>
 <net name="7_4V_TOP" class="0">
@@ -19899,8 +19905,13 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pinref part="C14" gate="G$1" pin="+"/>
 <wire x1="60.96" y1="200.66" x2="68.58" y2="200.66" width="0.1524" layer="91"/>
 <junction x="60.96" y="200.66"/>
-<wire x1="60.96" y1="220.98" x2="60.96" y2="200.66" width="0.1524" layer="91"/>
+<wire x1="60.96" y1="220.98" x2="60.96" y2="208.28" width="0.1524" layer="91"/>
 <junction x="60.96" y="220.98"/>
+<pinref part="R16" gate="G$1" pin="2"/>
+<wire x1="60.96" y1="208.28" x2="60.96" y2="200.66" width="0.1524" layer="91"/>
+<wire x1="60.96" y1="208.28" x2="88.9" y2="208.28" width="0.1524" layer="91"/>
+<wire x1="88.9" y1="208.28" x2="88.9" y2="200.66" width="0.1524" layer="91"/>
+<junction x="60.96" y="208.28"/>
 </segment>
 </net>
 <net name="7_4V" class="0">

@@ -2904,57 +2904,6 @@ W = angled&lt;p&gt;
 </package>
 </packages>
 </library>
-<library name="arduino_jw">
-<description>&lt;font size="+1"&gt;&lt;b&gt;Jim's Arduino Header Library&lt;/b&gt;&lt;/font&gt;
-
-&lt;p&gt;This library contains custom connectors for the Arduino Uno R3 for use in making custom shields.  Please feel free to use and modify as you like.&lt;/p&gt;
-
-&lt;p&gt; No guarantees!  This is my first attempt to make custom parts in Eagle and they're simple enough, but I haven't actually fabricated a board using them so use at your own risk.&lt;/p&gt;
-
-&lt;p&gt;&lt;i&gt;~Jim Watts&lt;/i&gt;&lt;br&gt;18-March-2015&lt;/p&gt;</description>
-<packages>
-<package name="CONN-2X03">
-<description>2x3 DIP header with pin 1 marked by a square pad.</description>
-<pad name="1" x="0" y="0" drill="1.2" diameter="1.8288" shape="square" rot="R270"/>
-<pad name="3" x="0" y="-2.54" drill="1.2" diameter="1.8288" shape="octagon" rot="R270"/>
-<pad name="5" x="0" y="-5.08" drill="1.2" diameter="1.8288" shape="octagon" rot="R270"/>
-<pad name="6" x="2.54" y="-5.08" drill="1.2" diameter="1.8288" shape="octagon" rot="R270"/>
-<pad name="4" x="2.54" y="-2.54" drill="1.2" diameter="1.8288" shape="octagon" rot="R270"/>
-<pad name="2" x="2.54" y="0" drill="1.2" diameter="1.8288" shape="octagon" rot="R270"/>
-<wire x1="1.27" y1="0.635" x2="1.905" y2="1.27" width="0.127" layer="21"/>
-<wire x1="1.905" y1="1.27" x2="3.175" y2="1.27" width="0.127" layer="21"/>
-<wire x1="3.175" y1="1.27" x2="3.81" y2="0.635" width="0.127" layer="21"/>
-<wire x1="3.81" y1="0.635" x2="3.81" y2="-0.635" width="0.127" layer="21"/>
-<wire x1="3.81" y1="-0.635" x2="3.175" y2="-1.27" width="0.127" layer="21"/>
-<wire x1="3.175" y1="-1.27" x2="3.81" y2="-1.905" width="0.127" layer="21"/>
-<wire x1="3.81" y1="-1.905" x2="3.81" y2="-3.175" width="0.127" layer="21"/>
-<wire x1="3.81" y1="-3.175" x2="3.175" y2="-3.81" width="0.127" layer="21"/>
-<wire x1="3.175" y1="-3.81" x2="3.81" y2="-4.445" width="0.127" layer="21"/>
-<wire x1="3.81" y1="-4.445" x2="3.81" y2="-5.715" width="0.127" layer="21"/>
-<wire x1="3.81" y1="-5.715" x2="3.175" y2="-6.35" width="0.127" layer="21"/>
-<wire x1="3.175" y1="-6.35" x2="1.905" y2="-6.35" width="0.127" layer="21"/>
-<wire x1="1.905" y1="-6.35" x2="1.27" y2="-5.715" width="0.127" layer="21"/>
-<wire x1="1.27" y1="-5.715" x2="0.635" y2="-6.35" width="0.127" layer="21"/>
-<wire x1="0.635" y1="-6.35" x2="-0.635" y2="-6.35" width="0.127" layer="21"/>
-<wire x1="-0.635" y1="-6.35" x2="-1.27" y2="-5.715" width="0.127" layer="21"/>
-<wire x1="-1.27" y1="-5.715" x2="-1.27" y2="-4.445" width="0.127" layer="21"/>
-<wire x1="-1.27" y1="-4.445" x2="-0.635" y2="-3.81" width="0.127" layer="21"/>
-<wire x1="-0.635" y1="-3.81" x2="-1.27" y2="-3.175" width="0.127" layer="21"/>
-<wire x1="-1.27" y1="-3.175" x2="-1.27" y2="-1.905" width="0.127" layer="21"/>
-<wire x1="-1.27" y1="-1.905" x2="-0.635" y2="-1.27" width="0.127" layer="21"/>
-<wire x1="-0.635" y1="-1.27" x2="-1.27" y2="-0.635" width="0.127" layer="21"/>
-<wire x1="-1.27" y1="-0.635" x2="-1.27" y2="0.635" width="0.127" layer="21"/>
-<wire x1="-1.27" y1="0.635" x2="-0.635" y2="1.27" width="0.127" layer="21"/>
-<wire x1="-0.635" y1="1.27" x2="0.635" y2="1.27" width="0.127" layer="21"/>
-<wire x1="0.635" y1="1.27" x2="1.27" y2="0.635" width="0.127" layer="21"/>
-<wire x1="2.54" y1="-1.27" x2="0" y2="-1.27" width="0.127" layer="21"/>
-<wire x1="2.54" y1="-3.81" x2="0" y2="-3.81" width="0.127" layer="21"/>
-<wire x1="-1.651" y1="0.635" x2="-1.651" y2="-0.635" width="0.127" layer="21"/>
-<text x="-1.27" y="1.905" size="1.27" layer="25">&gt;NAME</text>
-<text x="-1.27" y="-8.255" size="1.27" layer="25">&gt;VALUE</text>
-</package>
-</packages>
-</library>
 <library name="ledpot">
 <packages>
 <package name="POT">
@@ -4389,10 +4338,10 @@ design rules under a new name.</description>
 <element name="BATT_HIGH" library="solpad" package="SE14" value="SE14" x="6.27" y="83.01"/>
 <element name="BATT_LOW" library="solpad" package="SE14" value="SE14" x="6.47" y="73.71"/>
 <element name="C8" library="resistor" package="C050-025X075" value="10uF" x="46.804" y="36.508" rot="R180"/>
-<element name="C12" library="resistor" package="153CLV-1010" value="" x="6.166" y="91.8"/>
-<element name="C13" library="resistor" package="153CLV-1010" value="" x="6.258" y="81.362"/>
-<element name="C14" library="resistor" package="153CLV-1010" value="" x="6.366" y="70.5"/>
-<element name="C15" library="resistor" package="153CLV-1010" value="" x="6.166" y="58.4"/>
+<element name="C12" library="resistor" package="153CLV-1010" value="33u" x="6.166" y="91.8"/>
+<element name="C13" library="resistor" package="153CLV-1010" value="33u" x="6.258" y="81.362"/>
+<element name="C14" library="resistor" package="153CLV-1010" value="33u" x="6.366" y="70.5"/>
+<element name="C15" library="resistor" package="153CLV-1010" value="33u" x="6.166" y="58.4"/>
 <element name="FUSE" library="minifuse" package="FUSEHOLDER3588" value="" x="19.848" y="72.816"/>
 <element name="BIG_SWITCH" library="bigswitch" package="BIGSWITCH" value="" x="3.158" y="83.06" rot="R90"/>
 <element name="R1" library="SparkFun-Resistors" package="0805" value="2800" x="31.158" y="22.49">
@@ -4468,7 +4417,6 @@ design rules under a new name.</description>
 <attribute name="MPN" value="" x="52.4" y="32.4" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MF" value="" x="52.4" y="32.4" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
-<element name="PROGRAM" library="arduino_jw" package="CONN-2X03" value="" x="83" y="25.8"/>
 <element name="LED_DRIVER2" library="CSD18502KCS" package="KCS3" value="CSD18502KCS_KCS_3" x="57" y="69" rot="R90">
 <attribute name="VENDOR" value="TEXAS INSTRUMENTS" x="57" y="69" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MANUFACTURER_PART_NUMBER" value="csd18502kcs_kcs_3" x="57" y="69" size="1.778" layer="27" rot="R90" display="off"/>
@@ -4676,23 +4624,17 @@ design rules under a new name.</description>
 <signal name="SPI_MOSI">
 <contactref element="U$1" pad="12/MISO"/>
 <contactref element="U7" pad="15"/>
-<contactref element="PROGRAM" pad="4"/>
 <wire x1="37.184" y1="13.698" x2="57.922" y2="17.2254" width="0" layer="19" extent="1-1"/>
-<wire x1="85.54" y1="23.26" x2="37.184" y2="13.698" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="SPI_SCK">
 <contactref element="U7" pad="17"/>
 <contactref element="U$1" pad="13/SCK"/>
-<contactref element="PROGRAM" pad="3"/>
 <wire x1="37.184" y1="28.938" x2="60.2146" y2="18.718" width="0" layer="19" extent="1-1"/>
-<wire x1="83" y1="23.26" x2="37.184" y2="28.938" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="SPI_MISO">
 <contactref element="U7" pad="16"/>
 <contactref element="U$1" pad="11/MOSI"/>
-<contactref element="PROGRAM" pad="1"/>
 <wire x1="34.644" y1="13.698" x2="58.722" y2="17.2254" width="0" layer="19" extent="1-1"/>
-<wire x1="83" y1="25.8" x2="34.644" y2="13.698" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="CAMERA_SI">
 <contactref element="U7" pad="11"/>
@@ -5112,12 +5054,6 @@ design rules under a new name.</description>
 <contactref element="U$1" pad="16/A2"/>
 <contactref element="R11" pad="2"/>
 <wire x1="29.564" y1="28.938" x2="11.95" y2="24" width="0" layer="19" extent="1-1"/>
-</signal>
-<signal name="N$14">
-<contactref element="PROGRAM" pad="5"/>
-</signal>
-<signal name="N$15">
-<contactref element="PROGRAM" pad="6"/>
 </signal>
 <signal name="N$1">
 <contactref element="U$7" pad="P3"/>
