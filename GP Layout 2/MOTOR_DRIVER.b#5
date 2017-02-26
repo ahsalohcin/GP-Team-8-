@@ -2898,15 +2898,15 @@ design rules under a new name.</description>
 <attribute name="MANUFACTURER_PART_NUMBER" value="csd18502kcs_kcs_3" x="10.668" y="87.63" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="VENDOR" value="TEXAS INSTRUMENTS" x="10.668" y="87.63" size="1.778" layer="27" rot="R90" display="off"/>
 </element>
-<element name="BOT_REVERSE" library="CSD18502KCS" package="KCS3" value="CSD18502KCS_KCS_3" x="16.764" y="87.63" rot="R90">
+<element name="BOT_REV" library="CSD18502KCS" package="KCS3" value="CSD18502KCS_KCS_3" x="16.764" y="87.63" rot="R90">
 <attribute name="MANUFACTURER_PART_NUMBER" value="csd18502kcs_kcs_3" x="16.764" y="87.63" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="VENDOR" value="TEXAS INSTRUMENTS" x="16.764" y="87.63" size="1.778" layer="27" rot="R90" display="off"/>
 </element>
-<element name="U3" library="MIC4604" package="SOIC-8_M" value="MIC4604YM" x="17.78" y="74.93" rot="MR270">
+<element name="GATE1" library="MIC4604" package="SOIC-8_M" value="MIC4604YM" x="17.78" y="74.93" rot="MR270">
 <attribute name="MANUFACTURER_PART_NUMBER" value="mic4604ym" x="17.78" y="74.93" size="1.778" layer="28" rot="MR270" display="off"/>
 <attribute name="VENDOR" value="Microchip" x="17.78" y="74.93" size="1.778" layer="28" rot="MR270" display="off"/>
 </element>
-<element name="TOP_REVERSE" library="CSD18502KCS" package="KCS3" value="CSD18502KCS_KCS_3" x="16.51" y="60.96" rot="R270">
+<element name="TOP_REV" library="CSD18502KCS" package="KCS3" value="CSD18502KCS_KCS_3" x="16.51" y="60.96" rot="R270">
 <attribute name="MANUFACTURER_PART_NUMBER" value="csd18502kcs_kcs_3" x="16.51" y="60.96" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="VENDOR" value="TEXAS INSTRUMENTS" x="16.51" y="60.96" size="1.778" layer="27" rot="R270" display="off"/>
 </element>
@@ -2914,7 +2914,7 @@ design rules under a new name.</description>
 <attribute name="MANUFACTURER_PART_NUMBER" value="csd18502kcs_kcs_3" x="10.16" y="60.96" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="VENDOR" value="TEXAS INSTRUMENTS" x="10.16" y="60.96" size="1.778" layer="27" rot="R270" display="off"/>
 </element>
-<element name="U6" library="MIC4604" package="SOIC-8_M" value="MIC4604YM" x="30.48" y="74.93" rot="MR270">
+<element name="GATE2" library="MIC4604" package="SOIC-8_M" value="MIC4604YM" x="30.48" y="74.93" rot="MR270">
 <attribute name="MANUFACTURER_PART_NUMBER" value="mic4604ym" x="30.48" y="74.93" size="1.778" layer="28" rot="MR270" display="off"/>
 <attribute name="VENDOR" value="Microchip" x="30.48" y="74.93" size="1.778" layer="28" rot="MR270" display="off"/>
 </element>
@@ -3033,24 +3033,24 @@ design rules under a new name.</description>
 <wire x1="20.32" y1="3.81" x2="23.746" y2="33.59" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$2">
-<contactref element="U3" pad="8"/>
-<contactref element="BOT_REVERSE" pad="1"/>
+<contactref element="GATE1" pad="8"/>
+<contactref element="BOT_REV" pad="1"/>
 <wire x1="15.875" y1="72.2757" x2="16.764" y2="82.55" width="0" layer="19" extent="16-16"/>
 </signal>
 <signal name="N$3">
 <contactref element="TOP_FWD" pad="1"/>
-<contactref element="U3" pad="3"/>
+<contactref element="GATE1" pad="3"/>
 <wire x1="10.668" y1="82.55" x2="18.415" y2="77.5843" width="0" layer="19" extent="16-16"/>
 </signal>
 <signal name="N$4">
-<contactref element="U3" pad="4"/>
+<contactref element="GATE1" pad="4"/>
 <contactref element="C2" pad="1"/>
 <contactref element="C1" pad="1"/>
 <wire x1="33.02" y1="60.96" x2="33.02" y2="66.04" width="0" layer="19" extent="1-1"/>
 <wire x1="19.685" y1="77.5843" x2="33.02" y2="66.04" width="0" layer="19" extent="16-16"/>
 </signal>
 <signal name="N$5">
-<contactref element="U3" pad="2"/>
+<contactref element="GATE1" pad="2"/>
 <contactref element="C2" pad="2"/>
 <contactref element="C1" pad="2"/>
 <contactref element="D3" pad="C"/>
@@ -3066,24 +3066,24 @@ design rules under a new name.</description>
 <wire x1="78.1242" y1="14.12" x2="22.86" y2="3.81" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$9">
-<contactref element="U6" pad="8"/>
+<contactref element="GATE2" pad="8"/>
 <contactref element="BOT_FWD" pad="1"/>
 <wire x1="10.16" y1="66.04" x2="28.575" y2="72.2757" width="0" layer="19" extent="16-16"/>
 </signal>
 <signal name="N$10">
-<contactref element="TOP_REVERSE" pad="1"/>
-<contactref element="U6" pad="3"/>
+<contactref element="TOP_REV" pad="1"/>
+<contactref element="GATE2" pad="3"/>
 <wire x1="16.51" y1="66.04" x2="31.115" y2="77.5843" width="0" layer="19" extent="16-16"/>
 </signal>
 <signal name="N$11">
-<contactref element="U6" pad="4"/>
+<contactref element="GATE2" pad="4"/>
 <contactref element="C4" pad="1"/>
 <contactref element="C3" pad="1"/>
 <wire x1="33.02" y1="82.55" x2="33.02" y2="87.63" width="0" layer="19" extent="1-1"/>
 <wire x1="32.385" y1="77.5843" x2="33.02" y2="82.55" width="0" layer="19" extent="16-16"/>
 </signal>
 <signal name="N$12">
-<contactref element="U6" pad="2"/>
+<contactref element="GATE2" pad="2"/>
 <contactref element="C4" pad="2"/>
 <contactref element="C3" pad="2"/>
 <contactref element="D4" pad="C"/>
@@ -3187,14 +3187,14 @@ design rules under a new name.</description>
 <wire x1="20.004" y1="24.838" x2="86.526" y2="40.682" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="BLT_RX">
-<contactref element="U$1" pad="7"/>
 <contactref element="BLUETOOTH" pad="1"/>
-<wire x1="25.084" y1="9.598" x2="52.07" y2="35.666" width="0" layer="19" extent="1-1"/>
+<contactref element="U$1" pad="8"/>
+<wire x1="27.624" y1="9.598" x2="52.07" y2="35.666" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="BLT_TX">
-<contactref element="U$1" pad="8"/>
 <contactref element="BLUETOOTH" pad="2"/>
-<wire x1="27.624" y1="9.598" x2="54.61" y2="35.666" width="0" layer="19" extent="1-1"/>
+<contactref element="U$1" pad="7"/>
+<wire x1="25.084" y1="9.598" x2="54.61" y2="35.666" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$13">
 <contactref element="U7" pad="14"/>
@@ -3268,9 +3268,9 @@ design rules under a new name.</description>
 <contactref element="D3" pad="A2"/>
 <contactref element="D3" pad="A1"/>
 <contactref element="TOP_FWD" pad="2"/>
-<contactref element="U3" pad="1"/>
-<contactref element="TOP_REVERSE" pad="2"/>
-<contactref element="U6" pad="1"/>
+<contactref element="GATE1" pad="1"/>
+<contactref element="TOP_REV" pad="2"/>
+<contactref element="GATE2" pad="1"/>
 <contactref element="BIG_SWITCH" pad="GND"/>
 <wire x1="16.51" y1="63.5" x2="-61.39" y2="82.042" width="0" layer="19" extent="1-1"/>
 <wire x1="15.875" y1="77.5843" x2="16.51" y2="63.5" width="0" layer="19" extent="16-16"/>
@@ -3320,10 +3320,10 @@ design rules under a new name.</description>
 </signal>
 <signal name="GND_TOP">
 <contactref element="SV5" pad="10"/>
-<contactref element="BOT_REVERSE" pad="3"/>
-<contactref element="U3" pad="7"/>
+<contactref element="BOT_REV" pad="3"/>
+<contactref element="GATE1" pad="7"/>
 <contactref element="BOT_FWD" pad="3"/>
-<contactref element="U6" pad="7"/>
+<contactref element="GATE2" pad="7"/>
 <contactref element="C12" pad="-"/>
 <contactref element="C15" pad="-"/>
 <contactref element="C13" pad="-"/>
@@ -3389,7 +3389,7 @@ design rules under a new name.</description>
 </signal>
 <signal name="MOTOR_HIGH_TOP">
 <contactref element="TOP_FWD" pad="3"/>
-<contactref element="BOT_REVERSE" pad="2"/>
+<contactref element="BOT_REV" pad="2"/>
 <contactref element="LSP3" pad="MP"/>
 <contactref element="SV6" pad="5"/>
 <wire x1="10.668" y1="87.63" x2="16.764" y2="85.09" width="0" layer="19" extent="1-1"/>
@@ -3397,7 +3397,7 @@ design rules under a new name.</description>
 <wire x1="23.32" y1="54.98" x2="3.81" y2="60.96" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="MOTOR_LOW_TOP">
-<contactref element="TOP_REVERSE" pad="3"/>
+<contactref element="TOP_REV" pad="3"/>
 <contactref element="BOT_FWD" pad="2"/>
 <contactref element="LSP6" pad="MP"/>
 <contactref element="SV6" pad="6"/>
@@ -3417,12 +3417,12 @@ design rules under a new name.</description>
 </signal>
 <signal name="LI1_TOP">
 <contactref element="SV6" pad="2"/>
-<contactref element="U3" pad="6"/>
+<contactref element="GATE1" pad="6"/>
 <wire x1="15.7" y1="54.98" x2="18.415" y2="72.2757" width="0" layer="19" extent="16-16"/>
 </signal>
 <signal name="HI1_TOP">
 <contactref element="SV6" pad="1"/>
-<contactref element="U3" pad="5"/>
+<contactref element="GATE1" pad="5"/>
 <wire x1="13.16" y1="54.98" x2="19.685" y2="72.2757" width="0" layer="19" extent="16-16"/>
 </signal>
 <signal name="HI2">
@@ -3437,12 +3437,12 @@ design rules under a new name.</description>
 </signal>
 <signal name="HI2_TOP">
 <contactref element="SV6" pad="3"/>
-<contactref element="U6" pad="6"/>
+<contactref element="GATE2" pad="6"/>
 <wire x1="18.24" y1="54.98" x2="31.115" y2="72.2757" width="0" layer="19" extent="16-16"/>
 </signal>
 <signal name="LI2_TOP">
 <contactref element="SV6" pad="4"/>
-<contactref element="U6" pad="5"/>
+<contactref element="GATE2" pad="5"/>
 <wire x1="20.78" y1="54.98" x2="32.385" y2="72.2757" width="0" layer="19" extent="16-16"/>
 </signal>
 <signal name="HALL1">
