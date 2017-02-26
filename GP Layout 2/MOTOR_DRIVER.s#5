@@ -16642,13 +16642,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <junction x="375.92" y="137.16"/>
 </segment>
 </net>
-<net name="BATT_VOLTAGE" class="0">
-<segment>
-<pinref part="R1" gate="G$1" pin="2"/>
-<wire x1="375.92" y1="149.86" x2="375.92" y2="157.48" width="0.1524" layer="91"/>
-<label x="363.22" y="157.48" size="1.778" layer="95"/>
-</segment>
-</net>
 <net name="MOTOR_HIGH" class="0">
 <segment>
 <pinref part="R3" gate="G$1" pin="2"/>
@@ -16893,6 +16886,13 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pinref part="R11" gate="G$1" pin="1"/>
 <pinref part="D5" gate="G$1" pin="A"/>
 <wire x1="353.06" y1="121.92" x2="353.06" y2="116.84" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="7_4V" class="0">
+<segment>
+<pinref part="R1" gate="G$1" pin="2"/>
+<wire x1="375.92" y1="149.86" x2="375.92" y2="157.48" width="0.1524" layer="91"/>
+<label x="373.38" y="157.48" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
