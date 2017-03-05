@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="1" unitdist="mic" unit="mic" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="yes"/>
@@ -230,6 +230,7 @@
 </symbols>
 <devicesets>
 <deviceset name="MIC4604YM" prefix="U">
+<description>IC DRIVER MOSFET 85V 8-SOIC</description>
 <gates>
 <gate name="A" symbol="MIC4604YM" x="0" y="0"/>
 </gates>
@@ -247,8 +248,10 @@
 </connects>
 <technologies>
 <technology name="">
-<attribute name="MANUFACTURER_PART_NUMBER" value="mic4604ym" constant="no"/>
-<attribute name="VENDOR" value="Microchip" constant="no"/>
+<attribute name="DIGIKEY_PART_NUMBER" value="576-4395-1-ND" constant="no"/>
+<attribute name="MANUFACTURER" value="Microchip" constant="no"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="MIC4604YM-T5" constant="no"/>
+<attribute name="PRICE" value="$1.25" constant="no"/>
 </technology>
 </technologies>
 </device>

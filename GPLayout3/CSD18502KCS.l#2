@@ -156,63 +156,57 @@
 </layers>
 <library>
 <packages>
-<package name="BIGSWITCH">
-<wire x1="-4.25" y1="-5" x2="-4.25" y2="5" width="0.127" layer="51"/>
-<wire x1="-4.25" y1="-5" x2="-5.05" y2="-5" width="0.127" layer="51"/>
-<wire x1="-5.05" y1="-5" x2="-5.05" y2="5" width="0.127" layer="51"/>
-<wire x1="-5.05" y1="5" x2="-4.25" y2="5" width="0.127" layer="51"/>
-<wire x1="4.25" y1="5" x2="5.05" y2="5" width="0.127" layer="51"/>
-<wire x1="5.05" y1="-5" x2="4.25" y2="-5" width="0.127" layer="51"/>
-<wire x1="4.25" y1="-5" x2="4.25" y2="5" width="0.127" layer="51"/>
-<wire x1="5.05" y1="5" x2="5.05" y2="-5" width="0.127" layer="51"/>
-<wire x1="13.55" y1="5" x2="14.35" y2="5" width="0.127" layer="51"/>
-<wire x1="14.35" y1="5" x2="14.35" y2="-5" width="0.127" layer="51"/>
-<wire x1="14.35" y1="-5" x2="13.55" y2="-5" width="0.127" layer="51"/>
-<wire x1="13.55" y1="-5" x2="13.55" y2="5" width="0.127" layer="51"/>
-<wire x1="-8.95" y1="5" x2="18.25" y2="5" width="0.127" layer="51"/>
-<wire x1="18.25" y1="5" x2="18.25" y2="22.4" width="0.127" layer="51"/>
-<wire x1="18.25" y1="22.4" x2="-8.95" y2="22.4" width="0.127" layer="51"/>
-<wire x1="-8.95" y1="22.4" x2="-8.95" y2="5" width="0.127" layer="51"/>
-<wire x1="-12.2" y1="22.4" x2="21.5" y2="22.4" width="0.127" layer="51"/>
-<wire x1="21.5" y1="22.4" x2="21.5" y2="35.1" width="0.127" layer="51"/>
-<wire x1="21.5" y1="35.1" x2="-12.2" y2="35.1" width="0.127" layer="51"/>
-<wire x1="-12.2" y1="35.1" x2="-12.2" y2="22.4" width="0.127" layer="51"/>
-<smd name="GND" x="4.65" y="0" dx="1.778" dy="8.89" layer="16"/>
-<smd name="NC" x="13.97" y="0" dx="1.778" dy="8.89" layer="16"/>
-<smd name="VCC" x="-4.65" y="0" dx="1.778" dy="8.89" layer="16"/>
-<text x="-11.2" y="32.8" size="1.27" layer="25">&gt;NAME</text>
-<text x="-11.3" y="30.6" size="1.27" layer="27">&gt;VALUE</text>
+<package name="KCS3">
+<wire x1="-7.874" y1="-2.3368" x2="2.794" y2="-2.3368" width="0.1524" layer="51"/>
+<wire x1="2.794" y1="-2.3368" x2="2.794" y2="2.3368" width="0.1524" layer="51"/>
+<wire x1="2.794" y1="2.3368" x2="-7.874" y2="2.3368" width="0.1524" layer="51"/>
+<wire x1="-7.874" y1="2.3368" x2="-7.874" y2="-2.3368" width="0.1524" layer="51"/>
+<wire x1="-9.652" y1="0" x2="-9.906" y2="0" width="0" layer="51" curve="-180"/>
+<wire x1="-9.906" y1="0" x2="-9.652" y2="0" width="0" layer="51" curve="-180"/>
+<wire x1="-7.874" y1="-2.3368" x2="2.794" y2="-2.3368" width="0.1524" layer="21"/>
+<wire x1="2.794" y1="-2.3368" x2="2.794" y2="2.3368" width="0.1524" layer="21"/>
+<wire x1="2.794" y1="2.3368" x2="-7.874" y2="2.3368" width="0.1524" layer="21"/>
+<wire x1="-7.874" y1="2.3368" x2="-7.874" y2="-2.3368" width="0.1524" layer="21"/>
+<wire x1="-9.652" y1="0" x2="-9.906" y2="0" width="0.1524" layer="21" curve="-180"/>
+<wire x1="-9.906" y1="0" x2="-9.652" y2="0" width="0.1524" layer="21" curve="-180"/>
+<wire x1="-7.62" y1="1.27" x2="2.54" y2="1.27" width="0.127" layer="21"/>
+<pad name="1" x="-5.08" y="0" drill="1.143" diameter="1.651"/>
+<pad name="2" x="-2.54" y="0" drill="1.143" diameter="1.651"/>
+<pad name="3" x="0" y="0" drill="1.143" diameter="1.651"/>
+<text x="-7.62" y="2.54" size="1.27" layer="25">&gt;NAME</text>
 </package>
 </packages>
 <symbols>
-<symbol name="BIGSWITCH">
-<wire x1="-5.08" y1="0" x2="15.24" y2="0" width="0.254" layer="94"/>
-<wire x1="15.24" y1="0" x2="20.32" y2="0" width="0.254" layer="94"/>
-<wire x1="20.32" y1="0" x2="20.32" y2="12.7" width="0.254" layer="94"/>
-<wire x1="20.32" y1="12.7" x2="-5.08" y2="12.7" width="0.254" layer="94"/>
-<wire x1="-5.08" y1="12.7" x2="-5.08" y2="0" width="0.254" layer="94"/>
-<wire x1="15.24" y1="0" x2="15.24" y2="-5.08" width="0.254" layer="94"/>
-<pin name="GND" x="7.62" y="-5.08" length="middle" direction="pwr" rot="R90"/>
-<pin name="VCC" x="0" y="-5.08" length="middle" direction="pwr" rot="R90"/>
-<text x="-5.08" y="15.24" size="1.27" layer="95">&gt;NAME</text>
-<text x="5.08" y="15.24" size="1.27" layer="96">&gt;VALUE</text>
-<text x="15.24" y="2.54" size="1.778" layer="94" rot="R90">NC</text>
+<symbol name="CSD18502KCS_KCS_3">
+<wire x1="7.62" y1="5.08" x2="7.62" y2="-7.62" width="0.1524" layer="94"/>
+<wire x1="7.62" y1="-7.62" x2="58.42" y2="-7.62" width="0.1524" layer="94"/>
+<wire x1="58.42" y1="-7.62" x2="58.42" y2="5.08" width="0.1524" layer="94"/>
+<wire x1="58.42" y1="5.08" x2="7.62" y2="5.08" width="0.1524" layer="94"/>
+<pin name="DRAIN" x="0" y="-2.54" direction="pas"/>
+<pin name="GATE" x="0" y="0" direction="pas"/>
+<pin name="SOURCE" x="66.04" y="-2.54" direction="pas" rot="R180"/>
+<text x="28.2956" y="9.1186" size="2.0828" layer="95" ratio="6" rot="SR0">&gt;Name</text>
+<text x="27.6606" y="6.5786" size="2.0828" layer="96" ratio="6" rot="SR0">&gt;Value</text>
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="BIGSWITCH" uservalue="yes">
-<description>Rocker Switch SPST 25A (DC) Panel Mount, Snap-In</description>
+<deviceset name="CSD18502KCS_KCS_3" prefix="U">
+<description>MOSFET N-CH 60V 100A TO220-3</description>
 <gates>
-<gate name="G$1" symbol="BIGSWITCH" x="-7.62" y="-7.62"/>
+<gate name="A" symbol="CSD18502KCS_KCS_3" x="0" y="0"/>
 </gates>
 <devices>
-<device name="" package="BIGSWITCH">
+<device name="" package="KCS3">
 <connects>
-<connect gate="G$1" pin="GND" pad="GND"/>
-<connect gate="G$1" pin="VCC" pad="VCC"/>
+<connect gate="A" pin="DRAIN" pad="2"/>
+<connect gate="A" pin="GATE" pad="1"/>
+<connect gate="A" pin="SOURCE" pad="3"/>
 </connects>
 <technologies>
-<technology name=""/>
+<technology name="">
+<attribute name="MANUFACTURER" value="TEXAS INSTRUMENTS" constant="no"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="CSD18533KCS" constant="no"/>
+</technology>
 </technologies>
 </device>
 </devices>
