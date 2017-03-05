@@ -18273,7 +18273,12 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="PRICE" value="$0.37"/>
 </part>
 <part name="BIG_SWITCH" library="bigswitch" deviceset="BIGSWITCH" device=""/>
-<part name="R1" library="SparkFun-Resistors" deviceset="0.3OHM" device="-0805-1/8W-1%" value="2.8K"/>
+<part name="R1" library="SparkFun-Resistors" deviceset="0.3OHM" device="-0805-1/8W-1%" value="2.8K">
+<attribute name="DIGIKEY_PART_NUMBER" value="311-2.80KCRCT-ND"/>
+<attribute name="MANUFACTURER" value="Yageo"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="RC0805FR-072K8L"/>
+<attribute name="PRICE" value="$0.10"/>
+</part>
 <part name="R2" library="SparkFun-Resistors" deviceset="0.3OHM" device="-0805-1/8W-1%" value="0.3"/>
 <part name="SUPPLY2" library="supply2" deviceset="GND" device=""/>
 <part name="R3" library="SparkFun-Resistors" deviceset="0.3OHM" device="-0805-1/8W-1%" value="0.3"/>
@@ -18646,7 +18651,12 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <instance part="SUPPLY4" gate="GND" x="53.34" y="106.68"/>
 <instance part="SUPPLY5" gate="GND" x="320.04" y="154.94"/>
 <instance part="SUPPLY6" gate="GND" x="317.5" y="121.92"/>
-<instance part="R1" gate="G$1" x="375.92" y="144.78" rot="R90"/>
+<instance part="R1" gate="G$1" x="375.92" y="144.78" rot="R90">
+<attribute name="DIGIKEY_PART_NUMBER" x="375.92" y="144.78" size="1.778" layer="96" rot="R90" display="off"/>
+<attribute name="MANUFACTURER" x="375.92" y="144.78" size="1.778" layer="96" rot="R90" display="off"/>
+<attribute name="MANUFACTURER_PART_NUMBER" x="375.92" y="144.78" size="1.778" layer="96" rot="R90" display="off"/>
+<attribute name="PRICE" x="375.92" y="144.78" size="1.778" layer="96" rot="R90" display="off"/>
+</instance>
 <instance part="R2" gate="G$1" x="375.92" y="129.54" rot="R90"/>
 <instance part="SUPPLY2" gate="GND" x="375.92" y="119.38"/>
 <instance part="R3" gate="G$1" x="355.6" y="170.18" rot="R90"/>

@@ -12369,8 +12369,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </connects>
 <technologies>
 <technology name="">
-<attribute name="PROD_ID" value="XTAL-08181"/>
-<attribute name="SF_ID" value="COM-00536"/>
 <attribute name="VALUE" value="16MHz"/>
 </technology>
 </technologies>
@@ -18235,7 +18233,12 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="PRICE" value="$1.38"/>
 </part>
 <part name="SUPPLY3" library="supply2" deviceset="GND" device=""/>
-<part name="Y1" library="SparkFun-Clocks" deviceset="CRYSTAL-16MHZ" device="PTH-HC49US" value="16MHz"/>
+<part name="Y1" library="SparkFun-Clocks" deviceset="CRYSTAL-16MHZ" device="PTH-HC49US" value="16MHz">
+<attribute name="DIGIKEY_PART_NUMBER" value="887-2425-1-ND"/>
+<attribute name="MANUFACTURER" value="TXC CORPORATION"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="9C-16.000MBBK-T"/>
+<attribute name="PRICE" value="$0.36"/>
+</part>
 <part name="C5" library="resistor" deviceset="C-US" device="025-024X044" value="18 pF"/>
 <part name="C6" library="resistor" deviceset="C-US" device="025-024X044" value="18 pF"/>
 <part name="SUPPLY4" library="supply2" deviceset="GND" device=""/>
@@ -18633,7 +18636,12 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="PRICE" x="111.76" y="142.24" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="SUPPLY3" gate="GND" x="210.82" y="157.48"/>
-<instance part="Y1" gate="G$1" x="66.04" y="142.24"/>
+<instance part="Y1" gate="G$1" x="66.04" y="142.24">
+<attribute name="DIGIKEY_PART_NUMBER" x="66.04" y="142.24" size="1.778" layer="96" display="off"/>
+<attribute name="MANUFACTURER" x="66.04" y="142.24" size="1.778" layer="96" display="off"/>
+<attribute name="MANUFACTURER_PART_NUMBER" x="66.04" y="142.24" size="1.778" layer="96" display="off"/>
+<attribute name="PRICE" x="66.04" y="142.24" size="1.778" layer="96" display="off"/>
+</instance>
 <instance part="C5" gate="G$1" x="73.66" y="137.16"/>
 <instance part="C6" gate="G$1" x="53.34" y="137.16"/>
 <instance part="SUPPLY4" gate="GND" x="53.34" y="106.68"/>

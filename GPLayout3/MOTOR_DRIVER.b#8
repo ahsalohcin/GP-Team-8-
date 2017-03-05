@@ -4367,18 +4367,10 @@ Please make sure your boards conform to these design rules.</description>
 <attribute name="PRICE" value="$0.37" x="20.848" y="71.816" size="1.778" layer="27" display="off"/>
 </element>
 <element name="BIG_SWITCH" library="bigswitch" package="BIGSWITCH" value="" x="6.158" y="81.06" rot="R90"/>
-<element name="R1" library="SparkFun-Resistors" package="0805" value="0.3" x="31.158" y="22.49">
-<attribute name="PROD_ID" value="RES-11622" x="31.158" y="22.49" size="1.778" layer="27" display="off"/>
-</element>
-<element name="R2" library="SparkFun-Resistors" package="0805" value="0.3" x="26.202" y="22.49">
-<attribute name="PROD_ID" value="RES-11622" x="26.202" y="22.49" size="1.778" layer="27" display="off"/>
-</element>
-<element name="R3" library="SparkFun-Resistors" package="0805" value="0.3" x="22.49" y="22.654" rot="R270">
-<attribute name="PROD_ID" value="RES-11622" x="22.49" y="22.654" size="1.778" layer="27" rot="R270" display="off"/>
-</element>
-<element name="R4" library="SparkFun-Resistors" package="0805" value="0.3" x="18.51" y="22.59" rot="R90">
-<attribute name="PROD_ID" value="RES-11622" x="18.51" y="22.59" size="1.778" layer="27" rot="R90" display="off"/>
-</element>
+<element name="R1" library="SparkFun-Resistors" package="0805" value="2.8K" x="31.158" y="22.49"/>
+<element name="R2" library="SparkFun-Resistors" package="0805" value="0.3" x="26.202" y="22.49"/>
+<element name="R3" library="SparkFun-Resistors" package="0805" value="0.3" x="22.49" y="22.654" rot="R270"/>
+<element name="R4" library="SparkFun-Resistors" package="0805" value="0.3" x="18.51" y="22.59" rot="R90"/>
 <element name="U$2" library="heatsink" package="HEATSINK" value="HEATSINK" x="26.946" y="84.056" rot="R270">
 <attribute name="MANUFACTURER" value="Aavid Thermalloy" x="26.946" y="84.056" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MANUFACTURER_PART_NUMBER" value="507002B00000G" x="26.946" y="84.056" size="1.778" layer="27" rot="R270" display="off"/>

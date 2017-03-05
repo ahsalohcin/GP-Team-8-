@@ -18302,7 +18302,12 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="U$4" library="heatsink" deviceset="HEATSINK" device=""/>
 <part name="U$5" library="heatsink" deviceset="HEATSINK" device=""/>
 <part name="U$6" library="heatsink" deviceset="HEATSINK" device=""/>
-<part name="VOLT_REG" library="v-reg-3" deviceset="LM1086" device="TO220V"/>
+<part name="VOLT_REG" library="v-reg-3" deviceset="LM1086" device="TO220V">
+<attribute name="DIGIKEY_PART_NUMBER" value="LM1086IT-5.0/NOPB-ND"/>
+<attribute name="MANUFACTURER" value="Texas Instruments"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="LM1086IT-5.0/NOPB"/>
+<attribute name="PRICE" value="$1.67"/>
+</part>
 <part name="CAMERA" library="con-lsta" deviceset="FE05-1" device="">
 <attribute name="DIGIKEY_PART_NUMBER" value="28317-ND"/>
 <attribute name="MANUFACTURER" value="Parallax"/>
@@ -20068,7 +20073,12 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="PRICE" x="38.1" y="218.44" size="1.778" layer="96" rot="MR180" display="off"/>
 </instance>
 <instance part="BIG_SWITCH" gate="G$1" x="68.58" y="226.06"/>
-<instance part="VOLT_REG" gate="G$1" x="170.18" y="218.44"/>
+<instance part="VOLT_REG" gate="G$1" x="170.18" y="218.44">
+<attribute name="DIGIKEY_PART_NUMBER" x="170.18" y="218.44" size="1.778" layer="96" display="off"/>
+<attribute name="MANUFACTURER" x="170.18" y="218.44" size="1.778" layer="96" display="off"/>
+<attribute name="MANUFACTURER_PART_NUMBER" x="170.18" y="218.44" size="1.778" layer="96" display="off"/>
+<attribute name="PRICE" x="170.18" y="218.44" size="1.778" layer="96" display="off"/>
+</instance>
 <instance part="LED_DRIVER2" gate="A" x="264.16" y="180.34" rot="MR270"/>
 <instance part="U$7" gate="G$1" x="264.16" y="76.2"/>
 <instance part="R5" gate="G$1" x="266.7" y="99.06" rot="R90"/>
