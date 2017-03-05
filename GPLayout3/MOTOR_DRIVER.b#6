@@ -4366,7 +4366,12 @@ Please make sure your boards conform to these design rules.</description>
 <attribute name="MANUFACTURER_PART_NUMBER" value="0891010.NXS" x="20.848" y="71.816" size="1.778" layer="27" display="off"/>
 <attribute name="PRICE" value="$0.37" x="20.848" y="71.816" size="1.778" layer="27" display="off"/>
 </element>
-<element name="BIG_SWITCH" library="bigswitch" package="BIGSWITCH" value="" x="6.158" y="81.06" rot="R90"/>
+<element name="BIG_SWITCH" library="bigswitch" package="BIGSWITCH" value="" x="6.158" y="81.06" rot="R90">
+<attribute name="DIGIKEY_PART_NUMBER" value="CW106-ND" x="6.158" y="81.06" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="MANUFACTURER" value="CW Industries" x="6.158" y="81.06" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="GRB238B801BR1" x="6.158" y="81.06" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="PRICE" value="$2.86" x="6.158" y="81.06" size="1.778" layer="27" rot="R90" display="off"/>
+</element>
 <element name="R1" library="SparkFun-Resistors" package="0805" value="2.8K" x="31.158" y="22.49">
 <attribute name="DIGIKEY_PART_NUMBER" value="311-2.80KCRCT-ND" x="31.158" y="22.49" size="1.778" layer="27" display="off"/>
 <attribute name="MANUFACTURER" value="Yageo" x="31.158" y="22.49" size="1.778" layer="27" display="off"/>
@@ -4379,8 +4384,18 @@ Please make sure your boards conform to these design rules.</description>
 <attribute name="MANUFACTURER_PART_NUMBER" value="RC0805FR-071K62L" x="26.202" y="22.49" size="1.778" layer="27" display="off"/>
 <attribute name="PRICE" value="$0.10" x="26.202" y="22.49" size="1.778" layer="27" display="off"/>
 </element>
-<element name="R3" library="SparkFun-Resistors" package="0805" value="0.3" x="22.49" y="22.654" rot="R270"/>
-<element name="R4" library="SparkFun-Resistors" package="0805" value="0.3" x="18.51" y="22.59" rot="R90"/>
+<element name="R3" library="SparkFun-Resistors" package="0805" value="2.32K" x="22.49" y="22.654" rot="R270">
+<attribute name="DIGIKEY_PART_NUMBER" value="311-2.32KCRCT-ND" x="22.49" y="22.654" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MANUFACTURER" value="Yageo" x="22.49" y="22.654" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="RC0805FR-072K32L" x="22.49" y="22.654" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="PRICE" value="$0.10" x="22.49" y="22.654" size="1.778" layer="27" rot="R270" display="off"/>
+</element>
+<element name="R4" library="SparkFun-Resistors" package="0805" value="1.15K" x="18.51" y="22.59" rot="R90">
+<attribute name="DIGIKEY_PART_NUMBER" value="311-1.15KCRCT-ND" x="18.51" y="22.59" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="MANUFACTURER" value="Yageo" x="18.51" y="22.59" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="RC0805FR-071K15L" x="18.51" y="22.59" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="PRICE" value="$0.10" x="18.51" y="22.59" size="1.778" layer="27" rot="R90" display="off"/>
+</element>
 <element name="U$2" library="heatsink" package="HEATSINK" value="HEATSINK" x="26.946" y="84.056" rot="R270">
 <attribute name="MANUFACTURER" value="Aavid Thermalloy" x="26.946" y="84.056" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MANUFACTURER_PART_NUMBER" value="507002B00000G" x="26.946" y="84.056" size="1.778" layer="27" rot="R270" display="off"/>
@@ -4405,7 +4420,12 @@ Please make sure your boards conform to these design rules.</description>
 <attribute name="PRICE" value="$0.26" x="13.394" y="62.364" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="DIGIKEY_PART_NUMBER" value="HS112-ND" x="13.394" y="62.364" size="1.778" layer="27" rot="R270" display="off"/>
 </element>
-<element name="VOLT_REG" library="v-reg-3" package="TO220S" value="LM1086TO220V" x="46.226" y="42.786"/>
+<element name="VOLT_REG" library="v-reg-3" package="TO220S" value="LM1086TO220V" x="46.226" y="42.786">
+<attribute name="DIGIKEY_PART_NUMBER" value="LM1086IT-5.0/NOPB-ND" x="46.226" y="42.786" size="1.778" layer="27" display="off"/>
+<attribute name="MANUFACTURER" value="Texas Instruments" x="46.226" y="42.786" size="1.778" layer="27" display="off"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="LM1086IT-5.0/NOPB" x="46.226" y="42.786" size="1.778" layer="27" display="off"/>
+<attribute name="PRICE" value="$1.67" x="46.226" y="42.786" size="1.778" layer="27" display="off"/>
+</element>
 <element name="CAMERA" library="con-lsta" package="FE05-1" value="" x="78.222" y="9.45">
 <attribute name="MANUFACTURER" value="Parallax" x="78.222" y="9.45" size="1.778" layer="27" display="off"/>
 <attribute name="MANUFACTURER_PART_NUMBER" value="28317" x="78.222" y="9.45" size="1.778" layer="27" display="off"/>

@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="1" unitdist="mic" unit="mic" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.005" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="0.0005" altunitdist="mm" altunit="mm"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="yes"/>
@@ -194,7 +194,7 @@
 <wire x1="1.9812" y1="2.4892" x2="0.3048" y2="2.4892" width="0.1524" layer="51"/>
 <wire x1="0.3048" y1="2.4892" x2="-0.3048" y2="2.4892" width="0.1524" layer="51"/>
 <wire x1="-0.3048" y1="2.4892" x2="-1.9812" y2="2.4892" width="0.1524" layer="51"/>
-<wire x1="-1.9812" y1="2.4892" x2="-1.9812" y2="-2.4892" width="0.1524" layer="51"/>
+<wire x1="-1.9812" y1="2.4892" x2="-1.9812" y2="-2.4892" width="0.1524" layer="21"/>
 <wire x1="0.3048" y1="2.4892" x2="-0.3048" y2="2.4892" width="0.1524" layer="51" curve="-180"/>
 <wire x1="-2.1336" y1="-2.6162" x2="2.1336" y2="-2.6162" width="0.1524" layer="21"/>
 <wire x1="2.1336" y1="2.6162" x2="-2.1336" y2="2.6162" width="0.1524" layer="21"/>
@@ -206,8 +206,7 @@
 <smd name="6" x="2.6543" y="-0.635" dx="1.6002" dy="0.5334" layer="1"/>
 <smd name="7" x="2.6543" y="0.635" dx="1.6002" dy="0.5334" layer="1"/>
 <smd name="8" x="2.6543" y="1.905" dx="1.6002" dy="0.5334" layer="1"/>
-<text x="-2.1844" y="1.143" size="1.27" layer="51" ratio="6" rot="SR0">*</text>
-<text x="-3.4798" y="2.3114" size="1.27" layer="21" ratio="6" rot="SR0">*</text>
+<text x="-1.7594" y="0.838" size="1.27" layer="21" ratio="6" rot="SR0">*</text>
 </package>
 </packages>
 <symbols>
@@ -230,6 +229,7 @@
 </symbols>
 <devicesets>
 <deviceset name="MIC4604YM" prefix="U">
+<description>IC DRIVER MOSFET 85V 8-SOIC</description>
 <gates>
 <gate name="A" symbol="MIC4604YM" x="0" y="0"/>
 </gates>
@@ -247,8 +247,10 @@
 </connects>
 <technologies>
 <technology name="">
-<attribute name="MANUFACTURER_PART_NUMBER" value="mic4604ym" constant="no"/>
-<attribute name="VENDOR" value="Microchip" constant="no"/>
+<attribute name="DIGIKEY_PART_NUMBER" value="576-4395-1-ND" constant="no"/>
+<attribute name="MANUFACTURER" value="Microchip" constant="no"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="MIC4604YM-T5" constant="no"/>
+<attribute name="PRICE" value="$1.25" constant="no"/>
 </technology>
 </technologies>
 </device>

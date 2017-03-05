@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="8.0.1">
+<eagle version="8.0.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -18272,7 +18272,12 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="MANUFACTURER_PART_NUMBER" value="0891010.NXS"/>
 <attribute name="PRICE" value="$0.37"/>
 </part>
-<part name="BIG_SWITCH" library="bigswitch" deviceset="BIGSWITCH" device=""/>
+<part name="BIG_SWITCH" library="bigswitch" deviceset="BIGSWITCH" device="">
+<attribute name="DIGIKEY_PART_NUMBER" value="CW106-ND"/>
+<attribute name="MANUFACTURER" value="CW Industries"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="GRB238B801BR1"/>
+<attribute name="PRICE" value="$2.86"/>
+</part>
 <part name="R1" library="SparkFun-Resistors" deviceset="0.3OHM" device="-0805-1/8W-1%" value="2.8K">
 <attribute name="DIGIKEY_PART_NUMBER" value="311-2.80KCRCT-ND"/>
 <attribute name="MANUFACTURER" value="Yageo"/>
@@ -19479,6 +19484,11 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <junction x="327.66" y="167.64"/>
 <label x="330.2" y="167.64" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="SV3" gate="G$1" pin="4"/>
+<wire x1="243.84" y1="226.06" x2="264.16" y2="226.06" width="0.1524" layer="91"/>
+<label x="261.62" y="226.06" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="5V" class="0">
 <segment>
@@ -19929,6 +19939,11 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="330.2" y1="226.06" x2="340.36" y2="226.06" width="0.1524" layer="91"/>
 <label x="332.74" y="226.06" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="SV7" gate="G$1" pin="1"/>
+<wire x1="243.84" y1="154.94" x2="264.16" y2="154.94" width="0.1524" layer="91"/>
+<label x="256.54" y="154.94" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="GND_TOP2" class="0">
 <segment>
@@ -19936,12 +19951,22 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="330.2" y1="223.52" x2="340.36" y2="223.52" width="0.1524" layer="91"/>
 <label x="332.74" y="223.52" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="SV7" gate="G$1" pin="4"/>
+<wire x1="243.84" y1="162.56" x2="264.16" y2="162.56" width="0.1524" layer="91"/>
+<label x="256.54" y="162.56" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="7_4V" class="0">
 <segment>
 <pinref part="SV1" gate="G$1" pin="7"/>
 <wire x1="55.88" y1="149.86" x2="81.28" y2="149.86" width="0.1524" layer="91"/>
 <label x="76.2" y="149.86" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="SV3" gate="G$1" pin="1"/>
+<wire x1="243.84" y1="218.44" x2="264.16" y2="218.44" width="0.1524" layer="91"/>
+<label x="261.62" y="218.44" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="TX" class="0">
@@ -20072,7 +20097,12 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="MANUFACTURER_PART_NUMBER" x="38.1" y="218.44" size="1.778" layer="96" rot="MR180" display="off"/>
 <attribute name="PRICE" x="38.1" y="218.44" size="1.778" layer="96" rot="MR180" display="off"/>
 </instance>
-<instance part="BIG_SWITCH" gate="G$1" x="68.58" y="226.06"/>
+<instance part="BIG_SWITCH" gate="G$1" x="68.58" y="226.06">
+<attribute name="DIGIKEY_PART_NUMBER" x="68.58" y="226.06" size="1.778" layer="96" display="off"/>
+<attribute name="MANUFACTURER" x="68.58" y="226.06" size="1.778" layer="96" display="off"/>
+<attribute name="MANUFACTURER_PART_NUMBER" x="68.58" y="226.06" size="1.778" layer="96" display="off"/>
+<attribute name="PRICE" x="68.58" y="226.06" size="1.778" layer="96" display="off"/>
+</instance>
 <instance part="VOLT_REG" gate="G$1" x="170.18" y="218.44">
 <attribute name="DIGIKEY_PART_NUMBER" x="170.18" y="218.44" size="1.778" layer="96" display="off"/>
 <attribute name="MANUFACTURER" x="170.18" y="218.44" size="1.778" layer="96" display="off"/>

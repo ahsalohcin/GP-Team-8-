@@ -18286,13 +18286,28 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="PRICE" value="$0.10"/>
 </part>
 <part name="SUPPLY2" library="supply2" deviceset="GND" device=""/>
-<part name="R3" library="SparkFun-Resistors" deviceset="0.3OHM" device="-0805-1/8W-1%" value="0.3"/>
-<part name="R4" library="SparkFun-Resistors" deviceset="0.3OHM" device="-0805-1/8W-1%" value="0.3"/>
+<part name="R3" library="SparkFun-Resistors" deviceset="0.3OHM" device="-0805-1/8W-1%" value="2.32K">
+<attribute name="DIGIKEY_PART_NUMBER" value="311-2.32KCRCT-ND"/>
+<attribute name="MANUFACTURER" value="Yageo"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="RC0805FR-072K32L"/>
+<attribute name="PRICE" value="$0.10"/>
+</part>
+<part name="R4" library="SparkFun-Resistors" deviceset="0.3OHM" device="-0805-1/8W-1%" value="1.15K">
+<attribute name="DIGIKEY_PART_NUMBER" value="311-1.15KCRCT-ND"/>
+<attribute name="MANUFACTURER" value="Yageo"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="RC0805FR-071K15L"/>
+<attribute name="PRICE" value="$0.10"/>
+</part>
 <part name="U$2" library="heatsink" deviceset="HEATSINK" device=""/>
 <part name="U$4" library="heatsink" deviceset="HEATSINK" device=""/>
 <part name="U$5" library="heatsink" deviceset="HEATSINK" device=""/>
 <part name="U$6" library="heatsink" deviceset="HEATSINK" device=""/>
-<part name="VOLT_REG" library="v-reg-3" deviceset="LM1086" device="TO220V"/>
+<part name="VOLT_REG" library="v-reg-3" deviceset="LM1086" device="TO220V">
+<attribute name="DIGIKEY_PART_NUMBER" value="LM1086IT-5.0/NOPB-ND"/>
+<attribute name="MANUFACTURER" value="Texas Instruments"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="LM1086IT-5.0/NOPB"/>
+<attribute name="PRICE" value="$1.67"/>
+</part>
 <part name="CAMERA" library="con-lsta" deviceset="FE05-1" device="">
 <attribute name="DIGIKEY_PART_NUMBER" value="28317-ND"/>
 <attribute name="MANUFACTURER" value="Parallax"/>
@@ -18669,8 +18684,18 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="PRICE" x="375.92" y="129.54" size="1.778" layer="96" rot="R90" display="off"/>
 </instance>
 <instance part="SUPPLY2" gate="GND" x="375.92" y="119.38"/>
-<instance part="R3" gate="G$1" x="355.6" y="170.18" rot="R90"/>
-<instance part="R4" gate="G$1" x="355.6" y="154.94" rot="R90"/>
+<instance part="R3" gate="G$1" x="355.6" y="170.18" rot="R90">
+<attribute name="DIGIKEY_PART_NUMBER" x="355.6" y="170.18" size="1.778" layer="96" rot="R90" display="off"/>
+<attribute name="MANUFACTURER" x="355.6" y="170.18" size="1.778" layer="96" rot="R90" display="off"/>
+<attribute name="MANUFACTURER_PART_NUMBER" x="355.6" y="170.18" size="1.778" layer="96" rot="R90" display="off"/>
+<attribute name="PRICE" x="355.6" y="170.18" size="1.778" layer="96" rot="R90" display="off"/>
+</instance>
+<instance part="R4" gate="G$1" x="355.6" y="154.94" rot="R90">
+<attribute name="DIGIKEY_PART_NUMBER" x="355.6" y="154.94" size="1.778" layer="96" rot="R90" display="off"/>
+<attribute name="MANUFACTURER" x="355.6" y="154.94" size="1.778" layer="96" rot="R90" display="off"/>
+<attribute name="MANUFACTURER_PART_NUMBER" x="355.6" y="154.94" size="1.778" layer="96" rot="R90" display="off"/>
+<attribute name="PRICE" x="355.6" y="154.94" size="1.778" layer="96" rot="R90" display="off"/>
+</instance>
 <instance part="R9" gate="G$1" x="337.82" y="127" rot="R90"/>
 <instance part="R10" gate="G$1" x="345.44" y="127" rot="R90"/>
 <instance part="R11" gate="G$1" x="353.06" y="127" rot="R90"/>
@@ -20048,7 +20073,12 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="PRICE" x="38.1" y="218.44" size="1.778" layer="96" rot="MR180" display="off"/>
 </instance>
 <instance part="BIG_SWITCH" gate="G$1" x="68.58" y="226.06"/>
-<instance part="VOLT_REG" gate="G$1" x="170.18" y="218.44"/>
+<instance part="VOLT_REG" gate="G$1" x="170.18" y="218.44">
+<attribute name="DIGIKEY_PART_NUMBER" x="170.18" y="218.44" size="1.778" layer="96" display="off"/>
+<attribute name="MANUFACTURER" x="170.18" y="218.44" size="1.778" layer="96" display="off"/>
+<attribute name="MANUFACTURER_PART_NUMBER" x="170.18" y="218.44" size="1.778" layer="96" display="off"/>
+<attribute name="PRICE" x="170.18" y="218.44" size="1.778" layer="96" display="off"/>
+</instance>
 <instance part="LED_DRIVER2" gate="A" x="264.16" y="180.34" rot="MR270"/>
 <instance part="U$7" gate="G$1" x="264.16" y="76.2"/>
 <instance part="R5" gate="G$1" x="266.7" y="99.06" rot="R90"/>
