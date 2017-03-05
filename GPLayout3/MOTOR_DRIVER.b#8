@@ -4344,8 +4344,10 @@ Please make sure your boards conform to these design rules.</description>
 <attribute name="PRICE" value="$1.38" x="57.078" y="21.482" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
 <element name="Y1" library="SparkFun-Clocks" package="HC49US" value="16MHz" x="68.11" y="19.9" rot="MR90">
-<attribute name="SF_ID" value="COM-00536" x="68.11" y="19.9" size="1.778" layer="28" rot="MR90" display="off"/>
-<attribute name="PROD_ID" value="XTAL-08181" x="68.11" y="19.9" size="1.778" layer="28" rot="MR90" display="off"/>
+<attribute name="DIGIKEY_PART_NUMBER" value="887-2425-1-ND" x="68.11" y="19.9" size="1.778" layer="28" rot="MR90" display="off"/>
+<attribute name="MANUFACTURER" value="TXC CORPORATION" x="68.11" y="19.9" size="1.778" layer="28" rot="MR90" display="off"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="9C-16.000MBBK-T" x="68.11" y="19.9" size="1.778" layer="28" rot="MR90" display="off"/>
+<attribute name="PRICE" value="$0.36" x="68.11" y="19.9" size="1.778" layer="28" rot="MR90" display="off"/>
 </element>
 <element name="SV1" library="con-lsta" package="FE10" value="" x="26" y="43"/>
 <element name="SV2" library="con-lsta" package="FE10" value="" x="26" y="2"/>

@@ -2,26 +2,24 @@ EAGLE AutoRouter Statistics:
 
 Job           : C:/Users/Nathan/Documents/GitHub/GP-Team-8-/GPLayout3/MOTOR_DRIVER.brd
 
-Start at      : 23:07:18 (3/3/2017)
-End at        : 23:09:15 (3/3/2017)
-Elapsed time  : 00:01:52
+Start at      : 12:04:51 (3/5/2017)
+End at        : 12:05:10 (3/5/2017)
+Elapsed time  : 00:00:03
 
-Signals       :   102   RoutingGrid: 19.685 mil  Layers: 1
-Connections   :   199   predefined:  38 ( 22 Vias )
+Signals       :   102   RoutingGrid: 19.685 mil  Layers: 2
+Connections   :   229   predefined:  70 ( 22 Vias )
 
-Router memory :   146812
+Router memory :   293624
 
-Job has been interrupted!
+Passname          :    Busses     Route Optimize1 Optimize2 Optimize3 Optimize4
 
-Passname          :    Busses     Route
+Time per pass     :  00:00:00  00:00:01  00:00:00  00:00:01  00:00:00  00:00:01
+Number of Ripups  :         0         0         0         0         0         0
+max. Level        :         0         0         0         0         0         0
+max. Total        :         0         0         0         0         0         0
 
-Time per pass     :  00:00:00  00:01:52
-Number of Ripups  :         0      2940
-max. Level        :         0         9
-max. Total        :         0        53
-
-Routed            :         8       129
-Vias              :         0         0
-Resolution        :    23.1 %    83.9 %
+Routed            :        36       159       159       159       159       159
+Vias              :         0       150        65        39        37        37
+Resolution        :    46.3 %   100.0 %   100.0 %   100.0 %   100.0 %   100.0 %
 
 Final             : 

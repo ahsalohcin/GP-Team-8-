@@ -4338,7 +4338,10 @@ Please make sure your boards conform to these design rules.</description>
 <attribute name="PRICE" value="$1.25" x="35.88" y="73.33" size="1.778" layer="28" rot="MR270" display="off"/>
 </element>
 <element name="U7" library="SparkFun-IC-Microcontroller" package="TQFP32-08" value="ATMEGA328P_TQFP" x="57.078" y="21.482" rot="R180">
-<attribute name="PROD_ID" value="IC-09069" x="57.078" y="21.482" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="DIGIKEY_PART_NUMBER" value="ATMEGA328PB-AU-ND" x="57.078" y="21.482" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="MANUFACTURER" value="Microchip Technology" x="57.078" y="21.482" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="ATMEGA328PB-AU" x="57.078" y="21.482" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="PRICE" value="$1.38" x="57.078" y="21.482" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
 <element name="Y1" library="SparkFun-Clocks" package="HC49US" value="16MHz" x="68.11" y="19.9" rot="MR90">
 <attribute name="SF_ID" value="COM-00536" x="68.11" y="19.9" size="1.778" layer="28" rot="MR90" display="off"/>

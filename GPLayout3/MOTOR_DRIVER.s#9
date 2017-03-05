@@ -12250,10 +12250,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <connect gate="U$1" pin="VCC@6" pad="6"/>
 </connects>
 <technologies>
-<technology name="">
-<attribute name="PROD_ID" value="IC-09069" constant="no"/>
-<attribute name="VALUE" value="ATMEGA328P_TQFP" constant="no"/>
-</technology>
+<technology name=""/>
 </technologies>
 </device>
 </devices>
@@ -18231,7 +18228,12 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="MANUFACTURER_PART_NUMBER" value="DEV-14055"/>
 <attribute name="PRICE" value="$26.25"/>
 </part>
-<part name="U7" library="SparkFun-IC-Microcontroller" deviceset="ATMEGA328P_TQFP" device="" value="ATMEGA328P_TQFP"/>
+<part name="U7" library="SparkFun-IC-Microcontroller" deviceset="ATMEGA328P_TQFP" device="" value="ATMEGA328P_TQFP">
+<attribute name="DIGIKEY_PART_NUMBER" value="ATMEGA328PB-AU-ND"/>
+<attribute name="MANUFACTURER" value="Microchip Technology"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="ATMEGA328PB-AU"/>
+<attribute name="PRICE" value="$1.38"/>
+</part>
 <part name="SUPPLY3" library="supply2" deviceset="GND" device=""/>
 <part name="Y1" library="SparkFun-Clocks" deviceset="CRYSTAL-16MHZ" device="PTH-HC49US" value="16MHz"/>
 <part name="C5" library="resistor" deviceset="C-US" device="025-024X044" value="18 pF"/>
@@ -18624,7 +18626,12 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="MANUFACTURER_PART_NUMBER" x="259.08" y="154.94" size="1.778" layer="96" display="off"/>
 <attribute name="PRICE" x="259.08" y="154.94" size="1.778" layer="96" display="off"/>
 </instance>
-<instance part="U7" gate="U$1" x="111.76" y="142.24"/>
+<instance part="U7" gate="U$1" x="111.76" y="142.24">
+<attribute name="DIGIKEY_PART_NUMBER" x="111.76" y="142.24" size="1.778" layer="96" display="off"/>
+<attribute name="MANUFACTURER" x="111.76" y="142.24" size="1.778" layer="96" display="off"/>
+<attribute name="MANUFACTURER_PART_NUMBER" x="111.76" y="142.24" size="1.778" layer="96" display="off"/>
+<attribute name="PRICE" x="111.76" y="142.24" size="1.778" layer="96" display="off"/>
+</instance>
 <instance part="SUPPLY3" gate="GND" x="210.82" y="157.48"/>
 <instance part="Y1" gate="G$1" x="66.04" y="142.24"/>
 <instance part="C5" gate="G$1" x="73.66" y="137.16"/>
