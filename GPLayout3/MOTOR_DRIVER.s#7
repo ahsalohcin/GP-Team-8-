@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="8.0.1">
+<eagle version="8.0.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -19484,6 +19484,11 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <junction x="327.66" y="167.64"/>
 <label x="330.2" y="167.64" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="SV3" gate="G$1" pin="4"/>
+<wire x1="243.84" y1="226.06" x2="264.16" y2="226.06" width="0.1524" layer="91"/>
+<label x="261.62" y="226.06" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="5V" class="0">
 <segment>
@@ -19948,6 +19953,11 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="55.88" y1="149.86" x2="81.28" y2="149.86" width="0.1524" layer="91"/>
 <label x="76.2" y="149.86" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="SV3" gate="G$1" pin="1"/>
+<wire x1="243.84" y1="218.44" x2="264.16" y2="218.44" width="0.1524" layer="91"/>
+<label x="261.62" y="218.44" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="TX" class="0">
 <segment>
@@ -20052,6 +20062,20 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pinref part="SV2" gate="G$1" pin="1"/>
 <wire x1="104.14" y1="134.62" x2="127" y2="134.62" width="0.1524" layer="91"/>
 <label x="124.46" y="134.62" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="7_V_LED" class="0">
+<segment>
+<pinref part="SV7" gate="G$1" pin="1"/>
+<wire x1="243.84" y1="154.94" x2="264.16" y2="154.94" width="0.1524" layer="91"/>
+<label x="256.54" y="154.94" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="GND_LED" class="0">
+<segment>
+<pinref part="SV7" gate="G$1" pin="4"/>
+<wire x1="243.84" y1="162.56" x2="264.16" y2="162.56" width="0.1524" layer="91"/>
+<label x="256.54" y="162.56" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
