@@ -19939,12 +19939,22 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="330.2" y1="226.06" x2="340.36" y2="226.06" width="0.1524" layer="91"/>
 <label x="332.74" y="226.06" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="SV7" gate="G$1" pin="1"/>
+<wire x1="243.84" y1="154.94" x2="264.16" y2="154.94" width="0.1524" layer="91"/>
+<label x="256.54" y="154.94" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="GND_TOP2" class="0">
 <segment>
 <pinref part="SV9" gate="G$1" pin="1"/>
 <wire x1="330.2" y1="223.52" x2="340.36" y2="223.52" width="0.1524" layer="91"/>
 <label x="332.74" y="223.52" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="SV7" gate="G$1" pin="4"/>
+<wire x1="243.84" y1="162.56" x2="264.16" y2="162.56" width="0.1524" layer="91"/>
+<label x="256.54" y="162.56" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="7_4V" class="0">
@@ -20062,20 +20072,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pinref part="SV2" gate="G$1" pin="1"/>
 <wire x1="104.14" y1="134.62" x2="127" y2="134.62" width="0.1524" layer="91"/>
 <label x="124.46" y="134.62" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="7_V_LED" class="0">
-<segment>
-<pinref part="SV7" gate="G$1" pin="1"/>
-<wire x1="243.84" y1="154.94" x2="264.16" y2="154.94" width="0.1524" layer="91"/>
-<label x="256.54" y="154.94" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="GND_LED" class="0">
-<segment>
-<pinref part="SV7" gate="G$1" pin="4"/>
-<wire x1="243.84" y1="162.56" x2="264.16" y2="162.56" width="0.1524" layer="91"/>
-<label x="256.54" y="162.56" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
