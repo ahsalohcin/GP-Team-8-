@@ -22600,6 +22600,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <segment>
 <pinref part="SV2" gate="G$1" pin="3"/>
 <wire x1="104.14" y1="139.7" x2="127" y2="139.7" width="0.1524" layer="91"/>
+<label x="124.46" y="139.7" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>

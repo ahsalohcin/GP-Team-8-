@@ -20660,8 +20660,8 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <variantdefs>
 </variantdefs>
 <classes>
-<class number="0" name="default" width="0.15" drill="0.6">
-<clearance class="0" value="0.15"/>
+<class number="0" name="default" width="0.2" drill="0.6">
+<clearance class="0" value="0.2"/>
 </class>
 </classes>
 <parts>
