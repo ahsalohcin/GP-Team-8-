@@ -22146,7 +22146,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="104.14" y1="139.7" x2="127" y2="139.7" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="MOTOR_HIGH_TOP" class="0">
+<net name="I_SENSE_LOW_TOP" class="0">
 <segment>
 <pinref part="SV6" gate="G$1" pin="5"/>
 <wire x1="104.14" y1="210.82" x2="129.54" y2="210.82" width="0.1524" layer="91"/>

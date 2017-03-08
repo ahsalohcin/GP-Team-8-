@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="8.0.1">
+<eagle version="8.0.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -22563,7 +22563,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <label x="66.04" y="203.2" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="7_4_TOP" class="0">
+<net name="7_4V_TOP" class="0">
 <segment>
 <pinref part="SV5" gate="G$1" pin="6"/>
 <wire x1="55.88" y1="213.36" x2="76.2" y2="213.36" width="0.1524" layer="91"/>

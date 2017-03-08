@@ -5703,10 +5703,11 @@ design rules under a new name.</description>
 <contactref element="I_SENSE_AMP" pad="4"/>
 <wire x1="12.41464375" y1="67.38185" x2="10.50685" y2="67.38185" width="2" layer="16"/>
 <wire x1="3.51" y1="64.86" x2="3.65" y2="65" width="2" layer="16"/>
-<wire x1="10.50685" y1="67.38185" x2="8.125" y2="65" width="2" layer="16"/>
 <wire x1="1.444" y1="67.55" x2="1.444" y2="66.926" width="0.3048" layer="16"/>
 <wire x1="1.444" y1="66.926" x2="3.51" y2="64.86" width="0.3048" layer="16"/>
-<wire x1="3.65" y1="65" x2="8.125" y2="65" width="0" layer="19" extent="16-16"/>
+<wire x1="7.5" y1="64.375" x2="3.995" y2="64.375" width="2" layer="16"/>
+<wire x1="3.995" y1="64.375" x2="3.51" y2="64.86" width="2" layer="16"/>
+<wire x1="10.50685" y1="67.38185" x2="7.5" y2="64.375" width="2" layer="16"/>
 </signal>
 <signal name="I_SENSE_HI">
 <contactref element="SV1" pad="2"/>
