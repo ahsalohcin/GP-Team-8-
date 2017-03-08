@@ -20660,8 +20660,8 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <variantdefs>
 </variantdefs>
 <classes>
-<class number="0" name="default" width="0" drill="0">
-<clearance class="0" value="0.205"/>
+<class number="0" name="default" width="0.2" drill="0.6">
+<clearance class="0" value="0.2"/>
 </class>
 </classes>
 <parts>
@@ -22134,18 +22134,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <label x="121.92" y="213.36" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="LI2" class="0">
-<segment>
-<pinref part="SV2" gate="G$1" pin="4"/>
-<wire x1="104.14" y1="142.24" x2="127" y2="142.24" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="HI2" class="0">
-<segment>
-<pinref part="SV2" gate="G$1" pin="3"/>
-<wire x1="104.14" y1="139.7" x2="127" y2="139.7" width="0.1524" layer="91"/>
-</segment>
-</net>
 <net name="I_SENSE_LOW_TOP" class="0">
 <segment>
 <pinref part="SV6" gate="G$1" pin="5"/>
@@ -22595,27 +22583,18 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <label x="66.04" y="223.52" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="I_SENSE_HI" class="0">
-<segment>
-<pinref part="SV1" gate="G$1" pin="2"/>
-<wire x1="55.88" y1="137.16" x2="81.28" y2="137.16" width="0.1524" layer="91"/>
-<label x="76.2" y="137.16" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="I_SENSE_LOW" class="0">
-<segment>
-<pinref part="SV1" gate="G$1" pin="1"/>
-<wire x1="55.88" y1="134.62" x2="71.12" y2="134.62" width="0.1524" layer="91"/>
-<wire x1="73.66" y1="134.62" x2="81.28" y2="134.62" width="0.1524" layer="91"/>
-<wire x1="73.66" y1="134.62" x2="71.12" y2="134.62" width="0.1524" layer="91"/>
-<label x="76.2" y="134.62" size="1.778" layer="95"/>
-</segment>
-</net>
 <net name="I_SENSE_TOP" class="0">
 <segment>
 <pinref part="SV6" gate="G$1" pin="3"/>
 <wire x1="104.14" y1="205.74" x2="129.54" y2="205.74" width="0.1524" layer="91"/>
 <label x="121.92" y="205.74" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="I_SENSE" class="0">
+<segment>
+<pinref part="SV2" gate="G$1" pin="3"/>
+<wire x1="104.14" y1="139.7" x2="127" y2="139.7" width="0.1524" layer="91"/>
+<label x="124.46" y="139.7" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
