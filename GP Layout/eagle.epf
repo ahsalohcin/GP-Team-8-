@@ -6,6 +6,29 @@ Desktop="Desktop"
 
 [Globals]
 AutoSaveProject=1
+UsedLibrary="C:/Users/Alexander/Desktop/Desktop/EE/GP Team 8/GP-Team-8-/GPLayout3/CSD18502KCS.lbr"
+UsedLibrary="C:/Users/Alexander/Desktop/Desktop/EE/GP Team 8/GP-Team-8-/GPLayout3/Cree_XP.lbr"
+UsedLibrary="C:/Users/Alexander/Desktop/Desktop/EE/GP Team 8/GP-Team-8-/GPLayout3/MIC4604.lbr"
+UsedLibrary="C:/Users/Alexander/Desktop/Desktop/EE/GP Team 8/GP-Team-8-/GPLayout3/SparkFun-Clocks.lbr"
+UsedLibrary="C:/Users/Alexander/Desktop/Desktop/EE/GP Team 8/GP-Team-8-/GPLayout3/SparkFun-IC-Microcontroller.lbr"
+UsedLibrary="C:/Users/Alexander/Desktop/Desktop/EE/GP Team 8/GP-Team-8-/GPLayout3/SparkFun-LED.lbr"
+UsedLibrary="C:/Users/Alexander/Desktop/Desktop/EE/GP Team 8/GP-Team-8-/GPLayout3/SparkFun-Resistors.lbr"
+UsedLibrary="C:/Users/Alexander/Desktop/Desktop/EE/GP Team 8/GP-Team-8-/GPLayout3/Teensy356.lbr"
+UsedLibrary="C:/Users/Alexander/Desktop/Desktop/EE/GP Team 8/GP-Team-8-/GPLayout3/bigswitch.lbr"
+UsedLibrary="C:/Users/Alexander/Desktop/Desktop/EE/GP Team 8/GP-Team-8-/GPLayout3/con-lsta.lbr"
+UsedLibrary="C:/Users/Alexander/Desktop/Desktop/EE/GP Team 8/GP-Team-8-/GPLayout3/con-lstb.lbr"
+UsedLibrary="C:/Users/Alexander/Desktop/Desktop/EE/GP Team 8/GP-Team-8-/GPLayout3/diode.lbr"
+UsedLibrary="C:/Users/Alexander/Desktop/Desktop/EE/GP Team 8/GP-Team-8-/GPLayout3/frames.lbr"
+UsedLibrary="C:/Users/Alexander/Desktop/Desktop/EE/GP Team 8/GP-Team-8-/GPLayout3/heatsink.lbr"
+UsedLibrary="C:/Users/Alexander/Desktop/Desktop/EE/GP Team 8/GP-Team-8-/GPLayout3/ledpot.lbr"
+UsedLibrary="C:/Users/Alexander/Desktop/Desktop/EE/GP Team 8/GP-Team-8-/GPLayout3/minifuse.lbr"
+UsedLibrary="C:/Users/Alexander/Desktop/Desktop/EE/GP Team 8/GP-Team-8-/GPLayout3/rcl.lbr"
+UsedLibrary="C:/Users/Alexander/Desktop/Desktop/EE/GP Team 8/GP-Team-8-/GPLayout3/resistor.lbr"
+UsedLibrary="C:/Users/Alexander/Desktop/Desktop/EE/GP Team 8/GP-Team-8-/GPLayout3/smd-special.lbr"
+UsedLibrary="C:/Users/Alexander/Desktop/Desktop/EE/GP Team 8/GP-Team-8-/GPLayout3/solpad.lbr"
+UsedLibrary="C:/Users/Alexander/Desktop/Desktop/EE/GP Team 8/GP-Team-8-/GPLayout3/supply2.lbr"
+UsedLibrary="C:/Users/Alexander/Desktop/Desktop/EE/GP Team 8/GP-Team-8-/GPLayout3/transistor.lbr"
+UsedLibrary="C:/Users/Alexander/Desktop/Desktop/EE/GP Team 8/GP-Team-8-/GPLayout3/v-reg-3.lbr"
 UsedLibrary="C:/EAGLE 8.0/lbr/19inch.lbr"
 UsedLibrary="C:/EAGLE 8.0/lbr/40xx.lbr"
 UsedLibrary="C:/EAGLE 8.0/lbr/41xx.lbr"
@@ -349,10 +372,10 @@ UsedLibrary="C:/EAGLE 8.0/lbr/zilog.lbr"
 
 [Win_1]
 Type="Control Panel"
-Loc="0 0 1199 599"
-State=0
+Loc="319 128 1518 727"
+State=2
 Number=0
 
 [Desktop]
-Screen="1920 1080"
+Screen="3840 1080"
 Window="Win_1"
