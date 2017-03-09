@@ -163,19 +163,20 @@
 <wire x1="2.794" y1="-2.3368" x2="2.794" y2="2.3368" width="0.1524" layer="51"/>
 <wire x1="2.794" y1="2.3368" x2="-7.874" y2="2.3368" width="0.1524" layer="51"/>
 <wire x1="-7.874" y1="2.3368" x2="-7.874" y2="-2.3368" width="0.1524" layer="51"/>
-<wire x1="-9.652" y1="0" x2="-9.906" y2="0" width="0" layer="51" curve="-180"/>
-<wire x1="-9.906" y1="0" x2="-9.652" y2="0" width="0" layer="51" curve="-180"/>
+<wire x1="-8.382" y1="1.27" x2="-8.636" y2="1.27" width="0" layer="51" curve="-180"/>
+<wire x1="-8.636" y1="1.27" x2="-8.382" y2="1.27" width="0" layer="51" curve="-180"/>
 <wire x1="-7.874" y1="-2.3368" x2="2.794" y2="-2.3368" width="0.1524" layer="21"/>
 <wire x1="2.794" y1="-2.3368" x2="2.794" y2="2.3368" width="0.1524" layer="21"/>
 <wire x1="2.794" y1="2.3368" x2="-7.874" y2="2.3368" width="0.1524" layer="21"/>
 <wire x1="-7.874" y1="2.3368" x2="-7.874" y2="-2.3368" width="0.1524" layer="21"/>
-<wire x1="-9.652" y1="0" x2="-9.906" y2="0" width="0.1524" layer="21" curve="-180"/>
-<wire x1="-9.906" y1="0" x2="-9.652" y2="0" width="0.1524" layer="21" curve="-180"/>
+<wire x1="-8.382" y1="1.27" x2="-8.636" y2="1.27" width="0.1524" layer="21" curve="-180"/>
+<wire x1="-8.636" y1="1.27" x2="-8.382" y2="1.27" width="0.1524" layer="21" curve="-180"/>
 <wire x1="-7.62" y1="1.27" x2="2.54" y2="1.27" width="0.127" layer="21"/>
 <pad name="1" x="-5.08" y="0" drill="1.143" diameter="1.651"/>
 <pad name="2" x="-2.54" y="0" drill="1.143" diameter="1.651"/>
 <pad name="3" x="0" y="0" drill="1.143" diameter="1.651"/>
 <text x="-7.62" y="2.54" size="1.27" layer="25">&gt;NAME</text>
+<text x="-6.985" y="-2.032" size="0.9144" layer="21" font="vector" ratio="14">CSD18502KCS</text>
 </package>
 </packages>
 <symbols>
@@ -12049,7 +12050,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <packages>
 <package name="TQFP32-08">
 <description>&lt;B&gt;Thin Plasic Quad Flat Package&lt;/B&gt; Grid 0.8 mm</description>
-<circle x="-3.6576" y="3.683" radius="0.1524" width="0.2032" layer="21"/>
+<circle x="-3.0226" y="3.048" radius="0.1524" width="0.2032" layer="21"/>
 <wire x1="3.505" y1="3.505" x2="3.505" y2="-3.505" width="0.2032" layer="21"/>
 <wire x1="3.505" y1="-3.505" x2="-3.505" y2="-3.505" width="0.2032" layer="21"/>
 <wire x1="-3.505" y1="-3.505" x2="-3.505" y2="3.15" width="0.2032" layer="21"/>
@@ -12393,10 +12394,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <packages>
 <package name="SMS-006">
 <description>&lt;b&gt;DIP SWITCH&lt;/b&gt;</description>
-<wire x1="-8.255" y1="-3.2004" x2="8.255" y2="-3.2004" width="0.1524" layer="21"/>
-<wire x1="8.255" y1="3.2004" x2="8.255" y2="-3.2004" width="0.1524" layer="21"/>
-<wire x1="8.255" y1="3.2004" x2="-8.255" y2="3.2004" width="0.1524" layer="21"/>
-<wire x1="-8.255" y1="-3.2004" x2="-8.255" y2="3.2004" width="0.1524" layer="21"/>
+<wire x1="-8.255" y1="-3.2004" x2="8.255" y2="-3.2004" width="0.127" layer="21"/>
+<wire x1="8.255" y1="3.2004" x2="8.255" y2="-3.2004" width="0.127" layer="21"/>
+<wire x1="8.255" y1="3.2004" x2="-8.255" y2="3.2004" width="0.127" layer="21"/>
+<wire x1="-8.255" y1="-3.2004" x2="-8.255" y2="3.2004" width="0.127" layer="21"/>
 <wire x1="-7.112" y1="2.032" x2="-5.588" y2="2.032" width="0.1524" layer="21"/>
 <wire x1="-5.588" y1="-2.032" x2="-7.112" y2="-2.032" width="0.1524" layer="21"/>
 <wire x1="-5.588" y1="2.032" x2="-5.588" y2="-2.032" width="0.1524" layer="21"/>
@@ -13026,8 +13027,8 @@ W = angled&lt;p&gt;
 <pad name="1" x="-5.08" y="0" drill="0.8128" shape="long" rot="R90"/>
 <pad name="2" x="-2.54" y="0" drill="0.8128" shape="long" rot="R90"/>
 <text x="-6.35" y="1.651" size="1.27" layer="25" ratio="10">&gt;NAME</text>
-<text x="-7.493" y="-0.635" size="1.27" layer="21" ratio="10">1</text>
-<text x="-1.016" y="-0.635" size="1.27" layer="21" ratio="10">2</text>
+<text x="-7.493" y="-0.635" size="1.27" layer="51" ratio="10">1</text>
+<text x="-1.016" y="-0.635" size="1.27" layer="51" ratio="10">2</text>
 <text x="0" y="1.651" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
 </package>
 <package name="FE06">
@@ -13615,10 +13616,14 @@ W = angled&lt;p&gt;
 <library name="minifuse">
 <packages>
 <package name="FUSEHOLDER3588">
-<wire x1="-8" y1="3.35" x2="8" y2="3.35" width="0.127" layer="51"/>
-<wire x1="8" y1="3.35" x2="8" y2="-3.35" width="0.127" layer="51"/>
-<wire x1="8" y1="-3.35" x2="-8" y2="-3.35" width="0.127" layer="51"/>
-<wire x1="-8" y1="-3.35" x2="-8" y2="3.35" width="0.127" layer="51"/>
+<wire x1="-8" y1="3.35" x2="-5.971234375" y2="3.35" width="0.127" layer="21"/>
+<wire x1="-4.034746875" y1="3.3413375" x2="4.06751875" y2="3.35049375" width="0.127" layer="21"/>
+<wire x1="5.827734375" y1="3.35049375" x2="8" y2="3.35" width="0.127" layer="21"/>
+<wire x1="8" y1="3.35" x2="8" y2="-3.35" width="0.127" layer="21"/>
+<wire x1="8" y1="-3.35" x2="5.847396875" y2="-3.35" width="0.127" layer="21"/>
+<wire x1="4.047696875" y1="-3.354459375" x2="-3.858778125" y2="-3.336759375" width="0.127" layer="21"/>
+<wire x1="-6.024046875" y1="-3.35" x2="-8" y2="-3.35" width="0.127" layer="21"/>
+<wire x1="-8" y1="-3.35" x2="-8" y2="3.35" width="0.127" layer="21"/>
 <smd name="A" x="-4.96" y="3.03" dx="1.57" dy="2.82" layer="1" rot="R180"/>
 <smd name="B" x="4.96" y="3.03" dx="1.57" dy="2.82" layer="1" rot="R180"/>
 <smd name="C" x="-4.96" y="-3.03" dx="1.57" dy="2.82" layer="1"/>
@@ -20513,6 +20518,9 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <smd name="POSITIVE1" x="-1.85" y="0" dx="0.4" dy="0.5" layer="1"/>
 <smd name="THERMAL" x="0" y="0" dx="1.3" dy="3.3" layer="1"/>
 <text x="-2.54" y="2.54" size="1.27" layer="25">&gt;NAME</text>
+<wire x1="-2.667" y1="0.3048" x2="-2.667" y2="-0.3556" width="0.127" layer="21"/>
+<wire x1="-2.9464" y1="0" x2="-2.3495" y2="0" width="0.127" layer="21"/>
+<wire x1="2.3749" y1="-0.0127" x2="2.9718" y2="-0.0127" width="0.127" layer="21"/>
 </package>
 </packages>
 <symbols>

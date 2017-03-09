@@ -204,8 +204,10 @@
 </connects>
 <technologies>
 <technology name="">
-<attribute name="MANUFACTURER" value="TEXAS INSTRUMENTS" constant="no"/>
+<attribute name="DIGIKEY_PART_NUMBER" value="296-35013-ND" constant="no"/>
+<attribute name="MANUFACTURER" value="Texas Instruments" constant="no"/>
 <attribute name="MANUFACTURER_PART_NUMBER" value="CSD18533KCS" constant="no"/>
+<attribute name="PRICE" value="$1.53" constant="no"/>
 </technology>
 </technologies>
 </device>

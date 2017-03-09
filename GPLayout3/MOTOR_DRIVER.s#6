@@ -12776,9 +12776,9 @@ W = angled&lt;p&gt;
 <pad name="9" x="8.89" y="0" drill="0.8128" shape="long" rot="R90"/>
 <pad name="10" x="11.43" y="0" drill="0.8128" shape="long" rot="R90"/>
 <text x="-8.89" y="1.651" size="1.27" layer="25" ratio="10">&gt;NAME</text>
-<text x="-11.938" y="1.524" size="1.27" layer="21" ratio="10">1</text>
+<text x="-13.843" y="-0.381" size="1.27" layer="51" ratio="10">1</text>
 <text x="-12.7" y="-2.921" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
-<text x="10.287" y="1.524" size="1.27" layer="21" ratio="10">10</text>
+<text x="12.827" y="-0.381" size="1.27" layer="51" ratio="10">10</text>
 </package>
 <package name="FE05-1">
 <description>&lt;b&gt;FEMALE HEADER&lt;/b&gt;</description>
@@ -12886,8 +12886,8 @@ W = angled&lt;p&gt;
 <pad name="4" x="2.54" y="0" drill="0.8128" shape="long" rot="R90"/>
 <pad name="5" x="5.08" y="0" drill="0.8128" shape="long" rot="R90"/>
 <text x="-6.35" y="1.651" size="1.27" layer="25" ratio="10">&gt;NAME</text>
-<text x="-7.493" y="-0.635" size="1.27" layer="21" ratio="10">1</text>
-<text x="6.604" y="-0.635" size="1.27" layer="21" ratio="10">5</text>
+<text x="-7.493" y="-0.635" size="1.27" layer="51" ratio="10">1</text>
+<text x="6.604" y="-0.635" size="1.27" layer="51" ratio="10">5</text>
 <text x="0" y="1.651" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
 </package>
 <package name="FE04-1">
@@ -12977,8 +12977,8 @@ W = angled&lt;p&gt;
 <pad name="3" x="0" y="0" drill="0.8128" shape="long" rot="R90"/>
 <pad name="4" x="2.54" y="0" drill="0.8128" shape="long" rot="R90"/>
 <text x="-6.35" y="1.651" size="1.27" layer="25" ratio="10">&gt;NAME</text>
-<text x="-7.493" y="-0.635" size="1.27" layer="21" ratio="10">1</text>
-<text x="4.064" y="-0.635" size="1.27" layer="21" ratio="10">4</text>
+<text x="-7.493" y="-0.635" size="1.27" layer="51" ratio="10">1</text>
+<text x="4.064" y="-0.635" size="1.27" layer="51" ratio="10">4</text>
 <text x="0" y="1.651" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
 </package>
 <package name="FE02-1">
@@ -14268,7 +14268,7 @@ W = angled&lt;p&gt;
 <pad name="2" x="0" y="0" drill="1.016" shape="long" rot="R90"/>
 <pad name="3" x="2.54" y="0" drill="1.016" shape="long" rot="R90"/>
 <text x="-3.81" y="1.651" size="1.27" layer="25" ratio="10">&gt;NAME</text>
-<text x="-5.08" y="-0.635" size="1.27" layer="21" ratio="10">1</text>
+<text x="-5.08" y="-0.635" size="1.27" layer="51" ratio="10">1</text>
 <text x="-3.81" y="-2.921" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
 </package>
 </packages>
