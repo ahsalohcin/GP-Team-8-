@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.5" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="0.05" altunitdist="mm" altunit="mm"/>
+<grid distance="0.0999999999" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="0.05" altunitdist="mm" altunit="mm"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -5919,9 +5919,7 @@ design rules under a new name.</description>
 <wire x1="122.809" y1="1.135" x2="125.533" y2="3.859" width="0.254" layer="1"/>
 <wire x1="108.054" y1="1.135" x2="122.809" y2="1.135" width="0.254" layer="1"/>
 <wire x1="105.33" y1="3.859" x2="108.054" y2="1.135" width="0.254" layer="1"/>
-<wire x1="96.931" y1="3.859" x2="105.33" y2="3.859" width="0.254" layer="1"/>
-<wire x1="95.769" y1="2.951" x2="96.931" y2="3.859" width="0.254" layer="1"/>
-<wire x1="88.759" y1="2.951" x2="95.769" y2="2.951" width="0.254" layer="16"/>
+<wire x1="105.33" y1="3.859" x2="96.931" y2="3.859" width="0.254" layer="1"/>
 <wire x1="85.354" y1="6.356" x2="88.759" y2="2.951" width="0.254" layer="16"/>
 <wire x1="83.765" y1="7.945" x2="85.354" y2="6.356" width="0.254" layer="1"/>
 <wire x1="83.765" y1="13.166" x2="83.765" y2="7.945" width="0.254" layer="1"/>
@@ -5930,6 +5928,8 @@ design rules under a new name.</description>
 <wire x1="84.219" y1="13.62" x2="84.304" y2="13.698" width="0.254" layer="1"/>
 <via x="95.769" y="2.951" extent="1-16" drill="0.6"/>
 <via x="85.354" y="6.356" extent="1-16" drill="0.6"/>
+<wire x1="88.759" y1="2.951" x2="95.769" y2="2.951" width="0.254" layer="16"/>
+<wire x1="95.769" y1="2.951" x2="96.931" y2="3.859" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="SW1">
 <contactref element="S1" pad="1"/>
@@ -6937,11 +6937,8 @@ design rules under a new name.</description>
 <via x="157.045" y="5.33" extent="1-16" drill="0.254" diameter="0.05" shape="square"/>
 <via x="157.68" y="5.33" extent="1-16" drill="0.254" diameter="0.05" shape="square"/>
 <via x="157.045" y="5.965" extent="1-16" drill="0.254" diameter="0.05" shape="square"/>
-<via x="157.68" y="5.965" extent="1-16" drill="0.254" diameter="0.05" shape="square"/>
 <via x="156.41" y="5.965" extent="1-16" drill="0.254" diameter="0.05" shape="square"/>
 <via x="155.775" y="5.965" extent="1-16" drill="0.254" diameter="0.05" shape="square"/>
-<via x="157.68" y="5.965" extent="1-16" drill="0.254" diameter="0.05" shape="square"/>
-<via x="157.68" y="5.965" extent="1-16" drill="0.254" diameter="0.05" shape="square"/>
 <via x="158.315" y="5.965" extent="1-16" drill="0.254" diameter="0.05" shape="square"/>
 <via x="158.95" y="5.965" extent="1-16" drill="0.254" diameter="0.05" shape="square"/>
 </signal>

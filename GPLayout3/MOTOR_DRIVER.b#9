@@ -300,6 +300,13 @@
 <text x="122.9614" y="24.5872" size="0.9144" layer="21" font="vector" ratio="14">GND</text>
 <text x="122.9868" y="22.0218" size="0.9144" layer="21" font="vector" ratio="14">GND</text>
 <text x="122.9868" y="19.4818" size="0.9144" layer="21" font="vector" ratio="14">GND</text>
+<text x="137.0584" y="27.7876" size="0.9144" layer="21" font="vector" ratio="14">R6</text>
+<text x="134.1882" y="20.2184" size="0.9144" layer="21" font="vector" ratio="14">GND</text>
+<text x="137.1854" y="20.193" size="0.9144" layer="21" font="vector" ratio="14">7.4</text>
+<text x="137.1092" y="15.9258" size="0.9144" layer="21" font="vector" ratio="14">R8</text>
+<text x="146.2024" y="26.5176" size="0.9144" layer="21" font="vector" ratio="14">T1</text>
+<text x="146.1262" y="18.0086" size="0.9144" layer="21" font="vector" ratio="14">T2</text>
+<text x="146.812" y="12.065" size="0.9144" layer="21" font="vector" ratio="14">R7</text>
 </plain>
 <libraries>
 <library name="resistor">
@@ -2587,8 +2594,8 @@ W = angled&lt;p&gt;
 <pad name="1" x="-5.08" y="0" drill="0.8128" shape="long" rot="R90"/>
 <pad name="2" x="-2.54" y="0" drill="0.8128" shape="long" rot="R90"/>
 <text x="-6.35" y="1.651" size="1.27" layer="25" ratio="10">&gt;NAME</text>
-<text x="-7.493" y="-0.635" size="1.27" layer="21" ratio="10">1</text>
-<text x="-1.016" y="-0.635" size="1.27" layer="21" ratio="10">2</text>
+<text x="-7.493" y="-0.635" size="1.27" layer="51" ratio="10">1</text>
+<text x="-1.016" y="-0.635" size="1.27" layer="51" ratio="10">2</text>
 <text x="0" y="1.651" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
 </package>
 <package name="FE06">
