@@ -163,19 +163,20 @@
 <wire x1="2.794" y1="-2.3368" x2="2.794" y2="2.3368" width="0.1524" layer="51"/>
 <wire x1="2.794" y1="2.3368" x2="-7.874" y2="2.3368" width="0.1524" layer="51"/>
 <wire x1="-7.874" y1="2.3368" x2="-7.874" y2="-2.3368" width="0.1524" layer="51"/>
-<wire x1="-9.652" y1="0" x2="-9.906" y2="0" width="0" layer="51" curve="-180"/>
-<wire x1="-9.906" y1="0" x2="-9.652" y2="0" width="0" layer="51" curve="-180"/>
+<wire x1="-8.382" y1="1.27" x2="-8.636" y2="1.27" width="0" layer="51" curve="-180"/>
+<wire x1="-8.636" y1="1.27" x2="-8.382" y2="1.27" width="0" layer="51" curve="-180"/>
 <wire x1="-7.874" y1="-2.3368" x2="2.794" y2="-2.3368" width="0.1524" layer="21"/>
 <wire x1="2.794" y1="-2.3368" x2="2.794" y2="2.3368" width="0.1524" layer="21"/>
 <wire x1="2.794" y1="2.3368" x2="-7.874" y2="2.3368" width="0.1524" layer="21"/>
 <wire x1="-7.874" y1="2.3368" x2="-7.874" y2="-2.3368" width="0.1524" layer="21"/>
-<wire x1="-9.652" y1="0" x2="-9.906" y2="0" width="0.1524" layer="21" curve="-180"/>
-<wire x1="-9.906" y1="0" x2="-9.652" y2="0" width="0.1524" layer="21" curve="-180"/>
+<wire x1="-8.382" y1="1.27" x2="-8.636" y2="1.27" width="0.1524" layer="21" curve="-180"/>
+<wire x1="-8.636" y1="1.27" x2="-8.382" y2="1.27" width="0.1524" layer="21" curve="-180"/>
 <wire x1="-7.62" y1="1.27" x2="2.54" y2="1.27" width="0.127" layer="21"/>
 <pad name="1" x="-5.08" y="0" drill="1.143" diameter="1.651"/>
 <pad name="2" x="-2.54" y="0" drill="1.143" diameter="1.651"/>
 <pad name="3" x="0" y="0" drill="1.143" diameter="1.651"/>
 <text x="-7.62" y="2.54" size="1.27" layer="25">&gt;NAME</text>
+<text x="-6.985" y="-2.032" size="0.9144" layer="21" font="vector" ratio="14">CSD18502KCS</text>
 </package>
 </packages>
 <symbols>
@@ -12393,10 +12394,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <packages>
 <package name="SMS-006">
 <description>&lt;b&gt;DIP SWITCH&lt;/b&gt;</description>
-<wire x1="-8.255" y1="-3.2004" x2="8.255" y2="-3.2004" width="0.1524" layer="21"/>
-<wire x1="8.255" y1="3.2004" x2="8.255" y2="-3.2004" width="0.1524" layer="21"/>
-<wire x1="8.255" y1="3.2004" x2="-8.255" y2="3.2004" width="0.1524" layer="21"/>
-<wire x1="-8.255" y1="-3.2004" x2="-8.255" y2="3.2004" width="0.1524" layer="21"/>
+<wire x1="-8.255" y1="-3.2004" x2="8.255" y2="-3.2004" width="0.127" layer="21"/>
+<wire x1="8.255" y1="3.2004" x2="8.255" y2="-3.2004" width="0.127" layer="21"/>
+<wire x1="8.255" y1="3.2004" x2="-8.255" y2="3.2004" width="0.127" layer="21"/>
+<wire x1="-8.255" y1="-3.2004" x2="-8.255" y2="3.2004" width="0.127" layer="21"/>
 <wire x1="-7.112" y1="2.032" x2="-5.588" y2="2.032" width="0.1524" layer="21"/>
 <wire x1="-5.588" y1="-2.032" x2="-7.112" y2="-2.032" width="0.1524" layer="21"/>
 <wire x1="-5.588" y1="2.032" x2="-5.588" y2="-2.032" width="0.1524" layer="21"/>

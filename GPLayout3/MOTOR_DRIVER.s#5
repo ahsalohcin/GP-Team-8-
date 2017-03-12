@@ -176,7 +176,7 @@
 <pad name="2" x="-2.54" y="0" drill="1.143" diameter="1.651"/>
 <pad name="3" x="0" y="0" drill="1.143" diameter="1.651"/>
 <text x="-7.62" y="2.54" size="1.27" layer="25">&gt;NAME</text>
-<text x="-6.985" y="-1.905" size="0.9144" layer="21" font="vector" ratio="14">CSD18502KCS</text>
+<text x="-6.985" y="-2.032" size="0.9144" layer="21" font="vector" ratio="14">CSD18502KCS</text>
 </package>
 </packages>
 <symbols>
@@ -13616,10 +13616,14 @@ W = angled&lt;p&gt;
 <library name="minifuse">
 <packages>
 <package name="FUSEHOLDER3588">
-<wire x1="-8" y1="3.35" x2="8" y2="3.35" width="0.127" layer="51"/>
-<wire x1="8" y1="3.35" x2="8" y2="-3.35" width="0.127" layer="51"/>
-<wire x1="8" y1="-3.35" x2="-8" y2="-3.35" width="0.127" layer="51"/>
-<wire x1="-8" y1="-3.35" x2="-8" y2="3.35" width="0.127" layer="51"/>
+<wire x1="-8" y1="3.35" x2="-5.971234375" y2="3.35" width="0.127" layer="21"/>
+<wire x1="-4.034746875" y1="3.3413375" x2="4.06751875" y2="3.35049375" width="0.127" layer="21"/>
+<wire x1="5.827734375" y1="3.35049375" x2="8" y2="3.35" width="0.127" layer="21"/>
+<wire x1="8" y1="3.35" x2="8" y2="-3.35" width="0.127" layer="21"/>
+<wire x1="8" y1="-3.35" x2="5.847396875" y2="-3.35" width="0.127" layer="21"/>
+<wire x1="4.047696875" y1="-3.354459375" x2="-3.858778125" y2="-3.336759375" width="0.127" layer="21"/>
+<wire x1="-6.024046875" y1="-3.35" x2="-8" y2="-3.35" width="0.127" layer="21"/>
+<wire x1="-8" y1="-3.35" x2="-8" y2="3.35" width="0.127" layer="21"/>
 <smd name="A" x="-4.96" y="3.03" dx="1.57" dy="2.82" layer="1" rot="R180"/>
 <smd name="B" x="4.96" y="3.03" dx="1.57" dy="2.82" layer="1" rot="R180"/>
 <smd name="C" x="-4.96" y="-3.03" dx="1.57" dy="2.82" layer="1"/>

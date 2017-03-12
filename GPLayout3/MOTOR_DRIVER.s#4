@@ -12050,7 +12050,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <packages>
 <package name="TQFP32-08">
 <description>&lt;B&gt;Thin Plasic Quad Flat Package&lt;/B&gt; Grid 0.8 mm</description>
-<circle x="-3.6576" y="3.683" radius="0.1524" width="0.2032" layer="21"/>
+<circle x="-3.0226" y="3.048" radius="0.1524" width="0.2032" layer="21"/>
 <wire x1="3.505" y1="3.505" x2="3.505" y2="-3.505" width="0.2032" layer="21"/>
 <wire x1="3.505" y1="-3.505" x2="-3.505" y2="-3.505" width="0.2032" layer="21"/>
 <wire x1="-3.505" y1="-3.505" x2="-3.505" y2="3.15" width="0.2032" layer="21"/>
@@ -13616,10 +13616,14 @@ W = angled&lt;p&gt;
 <library name="minifuse">
 <packages>
 <package name="FUSEHOLDER3588">
-<wire x1="-8" y1="3.35" x2="8" y2="3.35" width="0.127" layer="51"/>
-<wire x1="8" y1="3.35" x2="8" y2="-3.35" width="0.127" layer="51"/>
-<wire x1="8" y1="-3.35" x2="-8" y2="-3.35" width="0.127" layer="51"/>
-<wire x1="-8" y1="-3.35" x2="-8" y2="3.35" width="0.127" layer="51"/>
+<wire x1="-8" y1="3.35" x2="-5.971234375" y2="3.35" width="0.127" layer="21"/>
+<wire x1="-4.034746875" y1="3.3413375" x2="4.06751875" y2="3.35049375" width="0.127" layer="21"/>
+<wire x1="5.827734375" y1="3.35049375" x2="8" y2="3.35" width="0.127" layer="21"/>
+<wire x1="8" y1="3.35" x2="8" y2="-3.35" width="0.127" layer="21"/>
+<wire x1="8" y1="-3.35" x2="5.847396875" y2="-3.35" width="0.127" layer="21"/>
+<wire x1="4.047696875" y1="-3.354459375" x2="-3.858778125" y2="-3.336759375" width="0.127" layer="21"/>
+<wire x1="-6.024046875" y1="-3.35" x2="-8" y2="-3.35" width="0.127" layer="21"/>
+<wire x1="-8" y1="-3.35" x2="-8" y2="3.35" width="0.127" layer="21"/>
 <smd name="A" x="-4.96" y="3.03" dx="1.57" dy="2.82" layer="1" rot="R180"/>
 <smd name="B" x="4.96" y="3.03" dx="1.57" dy="2.82" layer="1" rot="R180"/>
 <smd name="C" x="-4.96" y="-3.03" dx="1.57" dy="2.82" layer="1"/>

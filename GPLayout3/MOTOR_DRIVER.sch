@@ -22921,14 +22921,66 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="304.8" y1="215.9" x2="304.8" y2="210.82" width="0.1524" layer="91"/>
 </segment>
 </net>
+<net name="THERM2" class="0">
+<segment>
+<pinref part="LED2" gate="G$1" pin="THERMAL"/>
+<wire x1="309.88" y1="215.9" x2="307.34" y2="215.9" width="0.1524" layer="91"/>
+<label x="307.34" y="215.9" size="1.778" layer="95"/>
+</segment>
+</net>
 </nets>
 </sheet>
 </sheets>
 <errors>
+<approved hash="104,1,86.36,142.24,GATE1,VDD,7_4V_TOP,,,"/>
+<approved hash="104,1,30.48,139.7,GATE1,VSS,GND_TOP,,,"/>
+<approved hash="104,1,281.94,142.24,GATE2,VDD,7_4V_TOP,,,"/>
+<approved hash="104,1,337.82,139.7,GATE2,VSS,GND_TOP,,,"/>
+<approved hash="104,4,55.88,215.9,FUSE,GND,N$21,,,"/>
+<approved hash="104,4,55.88,220.98,FUSE,GND,N$21,,,"/>
+<approved hash="104,4,20.32,215.9,FUSE,VCC,BATT_VOLTAGE,,,"/>
+<approved hash="104,4,20.32,220.98,FUSE,VCC,BATT_VOLTAGE,,,"/>
+<approved hash="104,4,76.2,220.98,BIG_SWITCH,GND,7_4V_TOP,,,"/>
+<approved hash="104,4,68.58,220.98,BIG_SWITCH,VCC,N$21,,,"/>
+<approved hash="104,2,307.34,76.2,I_SENSE_AMP,V+,7_4V_TOP,,,"/>
+<approved hash="104,2,307.34,60.96,I_SENSE_AMP,V-,GND_TOP,,,"/>
+<approved hash="106,2,238.76,149.86,LI2,,,,,"/>
+<approved hash="106,2,134.62,134.62,PD6,,,,,"/>
+<approved hash="106,2,238.76,119.38,SW5,,,,,"/>
+<approved hash="106,4,309.88,215.9,THERM2,,,,,"/>
 <approved hash="113,1,193.571,130.071,FRAME1,,,,,"/>
 <approved hash="113,2,193.571,130.071,FRAME2,,,,,"/>
 <approved hash="113,3,193.571,130.071,FRAME3,,,,,"/>
+<approved hash="113,3,53.2977,147.515,SV1,,,,,"/>
+<approved hash="113,3,101.558,147.515,SV2,,,,,"/>
+<approved hash="113,3,53.2977,213.555,SV5,,,,,"/>
 <approved hash="113,4,193.571,130.071,FRAME4,,,,,"/>
+<approved hash="113,4,38.1,216.387,FUSE,,,,,"/>
+<approved hash="113,4,76.0095,229.828,BIG_SWITCH,,,,,"/>
+<approved hash="113,3,213.318,118.305,CAMERA,,,,,"/>
+<approved hash="113,3,249.119,120.845,CAMERA_B,,,,,"/>
+<approved hash="113,3,249.937,94.1747,BLUETOOTH,,,,,"/>
+<approved hash="113,3,286.978,123.385,SERVO,,,,,"/>
+<approved hash="113,3,289.518,105.605,HALL1,,,,,"/>
+<approved hash="113,3,289.518,87.8247,HALL2,,,,,"/>
+<approved hash="113,3,332.698,105.605,HALL1_B,,,,,"/>
+<approved hash="113,3,332.698,87.8247,HALL2_B,,,,,"/>
+<approved hash="113,3,238.718,162.755,SV3,,,,,"/>
+<approved hash="113,3,294.598,162.755,SV4,,,,,"/>
+<approved hash="113,4,265.177,195.775,LED1_CONN,,,,,"/>
+<approved hash="113,4,328.677,195.775,LED2_CONN,,,,,"/>
+<approved hash="113,3,325.078,164.025,GROUND,,,,,"/>
+<approved hash="113,3,342.858,164.025,3_3V,,,,,"/>
+<approved hash="113,3,365.718,164.025,5V,,,,,"/>
+<approved hash="113,2,335.86,113.03,D1,,,,,"/>
+<approved hash="113,2,343.48,113.03,D2,,,,,"/>
+<approved hash="113,2,351.1,113.03,D5,,,,,"/>
+<approved hash="113,4,245.676,218.635,LED1_CONN2,,,,,"/>
+<approved hash="113,4,304.096,218.635,LED2_CONN2,,,,,"/>
+<approved hash="113,3,167.598,68.7747,ATGPIO,,,,,"/>
+<approved hash="113,2,321.148,72.39,C7,,,,,"/>
+<approved hash="113,3,213.318,94.1747,REC,,,,,"/>
+<approved hash="113,3,126.958,70.0447,SV10,,,,,"/>
 </errors>
 </schematic>
 </drawing>
