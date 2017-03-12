@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="8.0.1">
+<eagle version="8.0.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -20677,8 +20677,8 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <variantdefs>
 </variantdefs>
 <classes>
-<class number="0" name="default" width="0.2" drill="0.6">
-<clearance class="0" value="0.2"/>
+<class number="0" name="default" width="0.1524" drill="0.381">
+<clearance class="0" value="0.1524"/>
 </class>
 </classes>
 <parts>
