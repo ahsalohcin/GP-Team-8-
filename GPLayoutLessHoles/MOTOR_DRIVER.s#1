@@ -20949,8 +20949,8 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <instance part="BOT_REV" gate="A" x="124.46" y="114.3" rot="MR270"/>
 <instance part="FRAME1" gate="G$1" x="0" y="0"/>
 <instance part="GATE1" gate="A" x="86.36" y="142.24" rot="MR0"/>
-<instance part="C1" gate="A" x="106.68" y="134.62" rot="R270"/>
-<instance part="C2" gate="A" x="116.84" y="134.62" rot="R270"/>
+<instance part="C1" gate="A" x="106.68" y="129.54" rot="R90"/>
+<instance part="C2" gate="A" x="116.84" y="129.54" rot="R90"/>
 <instance part="MOTOR_POS" gate="1" x="185.42" y="132.08" rot="R270"/>
 <instance part="TOP_REV" gate="A" x="243.84" y="213.36" rot="R270"/>
 <instance part="BOT_FWD" gate="A" x="243.84" y="114.3" rot="R270"/>
@@ -20998,9 +20998,9 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pinref part="C2" gate="A" pin="1"/>
 <wire x1="88.9" y1="124.46" x2="106.68" y2="124.46" width="0.1524" layer="91"/>
 <wire x1="106.68" y1="124.46" x2="116.84" y2="124.46" width="0.1524" layer="91"/>
-<wire x1="116.84" y1="124.46" x2="116.84" y2="134.62" width="0.1524" layer="91"/>
+<wire x1="116.84" y1="124.46" x2="116.84" y2="129.54" width="0.1524" layer="91"/>
 <pinref part="C1" gate="A" pin="1"/>
-<wire x1="106.68" y1="134.62" x2="106.68" y2="124.46" width="0.1524" layer="91"/>
+<wire x1="106.68" y1="129.54" x2="106.68" y2="124.46" width="0.1524" layer="91"/>
 <junction x="106.68" y="124.46"/>
 </segment>
 </net>
@@ -21010,9 +21010,9 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pinref part="C2" gate="A" pin="2"/>
 <wire x1="86.36" y1="139.7" x2="106.68" y2="139.7" width="0.1524" layer="91"/>
 <wire x1="106.68" y1="139.7" x2="116.84" y2="139.7" width="0.1524" layer="91"/>
-<wire x1="116.84" y1="139.7" x2="116.84" y2="127" width="0.1524" layer="91"/>
+<wire x1="116.84" y1="139.7" x2="116.84" y2="137.16" width="0.1524" layer="91"/>
 <pinref part="C1" gate="A" pin="2"/>
-<wire x1="106.68" y1="127" x2="106.68" y2="139.7" width="0.1524" layer="91"/>
+<wire x1="106.68" y1="137.16" x2="106.68" y2="139.7" width="0.1524" layer="91"/>
 <junction x="106.68" y="139.7"/>
 <pinref part="D3" gate="1" pin="C"/>
 <wire x1="106.68" y1="144.78" x2="106.68" y2="139.7" width="0.1524" layer="91"/>
@@ -22848,12 +22848,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <approved hash="113,2,193.571,130.071,FRAME2,,,,,"/>
 <approved hash="113,3,193.571,130.071,FRAME3,,,,,"/>
 <approved hash="113,3,53.2977,147.515,SV1,,,,,"/>
-<approved hash="113,3,101.558,147.515,SV2,,,,,"/>
 <approved hash="113,4,193.571,130.071,FRAME4,,,,,"/>
 <approved hash="113,4,38.1,216.387,FUSE,,,,,"/>
 <approved hash="113,4,76.0095,229.828,BIG_SWITCH,,,,,"/>
 <approved hash="113,3,213.318,118.305,CAMERA,,,,,"/>
-<approved hash="113,3,249.119,120.845,CAMERA_B,,,,,"/>
 <approved hash="113,3,249.937,94.1747,BLUETOOTH,,,,,"/>
 <approved hash="113,3,286.978,123.385,SERVO,,,,,"/>
 <approved hash="113,3,289.518,105.605,HALL1,,,,,"/>
@@ -22864,9 +22862,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <approved hash="113,3,294.598,162.755,SV4,,,,,"/>
 <approved hash="113,4,265.177,195.775,LED1_CONN,,,,,"/>
 <approved hash="113,4,328.677,195.775,LED2_CONN,,,,,"/>
-<approved hash="113,3,325.078,164.025,GROUND,,,,,"/>
-<approved hash="113,3,342.858,164.025,3_3V,,,,,"/>
-<approved hash="113,3,365.718,164.025,5V,,,,,"/>
 <approved hash="113,2,335.86,113.03,D1,,,,,"/>
 <approved hash="113,2,343.48,113.03,D2,,,,,"/>
 <approved hash="113,2,351.1,113.03,D5,,,,,"/>

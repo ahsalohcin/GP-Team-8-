@@ -22027,6 +22027,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <junction x="327.66" y="160.02"/>
 <wire x1="327.66" y1="165.1" x2="332.74" y2="165.1" width="0.1524" layer="91"/>
 <junction x="327.66" y="165.1"/>
+<label x="335.28" y="167.64" size="1.778" layer="95" rot="R180"/>
 </segment>
 <segment>
 <pinref part="SV3" gate="G$1" pin="4"/>

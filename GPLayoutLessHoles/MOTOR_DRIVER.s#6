@@ -20672,7 +20672,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="D3" library="diode" deviceset="BYV32" device=""/>
 <part name="D4" library="diode" deviceset="BYV32" device=""/>
 <part name="SV1" library="con-lsta" deviceset="FE10-1" device=""/>
-<part name="SV2" library="con-lsta" deviceset="FE10-1" device=""/>
+<part name="SV2" library="con-lsta" deviceset="FE05-1" device=""/>
 <part name="FRAME4" library="frames" deviceset="A3L-LOC" device=""/>
 <part name="BATT_HIGH" library="solpad" deviceset="SE14" device=""/>
 <part name="BATT_LOW" library="solpad" deviceset="SE14" device=""/>
@@ -21758,7 +21758,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </instance>
 <instance part="SUPPLY8" gate="GND" x="45.72" y="53.34"/>
 <instance part="SV1" gate="G$1" x="48.26" y="144.78"/>
-<instance part="SV2" gate="G$1" x="96.52" y="144.78"/>
+<instance part="SV2" gate="G$1" x="101.6" y="139.7"/>
 <instance part="CAMERA" gate="G$1" x="208.28" y="116.84">
 <attribute name="MANUFACTURER" x="208.28" y="116.84" size="1.778" layer="96" display="off"/>
 <attribute name="MANUFACTURER_PART_NUMBER" x="208.28" y="116.84" size="1.778" layer="96" display="off"/>
@@ -22004,21 +22004,21 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </net>
 <net name="MOTOR_HIGH" class="0">
 <segment>
-<pinref part="SV2" gate="G$1" pin="5"/>
-<wire x1="104.14" y1="144.78" x2="127" y2="144.78" width="0.1524" layer="91"/>
-<label x="124.46" y="144.78" size="1.778" layer="95"/>
+<pinref part="SV2" gate="G$1" pin="4"/>
+<wire x1="109.22" y1="142.24" x2="127" y2="142.24" width="0.1524" layer="91"/>
+<label x="124.46" y="142.24" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="MOTOR_LOW" class="0">
 <segment>
-<pinref part="SV2" gate="G$1" pin="6"/>
-<wire x1="104.14" y1="147.32" x2="127" y2="147.32" width="0.1524" layer="91"/>
-<label x="124.46" y="147.32" size="1.778" layer="95"/>
-</segment>
-<segment>
 <pinref part="S1" gate="G$1" pin="8"/>
 <wire x1="58.42" y1="76.2" x2="45.72" y2="76.2" width="0.1524" layer="91"/>
 <label x="45.72" y="76.2" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="SV2" gate="G$1" pin="5"/>
+<wire x1="109.22" y1="144.78" x2="127" y2="144.78" width="0.1524" layer="91"/>
+<label x="124.46" y="144.78" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="I_SENSE_LOW_TOP" class="0">
@@ -22371,14 +22371,14 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <net name="HI" class="0">
 <segment>
 <pinref part="SV2" gate="G$1" pin="2"/>
-<wire x1="104.14" y1="137.16" x2="127" y2="137.16" width="0.1524" layer="91"/>
+<wire x1="109.22" y1="137.16" x2="127" y2="137.16" width="0.1524" layer="91"/>
 <label x="124.46" y="137.16" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="LI" class="0">
 <segment>
 <pinref part="SV2" gate="G$1" pin="1"/>
-<wire x1="104.14" y1="134.62" x2="127" y2="134.62" width="0.1524" layer="91"/>
+<wire x1="109.22" y1="134.62" x2="127" y2="134.62" width="0.1524" layer="91"/>
 <label x="124.46" y="134.62" size="1.778" layer="95"/>
 </segment>
 </net>
@@ -22424,7 +22424,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <net name="I_SENSE" class="0">
 <segment>
 <pinref part="SV2" gate="G$1" pin="3"/>
-<wire x1="104.14" y1="139.7" x2="127" y2="139.7" width="0.1524" layer="91"/>
+<wire x1="109.22" y1="139.7" x2="127" y2="139.7" width="0.1524" layer="91"/>
 <label x="124.46" y="139.7" size="1.778" layer="95"/>
 </segment>
 </net>

@@ -20661,8 +20661,8 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="MANUFACTURER_PART_NUMBER" value="9C-16.000MBBK-T"/>
 <attribute name="PRICE" value="$0.36"/>
 </part>
-<part name="C5" library="resistor" deviceset="C-US" device="025-024X044" value="18 pF"/>
-<part name="C6" library="resistor" deviceset="C-US" device="025-024X044" value="18 pF"/>
+<part name="C5" library="rcl" deviceset="C-US" device="C0603" value="18 pF"/>
+<part name="C6" library="rcl" deviceset="C-US" device="C0603" value="18 pF"/>
 <part name="SUPPLY4" library="supply2" deviceset="GND" device=""/>
 <part name="SUPPLY5" library="supply2" deviceset="GND" device=""/>
 <part name="SUPPLY6" library="supply2" deviceset="GND" device=""/>
@@ -20739,7 +20739,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="MANUFACTURER_PART_NUMBER" value="28317"/>
 <attribute name="PRICE" value="$49.99"/>
 </part>
-<part name="CAMERA_B" library="con-lsta" deviceset="FE05-1" device="">
+<part name="CAMERA_B" library="con-lstb" deviceset="MA03-1" device="">
 <attribute name="DIGIKEY_PART_NUMBER" value="28317-ND"/>
 <attribute name="MANUFACTURER" value="Parallax"/>
 <attribute name="MANUFACTURER_PART_NUMBER" value="28317"/>
@@ -21770,11 +21770,11 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="DIGIKEY_PART_NUMBER" x="208.28" y="116.84" size="1.778" layer="96" display="off"/>
 <attribute name="PRICE" x="208.28" y="116.84" size="1.778" layer="96" display="off"/>
 </instance>
-<instance part="CAMERA_B" gate="G$1" x="243.84" y="119.38">
-<attribute name="MANUFACTURER" x="243.84" y="119.38" size="1.778" layer="96" display="off"/>
-<attribute name="DIGIKEY_PART_NUMBER" x="243.84" y="119.38" size="1.778" layer="96" display="off"/>
-<attribute name="MANUFACTURER_PART_NUMBER" x="243.84" y="119.38" size="1.778" layer="96" display="off"/>
-<attribute name="PRICE" x="243.84" y="119.38" size="1.778" layer="96" display="off"/>
+<instance part="CAMERA_B" gate="G$1" x="246.38" y="116.84">
+<attribute name="MANUFACTURER" x="246.38" y="116.84" size="1.778" layer="96" display="off"/>
+<attribute name="DIGIKEY_PART_NUMBER" x="246.38" y="116.84" size="1.778" layer="96" display="off"/>
+<attribute name="MANUFACTURER_PART_NUMBER" x="246.38" y="116.84" size="1.778" layer="96" display="off"/>
+<attribute name="PRICE" x="246.38" y="116.84" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="BLUETOOTH" gate="G$1" x="243.84" y="93.98">
 <attribute name="MANUFACTURER" x="243.84" y="93.98" size="1.778" layer="96" display="off"/>
@@ -21867,11 +21867,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pinref part="CAMERA" gate="G$1" pin="1"/>
 <wire x1="215.9" y1="111.76" x2="238.76" y2="111.76" width="0.1524" layer="91"/>
 <label x="226.06" y="111.76" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="CAMERA_B" gate="G$1" pin="1"/>
-<wire x1="251.46" y1="114.3" x2="271.78" y2="114.3" width="0.1524" layer="91"/>
-<label x="254" y="114.3" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="BLUETOOTH" gate="G$1" pin="3"/>
@@ -22051,11 +22046,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <label x="226.06" y="114.3" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="CAMERA_B" gate="G$1" pin="2"/>
-<wire x1="251.46" y1="116.84" x2="271.78" y2="116.84" width="0.1524" layer="91"/>
-<label x="254" y="116.84" size="1.778" layer="95"/>
-</segment>
-<segment>
 <pinref part="BLUETOOTH" gate="G$1" pin="4"/>
 <wire x1="251.46" y1="96.52" x2="271.78" y2="96.52" width="0.1524" layer="91"/>
 <label x="266.7" y="96.52" size="1.778" layer="95"/>
@@ -22106,23 +22096,23 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </net>
 <net name="CAMERA_SI_B" class="0">
 <segment>
-<pinref part="CAMERA_B" gate="G$1" pin="5"/>
-<wire x1="251.46" y1="124.46" x2="271.78" y2="124.46" width="0.1524" layer="91"/>
-<label x="254" y="124.46" size="1.778" layer="95"/>
+<pinref part="CAMERA_B" gate="G$1" pin="3"/>
+<wire x1="254" y1="119.38" x2="271.78" y2="119.38" width="0.1524" layer="91"/>
+<label x="254" y="119.38" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="CAMERA_CL_B" class="0">
 <segment>
-<pinref part="CAMERA_B" gate="G$1" pin="4"/>
-<wire x1="251.46" y1="121.92" x2="271.78" y2="121.92" width="0.1524" layer="91"/>
-<label x="254" y="121.92" size="1.778" layer="95"/>
+<pinref part="CAMERA_B" gate="G$1" pin="2"/>
+<wire x1="254" y1="116.84" x2="271.78" y2="116.84" width="0.1524" layer="91"/>
+<label x="254" y="116.84" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="CAMERA_A0_B" class="0">
 <segment>
-<pinref part="CAMERA_B" gate="G$1" pin="3"/>
-<wire x1="251.46" y1="119.38" x2="271.78" y2="119.38" width="0.1524" layer="91"/>
-<label x="254" y="119.38" size="1.778" layer="95"/>
+<pinref part="CAMERA_B" gate="G$1" pin="1"/>
+<wire x1="254" y1="114.3" x2="271.78" y2="114.3" width="0.1524" layer="91"/>
+<label x="254" y="114.3" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="BLT_TX" class="0">
