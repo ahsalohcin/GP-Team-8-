@@ -4993,9 +4993,9 @@ design rules under a new name.</description>
 <attribute name="NAME" x="18.115" y="16.615" size="0.8128" layer="22" rot="MR180"/>
 <attribute name="VALUE" x="18.115" y="19.155" size="0.8128" layer="28" rot="MR180"/>
 </element>
-<element name="ATGPIO" library="con-lsta" package="FE10" value="" x="83.5" y="9" smashed="yes">
-<attribute name="NAME" x="74.61" y="10.651" size="0.8128" layer="25" ratio="10"/>
-<attribute name="VALUE" x="70.8" y="6.079" size="1.27" layer="27" ratio="10"/>
+<element name="ATGPIO" library="con-lsta" package="FE10" value="" x="54.29" y="8.238" smashed="yes">
+<attribute name="NAME" x="45.4" y="9.889" size="0.8128" layer="25" ratio="10"/>
+<attribute name="VALUE" x="41.59" y="5.317" size="1.27" layer="27" ratio="10"/>
 </element>
 <element name="R17" library="rcl" package="R2512" value="10m" x="14.394540625" y="18.11175" smashed="yes" rot="MR315">
 <attribute name="NAME" x="14.84355625" y="21.2548375" size="0.8128" layer="26" rot="MR315"/>
@@ -5698,56 +5698,22 @@ design rules under a new name.</description>
 <signal name="PC4">
 <contactref element="U7" pad="27"/>
 <contactref element="ATGPIO" pad="4"/>
-<wire x1="95.342" y1="16.571" x2="95.342" y2="17.025" width="0.254" layer="1"/>
-<wire x1="94.661" y1="15.89" x2="95.342" y2="16.571" width="0.254" layer="1"/>
-<wire x1="91.937" y1="15.89" x2="94.661" y2="15.89" width="0.254" layer="1"/>
-<wire x1="87.397" y1="15.89" x2="91.937" y2="15.89" width="0.254" layer="16"/>
-<wire x1="85.581" y1="14.074" x2="87.397" y2="15.89" width="0.254" layer="16"/>
-<wire x1="85.581" y1="13.393" x2="85.581" y2="14.074" width="0.254" layer="16"/>
-<wire x1="82.857" y1="10.669" x2="85.581" y2="13.393" width="0.254" layer="16"/>
-<wire x1="81.495" y1="10.669" x2="82.857" y2="10.669" width="0.254" layer="16"/>
-<wire x1="79.906" y1="9.08" x2="81.495" y2="10.669" width="0.254" layer="16"/>
 <wire x1="95.342" y1="17.025" x2="95.378" y2="17.1894" width="0.254" layer="1"/>
-<wire x1="79.906" y1="9.08" x2="79.69" y2="9" width="0.254" layer="16"/>
-<via x="91.937" y="15.89" extent="1-16" drill="0.6"/>
+<wire x1="50.48" y1="8.238" x2="95.342" y2="17.025" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="PC5">
 <contactref element="U7" pad="28"/>
 <contactref element="ATGPIO" pad="5"/>
-<wire x1="96.023" y1="16.344" x2="96.023" y2="17.025" width="0.254" layer="1"/>
-<wire x1="94.661" y1="14.982" x2="96.023" y2="16.344" width="0.254" layer="1"/>
-<wire x1="91.029" y1="14.982" x2="94.661" y2="14.982" width="0.254" layer="1"/>
-<wire x1="88.986" y1="14.982" x2="91.029" y2="14.982" width="0.254" layer="16"/>
-<wire x1="88.078" y1="14.074" x2="88.986" y2="14.982" width="0.254" layer="16"/>
-<wire x1="88.078" y1="13.393" x2="88.078" y2="14.074" width="0.254" layer="16"/>
-<wire x1="86.716" y1="12.031" x2="88.078" y2="13.393" width="0.254" layer="16"/>
-<wire x1="85.354" y1="12.031" x2="86.716" y2="12.031" width="0.254" layer="16"/>
-<wire x1="82.403" y1="9.08" x2="85.354" y2="12.031" width="0.254" layer="16"/>
-<wire x1="96.023" y1="17.025" x2="96.178" y2="17.1894" width="0.254" layer="1"/>
-<wire x1="82.403" y1="9.08" x2="82.23" y2="9" width="0.254" layer="16"/>
-<via x="91.029" y="14.982" extent="1-16" drill="0.6"/>
+<wire x1="53.02" y1="8.238" x2="96.178" y2="17.1894" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="PB1">
 <contactref element="U7" pad="13"/>
 <contactref element="ATGPIO" pad="10"/>
-<wire x1="96.023" y1="22.246" x2="96.023" y2="25.651" width="0.254" layer="1"/>
-<wire x1="93.753" y1="19.976" x2="96.023" y2="22.246" width="0.254" layer="1"/>
-<wire x1="91.256" y1="17.479" x2="93.753" y2="19.976" width="0.254" layer="16"/>
-<wire x1="91.256" y1="17.252" x2="91.256" y2="17.479" width="0.254" layer="16"/>
-<wire x1="90.802" y1="16.798" x2="91.256" y2="17.252" width="0.254" layer="16"/>
-<wire x1="83.311" y1="16.798" x2="90.802" y2="16.798" width="0.254" layer="16"/>
-<wire x1="80.36" y1="13.847" x2="83.311" y2="16.798" width="0.254" layer="16"/>
-<wire x1="80.36" y1="13.166" x2="80.36" y2="13.847" width="0.254" layer="16"/>
-<wire x1="77.863" y1="10.669" x2="80.36" y2="13.166" width="0.254" layer="16"/>
-<wire x1="76.728" y1="10.669" x2="77.863" y2="10.669" width="0.254" layer="16"/>
-<wire x1="76.047" y1="9.988" x2="76.728" y2="10.669" width="0.254" layer="16"/>
-<wire x1="76.047" y1="7.945" x2="76.047" y2="9.988" width="0.254" layer="16"/>
 <wire x1="76.728" y1="7.264" x2="76.047" y2="7.945" width="0.254" layer="16"/>
 <wire x1="93.299" y1="7.264" x2="76.728" y2="7.264" width="0.254" layer="16"/>
-<wire x1="94.888" y1="8.853" x2="93.299" y2="7.264" width="0.254" layer="16"/>
 <wire x1="96.023" y1="25.651" x2="96.178" y2="25.7746" width="0.254" layer="1"/>
-<wire x1="94.888" y1="8.853" x2="94.93" y2="9" width="0.254" layer="16"/>
-<via x="93.753" y="19.976" extent="1-16" drill="0.6"/>
+<wire x1="65.72" y1="8.238" x2="96.023" y2="25.651" width="0" layer="19" extent="1-1"/>
+<wire x1="93.299" y1="7.264" x2="65.72" y2="8.238" width="0" layer="19" extent="16-16"/>
 </signal>
 <signal name="REC_MOTOR">
 <contactref element="U$1" pad="21/A7"/>
@@ -6593,81 +6559,41 @@ design rules under a new name.</description>
 <signal name="PC1">
 <contactref element="U7" pad="24"/>
 <contactref element="ATGPIO" pad="1"/>
-<wire x1="89.667" y1="18.841" x2="92.164" y2="18.841" width="0.254" layer="1"/>
-<wire x1="82.176" y1="18.841" x2="89.667" y2="18.841" width="0.254" layer="16"/>
-<wire x1="78.544" y1="15.209" x2="82.176" y2="18.841" width="0.254" layer="16"/>
-<wire x1="76.501" y1="15.209" x2="78.544" y2="15.209" width="0.254" layer="16"/>
-<wire x1="75.366" y1="14.074" x2="76.501" y2="15.209" width="0.254" layer="1"/>
-<wire x1="75.366" y1="12.258" x2="75.366" y2="14.074" width="0.254" layer="1"/>
-<wire x1="72.188" y1="9.08" x2="75.366" y2="12.258" width="0.254" layer="1"/>
 <wire x1="92.164" y1="18.841" x2="92.2854" y2="18.682" width="0.254" layer="1"/>
-<wire x1="72.188" y1="9.08" x2="72.07" y2="9" width="0.254" layer="1"/>
-<via x="89.667" y="18.841" extent="1-16" drill="0.6"/>
 <via x="76.501" y="15.209" extent="1-16" drill="0.6"/>
+<wire x1="76.501" y1="15.209" x2="92.164" y2="18.841" width="0" layer="19" extent="1-1"/>
+<wire x1="42.86" y1="8.238" x2="76.501" y2="15.209" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="PC2">
 <contactref element="U7" pad="25"/>
 <contactref element="ATGPIO" pad="2"/>
-<wire x1="90.802" y1="17.252" x2="93.753" y2="17.252" width="0.254" layer="1"/>
-<wire x1="90.348" y1="17.706" x2="90.802" y2="17.252" width="0.254" layer="1"/>
-<wire x1="81.722" y1="17.706" x2="90.348" y2="17.706" width="0.254" layer="16"/>
-<wire x1="77.863" y1="13.847" x2="81.722" y2="17.706" width="0.254" layer="16"/>
-<wire x1="77.863" y1="12.485" x2="77.863" y2="13.847" width="0.254" layer="16"/>
-<wire x1="74.458" y1="9.08" x2="77.863" y2="12.485" width="0.254" layer="16"/>
 <wire x1="93.753" y1="17.252" x2="93.778" y2="17.1894" width="0.254" layer="1"/>
-<wire x1="74.458" y1="9.08" x2="74.61" y2="9" width="0.254" layer="16"/>
-<via x="90.348" y="17.706" extent="1-16" drill="0.6"/>
+<wire x1="45.4" y1="8.238" x2="93.778" y2="17.1894" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="PC3">
 <contactref element="U7" pad="26"/>
 <contactref element="ATGPIO" pad="3"/>
 <wire x1="94.434" y1="17.933" x2="94.434" y2="17.252" width="0.254" layer="1"/>
-<wire x1="93.753" y1="18.614" x2="94.434" y2="17.933" width="0.254" layer="1"/>
-<wire x1="93.299" y1="18.614" x2="93.753" y2="18.614" width="0.254" layer="16"/>
-<wire x1="91.029" y1="16.344" x2="93.299" y2="18.614" width="0.254" layer="16"/>
-<wire x1="85.354" y1="16.344" x2="91.029" y2="16.344" width="0.254" layer="16"/>
-<wire x1="82.857" y1="13.847" x2="85.354" y2="16.344" width="0.254" layer="16"/>
-<wire x1="82.857" y1="13.166" x2="82.857" y2="13.847" width="0.254" layer="16"/>
-<wire x1="80.36" y1="10.669" x2="82.857" y2="13.166" width="0.254" layer="16"/>
-<wire x1="78.771" y1="10.669" x2="80.36" y2="10.669" width="0.254" layer="16"/>
-<wire x1="77.182" y1="9.08" x2="78.771" y2="10.669" width="0.254" layer="16"/>
 <wire x1="94.434" y1="17.252" x2="94.578" y2="17.1894" width="0.254" layer="1"/>
-<wire x1="77.182" y1="9.08" x2="77.15" y2="9" width="0.254" layer="16"/>
-<via x="93.753" y="18.614" extent="1-16" drill="0.6"/>
+<wire x1="47.94" y1="8.238" x2="94.434" y2="17.252" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="ADC6">
 <contactref element="U7" pad="19"/>
 <contactref element="ATGPIO" pad="6"/>
-<wire x1="90.802" y1="22.7" x2="92.164" y2="22.7" width="0.254" layer="1"/>
-<wire x1="85.581" y1="17.479" x2="90.802" y2="22.7" width="0.254" layer="1"/>
-<wire x1="85.581" y1="9.761" x2="85.581" y2="17.479" width="0.254" layer="1"/>
-<wire x1="84.9" y1="9.08" x2="85.581" y2="9.761" width="0.254" layer="1"/>
 <wire x1="92.164" y1="22.7" x2="92.2854" y2="22.682" width="0.254" layer="1"/>
-<wire x1="84.9" y1="9.08" x2="84.77" y2="9" width="0.254" layer="1"/>
+<wire x1="55.56" y1="8.238" x2="92.164" y2="22.7" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="ADC7">
 <contactref element="U7" pad="22"/>
 <contactref element="ATGPIO" pad="7"/>
-<wire x1="88.986" y1="20.203" x2="92.164" y2="20.203" width="0.254" layer="1"/>
-<wire x1="88.078" y1="19.295" x2="88.986" y2="20.203" width="0.254" layer="1"/>
-<wire x1="88.078" y1="12.031" x2="88.078" y2="19.295" width="0.254" layer="1"/>
-<wire x1="87.851" y1="11.804" x2="88.078" y2="12.031" width="0.254" layer="1"/>
-<wire x1="87.851" y1="9.534" x2="87.851" y2="11.804" width="0.254" layer="1"/>
-<wire x1="87.397" y1="9.08" x2="87.851" y2="9.534" width="0.254" layer="1"/>
 <wire x1="92.164" y1="20.203" x2="92.2854" y2="20.282" width="0.254" layer="1"/>
-<wire x1="87.397" y1="9.08" x2="87.31" y2="9" width="0.254" layer="1"/>
+<wire x1="58.1" y1="8.238" x2="92.164" y2="20.203" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="PD4">
 <contactref element="U7" pad="2"/>
 <contactref element="ATGPIO" pad="8"/>
-<wire x1="98.52" y1="19.295" x2="100.79" y2="19.295" width="0.254" layer="1"/>
-<wire x1="93.072" y1="13.847" x2="98.52" y2="19.295" width="0.254" layer="16"/>
-<wire x1="93.072" y1="12.258" x2="93.072" y2="13.847" width="0.254" layer="16"/>
-<wire x1="89.894" y1="9.08" x2="93.072" y2="12.258" width="0.254" layer="1"/>
 <wire x1="100.79" y1="19.295" x2="100.8706" y2="19.482" width="0.254" layer="1"/>
-<wire x1="89.894" y1="9.08" x2="89.85" y2="9" width="0.254" layer="1"/>
-<via x="98.52" y="19.295" extent="1-16" drill="0.6"/>
-<via x="93.072" y="12.258" extent="1-16" drill="0.6"/>
+<wire x1="60.64" y1="8.238" x2="100.79" y2="19.295" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="PD5">
 <contactref element="U7" pad="9"/>
@@ -6687,17 +6613,11 @@ design rules under a new name.</description>
 <wire x1="84.9" y1="5.448" x2="83.311" y2="7.037" width="0.254" layer="1"/>
 <wire x1="88.078" y1="5.448" x2="84.9" y2="5.448" width="0.254" layer="1"/>
 <wire x1="89.44" y1="6.81" x2="88.078" y2="5.448" width="0.254" layer="16"/>
-<wire x1="94.888" y1="6.81" x2="89.44" y2="6.81" width="0.254" layer="16"/>
-<wire x1="96.023" y1="7.945" x2="94.888" y2="6.81" width="0.254" layer="16"/>
-<wire x1="96.023" y1="9.988" x2="96.023" y2="7.945" width="0.254" layer="16"/>
-<wire x1="95.342" y1="10.669" x2="96.023" y2="9.988" width="0.254" layer="16"/>
-<wire x1="93.98" y1="10.669" x2="95.342" y2="10.669" width="0.254" layer="16"/>
-<wire x1="92.391" y1="9.08" x2="93.98" y2="10.669" width="0.254" layer="16"/>
 <wire x1="99.201" y1="25.878" x2="99.378" y2="25.7746" width="0.254" layer="1"/>
-<wire x1="92.391" y1="9.08" x2="92.39" y2="9" width="0.254" layer="16"/>
 <via x="98.747" y="27.24" extent="1-16" drill="0.6"/>
 <via x="80.587" y="19.295" extent="1-16" drill="0.6"/>
 <via x="88.078" y="5.448" extent="1-16" drill="0.6"/>
+<wire x1="89.44" y1="6.81" x2="63.18" y2="8.238" width="0" layer="19" extent="16-16"/>
 </signal>
 <signal name="PD6">
 <contactref element="U7" pad="10"/>

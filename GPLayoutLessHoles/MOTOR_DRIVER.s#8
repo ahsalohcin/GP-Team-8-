@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="8.0.1">
+<eagle version="8.0.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -20677,8 +20677,8 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <variantdefs>
 </variantdefs>
 <classes>
-<class number="0" name="default" width="0.2" drill="0.6">
-<clearance class="0" value="0.2"/>
+<class number="0" name="default" width="0.1524" drill="0.381">
+<clearance class="0" value="0.1524"/>
 </class>
 </classes>
 <parts>
@@ -22954,7 +22954,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <approved hash="113,3,53.2977,147.515,SV1,,,,,"/>
 <approved hash="113,3,101.558,147.515,SV2,,,,,"/>
 <approved hash="113,3,53.2977,213.555,SV5,,,,,"/>
-<approved hash="113,3,101.558,213.555,SV6,,,,,"/>
 <approved hash="113,4,193.571,130.071,FRAME4,,,,,"/>
 <approved hash="113,4,38.1,216.387,FUSE,,,,,"/>
 <approved hash="113,4,76.0095,229.828,BIG_SWITCH,,,,,"/>
@@ -22968,18 +22967,14 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <approved hash="113,3,332.698,87.8247,HALL2_B,,,,,"/>
 <approved hash="113,3,238.718,162.755,SV3,,,,,"/>
 <approved hash="113,3,294.598,162.755,SV4,,,,,"/>
-<approved hash="113,3,238.718,223.715,SV7,,,,,"/>
-<approved hash="113,3,294.598,223.715,SV8,,,,,"/>
 <approved hash="113,4,265.177,195.775,LED1_CONN,,,,,"/>
 <approved hash="113,4,328.677,195.775,LED2_CONN,,,,,"/>
-<approved hash="113,3,327.618,226.255,SV9,,,,,"/>
 <approved hash="113,3,325.078,164.025,GROUND,,,,,"/>
 <approved hash="113,3,342.858,164.025,3_3V,,,,,"/>
 <approved hash="113,3,365.718,164.025,5V,,,,,"/>
 <approved hash="113,2,335.86,113.03,D1,,,,,"/>
 <approved hash="113,2,343.48,113.03,D2,,,,,"/>
 <approved hash="113,2,351.1,113.03,D5,,,,,"/>
-<approved hash="113,3,215.858,76.3947,TXRX,,,,,"/>
 <approved hash="113,4,245.676,218.635,LED1_CONN2,,,,,"/>
 <approved hash="113,4,304.096,218.635,LED2_CONN2,,,,,"/>
 <approved hash="113,3,167.598,68.7747,ATGPIO,,,,,"/>
