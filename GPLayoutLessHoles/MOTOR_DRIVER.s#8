@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="8.0.0">
+<eagle version="8.0.1">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -12871,6 +12871,15 @@ W = angled&lt;p&gt;
 <wire x1="5.588" y1="0.508" x2="5.334" y2="0.508" width="0.1524" layer="51"/>
 <wire x1="5.334" y1="0.508" x2="5.334" y2="0.762" width="0.1524" layer="51"/>
 <wire x1="5.334" y1="0.762" x2="4.826" y2="0.762" width="0.1524" layer="51"/>
+<pad name="1" x="-5.08" y="0" drill="0.8128" shape="long" rot="R90"/>
+<pad name="2" x="-2.54" y="0" drill="0.8128" shape="long" rot="R90"/>
+<pad name="3" x="0" y="0" drill="0.8128" shape="long" rot="R90"/>
+<pad name="4" x="2.54" y="0" drill="0.8128" shape="long" rot="R90"/>
+<pad name="5" x="5.08" y="0" drill="0.8128" shape="long" rot="R90"/>
+<text x="-6.35" y="1.651" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+<text x="-7.493" y="-0.635" size="1.27" layer="21" ratio="10">1</text>
+<text x="6.604" y="-0.635" size="1.27" layer="21" ratio="10">5</text>
+<text x="0" y="1.651" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
 <rectangle x1="-5.207" y1="0.254" x2="-4.953" y2="0.762" layer="51"/>
 <rectangle x1="-5.207" y1="-0.762" x2="-4.953" y2="-0.254" layer="51"/>
 <rectangle x1="-2.667" y1="0.254" x2="-2.413" y2="0.762" layer="51"/>
@@ -12881,15 +12890,6 @@ W = angled&lt;p&gt;
 <rectangle x1="2.413" y1="-0.762" x2="2.667" y2="-0.254" layer="51"/>
 <rectangle x1="4.953" y1="0.254" x2="5.207" y2="0.762" layer="51"/>
 <rectangle x1="4.953" y1="-0.762" x2="5.207" y2="-0.254" layer="51"/>
-<pad name="1" x="-5.08" y="0" drill="0.8128" shape="long" rot="R90"/>
-<pad name="2" x="-2.54" y="0" drill="0.8128" shape="long" rot="R90"/>
-<pad name="3" x="0" y="0" drill="0.8128" shape="long" rot="R90"/>
-<pad name="4" x="2.54" y="0" drill="0.8128" shape="long" rot="R90"/>
-<pad name="5" x="5.08" y="0" drill="0.8128" shape="long" rot="R90"/>
-<text x="-6.35" y="1.651" size="1.27" layer="25" ratio="10">&gt;NAME</text>
-<text x="-7.493" y="-0.635" size="1.27" layer="51" ratio="10">1</text>
-<text x="6.604" y="-0.635" size="1.27" layer="51" ratio="10">5</text>
-<text x="0" y="1.651" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
 </package>
 <package name="FE04-1">
 <description>&lt;b&gt;FEMALE HEADER&lt;/b&gt;</description>
@@ -13396,13 +13396,13 @@ W = angled&lt;p&gt;
 <wire x1="-1.27" y1="7.62" x2="3.81" y2="7.62" width="0.4064" layer="94"/>
 <wire x1="1.905" y1="5.715" x2="1.905" y2="4.445" width="0.254" layer="94" curve="-180" cap="flat"/>
 <wire x1="1.905" y1="3.175" x2="1.905" y2="1.905" width="0.254" layer="94" curve="-180" cap="flat"/>
+<text x="-1.27" y="-10.16" size="1.778" layer="96">&gt;VALUE</text>
+<text x="-1.27" y="8.382" size="1.778" layer="95">&gt;NAME</text>
 <pin name="1" x="7.62" y="-5.08" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
 <pin name="2" x="7.62" y="-2.54" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
 <pin name="3" x="7.62" y="0" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
 <pin name="4" x="7.62" y="2.54" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
 <pin name="5" x="7.62" y="5.08" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
-<text x="-1.27" y="-10.16" size="1.778" layer="96">&gt;VALUE</text>
-<text x="-1.27" y="8.382" size="1.778" layer="95">&gt;NAME</text>
 </symbol>
 <symbol name="FE04-1">
 <wire x1="3.81" y1="-7.62" x2="-1.27" y2="-7.62" width="0.4064" layer="94"/>
@@ -13520,7 +13520,12 @@ W = angled&lt;p&gt;
 <connect gate="G$1" pin="5" pad="5"/>
 </connects>
 <technologies>
-<technology name=""/>
+<technology name="">
+<attribute name="MF" value="" constant="no"/>
+<attribute name="MPN" value="" constant="no"/>
+<attribute name="OC_FARNELL" value="unknown" constant="no"/>
+<attribute name="OC_NEWARK" value="unknown" constant="no"/>
+</technology>
 </technologies>
 </device>
 </devices>
@@ -20733,7 +20738,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="SV1" library="con-lsta" deviceset="FE10-1" device=""/>
 <part name="SV2" library="con-lsta" deviceset="FE10-1" device=""/>
 <part name="SV5" library="con-lsta" deviceset="FE10-1" device=""/>
-<part name="SV6" library="con-lsta" deviceset="FE10-1" device=""/>
 <part name="FRAME4" library="frames" deviceset="A3L-LOC" device=""/>
 <part name="BATT_HIGH" library="solpad" deviceset="SE14" device=""/>
 <part name="BATT_LOW" library="solpad" deviceset="SE14" device=""/>
@@ -20879,6 +20883,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="REC" library="con-lsta" deviceset="FE06-1" device=""/>
 <part name="C8" library="rcl" deviceset="C-US" device="C0805" value="10u"/>
 <part name="SV10" library="con-lsta" deviceset="FE09-1" device=""/>
+<part name="SV6" library="con-lsta" deviceset="FE05-1" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -21883,7 +21888,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <instance part="SV1" gate="G$1" x="48.26" y="144.78"/>
 <instance part="SV2" gate="G$1" x="96.52" y="144.78"/>
 <instance part="SV5" gate="G$1" x="48.26" y="210.82"/>
-<instance part="SV6" gate="G$1" x="96.52" y="210.82"/>
 <instance part="CAMERA" gate="G$1" x="208.28" y="116.84">
 <attribute name="MANUFACTURER" x="208.28" y="116.84" size="1.778" layer="96" display="off"/>
 <attribute name="MANUFACTURER_PART_NUMBER" x="208.28" y="116.84" size="1.778" layer="96" display="off"/>
@@ -21945,6 +21949,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <instance part="ATGPIO" gate="G$1" x="162.56" y="66.04"/>
 <instance part="REC" gate="G$1" x="208.28" y="91.44"/>
 <instance part="SV10" gate="G$1" x="121.92" y="68.58"/>
+<instance part="SV6" gate="G$1" x="96.52" y="205.74"/>
 </instances>
 <busses>
 </busses>
@@ -22121,9 +22126,9 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </net>
 <net name="HI_TOP" class="0">
 <segment>
-<pinref part="SV6" gate="G$1" pin="2"/>
 <wire x1="104.14" y1="203.2" x2="129.54" y2="203.2" width="0.1524" layer="91"/>
 <label x="121.92" y="203.2" size="1.778" layer="95"/>
+<pinref part="SV6" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="MOTOR_HIGH" class="0">
@@ -22145,18 +22150,11 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <label x="45.72" y="76.2" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="MOTOR_LOW_TOP" class="0">
-<segment>
-<pinref part="SV6" gate="G$1" pin="6"/>
-<wire x1="104.14" y1="213.36" x2="129.54" y2="213.36" width="0.1524" layer="91"/>
-<label x="121.92" y="213.36" size="1.778" layer="95"/>
-</segment>
-</net>
 <net name="I_SENSE_LOW_TOP" class="0">
 <segment>
-<pinref part="SV6" gate="G$1" pin="5"/>
-<wire x1="104.14" y1="210.82" x2="129.54" y2="210.82" width="0.1524" layer="91"/>
-<label x="121.92" y="210.82" size="1.778" layer="95"/>
+<wire x1="104.14" y1="208.28" x2="129.54" y2="208.28" width="0.1524" layer="91"/>
+<label x="121.92" y="208.28" size="1.778" layer="95"/>
+<pinref part="SV6" gate="G$1" pin="4"/>
 </segment>
 </net>
 <net name="CAMERA_SI" class="0">
@@ -22550,9 +22548,9 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </net>
 <net name="LI_TOP" class="0">
 <segment>
-<pinref part="SV6" gate="G$1" pin="1"/>
 <wire x1="104.14" y1="200.66" x2="129.54" y2="200.66" width="0.1524" layer="91"/>
 <label x="121.92" y="200.66" size="1.778" layer="95"/>
+<pinref part="SV6" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="HI" class="0">
@@ -22603,9 +22601,9 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </net>
 <net name="I_SENSE_TOP" class="0">
 <segment>
-<pinref part="SV6" gate="G$1" pin="3"/>
 <wire x1="104.14" y1="205.74" x2="129.54" y2="205.74" width="0.1524" layer="91"/>
 <label x="121.92" y="205.74" size="1.778" layer="95"/>
+<pinref part="SV6" gate="G$1" pin="3"/>
 </segment>
 </net>
 <net name="I_SENSE" class="0">
@@ -22620,6 +22618,13 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pinref part="SV10" gate="G$1" pin="9"/>
 <wire x1="129.54" y1="78.74" x2="147.32" y2="78.74" width="0.1524" layer="91"/>
 <label x="139.7" y="78.74" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="MOTOR_LOW_TOP" class="0">
+<segment>
+<wire x1="104.14" y1="210.82" x2="129.54" y2="210.82" width="0.1524" layer="91"/>
+<label x="121.92" y="210.82" size="1.778" layer="95"/>
+<pinref part="SV6" gate="G$1" pin="5"/>
 </segment>
 </net>
 </nets>
@@ -22919,13 +22924,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <label x="304.8" y="210.82" size="1.778" layer="95"/>
 <pinref part="LED2_CONN2" gate="G$1" pin="1"/>
 <wire x1="304.8" y1="215.9" x2="304.8" y2="210.82" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="THERM2" class="0">
-<segment>
-<pinref part="LED2" gate="G$1" pin="THERMAL"/>
-<wire x1="309.88" y1="215.9" x2="307.34" y2="215.9" width="0.1524" layer="91"/>
-<label x="307.34" y="215.9" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>

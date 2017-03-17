@@ -20617,6 +20617,120 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </deviceset>
 </devicesets>
 </library>
+<library name="cap-aluminum">
+<packages>
+<package name="CAP_EEE_B">
+<smd name="1" x="-2.2098" y="0" dx="2.5146" dy="1.778" layer="1"/>
+<smd name="2" x="2.2098" y="0" dx="2.5146" dy="1.778" layer="1"/>
+<wire x1="-2.3876" y1="-2.3876" x2="2.3876" y2="-2.3876" width="0.1524" layer="21"/>
+<wire x1="2.3876" y1="-2.3876" x2="2.3876" y2="-1.2192" width="0.1524" layer="21"/>
+<wire x1="2.3876" y1="2.3876" x2="-2.3876" y2="2.3876" width="0.1524" layer="21"/>
+<wire x1="-2.3876" y1="2.3876" x2="-2.3876" y2="1.2192" width="0.1524" layer="21"/>
+<wire x1="-2.3876" y1="-1.2192" x2="-2.3876" y2="-2.3876" width="0.1524" layer="21"/>
+<wire x1="2.3876" y1="1.2192" x2="2.3876" y2="2.3876" width="0.1524" layer="21"/>
+<text x="-3.2766" y="-0.635" size="1.27" layer="21" ratio="6" rot="SR0">&gt;Name</text>
+<wire x1="-2.2352" y1="1.1176" x2="-1.1176" y2="2.2352" width="0.1524" layer="51"/>
+<wire x1="-2.2352" y1="-1.1176" x2="-1.1176" y2="-2.2352" width="0.1524" layer="51"/>
+<wire x1="-2.2352" y1="-2.2352" x2="2.2352" y2="-2.2352" width="0.1524" layer="51"/>
+<wire x1="2.2352" y1="-2.2352" x2="2.2352" y2="2.2352" width="0.1524" layer="51"/>
+<wire x1="2.2352" y1="2.2352" x2="-2.2352" y2="2.2352" width="0.1524" layer="51"/>
+<wire x1="-2.2352" y1="2.2352" x2="-2.2352" y2="-2.2352" width="0.1524" layer="51"/>
+</package>
+<package name="CAP_EEE_B-M">
+<smd name="1" x="-2.3495" y="0" dx="2.794" dy="1.9812" layer="1"/>
+<smd name="2" x="2.3495" y="0" dx="2.794" dy="1.9812" layer="1"/>
+<wire x1="-2.3876" y1="-2.3876" x2="2.3876" y2="-2.3876" width="0.1524" layer="21"/>
+<wire x1="2.3876" y1="-2.3876" x2="2.3876" y2="-1.3208" width="0.1524" layer="21"/>
+<wire x1="2.3876" y1="2.3876" x2="-2.3876" y2="2.3876" width="0.1524" layer="21"/>
+<wire x1="-2.3876" y1="2.3876" x2="-2.3876" y2="1.3208" width="0.1524" layer="21"/>
+<wire x1="-2.3876" y1="-1.3208" x2="-2.3876" y2="-2.3876" width="0.1524" layer="21"/>
+<wire x1="2.3876" y1="1.3208" x2="2.3876" y2="2.3876" width="0.1524" layer="21"/>
+<text x="-3.2766" y="-0.635" size="1.27" layer="21" ratio="6" rot="SR0">&gt;Name</text>
+<wire x1="-2.2352" y1="1.1176" x2="-1.1176" y2="2.2352" width="0.1524" layer="51"/>
+<wire x1="-2.2352" y1="-1.1176" x2="-1.1176" y2="-2.2352" width="0.1524" layer="51"/>
+<wire x1="-2.2352" y1="-2.2352" x2="2.2352" y2="-2.2352" width="0.1524" layer="51"/>
+<wire x1="2.2352" y1="-2.2352" x2="2.2352" y2="2.2352" width="0.1524" layer="51"/>
+<wire x1="2.2352" y1="2.2352" x2="-2.2352" y2="2.2352" width="0.1524" layer="51"/>
+<wire x1="-2.2352" y1="2.2352" x2="-2.2352" y2="-2.2352" width="0.1524" layer="51"/>
+</package>
+<package name="CAP_EEE_B-L">
+<smd name="1" x="-2.0574" y="0" dx="2.2098" dy="1.5748" layer="1"/>
+<smd name="2" x="2.0574" y="0" dx="2.2098" dy="1.5748" layer="1"/>
+<wire x1="-2.3876" y1="-2.3876" x2="2.3876" y2="-2.3876" width="0.1524" layer="21"/>
+<wire x1="2.3876" y1="-2.3876" x2="2.3876" y2="-1.1176" width="0.1524" layer="21"/>
+<wire x1="2.3876" y1="2.3876" x2="-2.3876" y2="2.3876" width="0.1524" layer="21"/>
+<wire x1="-2.3876" y1="2.3876" x2="-2.3876" y2="1.1176" width="0.1524" layer="21"/>
+<wire x1="-2.3876" y1="-1.1176" x2="-2.3876" y2="-2.3876" width="0.1524" layer="21"/>
+<wire x1="2.3876" y1="1.1176" x2="2.3876" y2="2.3876" width="0.1524" layer="21"/>
+<text x="-3.2766" y="-0.635" size="1.27" layer="21" ratio="6" rot="SR0">&gt;Name</text>
+<wire x1="-2.2352" y1="1.1176" x2="-1.1176" y2="2.2352" width="0.1524" layer="51"/>
+<wire x1="-2.2352" y1="-1.1176" x2="-1.1176" y2="-2.2352" width="0.1524" layer="51"/>
+<wire x1="-2.2352" y1="-2.2352" x2="2.2352" y2="-2.2352" width="0.1524" layer="51"/>
+<wire x1="2.2352" y1="-2.2352" x2="2.2352" y2="2.2352" width="0.1524" layer="51"/>
+<wire x1="2.2352" y1="2.2352" x2="-2.2352" y2="2.2352" width="0.1524" layer="51"/>
+<wire x1="-2.2352" y1="2.2352" x2="-2.2352" y2="-2.2352" width="0.1524" layer="51"/>
+</package>
+</packages>
+<symbols>
+<symbol name="CAPH">
+<pin name="2" x="7.62" y="0" visible="off" length="short" direction="pas" swaplevel="1" rot="R180"/>
+<pin name="1" x="0" y="0" visible="off" length="short" direction="pas" swaplevel="1"/>
+<wire x1="3.4798" y1="-1.905" x2="3.4798" y2="0" width="0.2032" layer="94"/>
+<wire x1="3.4798" y1="0" x2="3.4798" y2="1.905" width="0.2032" layer="94"/>
+<wire x1="4.1148" y1="-1.905" x2="4.1148" y2="0" width="0.2032" layer="94"/>
+<wire x1="4.1148" y1="0" x2="4.1148" y2="1.905" width="0.2032" layer="94"/>
+<wire x1="4.1148" y1="0" x2="5.08" y2="0" width="0.2032" layer="94"/>
+<wire x1="2.54" y1="0" x2="3.4798" y2="0" width="0.2032" layer="94"/>
+<text x="-5.1562" y="-5.5372" size="3.4798" layer="96" ratio="10" rot="SR0">&gt;Value</text>
+<text x="-4.0894" y="2.0828" size="3.4798" layer="95" ratio="10" rot="SR0">&gt;Name</text>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="EEE1VA100WR" prefix="C">
+<gates>
+<gate name="A" symbol="CAPH" x="0" y="0" swaplevel="1"/>
+</gates>
+<devices>
+<device name="" package="CAP_EEE_B">
+<connects>
+<connect gate="A" pin="1" pad="1"/>
+<connect gate="A" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="MANUFACTURER_PART_NUMBER" value="EEE1VA100WR" constant="no"/>
+<attribute name="VENDOR" value="Panasonic" constant="no"/>
+</technology>
+</technologies>
+</device>
+<device name="CAP_EEE_B-M" package="CAP_EEE_B-M">
+<connects>
+<connect gate="A" pin="1" pad="1"/>
+<connect gate="A" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="MANUFACTURER_PART_NUMBER" value="EEE1VA100WR" constant="no"/>
+<attribute name="VENDOR" value="Panasonic" constant="no"/>
+</technology>
+</technologies>
+</device>
+<device name="CAP_EEE_B-L" package="CAP_EEE_B-L">
+<connects>
+<connect gate="A" pin="1" pad="1"/>
+<connect gate="A" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="MANUFACTURER_PART_NUMBER" value="EEE1VA100WR" constant="no"/>
+<attribute name="VENDOR" value="Panasonic" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -20632,14 +20746,14 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="BOT_REV" library="CSD18502KCS" deviceset="CSD18502KCS_KCS_3" device=""/>
 <part name="FRAME1" library="frames" deviceset="A3L-LOC" device=""/>
 <part name="GATE1" library="MIC4604" deviceset="MIC4604YM" device=""/>
-<part name="C1" library="resistor" deviceset="C-US" device="025-050X050" value="10uF"/>
-<part name="C2" library="resistor" deviceset="C-US" device="025-050X050" value="10uF"/>
+<part name="C1" library="cap-aluminum" deviceset="EEE1VA100WR" device="" value="10uF"/>
+<part name="C2" library="cap-aluminum" deviceset="EEE1VA100WR" device="" value="10uF"/>
 <part name="MOTOR_POS" library="solpad" deviceset="SE14" device=""/>
 <part name="TOP_REV" library="CSD18502KCS" deviceset="CSD18502KCS_KCS_3" device=""/>
 <part name="BOT_FWD" library="CSD18502KCS" deviceset="CSD18502KCS_KCS_3" device=""/>
 <part name="GATE2" library="MIC4604" deviceset="MIC4604YM" device=""/>
-<part name="C3" library="resistor" deviceset="C-US" device="025-050X050" value="10uF"/>
-<part name="C4" library="resistor" deviceset="C-US" device="025-050X050" value="10uF"/>
+<part name="C3" library="cap-aluminum" deviceset="EEE1VA100WR" device="" value="10uF"/>
+<part name="C4" library="cap-aluminum" deviceset="EEE1VA100WR" device="" value="10uF"/>
 <part name="MOTOR_NEG" library="solpad" deviceset="SE14" device=""/>
 <part name="FRAME2" library="frames" deviceset="A3L-LOC" device=""/>
 <part name="U$1" library="Teensy356" deviceset="TEENSY_3.5/3.6_FEWER" device="">
@@ -20835,14 +20949,14 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <instance part="BOT_REV" gate="A" x="124.46" y="114.3" rot="MR270"/>
 <instance part="FRAME1" gate="G$1" x="0" y="0"/>
 <instance part="GATE1" gate="A" x="86.36" y="142.24" rot="MR0"/>
-<instance part="C1" gate="G$1" x="106.68" y="132.08" rot="R180"/>
-<instance part="C2" gate="G$1" x="116.84" y="132.08" rot="R180"/>
+<instance part="C1" gate="A" x="106.68" y="129.54" rot="R90"/>
+<instance part="C2" gate="A" x="116.84" y="129.54" rot="R90"/>
 <instance part="MOTOR_POS" gate="1" x="185.42" y="132.08" rot="R270"/>
 <instance part="TOP_REV" gate="A" x="243.84" y="213.36" rot="R270"/>
 <instance part="BOT_FWD" gate="A" x="243.84" y="114.3" rot="R270"/>
 <instance part="GATE2" gate="A" x="281.94" y="142.24"/>
-<instance part="C3" gate="G$1" x="261.62" y="132.08" rot="MR180"/>
-<instance part="C4" gate="G$1" x="251.46" y="132.08" rot="MR180"/>
+<instance part="C3" gate="A" x="261.62" y="132.08" rot="MR90"/>
+<instance part="C4" gate="A" x="251.46" y="132.08" rot="MR90"/>
 <instance part="MOTOR_NEG" gate="1" x="226.06" y="132.08" rot="MR270"/>
 <instance part="D3" gate="1" x="106.68" y="147.32" rot="R180"/>
 <instance part="D4" gate="1" x="261.62" y="147.32" rot="MR180"/>
@@ -20881,11 +20995,11 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pinref part="GATE1" gate="A" pin="HS"/>
 <wire x1="86.36" y1="134.62" x2="88.9" y2="134.62" width="0.1524" layer="91"/>
 <wire x1="88.9" y1="134.62" x2="88.9" y2="124.46" width="0.1524" layer="91"/>
-<pinref part="C2" gate="G$1" pin="1"/>
+<pinref part="C2" gate="A" pin="1"/>
 <wire x1="88.9" y1="124.46" x2="106.68" y2="124.46" width="0.1524" layer="91"/>
 <wire x1="106.68" y1="124.46" x2="116.84" y2="124.46" width="0.1524" layer="91"/>
 <wire x1="116.84" y1="124.46" x2="116.84" y2="129.54" width="0.1524" layer="91"/>
-<pinref part="C1" gate="G$1" pin="1"/>
+<pinref part="C1" gate="A" pin="1"/>
 <wire x1="106.68" y1="129.54" x2="106.68" y2="124.46" width="0.1524" layer="91"/>
 <junction x="106.68" y="124.46"/>
 </segment>
@@ -20893,11 +21007,11 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <net name="N$5" class="0">
 <segment>
 <pinref part="GATE1" gate="A" pin="HB"/>
-<pinref part="C2" gate="G$1" pin="2"/>
+<pinref part="C2" gate="A" pin="2"/>
 <wire x1="86.36" y1="139.7" x2="106.68" y2="139.7" width="0.1524" layer="91"/>
 <wire x1="106.68" y1="139.7" x2="116.84" y2="139.7" width="0.1524" layer="91"/>
 <wire x1="116.84" y1="139.7" x2="116.84" y2="137.16" width="0.1524" layer="91"/>
-<pinref part="C1" gate="G$1" pin="2"/>
+<pinref part="C1" gate="A" pin="2"/>
 <wire x1="106.68" y1="137.16" x2="106.68" y2="139.7" width="0.1524" layer="91"/>
 <junction x="106.68" y="139.7"/>
 <pinref part="D3" gate="1" pin="C"/>
@@ -20929,24 +21043,22 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pinref part="GATE2" gate="A" pin="HS"/>
 <wire x1="281.94" y1="134.62" x2="279.4" y2="134.62" width="0.1524" layer="91"/>
 <wire x1="279.4" y1="134.62" x2="279.4" y2="124.46" width="0.1524" layer="91"/>
-<pinref part="C4" gate="G$1" pin="1"/>
+<pinref part="C4" gate="A" pin="1"/>
 <wire x1="279.4" y1="124.46" x2="261.62" y2="124.46" width="0.1524" layer="91"/>
 <wire x1="261.62" y1="124.46" x2="251.46" y2="124.46" width="0.1524" layer="91"/>
-<wire x1="251.46" y1="124.46" x2="251.46" y2="129.54" width="0.1524" layer="91"/>
-<pinref part="C3" gate="G$1" pin="1"/>
-<wire x1="261.62" y1="129.54" x2="261.62" y2="124.46" width="0.1524" layer="91"/>
+<wire x1="251.46" y1="124.46" x2="251.46" y2="132.08" width="0.1524" layer="91"/>
+<pinref part="C3" gate="A" pin="1"/>
+<wire x1="261.62" y1="132.08" x2="261.62" y2="124.46" width="0.1524" layer="91"/>
 <junction x="261.62" y="124.46"/>
 </segment>
 </net>
 <net name="N$12" class="0">
 <segment>
 <pinref part="GATE2" gate="A" pin="HB"/>
-<pinref part="C4" gate="G$1" pin="2"/>
+<pinref part="C4" gate="A" pin="2"/>
 <wire x1="281.94" y1="139.7" x2="261.62" y2="139.7" width="0.1524" layer="91"/>
 <wire x1="261.62" y1="139.7" x2="251.46" y2="139.7" width="0.1524" layer="91"/>
-<wire x1="251.46" y1="139.7" x2="251.46" y2="137.16" width="0.1524" layer="91"/>
-<pinref part="C3" gate="G$1" pin="2"/>
-<wire x1="261.62" y1="137.16" x2="261.62" y2="139.7" width="0.1524" layer="91"/>
+<pinref part="C3" gate="A" pin="2"/>
 <junction x="261.62" y="139.7"/>
 <pinref part="D4" gate="1" pin="C"/>
 <wire x1="261.62" y1="144.78" x2="261.62" y2="139.7" width="0.1524" layer="91"/>
@@ -22736,12 +22848,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <approved hash="113,2,193.571,130.071,FRAME2,,,,,"/>
 <approved hash="113,3,193.571,130.071,FRAME3,,,,,"/>
 <approved hash="113,3,53.2977,147.515,SV1,,,,,"/>
-<approved hash="113,3,101.558,147.515,SV2,,,,,"/>
 <approved hash="113,4,193.571,130.071,FRAME4,,,,,"/>
 <approved hash="113,4,38.1,216.387,FUSE,,,,,"/>
 <approved hash="113,4,76.0095,229.828,BIG_SWITCH,,,,,"/>
 <approved hash="113,3,213.318,118.305,CAMERA,,,,,"/>
-<approved hash="113,3,249.119,120.845,CAMERA_B,,,,,"/>
 <approved hash="113,3,249.937,94.1747,BLUETOOTH,,,,,"/>
 <approved hash="113,3,286.978,123.385,SERVO,,,,,"/>
 <approved hash="113,3,289.518,105.605,HALL1,,,,,"/>
@@ -22752,9 +22862,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <approved hash="113,3,294.598,162.755,SV4,,,,,"/>
 <approved hash="113,4,265.177,195.775,LED1_CONN,,,,,"/>
 <approved hash="113,4,328.677,195.775,LED2_CONN,,,,,"/>
-<approved hash="113,3,325.078,164.025,GROUND,,,,,"/>
-<approved hash="113,3,342.858,164.025,3_3V,,,,,"/>
-<approved hash="113,3,365.718,164.025,5V,,,,,"/>
 <approved hash="113,2,335.86,113.03,D1,,,,,"/>
 <approved hash="113,2,343.48,113.03,D2,,,,,"/>
 <approved hash="113,2,351.1,113.03,D5,,,,,"/>
