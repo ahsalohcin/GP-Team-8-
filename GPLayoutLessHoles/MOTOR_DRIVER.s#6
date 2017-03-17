@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="8.0.0">
+<eagle version="8.0.1">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -22919,13 +22919,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <label x="304.8" y="210.82" size="1.778" layer="95"/>
 <pinref part="LED2_CONN2" gate="G$1" pin="1"/>
 <wire x1="304.8" y1="215.9" x2="304.8" y2="210.82" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="THERM2" class="0">
-<segment>
-<pinref part="LED2" gate="G$1" pin="THERMAL"/>
-<wire x1="309.88" y1="215.9" x2="307.34" y2="215.9" width="0.1524" layer="91"/>
-<label x="307.34" y="215.9" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
