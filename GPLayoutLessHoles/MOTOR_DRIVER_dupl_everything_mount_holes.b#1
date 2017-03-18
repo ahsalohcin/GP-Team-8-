@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.025" altunitdist="inch" altunit="inch"/>
+<grid distance="0.01" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.0005" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -52,7 +52,7 @@
 <layer number="42" name="bRestrict" color="1" fill="10" visible="no" active="yes"/>
 <layer number="43" name="vRestrict" color="2" fill="10" visible="no" active="yes"/>
 <layer number="44" name="Drills" color="7" fill="1" visible="no" active="yes"/>
-<layer number="45" name="Holes" color="7" fill="1" visible="no" active="yes"/>
+<layer number="45" name="Holes" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="46" name="Milling" color="3" fill="1" visible="no" active="yes"/>
 <layer number="47" name="Measures" color="7" fill="1" visible="no" active="yes"/>
 <layer number="48" name="Document" color="7" fill="1" visible="no" active="yes"/>
@@ -156,8 +156,6 @@
 </layers>
 <board>
 <plain>
-<wire x1="0" y1="0" x2="170" y2="0" width="0" layer="20"/>
-<wire x1="170" y1="45.39" x2="0" y2="45.39" width="0" layer="20"/>
 <dimension x1="39.5" y1="0" x2="130.94" y2="0" x3="85.22" y3="-29.21" textsize="1.778" layer="48" unit="inch"/>
 <wire x1="0" y1="45.39" x2="0" y2="0" width="0" layer="20"/>
 <dimension x1="1" y1="45.54" x2="1" y2="-0.18" x3="-6.62" y3="22.68" textsize="1.778" layer="48" unit="inch"/>
@@ -330,9 +328,18 @@
 <vertex x="169.5" y="0.5"/>
 <vertex x="153.5" y="0.5"/>
 </polygon>
-<wire x1="170" y1="0" x2="340" y2="0" width="0" layer="20"/>
+<wire x1="0" y1="0" x2="39.497" y2="0" width="0" layer="20"/>
+<wire x1="57.404" y1="0" x2="57.3024" y2="0" width="0" layer="20"/>
+<wire x1="57.404" y1="0" x2="112.9792" y2="0" width="0" layer="20"/>
+<wire x1="130.9243" y1="0" x2="209.4992" y2="0" width="0" layer="20"/>
+<wire x1="227.1268" y1="0" x2="283.0449" y2="0" width="0" layer="20"/>
+<wire x1="300.9265" y1="0" x2="340" y2="0" width="0" layer="20"/>
 <wire x1="340" y1="0" x2="340" y2="45.39" width="0" layer="20"/>
-<wire x1="340" y1="45.39" x2="170" y2="45.39" width="0" layer="20"/>
+<wire x1="340" y1="45.39" x2="300.9138" y2="45.3898" width="0" layer="20"/>
+<wire x1="284.2006" y1="45.3898" x2="227.7999" y2="45.3898" width="0" layer="20"/>
+<wire x1="209.4992" y1="45.3898" x2="130.9243" y2="45.3898" width="0" layer="20"/>
+<wire x1="112.9792" y1="45.3898" x2="57.4802" y2="45.3898" width="0" layer="20"/>
+<wire x1="39.497" y1="45.3898" x2="0" y2="45.39" width="0" layer="20"/>
 <dimension x1="209.5" y1="0" x2="300.94" y2="0" x3="255.22" y3="-29.21" textsize="1.778" layer="48" unit="inch"/>
 <dimension x1="171" y1="45.54" x2="171" y2="-0.18" x3="163.38" y3="22.68" textsize="1.778" layer="48" unit="inch"/>
 <dimension x1="171" y1="45.54" x2="209.1" y2="45.54" x3="190.05" y3="54.43" textsize="1.778" layer="48" unit="inch"/>
@@ -505,6 +512,30 @@
 <vertex x="323.5" y="0.5"/>
 </polygon>
 <wire x1="170.0008" y1="45.389" x2="170.0008" y2="0" width="0" layer="102"/>
+<wire x1="39.497" y1="45.3898" x2="46.8376" y2="54.356" width="0" layer="20"/>
+<wire x1="46.8376" y1="54.356" x2="50.165" y2="54.356" width="0" layer="20"/>
+<wire x1="50.165" y1="54.356" x2="57.4802" y2="45.3898" width="0" layer="20"/>
+<wire x1="130.9243" y1="45.3898" x2="123.8504" y2="54.356" width="0" layer="20"/>
+<wire x1="123.8504" y1="54.356" x2="120.4976" y2="54.356" width="0" layer="20"/>
+<wire x1="120.4976" y1="54.356" x2="112.9792" y2="45.3898" width="0" layer="20"/>
+<wire x1="39.497" y1="0" x2="46.9138" y2="-8.636" width="0" layer="20"/>
+<wire x1="46.9138" y1="-8.636" x2="50.165" y2="-8.636" width="0" layer="20"/>
+<wire x1="50.165" y1="-8.636" x2="57.3024" y2="0" width="0" layer="20"/>
+<wire x1="130.9243" y1="0" x2="123.825" y2="-8.636" width="0" layer="20"/>
+<wire x1="123.825" y1="-8.636" x2="120.523" y2="-8.636" width="0" layer="20"/>
+<wire x1="120.523" y1="-8.636" x2="112.9792" y2="0" width="0" layer="20"/>
+<wire x1="209.4992" y1="45.3898" x2="216.7763" y2="54.3433" width="0" layer="20"/>
+<wire x1="216.7763" y1="54.3433" x2="220.0783" y2="54.356" width="0" layer="20"/>
+<wire x1="220.0783" y1="54.356" x2="227.7999" y2="45.3898" width="0" layer="20"/>
+<wire x1="300.9265" y1="45.3898" x2="293.7891" y2="54.356" width="0" layer="20"/>
+<wire x1="293.7891" y1="54.356" x2="290.195" y2="54.356" width="0" layer="20"/>
+<wire x1="290.195" y1="54.356" x2="284.2006" y2="45.3898" width="0" layer="20"/>
+<wire x1="209.4992" y1="0" x2="216.8271" y2="-8.636" width="0" layer="20"/>
+<wire x1="216.8271" y1="-8.636" x2="220.1037" y2="-8.6487" width="0" layer="20"/>
+<wire x1="220.1037" y1="-8.6487" x2="227.1268" y2="0" width="0" layer="20"/>
+<wire x1="300.9265" y1="0" x2="293.6621" y2="-8.636" width="0" layer="20"/>
+<wire x1="293.6621" y1="-8.636" x2="290.449" y2="-8.636" width="0" layer="20"/>
+<wire x1="290.449" y1="-8.636" x2="283.0449" y2="0" width="0" layer="20"/>
 </plain>
 <libraries>
 <library name="resistor">
@@ -4507,6 +4538,26 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </package>
 </packages>
 </library>
+<library name="holes">
+<description>&lt;b&gt;Mounting Holes and Pads&lt;/b&gt;&lt;p&gt;
+&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
+<packages>
+<package name="3,6">
+<description>&lt;b&gt;MOUNTING HOLE&lt;/b&gt; 3.6 mm with drill center</description>
+<wire x1="-2.159" y1="0" x2="0" y2="-2.159" width="2.4892" layer="51" curve="90" cap="flat"/>
+<wire x1="0" y1="2.159" x2="2.159" y2="0" width="2.4892" layer="51" curve="-90" cap="flat"/>
+<circle x="0" y="0" radius="3.429" width="0.1524" layer="21"/>
+<circle x="0" y="0" radius="0.762" width="0.4572" layer="51"/>
+<circle x="0" y="0" radius="3.048" width="2.7686" layer="39"/>
+<circle x="0" y="0" radius="3.048" width="2.7686" layer="40"/>
+<circle x="0" y="0" radius="3.048" width="2.032" layer="43"/>
+<circle x="0" y="0" radius="3.048" width="2.032" layer="41"/>
+<circle x="0" y="0" radius="3.048" width="2.032" layer="42"/>
+<circle x="0" y="0" radius="1.9" width="0.2032" layer="21"/>
+<hole x="0" y="0" drill="3.6"/>
+</package>
+</packages>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -5773,6 +5824,14 @@ design rules under a new name.</description>
 <attribute name="MPN" value="" x="198.5496" y="42.926" size="1.778" layer="27" display="off"/>
 <attribute name="OC_NEWARK" value="unknown" x="198.5496" y="42.926" size="1.778" layer="27" display="off"/>
 </element>
+<element name="H1" library="holes" package="3,6" value="MOUNT-HOLE3.6" x="48.514" y="-5.08"/>
+<element name="H2" library="holes" package="3,6" value="MOUNT-HOLE3.6" x="122.174" y="-5.08"/>
+<element name="H3" library="holes" package="3,6" value="MOUNT-HOLE3.6" x="48.514" y="50.8"/>
+<element name="H4" library="holes" package="3,6" value="MOUNT-HOLE3.6" x="122.174" y="50.8"/>
+<element name="H5" library="holes" package="3,6" value="MOUNT-HOLE3.6" x="218.44" y="50.8"/>
+<element name="H6" library="holes" package="3,6" value="MOUNT-HOLE3.6" x="292.1" y="50.8"/>
+<element name="H7" library="holes" package="3,6" value="MOUNT-HOLE3.6" x="218.44" y="-5.08"/>
+<element name="H8" library="holes" package="3,6" value="MOUNT-HOLE3.6" x="292.1" y="-5.08"/>
 </elements>
 <signals>
 <signal name="MOTOR_HIGH">
