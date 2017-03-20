@@ -12919,14 +12919,7 @@ W = angled&lt;p&gt;
 <wire x1="3.048" y1="0.508" x2="2.794" y2="0.508" width="0.1524" layer="51"/>
 <wire x1="2.794" y1="0.508" x2="2.794" y2="0.762" width="0.1524" layer="51"/>
 <wire x1="2.794" y1="0.762" x2="2.286" y2="0.762" width="0.1524" layer="51"/>
-<pad name="1" x="-5.08" y="0" drill="0.8128" shape="long" rot="R90"/>
-<pad name="2" x="-2.54" y="0" drill="0.8128" shape="long" rot="R90"/>
-<pad name="3" x="0" y="0" drill="0.8128" shape="long" rot="R90"/>
-<pad name="4" x="2.54" y="0" drill="0.8128" shape="long" rot="R90"/>
-<text x="-6.35" y="1.651" size="1.27" layer="25" ratio="10">&gt;NAME</text>
-<text x="-7.493" y="-0.635" size="1.27" layer="21" ratio="10">1</text>
-<text x="4.064" y="-0.635" size="1.27" layer="21" ratio="10">4</text>
-<text x="0" y="1.651" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
+<wire x1="3.81" y1="1.27" x2="3.81" y2="-1.27" width="0.127" layer="21"/>
 <rectangle x1="-5.207" y1="0.254" x2="-4.953" y2="0.762" layer="51"/>
 <rectangle x1="-5.207" y1="-0.762" x2="-4.953" y2="-0.254" layer="51"/>
 <rectangle x1="-2.667" y1="0.254" x2="-2.413" y2="0.762" layer="51"/>
@@ -12935,7 +12928,14 @@ W = angled&lt;p&gt;
 <rectangle x1="-0.127" y1="-0.762" x2="0.127" y2="-0.254" layer="51"/>
 <rectangle x1="2.413" y1="0.254" x2="2.667" y2="0.762" layer="51"/>
 <rectangle x1="2.413" y1="-0.762" x2="2.667" y2="-0.254" layer="51"/>
-<wire x1="3.81" y1="1.27" x2="3.81" y2="-1.27" width="0.127" layer="21"/>
+<pad name="1" x="-5.08" y="0" drill="0.8128" shape="long" rot="R90"/>
+<pad name="2" x="-2.54" y="0" drill="0.8128" shape="long" rot="R90"/>
+<pad name="3" x="0" y="0" drill="0.8128" shape="long" rot="R90"/>
+<pad name="4" x="2.54" y="0" drill="0.8128" shape="long" rot="R90"/>
+<text x="-6.35" y="1.651" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+<text x="-7.493" y="-0.635" size="1.27" layer="51" ratio="10">1</text>
+<text x="4.064" y="-0.635" size="1.27" layer="51" ratio="10">4</text>
+<text x="0" y="1.651" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
 </package>
 <package name="FE02-1">
 <description>&lt;b&gt;FEMALE HEADER&lt;/b&gt;</description>
@@ -13347,12 +13347,12 @@ W = angled&lt;p&gt;
 <wire x1="3.81" y1="-7.62" x2="3.81" y2="5.08" width="0.4064" layer="94"/>
 <wire x1="-1.27" y1="5.08" x2="3.81" y2="5.08" width="0.4064" layer="94"/>
 <wire x1="1.905" y1="3.175" x2="1.905" y2="1.905" width="0.254" layer="94" curve="-180" cap="flat"/>
-<text x="-1.27" y="-10.16" size="1.778" layer="96">&gt;VALUE</text>
-<text x="-1.27" y="5.842" size="1.778" layer="95">&gt;NAME</text>
 <pin name="1" x="7.62" y="-5.08" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
 <pin name="2" x="7.62" y="-2.54" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
 <pin name="3" x="7.62" y="0" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
 <pin name="4" x="7.62" y="2.54" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
+<text x="-1.27" y="-10.16" size="1.778" layer="96">&gt;VALUE</text>
+<text x="-1.27" y="5.842" size="1.778" layer="95">&gt;NAME</text>
 </symbol>
 <symbol name="FE02-1">
 <wire x1="3.81" y1="-5.08" x2="-1.27" y2="-5.08" width="0.4064" layer="94"/>
@@ -21375,6 +21375,16 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="H6" library="holes" deviceset="MOUNT-HOLE" device="3.6"/>
 <part name="H7" library="holes" deviceset="MOUNT-HOLE" device="3.6"/>
 <part name="H8" library="holes" deviceset="MOUNT-HOLE" device="3.6"/>
+<part name="SV19" library="con-lsta" deviceset="FE04-1" device=""/>
+<part name="SV20" library="con-lsta" deviceset="FE04-1" device=""/>
+<part name="H9" library="holes" deviceset="MOUNT-HOLE" device="3.3"/>
+<part name="H10" library="holes" deviceset="MOUNT-HOLE" device="3.3"/>
+<part name="H11" library="holes" deviceset="MOUNT-HOLE" device="3.3"/>
+<part name="H12" library="holes" deviceset="MOUNT-HOLE" device="3.3"/>
+<part name="H13" library="holes" deviceset="MOUNT-HOLE" device="3.3"/>
+<part name="H14" library="holes" deviceset="MOUNT-HOLE" device="3.3"/>
+<part name="H15" library="holes" deviceset="MOUNT-HOLE" device="3.3"/>
+<part name="H16" library="holes" deviceset="MOUNT-HOLE" device="3.3"/>
 </parts>
 <sheets>
 <sheet>
@@ -22379,6 +22389,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <instance part="REC" gate="G$1" x="208.28" y="91.44"/>
 <instance part="SV6" gate="G$1" x="96.52" y="205.74"/>
 <instance part="SV5" gate="G$1" x="48.26" y="213.36"/>
+<instance part="SV19" gate="G$1" x="233.68" y="203.2"/>
 </instances>
 <busses>
 </busses>
@@ -23020,6 +23031,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <instance part="LED2_CONN2" gate="G$1" x="297.18" y="218.44"/>
 <instance part="R16" gate="G$1" x="88.9" y="195.58" rot="R90"/>
 <instance part="C8" gate="G$1" x="198.12" y="210.82"/>
+<instance part="H9" gate="G$1" x="226.06" y="233.68"/>
+<instance part="H10" gate="G$1" x="238.76" y="233.68"/>
+<instance part="H11" gate="G$1" x="251.46" y="233.68"/>
+<instance part="H12" gate="G$1" x="261.62" y="233.68"/>
 </instances>
 <busses>
 </busses>
@@ -23265,6 +23280,20 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <label x="304.8" y="210.82" size="1.778" layer="95"/>
 <pinref part="LED2_CONN2" gate="G$1" pin="1"/>
 <wire x1="304.8" y1="215.9" x2="304.8" y2="210.82" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="THERM1" class="0">
+<segment>
+<pinref part="LED1" gate="G$1" pin="THERMAL"/>
+<wire x1="254" y1="218.44" x2="248.92" y2="218.44" width="0.1524" layer="91"/>
+<label x="248.92" y="218.44" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="THERM2" class="0">
+<segment>
+<pinref part="LED2" gate="G$1" pin="THERMAL"/>
+<wire x1="309.88" y1="215.9" x2="307.34" y2="215.9" width="0.1524" layer="91"/>
+<label x="307.34" y="215.9" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
@@ -24271,6 +24300,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <instance part="REC1" gate="G$1" x="208.28" y="91.44"/>
 <instance part="SV17" gate="G$1" x="96.52" y="205.74"/>
 <instance part="SV18" gate="G$1" x="48.26" y="213.36"/>
+<instance part="SV20" gate="G$1" x="233.68" y="200.66"/>
 </instances>
 <busses>
 </busses>
@@ -24912,6 +24942,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <instance part="LED2_CONN3" gate="G$1" x="297.18" y="218.44"/>
 <instance part="R34" gate="G$1" x="88.9" y="195.58" rot="R90"/>
 <instance part="C24" gate="G$1" x="198.12" y="210.82"/>
+<instance part="H13" gate="G$1" x="233.68" y="241.3"/>
+<instance part="H14" gate="G$1" x="254" y="241.3"/>
+<instance part="H15" gate="G$1" x="271.78" y="241.3"/>
+<instance part="H16" gate="G$1" x="289.56" y="241.3"/>
 </instances>
 <busses>
 </busses>
@@ -25157,6 +25191,20 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <label x="304.8" y="210.82" size="1.778" layer="95"/>
 <pinref part="LED2_CONN3" gate="G$1" pin="1"/>
 <wire x1="304.8" y1="215.9" x2="304.8" y2="210.82" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="THERM1_DUP" class="0">
+<segment>
+<pinref part="LED3" gate="G$1" pin="THERMAL"/>
+<wire x1="254" y1="218.44" x2="248.92" y2="218.44" width="0.1524" layer="91"/>
+<label x="248.92" y="218.44" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="THERM2_DUP" class="0">
+<segment>
+<pinref part="LED4" gate="G$1" pin="THERMAL"/>
+<wire x1="309.88" y1="215.9" x2="307.34" y2="215.9" width="0.1524" layer="91"/>
+<label x="307.34" y="215.9" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
