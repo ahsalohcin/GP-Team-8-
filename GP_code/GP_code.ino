@@ -12,9 +12,16 @@
 #include <Servo.h>
 
 unsigned long int prevLoop; // to track loop time
+
+// useful function
+double mapdouble(double x, double in_min, double in_max, double out_min, double out_max)
+{
+ return (double)(x - in_min) * (out_max - out_min) / (double)(in_max - in_min) + out_min;
+}
+
 // MOTORS
 //************************************************************************
-  int HI = 3; //likewise with motor, arbitrary pin number 
+  int HI = 3; //pin numbers
   int LI = 4;
 //int triggerPin = 9; // help when looking at O-scope
 //int triggerPin2 = 10; // help when looking at O-scope
@@ -44,7 +51,7 @@ unsigned long int prevLoop; // to track loop time
   double averaged[128]; //after moving average filter
   double differences[127];//after taking differences
   
-  int threshhold = 350; // for thershholding technique
+  int threshhold = 350; // for threshholding technique
   unsigned int integrationPeriod = 50;
   unsigned int prevCameraTime = 0;
   
@@ -82,13 +89,14 @@ unsigned long int prevLoop; // to track loop time
 // STEERING
 //************************************************************************
   // for camera steering
-  double xError; // xCenter - xMeasured (from camera);
-  double xCenter = 64.0;
+  double xError; // xRef - xMeasured (from camera);
+  double xRef = 64.0; // center is 64;
   double xMeasured;  
   double kSteering = .546875; // 35/64 = .546875 for full range. will be adjusted later.
   double kSteeringMicro =  (double)(servoRangeMicro)/64.00;
      
-  void steerCamera(double xCenter, double xMeasured); // steers using camera input 
+  void steerCamera(double xRef, double xMeasured); // steers using camera input 
+  
   // for Tx steering
   void steerTx(); // steers using Tx input
 
@@ -109,7 +117,29 @@ unsigned long int prevLoop; // to track loop time
   volatile unsigned long int prevHallTime_R; // volatile to prevent memory issues
   void magnet_detect_R();
   
+// DIAGNOSTICS
+//************************************************************************
+  double BATT_VOLTAGE_SENSE = 17; //pin number;
+  double battVoltSenseVal;
+  double battVoltVal;
+  double battConst = 2.728; // (R2+R1)/R1; R1 = 2.8k, R2 = 1.62k 
+  double battPeriod = 1000; 
+  double battPrevTime = 0;
 
+  double EMF_SENSE_HIGH = 19;
+  double emfSenseHigh = 0;
+  double EMF_SENSE_LOW = 18;
+  double emfSenseLow = 0;
+  double emfConst = 3.0174; // (R3+R4)/R4; R3 = 2.32k, R4 = 1.15k
+  double emfHigh; // emfHighV = (emfSenseHighVal - emfSenseLowVal)*emfConst;
+  double emf; //emf = emfHigh-emfSenseLow
+
+  double I_SENSE = 5;
+  double iSenseV;
+  double iCalc;
+  double iConst = 2.5; // 5k /(RS*RL) RS = .02 RL = 100k. unreliable with RL = 100k? RL = 10k better for ADC
+  
+  
 // MAIN CODE
 //************************************************************************
 void setup() {
@@ -141,7 +171,15 @@ void setup() {
 
     pinMode(hallPin_R,INPUT);
     attachInterrupt(digitalPinToInterrupt(hallPin_R), magnet_detect_R, RISING); //set up interrupt function. should work on any teensy pin.
-  
+
+  // diagnostics
+    pinMode(BATT_VOLTAGE_SENSE,INPUT);
+    
+    pinMode(EMF_SENSE_HIGH, INPUT);
+    pinMode(EMF_SENSE_LOW,INPUT);
+
+    pinMode(I_SENSE, INPUT);
+    
   //indicator LED that program is running
     pinMode(13, OUTPUT);
     digitalWrite(13,HIGH);
@@ -188,7 +226,7 @@ void loop() {
     steerTx();
   
   //Proportional controller write to servo instead
-    //steerCamera(xCenter,xMeasured);
+    //steerCamera(xRef,xMeasured);
 
   //Speed Sensing
     Serial.print(" Speed data: ");
@@ -207,7 +245,38 @@ void loop() {
     Serial.print(" ");
     Serial.print(" wheelSpeed_L: ");
     Serial.print(wheelSpeed_L_Copy);
-  
+
+  //Diagnostics
+    //batt voltage runs once in a while
+    if ( millis() - battPrevTime > battPeriod)
+    {
+      battVoltSenseVal = analogRead(BATT_VOLTAGE_SENSE);
+      battVoltVal = battVoltSenseVal*battConst;
+      Serial.print(" Batt: ");
+      Serial.print(battVoltVal);
+      battPrevTime = millis();
+    }
+    
+    //reading emf 
+    emfSenseHigh = mapdouble(analogRead(EMF_SENSE_HIGH),0,1023,0,3.3);
+    emfSenseLow = mapdouble(analogRead(EMF_SENSE_LOW),0,1023,0,3.3);
+    emfHigh = (emfSenseHigh - emfSenseLow)*emfConst;
+    emf = emfHigh-emfSenseLow;
+    Serial.print(" emfSenseLow(V): ");
+    Serial.print(emfSenseLow);
+    Serial.print(" emfSenseHigh(V): ");
+    Serial.print(emfSenseHigh);
+    Serial.print(" emf(V): ");
+    Serial.print(emf);
+
+    //reading motor current
+    iSenseV = mapdouble(analogRead(I_SENSE),0,1023,0,3.3);
+    iCalc = iConst * iSenseV;
+    Serial.print(" iSenseV: ");
+    Serial.print(iSenseV);
+    Serial.print(" iCalc: ");
+    Serial.print(iCalc);
+   
   //Print loop time
     Serial.print(" Looptime: ");    
     Serial.println(millis()-prevLoop);
@@ -343,11 +412,11 @@ void steerTx() //needs checking
  Serial.print(servoValueMicro);
 }
 
-void steerCamera(double xCenter, double xMeasured)
+void steerCamera(double xRef, double xMeasured)
 {
   double xError;
   double steerValue;
-  xError = xCenter - xMeasured;
+  xError = xRef - xMeasured;
   //0-180
     //steerValue = servoMid + kSteering*xError; // for full range: 64 pixels --> 35 ms has kSteering = 35/64 = .546875
     //myServo.write(steerValue);
@@ -357,8 +426,7 @@ void steerCamera(double xCenter, double xMeasured)
     myServo.writeMicroseconds(steerValue);
   //does fullrange camera to fullrange servo
   //steerValue = constrain( map( xMeasured, 128, 0, servoMid - servoRange, servoMid + servoRange ), servoMid - servoRange, servoMid + servoRange );
-  
-  
+   
   Serial.print(" steerValue: ");
   Serial.print(steerValue);
 }
