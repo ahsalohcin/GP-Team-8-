@@ -21163,9 +21163,9 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="R15" library="resistor" deviceset="R-US_" device="R0603" value="10k"/>
 <part name="R16" library="resistor" deviceset="R-US_" device="R0603" value="10k"/>
 <part name="ATGPIO" library="con-lsta" deviceset="FE10-1" device=""/>
-<part name="R17" library="rcl" deviceset="R-US_" device="R2512" value="10m"/>
+<part name="R17" library="rcl" deviceset="R-US_" device="R2512" value="20m"/>
 <part name="I_SENSE_AMP" library="burr-brown" deviceset="INA138" device=""/>
-<part name="R18" library="rcl" deviceset="R-US_" device="R0603" value="10k"/>
+<part name="R18" library="rcl" deviceset="R-US_" device="R0603" value="100k"/>
 <part name="C7" library="resistor" deviceset="C-US" device="C0603"/>
 <part name="REC" library="con-lsta" deviceset="FE06-1" device=""/>
 <part name="C8" library="rcl" deviceset="C-US" device="C0805" value="10u"/>
@@ -21359,9 +21359,9 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="R33" library="resistor" deviceset="R-US_" device="R0603" value="10k"/>
 <part name="R34" library="resistor" deviceset="R-US_" device="R0603" value="10k"/>
 <part name="ATGPIO1" library="con-lsta" deviceset="FE10-1" device=""/>
-<part name="R35" library="rcl" deviceset="R-US_" device="R2512" value="10m"/>
+<part name="R35" library="rcl" deviceset="R-US_" device="R2512" value="20m"/>
 <part name="I_SENSE_AMP1" library="burr-brown" deviceset="INA138" device=""/>
-<part name="R36" library="rcl" deviceset="R-US_" device="R0603" value="10k"/>
+<part name="R36" library="rcl" deviceset="R-US_" device="R0603" value="100k"/>
 <part name="C23" library="resistor" deviceset="C-US" device="C0603"/>
 <part name="REC1" library="con-lsta" deviceset="FE06-1" device=""/>
 <part name="C24" library="rcl" deviceset="C-US" device="C0805" value="10u"/>

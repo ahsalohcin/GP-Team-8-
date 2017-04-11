@@ -7695,6 +7695,8 @@ design rules under a new name.</description>
 <vertex x="169.5" y="0.5"/>
 <vertex x="153.5" y="0.5"/>
 </polygon>
+<contactref element="LED2" pad="THERMAL"/>
+<wire x1="161.68" y1="8.06" x2="161.375" y2="7.75" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="THERM1">
 <via x="161.3406" y="40.2478" extent="1-16" drill="0.381" diameter="0.005" shape="square"/>
@@ -7725,6 +7727,8 @@ design rules under a new name.</description>
 <vertex x="169.5" y="31"/>
 <vertex x="169.5" y="45"/>
 </polygon>
+<contactref element="LED1" pad="THERMAL"/>
+<wire x1="161.9756" y1="37.7078" x2="161.6706" y2="37.9828" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="MOTOR_HIGH_DUP">
 <contactref element="R21" pad="2"/>
@@ -9584,6 +9588,8 @@ design rules under a new name.</description>
 <vertex x="339.5" y="0.5"/>
 <vertex x="323.5" y="0.5"/>
 </polygon>
+<contactref element="LED4" pad="THERMAL"/>
+<wire x1="331.68" y1="8.06" x2="331.375" y2="7.75" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="THERM1_DUP">
 <via x="331.3406" y="40.2478" extent="1-16" drill="0.381" diameter="0.005" shape="square"/>
@@ -9614,6 +9620,8 @@ design rules under a new name.</description>
 <vertex x="339.5" y="31"/>
 <vertex x="339.5" y="45"/>
 </polygon>
+<contactref element="LED3" pad="THERMAL"/>
+<wire x1="331.9756" y1="37.7078" x2="331.6706" y2="37.9828" width="0" layer="19" extent="1-1"/>
 </signal>
 </signals>
 <errors>

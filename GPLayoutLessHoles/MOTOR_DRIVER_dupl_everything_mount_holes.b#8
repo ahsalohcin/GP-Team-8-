@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.01" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.0025" altunitdist="inch" altunit="inch"/>
+<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.025" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -52,7 +52,7 @@
 <layer number="42" name="bRestrict" color="1" fill="10" visible="no" active="yes"/>
 <layer number="43" name="vRestrict" color="2" fill="10" visible="no" active="yes"/>
 <layer number="44" name="Drills" color="7" fill="1" visible="no" active="yes"/>
-<layer number="45" name="Holes" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="45" name="Holes" color="7" fill="1" visible="no" active="yes"/>
 <layer number="46" name="Milling" color="3" fill="1" visible="no" active="yes"/>
 <layer number="47" name="Measures" color="7" fill="1" visible="no" active="yes"/>
 <layer number="48" name="Document" color="7" fill="1" visible="no" active="yes"/>
@@ -156,16 +156,18 @@
 </layers>
 <board>
 <plain>
+<wire x1="0" y1="0" x2="170" y2="0" width="0" layer="20"/>
+<wire x1="170" y1="45.39" x2="0" y2="45.39" width="0" layer="20"/>
 <dimension x1="39.5" y1="0" x2="130.94" y2="0" x3="85.22" y3="-29.21" textsize="1.778" layer="48" unit="inch"/>
-<wire x1="0" y1="45.72" x2="0" y2="0" width="0" layer="20"/>
+<wire x1="0" y1="45.39" x2="0" y2="0" width="0" layer="20"/>
 <dimension x1="1" y1="45.54" x2="1" y2="-0.18" x3="-6.62" y3="22.68" textsize="1.778" layer="48" unit="inch"/>
 <dimension x1="1" y1="45.54" x2="39.1" y2="45.54" x3="20.05" y3="54.43" textsize="1.778" layer="48" unit="inch"/>
 <dimension x1="39.5" y1="0" x2="77.6" y2="0" x3="58.55" y3="-15.24" textsize="1.778" layer="48" unit="inch"/>
 <dimension x1="130.92" y1="0" x2="92.84" y2="0" x3="111.88" y3="-15.24" textsize="1.778" layer="48" unit="inch"/>
 <dimension x1="130.965" y1="45.79" x2="169.065" y2="45.79" x3="150.015" y3="54.68" textsize="1.778" layer="48" unit="inch"/>
-<wire x1="131.064" y1="0" x2="131.064" y2="45.72" width="0" layer="102"/>
-<wire x1="153" y1="0.0254" x2="153" y2="45.72" width="0" layer="102"/>
-<wire x1="39.878" y1="45.72" x2="39.878" y2="0" width="0" layer="102"/>
+<wire x1="130.92" y1="0" x2="130.92" y2="45.39" width="0" layer="102"/>
+<wire x1="153" y1="0.0254" x2="153" y2="45.39" width="0" layer="102"/>
+<wire x1="39.5" y1="45.39" x2="39.5" y2="0" width="0" layer="102"/>
 <text x="110.294" y="33.3076" size="0.9144" layer="21" font="vector" ratio="14" rot="R90">HL1</text>
 <text x="110.3122" y="28.1178" size="0.9144" layer="21" font="vector" ratio="15" rot="R90">HL2</text>
 <text x="127.7112" y="28.4226" size="0.9144" layer="21" font="vector" ratio="14" rot="R90">HL2B</text>
@@ -248,7 +250,7 @@
 <text x="110.7186" y="11.938" size="0.9144" layer="21" font="vector" ratio="14" rot="R90">C6</text>
 <text x="109.3978" y="26.3144" size="0.9144" layer="21" font="vector" ratio="14" rot="R90">C5</text>
 <text x="125.1458" y="8.255" size="0.9144" layer="21" font="vector" ratio="14" rot="R90">CAM</text>
-<text x="106.3752" y="7.7978" size="0.9144" layer="21" font="vector" ratio="14" rot="R90">CAM.B</text>
+<text x="110.9472" y="7.7978" size="0.9144" layer="21" font="vector" ratio="14" rot="R90">CAM.B</text>
 <text x="80.391" y="30.3784" size="0.9144" layer="21" font="vector" ratio="14" rot="R90">TGPIO</text>
 <text x="70.5358" y="6.5786" size="0.9144" layer="21" font="vector" ratio="14" rot="R90">ATGPIO</text>
 <text x="98.4758" y="6.731" size="0.9144" layer="21" font="vector" ratio="14" rot="R90">SI</text>
@@ -293,10 +295,10 @@
 <text x="91.2876" y="6.5278" size="0.9144" layer="21" font="vector" ratio="14">PD5</text>
 <text x="94.0054" y="10.5156" size="0.9144" layer="21" font="vector" ratio="14">PB1</text>
 <text x="123.444" y="14.4018" size="0.9144" layer="21" font="vector" ratio="14">5V</text>
-<text x="122.9614" y="27.1018" size="0.9144" layer="21" font="vector" ratio="14">SW1</text>
-<text x="122.9614" y="24.5872" size="0.9144" layer="21" font="vector" ratio="14">SW2</text>
-<text x="122.9868" y="22.0218" size="0.9144" layer="21" font="vector" ratio="14">SW3</text>
-<text x="122.9868" y="19.4818" size="0.9144" layer="21" font="vector" ratio="14">SW4</text>
+<text x="122.9614" y="27.1018" size="0.9144" layer="21" font="vector" ratio="14">GND</text>
+<text x="122.9614" y="24.5872" size="0.9144" layer="21" font="vector" ratio="14">GND</text>
+<text x="122.9868" y="22.0218" size="0.9144" layer="21" font="vector" ratio="14">GND</text>
+<text x="122.9868" y="19.4818" size="0.9144" layer="21" font="vector" ratio="14">GND</text>
 <text x="137.0584" y="27.7876" size="0.9144" layer="21" font="vector" ratio="14">R6</text>
 <text x="134.1882" y="20.2184" size="0.9144" layer="21" font="vector" ratio="14">GND</text>
 <text x="137.1854" y="20.193" size="0.9144" layer="21" font="vector" ratio="14">7.4</text>
@@ -328,32 +330,18 @@
 <vertex x="169.5" y="0.5"/>
 <vertex x="153.5" y="0.5"/>
 </polygon>
-<wire x1="0" y1="0" x2="39.878" y2="0" width="0" layer="20"/>
-<wire x1="39.878" y1="0" x2="46.736" y2="-8.636" width="0" layer="20"/>
-<wire x1="46.736" y1="-8.636" x2="50.292" y2="-8.636" width="0" layer="20"/>
-<wire x1="50.292" y1="-8.636" x2="56.896" y2="0" width="0" layer="20"/>
-<wire x1="56.896" y1="0" x2="113.284" y2="0" width="0" layer="20"/>
-<wire x1="113.284" y1="0" x2="120.396" y2="-8.636" width="0" layer="20"/>
-<wire x1="120.396" y1="-8.636" x2="123.952" y2="-8.636" width="0" layer="20"/>
-<wire x1="123.952" y1="-8.636" x2="131.064" y2="0" width="0" layer="20"/>
-<wire x1="131.064" y1="0" x2="209.804" y2="0" width="0" layer="20"/>
-<wire x1="209.804" y1="0" x2="216.662" y2="-8.636" width="0" layer="20"/>
-<wire x1="216.662" y1="-8.636" x2="220.218" y2="-8.636" width="0" layer="20"/>
-<wire x1="220.218" y1="-8.636" x2="227.076" y2="0" width="0" layer="20"/>
-<wire x1="227.076" y1="0" x2="283.718" y2="0" width="0" layer="20"/>
-<wire x1="283.718" y1="0" x2="290.322" y2="-8.636" width="0" layer="20"/>
-<wire x1="290.322" y1="-8.636" x2="293.878" y2="-8.636" width="0" layer="20"/>
-<wire x1="293.878" y1="-8.636" x2="300.99" y2="0" width="0" layer="20"/>
-<wire x1="300.99" y1="0" x2="340.36" y2="0" width="0" layer="20"/>
+<wire x1="170" y1="0" x2="340" y2="0" width="0" layer="20"/>
+<wire x1="340" y1="0" x2="340" y2="45.39" width="0" layer="20"/>
+<wire x1="340" y1="45.39" x2="170" y2="45.39" width="0" layer="20"/>
 <dimension x1="209.5" y1="0" x2="300.94" y2="0" x3="255.22" y3="-29.21" textsize="1.778" layer="48" unit="inch"/>
 <dimension x1="171" y1="45.54" x2="171" y2="-0.18" x3="163.38" y3="22.68" textsize="1.778" layer="48" unit="inch"/>
 <dimension x1="171" y1="45.54" x2="209.1" y2="45.54" x3="190.05" y3="54.43" textsize="1.778" layer="48" unit="inch"/>
 <dimension x1="209.5" y1="0" x2="247.6" y2="0" x3="228.55" y3="-15.24" textsize="1.778" layer="48" unit="inch"/>
 <dimension x1="300.92" y1="0" x2="262.84" y2="0" x3="281.88" y3="-15.24" textsize="1.778" layer="48" unit="inch"/>
 <dimension x1="300.965" y1="45.79" x2="339.065" y2="45.79" x3="320.015" y3="54.68" textsize="1.778" layer="48" unit="inch"/>
-<wire x1="300.99" y1="0" x2="300.99" y2="45.72" width="0" layer="102"/>
-<wire x1="323" y1="0.0254" x2="323" y2="45.72" width="0" layer="102"/>
-<wire x1="209.804" y1="45.72" x2="209.804" y2="0" width="0" layer="102"/>
+<wire x1="300.92" y1="0" x2="300.92" y2="45.39" width="0" layer="102"/>
+<wire x1="323" y1="0.0254" x2="323" y2="45.39" width="0" layer="102"/>
+<wire x1="209.5" y1="45.39" x2="209.5" y2="0" width="0" layer="102"/>
 <text x="280.294" y="33.3076" size="0.9144" layer="21" font="vector" ratio="14" rot="R90">HL1</text>
 <text x="280.3122" y="28.1178" size="0.9144" layer="21" font="vector" ratio="15" rot="R90">HL2</text>
 <text x="297.7112" y="28.4226" size="0.9144" layer="21" font="vector" ratio="14" rot="R90">HL2B</text>
@@ -436,7 +424,7 @@
 <text x="280.7186" y="11.938" size="0.9144" layer="21" font="vector" ratio="14" rot="R90">C6</text>
 <text x="279.3978" y="26.3144" size="0.9144" layer="21" font="vector" ratio="14" rot="R90">C5</text>
 <text x="295.1458" y="8.255" size="0.9144" layer="21" font="vector" ratio="14" rot="R90">CAM</text>
-<text x="276.3752" y="7.7978" size="0.9144" layer="21" font="vector" ratio="14" rot="R90">CAM.B</text>
+<text x="280.9472" y="7.7978" size="0.9144" layer="21" font="vector" ratio="14" rot="R90">CAM.B</text>
 <text x="250.391" y="30.3784" size="0.9144" layer="21" font="vector" ratio="14" rot="R90">TGPIO</text>
 <text x="240.5358" y="6.5786" size="0.9144" layer="21" font="vector" ratio="14" rot="R90">ATGPIO</text>
 <text x="268.4758" y="6.731" size="0.9144" layer="21" font="vector" ratio="14" rot="R90">SI</text>
@@ -481,10 +469,10 @@
 <text x="261.2876" y="6.5278" size="0.9144" layer="21" font="vector" ratio="14">PD5</text>
 <text x="264.0054" y="10.5156" size="0.9144" layer="21" font="vector" ratio="14">PB1</text>
 <text x="293.444" y="14.4018" size="0.9144" layer="21" font="vector" ratio="14">5V</text>
-<text x="292.9614" y="27.1018" size="0.9144" layer="21" font="vector" ratio="14">SW1</text>
-<text x="292.9614" y="24.5872" size="0.9144" layer="21" font="vector" ratio="14">SW2</text>
-<text x="292.9868" y="22.0218" size="0.9144" layer="21" font="vector" ratio="14">SW3</text>
-<text x="292.9868" y="19.4818" size="0.9144" layer="21" font="vector" ratio="14">SW4</text>
+<text x="292.9614" y="27.1018" size="0.9144" layer="21" font="vector" ratio="14">GND</text>
+<text x="292.9614" y="24.5872" size="0.9144" layer="21" font="vector" ratio="14">GND</text>
+<text x="292.9868" y="22.0218" size="0.9144" layer="21" font="vector" ratio="14">GND</text>
+<text x="292.9868" y="19.4818" size="0.9144" layer="21" font="vector" ratio="14">GND</text>
 <text x="307.0584" y="27.7876" size="0.9144" layer="21" font="vector" ratio="14">R6</text>
 <text x="304.1882" y="20.2184" size="0.9144" layer="21" font="vector" ratio="14">GND</text>
 <text x="307.1854" y="20.193" size="0.9144" layer="21" font="vector" ratio="14">7.4</text>
@@ -516,27 +504,7 @@
 <vertex x="339.5" y="0.5"/>
 <vertex x="323.5" y="0.5"/>
 </polygon>
-<wire x1="170.0008" y1="45.72" x2="170.0008" y2="0" width="0" layer="102"/>
-<wire x1="340.36" y1="0" x2="340.36" y2="45.72" width="0" layer="20"/>
-<wire x1="340.36" y1="45.72" x2="300.99" y2="45.72" width="0" layer="20"/>
-<wire x1="300.99" y1="45.72" x2="293.878" y2="54.356" width="0" layer="20"/>
-<wire x1="293.878" y1="54.356" x2="290.322" y2="54.356" width="0" layer="20"/>
-<wire x1="290.322" y1="54.356" x2="283.464" y2="45.72" width="0" layer="20"/>
-<wire x1="283.464" y1="45.72" x2="227.076" y2="45.72" width="0" layer="20"/>
-<wire x1="227.076" y1="45.72" x2="220.218" y2="54.356" width="0" layer="20"/>
-<wire x1="220.218" y1="54.356" x2="216.662" y2="54.356" width="0" layer="20"/>
-<wire x1="216.662" y1="54.356" x2="209.804" y2="45.72" width="0" layer="20"/>
-<wire x1="209.804" y1="45.72" x2="131.064" y2="45.72" width="0" layer="20"/>
-<wire x1="131.064" y1="45.72" x2="123.952" y2="54.356" width="0" layer="20"/>
-<wire x1="123.952" y1="54.356" x2="120.396" y2="54.356" width="0" layer="20"/>
-<wire x1="120.396" y1="54.356" x2="113.538" y2="45.72" width="0" layer="20"/>
-<wire x1="113.538" y1="45.72" x2="57.15" y2="45.72" width="0" layer="20"/>
-<wire x1="57.15" y1="45.72" x2="50.292" y2="54.356" width="0" layer="20"/>
-<wire x1="50.292" y1="54.356" x2="46.736" y2="54.356" width="0" layer="20"/>
-<wire x1="46.736" y1="54.356" x2="39.878" y2="45.72" width="0" layer="20"/>
-<wire x1="39.878" y1="45.72" x2="0" y2="45.72" width="0" layer="20"/>
-<text x="122.936" y="16.9418" size="0.9144" layer="21" font="vector" ratio="14">SENSE</text>
-<text x="292.862" y="16.9418" size="0.9144" layer="21" font="vector" ratio="14">SENSE</text>
+<wire x1="170.0008" y1="45.389" x2="170.0008" y2="0" width="0" layer="102"/>
 </plain>
 <libraries>
 <library name="resistor">
@@ -4539,26 +4507,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </package>
 </packages>
 </library>
-<library name="holes">
-<description>&lt;b&gt;Mounting Holes and Pads&lt;/b&gt;&lt;p&gt;
-&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
-<packages>
-<package name="3,6">
-<description>&lt;b&gt;MOUNTING HOLE&lt;/b&gt; 3.6 mm with drill center</description>
-<wire x1="-2.159" y1="0" x2="0" y2="-2.159" width="2.4892" layer="51" curve="90" cap="flat"/>
-<wire x1="0" y1="2.159" x2="2.159" y2="0" width="2.4892" layer="51" curve="-90" cap="flat"/>
-<circle x="0" y="0" radius="3.429" width="0.1524" layer="21"/>
-<circle x="0" y="0" radius="0.762" width="0.4572" layer="51"/>
-<circle x="0" y="0" radius="3.048" width="2.7686" layer="39"/>
-<circle x="0" y="0" radius="3.048" width="2.7686" layer="40"/>
-<circle x="0" y="0" radius="3.048" width="2.032" layer="43"/>
-<circle x="0" y="0" radius="3.048" width="2.032" layer="41"/>
-<circle x="0" y="0" radius="3.048" width="2.032" layer="42"/>
-<circle x="0" y="0" radius="1.9" width="0.2032" layer="21"/>
-<hole x="0" y="0" drill="3.6"/>
-</package>
-</packages>
-</library>
 </libraries>
 <attributes>
 </attributes>
@@ -5825,14 +5773,6 @@ design rules under a new name.</description>
 <attribute name="MPN" value="" x="198.5496" y="42.926" size="1.778" layer="27" display="off"/>
 <attribute name="OC_NEWARK" value="unknown" x="198.5496" y="42.926" size="1.778" layer="27" display="off"/>
 </element>
-<element name="H1" library="holes" package="3,6" value="MOUNT-HOLE3.6" x="48.514" y="-5.08"/>
-<element name="H2" library="holes" package="3,6" value="MOUNT-HOLE3.6" x="122.174" y="-5.08"/>
-<element name="H3" library="holes" package="3,6" value="MOUNT-HOLE3.6" x="48.514" y="50.8"/>
-<element name="H4" library="holes" package="3,6" value="MOUNT-HOLE3.6" x="122.174" y="50.8"/>
-<element name="H5" library="holes" package="3,6" value="MOUNT-HOLE3.6" x="218.44" y="50.8"/>
-<element name="H6" library="holes" package="3,6" value="MOUNT-HOLE3.6" x="292.1" y="50.8"/>
-<element name="H7" library="holes" package="3,6" value="MOUNT-HOLE3.6" x="218.44" y="-5.08"/>
-<element name="H8" library="holes" package="3,6" value="MOUNT-HOLE3.6" x="292.1" y="-5.08"/>
 </elements>
 <signals>
 <signal name="MOTOR_HIGH">
