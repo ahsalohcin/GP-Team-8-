@@ -35,10 +35,10 @@ double mapdouble(double x, double in_min, double in_max, double out_min, double 
   void getPot();
 
   // transmitter and motor driver
-  int REC_MOTOR = 15; // pin to read signals from reciever
+  int REC_MOTOR = 21; // pin to read signals from reciever
   int throttleValue;
-  int topDutyCycle = 256; // = 100%
-  int buffTx = 100; // buffer for tx input . full range of tx input is 1160 to 1830
+  int topDutyCycle = 256*.75; // = 100%
+  int buffTx = 200; // buffer for tx input . full range of tx input is 1160 to 1830
   int throttleMid = 1500;
   void getTxMotor(); //gets input from tx, converts to pwm, and prints
 
@@ -87,8 +87,8 @@ double mapdouble(double x, double in_min, double in_max, double out_min, double 
 
 // SERVO
 //************************************************************************
-  int REC_SERVO = 18;
-  int SERVO = 20;
+  int REC_SERVO = 20;
+  int SERVO = 9;
   
   int servoValueMicro; //1000-2000 for full range. is actually less because of the physical stops 
   int servoMidMicro = 1455; // 2/18 test: min 1140, max 1770 before running into mechanical stops
@@ -190,8 +190,14 @@ void setup() {
     pinMode(I_SENSE, INPUT);
     
   //indicator LED that program is running
-    pinMode(13, OUTPUT);
-    digitalWrite(13,HIGH);
+    pinMode(14, OUTPUT);
+    digitalWrite(14,HIGH);
+
+    pinMode(15, OUTPUT);
+    digitalWrite(15,HIGH);
+
+    pinMode(16, OUTPUT);
+    digitalWrite(16,HIGH);
 }
 
 void loop() {
@@ -239,7 +245,7 @@ void loop() {
   
   //Proportional controller write to servo instead
     //steerCamera(xRef,xMeasured);
-
+/*
   //Speed Sensing
     Serial.print(" Speed data: ");
     Serial.print(prevHallTime_L);
@@ -288,7 +294,7 @@ void loop() {
     Serial.print(iSenseV);
     Serial.print(" iCalc: ");
     Serial.print(iCalc);
-   
+  */ 
   //Print loop time
     Serial.print(" Looptime: ");    
     Serial.println(millis()-prevLoop);
@@ -311,8 +317,8 @@ void getline(int lineBuffer[])
     digitalWrite(pinCL, HIGH);
     lineBuffer[i] = analogRead(pinAO);
     digitalWrite(pinCL, LOW);
-    Serial.print(out[i]);
-    Serial.print(" ");
+    //Serial.print(out[i]);
+    //Serial.print(" ");
   }
   //digitalWrite(triggerPin2, LOW);
   prevCameraTime = millis();
@@ -398,7 +404,7 @@ void getPot()
 void getTxMotor()
 {
      throttleValue = pulseIn(REC_MOTOR, HIGH, 25000); //throttleValue is speed setpoint open loop
-     if ( throttleValue < 1000 && throttleValue > 2000)
+     if ( throttleValue < 1000 || throttleValue > 2000)
      {
       throttleValue = throttleMid;
      }
@@ -435,6 +441,12 @@ void steerTx() //needs checking
 {
  //get data from Tx 
  servoValueMicro = pulseIn(REC_SERVO,HIGH, 25000);
+
+  if ( servoValueMicro < 1000 || servoValueMicro > 2000)
+  {
+    servoValueMicro = servoMidMicro;
+  }
+  
  //servoValue = map(servoValue,1350,1730,1000,2000); was used for calibration
  //map to servo steering range
    // 0-180
@@ -442,7 +454,9 @@ void steerTx() //needs checking
       //myServo.write(servoValue); 
    //1000-2000
       //servoValue = constrain(map( servoValue,1830,1160,servoMidMicro - servoRangeMicro, servoMidMicro + servoRangeMicro), servoMidMicro - servoRangeMicro, servoMidMicro + servoRangeMicro );
- myServo.writeMicroseconds(constrain(servoValueMicro,servoMidMicro-servoRangeMicro,servoMidMicro+servoRangeMicro));
+ servoValueMicro = constrain(servoValueMicro,servoMidMicro-servoRangeMicro,servoMidMicro+servoRangeMicro);
+ servoValueMicro = map(servoValueMicro, servoMidMicro-servoRangeMicro,servoMidMicro+servoRangeMicro,servoMidMicro+servoRangeMicro,servoMidMicro-servoRangeMicro);
+ myServo.writeMicroseconds(servoValueMicro);
  Serial.print(" servoValueMicro: ");
  Serial.print(servoValueMicro);
 }
