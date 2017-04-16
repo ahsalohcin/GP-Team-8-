@@ -18,6 +18,12 @@ double mapdouble(double x, double in_min, double in_max, double out_min, double 
 {
  return (double)(x - in_min) * (out_max - out_min) / (double)(in_max - in_min) + out_min;
 }
+// STATE FLOW
+//************************************************************************
+bool state = 1;
+int stateValue;
+int REC_STATE = 22;
+int stateCheck();
 
 // MOTORS
 //************************************************************************
@@ -37,7 +43,7 @@ double mapdouble(double x, double in_min, double in_max, double out_min, double 
   // transmitter and motor driver
   int REC_MOTOR = 21; // pin to read signals from reciever
   int throttleValue;
-  int topDutyCycle = 256*.75; // = 100%
+  int topDutyCycle = 256*.5; // = 100%
   int buffTx = 200; // buffer for tx input . full range of tx input is 1160 to 1830
   int throttleMid = 1500;
   void getTxMotor(); //gets input from tx, converts to pwm, and prints
@@ -153,7 +159,9 @@ double mapdouble(double x, double in_min, double in_max, double out_min, double 
 //************************************************************************
 void setup() {
   Serial.begin(9600); //setting speed of communication in bits/second
-  
+
+  //state flow
+    pinMode(REC_STATE,INPUT);
   //Motor things  
     //pinMode(potentioPin,INPUT); //turn on ADC at pin; ready to read voltages
     pinMode(HI,OUTPUT);
@@ -202,6 +210,8 @@ void setup() {
 
 void loop() {
 
+  if (stateCheck()) // 1 if everything is fine
+  {
   //Getting motor inputs. pot or Tx
     //getPot();
     //openloop
@@ -299,10 +309,33 @@ void loop() {
     Serial.print(" Looptime: ");    
     Serial.println(millis()-prevLoop);
     prevLoop = millis();
+  }
+
+  else // 0 if pause signal is high
+  {
+     Serial.print("PAUSED");
+     analogWrite(HI, 0);
+     analogWrite(LI, 0);
+     while (!stateCheck())
+     {
+      delay(100);
+     }       
+  }  
 }
 
 // FUNCTION DEFINITIONS
 //************************************************************************
+
+int stateCheck()
+{
+  stateValue = pulseIn(REC_STATE, HIGH, 25000);
+  if (stateValue > 1750) // channel is all the way high
+    {state = 0;}
+  else 
+  state = 1;
+  return state;
+}
+
 void getline(int lineBuffer[])
 { 
   //digitalWrite(triggerPin2, HIGH);
