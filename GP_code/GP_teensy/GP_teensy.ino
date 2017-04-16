@@ -118,6 +118,9 @@ int stateCheck();
 
 // SPEED SENSING
 //************************************************************************
+
+  int hallTimeout = 500; // in millisec
+  int speedLimit = 6;
   double wheelDiameter = 1.8; //inches
   int hallPin_L = 1;//left
   int hallValue_L;
@@ -129,7 +132,7 @@ int stateCheck();
   int hallPin_R = 2;//right
   int hallValue_R;
   double wheelSpeed_R;
-  double wheelSpeed_R_Copy; //copy to prevent memory issues
+  double wheelSpeed_R_Copy=0; //copy to prevent memory issues
   volatile unsigned long int prevHallTime_R; // volatile to prevent memory issues
   void magnet_detect_R();
   
@@ -138,9 +141,11 @@ int stateCheck();
   double BATT_VOLTAGE_SENSE = 17; //pin number;
   double battVoltSenseVal;
   double battVoltVal;
-  double battConst = 2.728; // (R2+R1)/R1; R1 = 2.8k, R2 = 1.62k 
+  double battConst = 2.728*.992; // (R2+R1)/R1; R1 = 2.8k, R2 = 1.62k, also a fudge factor 
   double battPeriod = 1000; 
   double battPrevTime = 0;
+  double lowBattWarning = 6.7;
+  double getBattVoltVal();
 
   double EMF_SENSE_HIGH = 19;
   double emfSenseHigh = 0;
@@ -255,36 +260,34 @@ void loop() {
   
   //Proportional controller write to servo instead
     //steerCamera(xRef,xMeasured);
-/*
+
   //Speed Sensing
     Serial.print(" Speed data: ");
-    Serial.print(prevHallTime_L);
+    /*
+    Serial.print(prevHallTime_R);
     Serial.print(" ");
     Serial.print(millis());
     Serial.print(" ");
-  
+    */
+    if ( (millis()-prevHallTime_R) > hallTimeout )
+    wheelSpeed_R = 0;
     noInterrupts(); // to prevent memory issues
-    wheelSpeed_L_Copy = wheelSpeed_L;
+    wheelSpeed_R_Copy = wheelSpeed_R;
     interrupts();
     
-    hallValue_L = analogRead(hallPin_L);
-    Serial.print(" hallPin_L: ");
-    Serial.print(hallValue_L);
-    Serial.print(" ");
-    Serial.print(" wheelSpeed_L: ");
-    Serial.print(wheelSpeed_L_Copy);
-
+    hallValue_R = analogRead(hallPin_R);
+    //Serial.print(" hallPin_R: ");
+    //Serial.print(hallValue_R);
+    //Serial.print(" ");
+    Serial.print(" wheelSpeed_R: ");
+    Serial.print(wheelSpeed_R_Copy);
   //Diagnostics
     //batt voltage runs once in a while
     if ( millis() - battPrevTime > battPeriod)
     {
-      battVoltSenseVal = analogRead(BATT_VOLTAGE_SENSE);
-      battVoltVal = battVoltSenseVal*battConst;
-      Serial.print(" Batt: ");
-      Serial.print(battVoltVal);
-      battPrevTime = millis();
+      getBattVoltVal();
     }
-    
+    /*
     //reading emf 
     emfSenseHigh = mapdouble(analogRead(EMF_SENSE_HIGH),0,1023,0,3.3);
     emfSenseLow = mapdouble(analogRead(EMF_SENSE_LOW),0,1023,0,3.3);
@@ -329,11 +332,25 @@ void loop() {
 int stateCheck()
 {
   stateValue = pulseIn(REC_STATE, HIGH, 25000);
-  if (stateValue > 1750) // channel is all the way high
+  if (stateValue > 1750 && stateValue < 2000 ) // channel is all the way high
     {state = 0;}
   else 
   state = 1;
+
+  if ( getBattVoltVal() < lowBattWarning )
+  {
+    Serial.println("batt volts error");
+    if (millis() > 2000)
+    {
+      state = 0;
+    }
+  }
+    
+  wheelSpeed_R_Copy = wheelSpeed_R;
+  if (wheelSpeed_R_Copy > speedLimit )
+  state = 0;
   return state;
+  
 }
 
 void getline(int lineBuffer[])
@@ -515,12 +532,21 @@ void steerCamera(double xRef, double xMeasured)
 
 void magnet_detect_L()
 {
-  wheelSpeed_L = (wheelDiameter*PI/12)/((millis()-prevHallTime_L)/1000.0); // converts to ft/sec
-  prevHallTime_L = millis();
+  wheelSpeed_L = (wheelDiameter*PI/12/3)/((millis()-prevHallTime_L)/1000.0); // converts to ft/sec
+  Serial.println("magnet_detect_L");
 }
 
 void magnet_detect_R()
 {
-  wheelSpeed_R = (wheelDiameter*PI/12)/((millis()-prevHallTime_R)/1000.0); // converts to ft/sec
+  wheelSpeed_R = (wheelDiameter*PI/12/3)/((millis()-prevHallTime_R)/1000.0); // converts to ft/sec
   prevHallTime_R = millis();
+}
+
+double getBattVoltVal(){
+      battVoltSenseVal = analogRead(BATT_VOLTAGE_SENSE);
+      battVoltVal = battVoltSenseVal*battConst/1024.0*3.3;
+      Serial.print(" Batt: ");
+      Serial.print(battVoltVal);
+      battPrevTime = millis();
+      return battVoltVal;
 }
