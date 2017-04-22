@@ -469,7 +469,7 @@ void telemetry()
   */
 
   
-  String strdata = String("motor: " + String(motorValue) + " brake: " + String(brakeValue) + " transmitter: " + String(throttleValue) + " servo: " + String(servoValueMicro));
+  String strdata = String("mtr:" + String(motorValue) + ";brk:" + String(brakeValue) + ";trstr:" + String(throttleValue) + ";srv:" + String(servoValueMicro) + ";spd:" + String(wheelSpeed_R_Copy));
 
   //Serial.println("Telemetry data: ");
   //Serial.println(strdata.c_str());
@@ -506,8 +506,11 @@ int stateCheck()
       state = 0;
     }
   }
-    
+
+  noInterrupts();
   wheelSpeed_R_Copy = wheelSpeed_R;
+  interrupts();
+  
   if (wheelSpeed_R_Copy > speedLimit )
     state = 0;
 
