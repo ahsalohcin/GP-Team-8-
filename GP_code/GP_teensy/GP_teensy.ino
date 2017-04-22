@@ -249,12 +249,8 @@ void setup() {
 
 void loop() {
 
-  // bluetooth command received
-  if(packetAvailable())
-     packetParse();
-
   //if (stateCheck()) // 1 if everything is fine
-  if(state == ON)
+  if(stateCheck())
   {
     //stateCheck();
   //Getting motor inputs. pot or Tx
@@ -492,11 +488,15 @@ void telemetry()
 int stateCheck()
 {
   stateValue = pulseIn(REC_STATE, HIGH, 25000);
-<<<<<<< Updated upstream
   if (stateValue > 1750 && stateValue < 2000 ) // channel is all the way high
     {state = 0;}
   else 
-  state = 1;
+    state = 1;
+
+
+  //Check for bluetooth message that might change state
+  if(packetAvailable())
+     packetParse();
 
   if ( getBattVoltVal() < lowBattWarning )
   {
@@ -509,13 +509,8 @@ int stateCheck()
     
   wheelSpeed_R_Copy = wheelSpeed_R;
   if (wheelSpeed_R_Copy > speedLimit )
-  state = 0;
-=======
-  if (stateValue > 1750) // channel is all the way high
-    {state = OFF;}
-  else 
-    state = ON;
->>>>>>> Stashed changes
+    state = 0;
+
   return state;
   
 }
