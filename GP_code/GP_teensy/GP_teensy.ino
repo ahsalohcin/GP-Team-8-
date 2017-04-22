@@ -75,7 +75,7 @@ int stateCheck();
   int REC_MOTOR = 21; // pin to read signals from reciever
   int throttleValue;
   int topDutyCycle = 256*.5; // = 100%
-  int buffTx = 200; // buffer for tx input . full range of tx input is 1160 to 1830
+  int buffTx = 10; // buffer for tx input . full range of tx input is 1160 to 1830
   int throttleMid = 1500;
   void getSpeedOL(); //gets input from tx, assigns it to a desired speed, determines what to give HI and LI. 
 
@@ -85,7 +85,10 @@ int stateCheck();
   double vError;
   double topSpeed = 10;
   double kpSpeed = .5;
+  double kiSpeed = 0.5;
+  double vErrorTotal = 0.0;
   void getSpeedCL();
+
   
 
 // CAMERA AND PROCESSING
@@ -432,6 +435,8 @@ void exec_packet_cmd(char *cmd_name, char* cmd_value)
 {
 
   char chg_state[] = "change_state";
+  char change_kpSpeed[] = "kpSpeed";
+  char change_kiSpeed[] = "kiSpeed";
 
   if(strcmp(chg_state, cmd_name) == 0)
   {
@@ -441,6 +446,18 @@ void exec_packet_cmd(char *cmd_name, char* cmd_value)
         state = ON;
       else
         state = OFF;
+  }
+  else if(strcmp(change_kpSpeed, cmd_name) == 0)
+  {
+    double value = strtod(cmd_value, NULL);
+
+    kpSpeed = value;
+  }
+  else if(strcmp(change_kiSpeed, cmd_name) == 0)
+  {
+    double value = strtod(cmd_value, NULL);
+
+    kiSpeed = value;
   }
   
 /*  
@@ -472,18 +489,19 @@ void telemetry()
   */
 
   
-  String strdata = String("mtr:" + String(motorValue) + ";brk:" + String(brakeValue) + ";trstr:" + String(throttleValue) + ";srv:" + String(servoValueMicro) + ";spd:" + String(wheelSpeed_R_Copy));
+  //String strdata = String("mtr:" + String(motorValue) + ";brk:" + String(brakeValue) + ";trstr:" + String(throttleValue) + ";srv:" + String(servoValueMicro) + ";spd:" + String(wheelSpeed_R_Copy));
+  String strdata = String("vref: " + String(vRef) + " vMeas: " + vMeas + " vErr: " + vError + " kpSpeed: " + kpSpeed + " vErrorTotal: " + vErrorTotal + " kiSpeed: " + kiSpeed);
 
   //Serial.println("Telemetry data: ");
   //Serial.println(strdata.c_str());
 
   //char data[strdata.length() + 1];
-  //BTSERIAL.write("\b");
-  //BTSERIAL.write("hello");
-  //BTSERIAL.write("\n");
   BTSERIAL.write("\b");
-  BTSERIAL.write("A");
+  BTSERIAL.write(strdata.c_str());
   BTSERIAL.write("\n");
+  //BTSERIAL.write("\b");
+  //BTSERIAL.write("A");
+  //BTSERIAL.write("\n");
  
   
 }
@@ -500,7 +518,7 @@ int stateCheck()
   //Check for bluetooth message that might change state
   if(packetAvailable())
      packetParse();
-/*
+
   if ( getBattVoltVal() < lowBattWarning )
   {
     Serial.println("batt volts error");
@@ -509,7 +527,7 @@ int stateCheck()
       state = 0;
     }
   }
-*/
+  
   noInterrupts();
   wheelSpeed_R_Copy = wheelSpeed_R;
   interrupts();
@@ -637,21 +655,22 @@ void getSpeedOL()
 void getSpeedCL()
 {
   throttleValue = pulseIn(REC_MOTOR, HIGH, 25000); // throttleValue is a Speed setpoint used for closed loop
-  if ( throttleValue < 1000 && throttleValue > 2000)
+  if ( throttleValue < 1000 || throttleValue > 2000)
   {
     throttleValue = throttleMid;
   }
   
-  vRef = constrain(mapdouble(throttleValue,1160,1830,-topSpeed, topSpeed),-topSpeed,topSpeed); //convert to ft per sec
+  vRef = constrain(mapdouble(throttleValue,1150,1850,-topSpeed, topSpeed),-topSpeed,topSpeed); //convert to ft per sec
   
   vMeas = wheelSpeed_R_Copy;
   vError = vRef-vMeas; // in ft/sec
+  vErrorTotal += vError;
   Serial.print(" vRef: ");
   Serial.print(vRef);
   Serial.print(" vError: ");
   Serial.print(vError);
 
-  throttleValue = throttleValue + kpSpeed*vError; //kpSpeed must be in us /(ft/sec)
+  throttleValue = throttleValue + kpSpeed*vError + kiSpeed*vErrorTotal; //kpSpeed must be in us /(ft/sec)
 
   //throttleValue = constrain(mapdouble(vError,-topSpeed,topSpeed,1000,2000),1000,2000); //convert back to microseconds
   
