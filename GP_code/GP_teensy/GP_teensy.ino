@@ -77,15 +77,15 @@ int stateCheck();
   int topDutyCycle = 256*.5; // = 100%
   int buffTx = 200; // buffer for tx input . full range of tx input is 1160 to 1830
   int throttleMid = 1500;
-  void getTxMotor(); //gets input from tx, converts to pwm, and prints
+  void getSpeedOL(); //gets input from tx, assigns it to a desired speed, determines what to give HI and LI. 
 
   // speed feedback
   double vRef;
   double vMeas;
   double vError;
   double topSpeed = 10;
-  double kSpeed = 1;
-  void getSpeedFeedback();
+  double kpSpeed = .5;
+  void getSpeedCL();
   
 
 // CAMERA AND PROCESSING
@@ -256,9 +256,9 @@ void loop() {
   //Getting motor inputs. pot or Tx
     //getPot();
     //openloop
-    getTxMotor();
+    getSpeedCL();
     //closedloop
-    //getSpeedFeedback();
+    //getSpeedCL();
   
   //Write to motor
      analogWrite(HI, motorValue); //HI denotes the pin on which the motor is in; motorValue represents the duty cycle of the PWM
@@ -494,13 +494,13 @@ int stateCheck()
   //if (stateValue > 1750 && stateValue < 2000 ) // channel is all the way high
   //  {state = 0;}
   //else 
-  //  state = 1;
+    state = 1;
 
 
   //Check for bluetooth message that might change state
   if(packetAvailable())
      packetParse();
-
+/*
   if ( getBattVoltVal() < lowBattWarning )
   {
     Serial.println("batt volts error");
@@ -509,7 +509,7 @@ int stateCheck()
       state = 0;
     }
   }
-
+*/
   noInterrupts();
   wheelSpeed_R_Copy = wheelSpeed_R;
   interrupts();
@@ -619,13 +619,14 @@ void getPot()
      Serial.print(potentioValue); //integer between 0 and 1023 
 }
 */
-void getTxMotor()
+void getSpeedOL()
 {
      throttleValue = pulseIn(REC_MOTOR, HIGH, 25000); //throttleValue is speed setpoint open loop
      if ( throttleValue < 1000 || throttleValue > 2000)
      {
       throttleValue = throttleMid;
      }
+
      motorValue = constrain(map(throttleValue, throttleMid+buffTx,1830, 0, topDutyCycle),0,topDutyCycle);
      brakeValue = constrain(map(throttleValue, throttleMid-buffTx,1160, 0, topDutyCycle),0,topDutyCycle);
      Serial.print("transmitter (1160 to 1830) = " );     
@@ -633,7 +634,7 @@ void getTxMotor()
 }
 
 // needs a lot of work
-void getSpeedFeedback()
+void getSpeedCL()
 {
   throttleValue = pulseIn(REC_MOTOR, HIGH, 25000); // throttleValue is a Speed setpoint used for closed loop
   if ( throttleValue < 1000 && throttleValue > 2000)
@@ -641,17 +642,22 @@ void getSpeedFeedback()
     throttleValue = throttleMid;
   }
   
-  vRef = constrain(mapdouble(throttleValue,1000,2000,-topSpeed, topSpeed),-topSpeed,topSpeed); //convert to ft per sec
-  vMeas = wheelSpeed_L_Copy;
+  vRef = constrain(mapdouble(throttleValue,1160,1830,-topSpeed, topSpeed),-topSpeed,topSpeed); //convert to ft per sec
+  
+  vMeas = wheelSpeed_R_Copy;
   vError = vRef-vMeas; // in ft/sec
+  Serial.print(" vRef: ");
+  Serial.print(vRef);
+  Serial.print(" vError: ");
+  Serial.print(vError);
 
-  throttleValue = throttleMid + kSpeed*vError; //kSpeed must be in us /(ft/sec)
+  throttleValue = throttleValue + kpSpeed*vError; //kpSpeed must be in us /(ft/sec)
 
   //throttleValue = constrain(mapdouble(vError,-topSpeed,topSpeed,1000,2000),1000,2000); //convert back to microseconds
   
   motorValue = constrain(map(throttleValue, throttleMid+buffTx,1830, 0, topDutyCycle),0,topDutyCycle);
   brakeValue = constrain(map(throttleValue, throttleMid-buffTx,1160, 0, topDutyCycle),0,topDutyCycle);
-  Serial.print("transmitter (1160 to 1830) = " );     
+  Serial.print(" throttleValue (1160 to 1830) = " );     
   Serial.print(throttleValue); //integer between 1160 and 1830
 }
 
