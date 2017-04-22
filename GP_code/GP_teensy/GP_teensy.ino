@@ -10,6 +10,7 @@
 //First: try to just do single thread and half bridge
 
 #include <Servo.h>
+#include <SoftwareSerial.h>
 
 unsigned long int prevLoop; // to track loop time
 
@@ -18,9 +19,39 @@ double mapdouble(double x, double in_min, double in_max, double out_min, double 
 {
  return (double)(x - in_min) * (out_max - out_min) / (double)(in_max - in_min) + out_min;
 }
+
+// BLUETOOTH MODULE COMMUNICATION
+//***********************************************************************
+#define BTSERIAL Serial3
+#define MESSAGE_BEGIN 29
+#define MESSAGE_END 30
+#define MAX_MESSAGE_SIZE 100
+
+
+char messageBuffer[MAX_MESSAGE_SIZE]; // bluetooth message content
+int bufferPos = 0; //keeps track of last char in messageBuffer
+
+//Check if complete bluetooth packet was received
+bool packetAvailable();
+
+//Parse bt packet into name and value
+void packetParse();
+
+// Executes bluetooth command 
+void exec_packet_cmd(char *cmd_name, char* cmd_value);
+
+// Sends telemetry data through bluetooth back to computer monitoring
+void telemetry();
+
+
 // STATE FLOW
 //************************************************************************
-bool state = 1;
+enum STATE {
+  OFF,
+  ON  
+};
+
+int state = ON;
 int stateValue;
 int REC_STATE = 22;
 int stateCheck();
@@ -165,6 +196,9 @@ int stateCheck();
 void setup() {
   Serial.begin(9600); //setting speed of communication in bits/second
 
+  //bluetooth serial
+  BTSERIAL.begin(9600);
+
   //state flow
     pinMode(REC_STATE,INPUT);
   //Motor things  
@@ -215,8 +249,14 @@ void setup() {
 
 void loop() {
 
-  if (stateCheck()) // 1 if everything is fine
+  // bluetooth command received
+  if(packetAvailable())
+     packetParse();
+
+  //if (stateCheck()) // 1 if everything is fine
+  if(state == ON)
   {
+    //stateCheck();
   //Getting motor inputs. pot or Tx
     //getPot();
     //openloop
@@ -308,6 +348,9 @@ void loop() {
     Serial.print(" iCalc: ");
     Serial.print(iCalc);
   */ 
+
+     
+   telemetry();
   //Print loop time
     Serial.print(" Looptime: ");    
     Serial.println(millis()-prevLoop);
@@ -319,7 +362,7 @@ void loop() {
      Serial.print("PAUSED");
      analogWrite(HI, 0);
      analogWrite(LI, 0);
-     while (!stateCheck())
+     while (!state)
      {
       delay(100);
      }       
@@ -329,9 +372,127 @@ void loop() {
 // FUNCTION DEFINITIONS
 //************************************************************************
 
+
+bool packetAvailable()
+{
+  while(BTSERIAL.available() > 0)
+    {
+      char incomingByte = BTSERIAL.read();
+
+      if(incomingByte == MESSAGE_BEGIN)
+      {
+        //clear buffer for new incoming packet
+        bufferPos = 0;
+      }
+      else if(incomingByte == MESSAGE_END)
+      {
+        //full packet received
+        messageBuffer[bufferPos] = '\0';
+        return true;
+      }
+      else
+      {
+        messageBuffer[bufferPos] = incomingByte;
+        bufferPos++;
+      }
+         
+    }
+
+    return false;
+}
+
+void packetParse()
+{  
+  char packet_name[40];
+  char packet_value[40] = {0};
+  long int value = 0;
+  
+  //get divider position
+  char *separator = strchr(messageBuffer, ':');
+  *separator = '\0';
+
+  //get command name
+  strcpy(packet_name, messageBuffer);
+
+  //skip white space
+  *separator = ':';
+  separator += 2;
+
+  //get value
+  for(int i = 0; *separator != '\0'; i++, separator++)
+    packet_value[i] = *separator;
+
+  exec_packet_cmd(packet_name, packet_value);
+
+  BTSERIAL.write("\b");
+  BTSERIAL.write(messageBuffer);
+  BTSERIAL.write("\n");
+}
+
+void exec_packet_cmd(char *cmd_name, char* cmd_value)
+{
+
+  char chg_state[] = "change_state";
+
+  if(strcmp(chg_state, cmd_name) == 0)
+  {
+      long int value = strtol(cmd_value, NULL, 10);
+
+      if(value == ON)
+        state = ON;
+      else
+        state = OFF;
+  }
+  
+/*  
+  Serial.write("name: ");
+  Serial.println(cmd_name);
+
+  Serial.write("value: ");
+  Serial.println(cmd_value);
+*/
+}
+
+void telemetry()
+{
+  /*
+  Serial.print(" motor = ");
+  Serial.print(motorValue); //corresponding value of the motor that runs at the value of PotValue
+  Serial.print(" brake = ");
+  Serial.print(brakeValue); 
+
+  Serial.print("transmitter (1160 to 1830) = " );     
+  Serial.print(throttleValue); //integer between 1160 and 1830
+
+  Serial.print(" servoValueMicro: ");
+  Serial.print(servoValueMicro);
+
+  Serial.print(" steerValue: ");
+  Serial.print(steerValue);
+
+  */
+
+  
+  String strdata = String("motor: " + String(motorValue) + " brake: " + String(brakeValue) + " transmitter: " + String(throttleValue) + " servo: " + String(servoValueMicro));
+
+  //Serial.println("Telemetry data: ");
+  //Serial.println(strdata.c_str());
+
+  //char data[strdata.length() + 1];
+  //BTSERIAL.write("\b");
+  //BTSERIAL.write("hello");
+  //BTSERIAL.write("\n");
+  BTSERIAL.write("\b");
+  BTSERIAL.write("A");
+  BTSERIAL.write("\n");
+ 
+  
+}
+
 int stateCheck()
 {
   stateValue = pulseIn(REC_STATE, HIGH, 25000);
+<<<<<<< Updated upstream
   if (stateValue > 1750 && stateValue < 2000 ) // channel is all the way high
     {state = 0;}
   else 
@@ -349,6 +510,12 @@ int stateCheck()
   wheelSpeed_R_Copy = wheelSpeed_R;
   if (wheelSpeed_R_Copy > speedLimit )
   state = 0;
+=======
+  if (stateValue > 1750) // channel is all the way high
+    {state = OFF;}
+  else 
+    state = ON;
+>>>>>>> Stashed changes
   return state;
   
 }
