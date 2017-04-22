@@ -323,6 +323,9 @@ void loop() {
     {
       getBattVoltVal();
     }
+
+    Serial.print(" Batt: ");
+    Serial.print(battVoltVal);
     /*
     //reading emf 
     emfSenseHigh = mapdouble(analogRead(EMF_SENSE_HIGH),0,1023,0,3.3);
@@ -358,7 +361,7 @@ void loop() {
      Serial.print("PAUSED");
      analogWrite(HI, 0);
      analogWrite(LI, 0);
-     while (!state)
+     while (!stateCheck())
      {
       delay(100);
      }       
@@ -488,10 +491,10 @@ void telemetry()
 int stateCheck()
 {
   stateValue = pulseIn(REC_STATE, HIGH, 25000);
-  if (stateValue > 1750 && stateValue < 2000 ) // channel is all the way high
-    {state = 0;}
-  else 
-    state = 1;
+  //if (stateValue > 1750 && stateValue < 2000 ) // channel is all the way high
+  //  {state = 0;}
+  //else 
+  //  state = 1;
 
 
   //Check for bluetooth message that might change state
@@ -710,8 +713,6 @@ void magnet_detect_R()
 double getBattVoltVal(){
       battVoltSenseVal = analogRead(BATT_VOLTAGE_SENSE);
       battVoltVal = battVoltSenseVal*battConst/1024.0*3.3;
-      Serial.print(" Batt: ");
-      Serial.print(battVoltVal);
       battPrevTime = millis();
       return battVoltVal;
 }
