@@ -1,13 +1,15 @@
 // copied from feb5_motors_tx_camera_servo_halleffect on 4/8. Goal was to drive with Tx running single threaded on PCB
 // change pin numbers/names
 
-// control modes: TEENSY: no atmega at all.
-//        ATMEGA: using atmega for camera and HES
+// 4/24  significant changes to state flow and modes and changed topspeed pause condition:
+// use enum types for state and modes. stateCheck() is modified to return "state" type, and it has multiple return statements.any paused condition will return pause. 
+// topspeed pause condition is now same as topspeed for Tx throttle control. Maybe set it to something else? Probably limited our performance on saturday 4/22. 
+// added throttle mode using bluetooth. 
 
-// motor modes: HALF: half bridge. connect neg of motor to MOTOR_NEG_B
-//              FULL: full bridge. connect neg of motor to MOTOR_NEG
 
-//First: try to just do single thread and half bridge
+// currently OL Tx throttle is linear + deadzone in input, linear in output 
+// CL is Tx throttle input linear with no deadzone, but with deadzone in output. 
+// CL preferred: Tx throttle input linear with deadzone. very little deadzone in output.
 
 #include <Servo.h>
 #include <SoftwareSerial.h>
@@ -27,7 +29,6 @@ double mapdouble(double x, double in_min, double in_max, double out_min, double 
 #define MESSAGE_END 30
 #define MAX_MESSAGE_SIZE 100
 
-
 char messageBuffer[MAX_MESSAGE_SIZE]; // bluetooth message content
 int bufferPos = 0; //keeps track of last char in messageBuffer
 
@@ -43,53 +44,68 @@ void exec_packet_cmd(char *cmd_name, char* cmd_value);
 // Sends telemetry data through bluetooth back to computer monitoring
 void telemetry();
 
-
 // STATE FLOW
 //************************************************************************
-enum STATE {
-  OFF,
-  ON  
-};
+typedef enum {
+  PLAY,
+  PAUSE  
+} state;
+state myState = PLAY;
 
-int state = ON;
+// for RC controlled state. pause when right stick all the way up
 int stateValue;
 int REC_STATE = 22;
-int stateCheck();
+
+int SW1 = 24; 
+int SW2 = 25;
+int SW3 = 26;
+int SW4 = 27;
+
+state stateCheck();
+
+// DRIVE MODES
+//************************************************************************
+typedef enum {
+  RC_TH,
+  BT_TH,
+  AUTO_TH,
+} throttleMode;
+
+throttleMode myThrottleMode = RC_TH;
+
+typedef enum {
+  RC_ST,
+  AUTO_ST,
+} steerMode;
+
+steerMode mySteerMode = RC_ST;
 
 // MOTORS
 //************************************************************************
   int HI = 3; //pin numbers
   int LI = 4;
-//int triggerPin = 9; // help when looking at O-scope
-//int triggerPin2 = 10; // help when looking at O-scope
+  
   int motorValue = 0;
   int brakeValue = 0;
-//int buff = 100; // deadzone for pot
 
-  /* reads a pin to get input, has deadzone, and prints
-  0-512 is braking, and 513-1023 is forward. There is an adjustable buffer;
-  77 = .3 of 256. 180 = .7 of 256 */
-  void getPot();
-
-  // transmitter and motor driver
+  // allow Tx input fomr channel 3 (left stick vertical)
   int REC_MOTOR = 21; // pin to read signals from reciever
   int throttleValue;
-  int topDutyCycle = 256*.5; // = 100%
+  int topDutyCycleOL = 256*.5; //max speed
   int buffTx = 10; // buffer for tx input . full range of tx input is 1160 to 1830
   int throttleMid = 1500;
   void getSpeedOL(); //gets input from tx, assigns it to a desired speed, determines what to give HI and LI. 
 
-  // speed feedback
+  // closed loop speed control
   double vRef;
   double vMeas;
   double vError;
-  double topSpeed = 10;
+  double topSpeed = 10; // in ft/sec
+  int topDutyCycleCL = 256*.5; // max speed 
   double kpSpeed = .5;
   double kiSpeed = 0.5;
   double vErrorTotal = 0.0;
   void getSpeedCL();
-
-  
 
 // CAMERA AND PROCESSING
 //************************************************************************
@@ -153,13 +169,14 @@ int stateCheck();
 // SPEED SENSING
 //************************************************************************
 
-  int hallTimeout = 500; // in millisec
-  int speedLimit = 6;
+  unsigned int hallTimeout = 500; // in millisec
+  int speedLimit = topSpeed; //higher than this will pause it. 
   double wheelDiameter = 1.8; //inches
+  
   int hallPin_L = 1;//left
   int hallValue_L;
   double wheelSpeed_L;
-  double wheelSpeed_L_Copy; //copy to prevent memory issues
+  double wheelSpeed_L_Copy = 0; //copy to prevent memory issues
   volatile unsigned long int prevHallTime_L; // volatile to prevent memory issues
   void magnet_detect_L();
   
@@ -204,14 +221,11 @@ void setup() {
 
   //state flow
     pinMode(REC_STATE,INPUT);
+    pinMode(SW1,INPUT_PULLUP);
   //Motor things  
-    //pinMode(potentioPin,INPUT); //turn on ADC at pin; ready to read voltages
     pinMode(HI,OUTPUT);
     pinMode(LI,OUTPUT);
-    //pinMode(triggerPin,OUTPUT);
-    //analogWriteFrequency(HI, 9800); appears to be unnecessary
-    //analogWriteFrequency(LI, 9800);
-    
+
   //for transmitter throttle
     pinMode(REC_MOTOR,INPUT);
   
@@ -248,25 +262,23 @@ void setup() {
 
     pinMode(16, OUTPUT);
     digitalWrite(16,HIGH);
+
+    Serial.println("Setup Successful");
 }
 
 void loop() {
 
   //if (stateCheck()) // 1 if everything is fine
-  if(stateCheck())
+  if(stateCheck() == PLAY)
   {
-    //stateCheck();
-  //Getting motor inputs. pot or Tx
-    //getPot();
     //openloop
-    getSpeedCL();
+    //getSpeedOL();
     //closedloop
-    //getSpeedCL();
+    getSpeedCL();
   
   //Write to motor
      analogWrite(HI, motorValue); //HI denotes the pin on which the motor is in; motorValue represents the duty cycle of the PWM
      analogWrite(LI, brakeValue);
-     //analogWrite(triggerPin, 10); //help with O-scope reading 
      Serial.print(" motor = ");
      Serial.print(motorValue); //corresponding value of the motor that runs at the value of PotValue
      Serial.print(" brake = ");
@@ -294,12 +306,15 @@ void loop() {
     Serial.print(" xMeasured: ");
     Serial.print(xMeasured);
     
-  //Get Tx steering input and writes to servo
+  if (mySteerMode == RC_ST)  
+    {//Get Tx steering input and writes to servo
     steerTx();
-  
-  //Proportional controller write to servo instead
-    //steerCamera(xRef,xMeasured);
-
+    }
+  else 
+    {//Camera feedback to write to servo instead
+    steerCamera(xRef,xMeasured);
+    }
+    
   //Speed Sensing
     Serial.print(" Speed data: ");
     /*
@@ -310,6 +325,7 @@ void loop() {
     */
     if ( (millis()-prevHallTime_R) > hallTimeout )
     wheelSpeed_R = 0;
+    
     noInterrupts(); // to prevent memory issues
     wheelSpeed_R_Copy = wheelSpeed_R;
     interrupts();
@@ -341,15 +357,14 @@ void loop() {
     Serial.print(emfSenseHigh);
     Serial.print(" emf(V): ");
     Serial.print(emf);
-
+*/
     //reading motor current
     iSenseV = mapdouble(analogRead(I_SENSE),0,1023,0,3.3);
     iCalc = iConst * iSenseV;
     Serial.print(" iSenseV: ");
     Serial.print(iSenseV);
     Serial.print(" iCalc: ");
-    Serial.print(iCalc);
-  */ 
+    Serial.print(iCalc); 
 
      
    telemetry();
@@ -359,13 +374,14 @@ void loop() {
     prevLoop = millis();
   }
 
-  else // 0 if pause signal is high
+  else // PAUSE if pause signal is high
   {
-     Serial.print("PAUSED");
+     Serial.print("PAUSE");
      analogWrite(HI, 0);
      analogWrite(LI, 0);
-     while (!stateCheck())
+     while (stateCheck() == PAUSE)
      {
+      Serial.println("PAUSE");
       delay(100);
      }       
   }  
@@ -442,10 +458,10 @@ void exec_packet_cmd(char *cmd_name, char* cmd_value)
   {
       long int value = strtol(cmd_value, NULL, 10);
 
-      if(value == ON)
-        state = ON;
+      if(value == 1)
+        myState = PLAY;
       else
-        state = OFF;
+        myState = PAUSE;
   }
   else if(strcmp(change_kpSpeed, cmd_name) == 0)
   {
@@ -501,42 +517,60 @@ void telemetry()
   BTSERIAL.write("\n");
   //BTSERIAL.write("\b");
   //BTSERIAL.write("A");
-  //BTSERIAL.write("\n");
- 
-  
+  //BTSERIAL.write("\n");  
 }
 
-int stateCheck()
+state stateCheck()
 {
+  //Serial.println("checking state");
+  // If pause switch is on
+  if (digitalRead(SW1) == LOW) 
+    {
+      myState = PAUSE;
+      Serial.print(digitalRead(SW1));
+      Serial.println("pause switch");
+      return myState;
+    }
+  
+  //If Tx says to pause
   stateValue = pulseIn(REC_STATE, HIGH, 25000);
-  //if (stateValue > 1750 && stateValue < 2000 ) // channel is all the way high
-  //  {state = 0;}
-  //else 
-    state = 1;
-
-
+  if (stateValue > 1750 && stateValue < 2000 ) // channel is all the way high
+    {myState = PAUSE;
+    Serial.println(stateValue);
+    return myState;}
+    
   //Check for bluetooth message that might change state
+
+  /*
   if(packetAvailable())
      packetParse();
-
+  if (myState == PAUSE)
+     {return myState;}   
+  */
+  // low Batt Warning
+  
   if ( getBattVoltVal() < lowBattWarning )
   {
-    Serial.println("batt volts error");
     if (millis() > 2000)
     {
-      state = 0;
+      Serial.println("batt volts error");
+      myState = PAUSE;
+      return myState;
     }
   }
+  //exceeding top speed 
+
   
   noInterrupts();
   wheelSpeed_R_Copy = wheelSpeed_R;
   interrupts();
-  
+    
   if (wheelSpeed_R_Copy > speedLimit )
-    state = 0;
-
-  return state;
-  
+    {myState = PAUSE;
+    return myState;}
+ 
+  myState = PLAY;
+  return myState;
 }
 
 void getline(int lineBuffer[])
@@ -645,10 +679,10 @@ void getSpeedOL()
       throttleValue = throttleMid;
      }
 
-     motorValue = constrain(map(throttleValue, throttleMid+buffTx,1830, 0, topDutyCycle),0,topDutyCycle);
-     brakeValue = constrain(map(throttleValue, throttleMid-buffTx,1160, 0, topDutyCycle),0,topDutyCycle);
-     Serial.print("transmitter (1160 to 1830) = " );     
-     Serial.print(throttleValue); //integer between 1160 and 1830
+     motorValue = constrain(map(throttleValue, throttleMid+buffTx,1850, 0, topDutyCycleOL),0,topDutyCycleOL);
+     brakeValue = constrain(map(throttleValue, throttleMid-buffTx,1150, 0, topDutyCycleOL),0,topDutyCycleOL);
+     Serial.print("transmitter (1150 to 1850) = " );     
+     Serial.print(throttleValue); //integer between 1150 and 1850
 }
 
 // needs a lot of work
@@ -674,9 +708,10 @@ void getSpeedCL()
 
   //throttleValue = constrain(mapdouble(vError,-topSpeed,topSpeed,1000,2000),1000,2000); //convert back to microseconds
   
-  motorValue = constrain(map(throttleValue, throttleMid+buffTx,1830, 0, topDutyCycle),0,topDutyCycle);
-  brakeValue = constrain(map(throttleValue, throttleMid-buffTx,1160, 0, topDutyCycle),0,topDutyCycle);
-  Serial.print(" throttleValue (1160 to 1830) = " );     
+  motorValue = constrain(map(throttleValue, throttleMid+buffTx,1850, 0, topDutyCycleCL),0,topDutyCycleCL);
+  brakeValue = constrain(map(throttleValue, throttleMid-buffTx,1150, 0, topDutyCycleCL),0,topDutyCycleCL);
+  
+  Serial.print(" throttleValue (1150 to 1850) = " );     
   Serial.print(throttleValue); //integer between 1160 and 1830
 }
 
@@ -740,4 +775,5 @@ double getBattVoltVal(){
       battVoltVal = battVoltSenseVal*battConst/1024.0*3.3;
       battPrevTime = millis();
       return battVoltVal;
-}
+} 
+
