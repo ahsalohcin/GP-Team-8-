@@ -3,7 +3,7 @@
 #include "SPIMaster.h"
 
 
-boolean read_error_n = true;
+boolean read_error = false;
 
 void SPIMasterInit(){
   pinMode(slaveSelect, OUTPUT);
@@ -12,7 +12,7 @@ void SPIMasterInit(){
 }
 
 boolean SPIReadError(){
-  return ~read_error_n;
+  return read_error;
 }
 
 boolean sendData(byte addr, float value){
@@ -48,7 +48,7 @@ boolean sendData(byte addr, float value){
 float getData(byte addr){
   union Data data;
   byte CRC = 0;
-  read_error_n = true;
+  read_error = false;
   digitalWrite(slaveSelect, LOW);
   SPI.beginTransaction(SPISettings(SPI_CLK, MSBFIRST, SPI_MODE0));
   SPI.transfer(READ_CMD);
@@ -65,7 +65,10 @@ float getData(byte addr){
   }
   if (CRC_EN){
     byte crc_rec = sendReceive(0);
-    read_error_n = (CRC == crc_rec);
+    Serial.print(CRC, HEX);
+    Serial.print(" / ");
+    Serial.println(crc_rec, HEX);
+    read_error = (CRC != crc_rec);
   }
   digitalWrite(slaveSelect, HIGH);
   SPI.endTransaction();
