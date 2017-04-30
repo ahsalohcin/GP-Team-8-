@@ -31,6 +31,8 @@ double mapdouble(double x, double in_min, double in_max, double out_min, double 
 
 char messageBuffer[MAX_MESSAGE_SIZE]; // bluetooth message content
 int bufferPos = 0; //keeps track of last char in messageBuffer
+int btPeriod = 100; // ms
+unsigned long int prevBtTime = 0;
 
 //Check if complete bluetooth packet was received
 bool packetAvailable();
@@ -105,8 +107,8 @@ steerMode mySteerMode = RC_ST;
   int buffTxOut = 5; // for safety. units of us. (tested)
   int buffOut = 1; // for safety. larger will mess up linearity . may be in units of speed (ft/sec).(untested)
   int topDutyCycleCL = 256*.5; // max speed 
-  double kpSpeed = 0.5;
-  double kiSpeed = 0.05;
+  double kpSpeed = 3.0;
+  double kiSpeed = 0.005;
   double vErrorTotal = 0.0;
   void getSpeedCL();
 
@@ -369,8 +371,11 @@ void loop() {
     Serial.print(" iCalc: ");
     Serial.print(iCalc); 
 
-     
+   if (millis()-prevBtTime >btPeriod)
+   {
    telemetry();
+   prevBtTime = millis();
+   }
   //Print loop time
     Serial.print(" Looptime: ");    
     Serial.println(millis()-prevLoop);
@@ -508,9 +513,8 @@ void telemetry()
   */
 
   
-  //String strdata = String("mtr:" + String(motorValue) + ";brk:" + String(brakeValue) + ";trstr:" + String(throttleValue) + ";srv:" + String(servoValueMicro) + ";spd:" + String(wheelSpeed_R_Copy));
-  String strdata = String("vref: " + String(vRef) + " vMeas: " + vMeas + " vErr: " + vError + " kpSpeed: " + kpSpeed + " vErrorTotal: " + vErrorTotal + " kiSpeed: " + kiSpeed);
-
+  //String strdata = String("mtr:" + String(motorValue) + ";brk:" + String(brakeValue) + ";trst:" + String(throttleValue) + ";srv:" + String(servoValueMicro) + ";spd:" + String(wheelSpeed_R_Copy));
+  String strdata = String( "vRef:" +String(vRef) + ";vError:" + String(vError));
   //Serial.println("Telemetry data: ");
   //Serial.println(strdata.c_str());
 
@@ -727,7 +731,7 @@ void getSpeedCL()
   //Serial.print(" throttleValue (1150 to 1850) = " );     
   //Serial.print(throttleValue); //integer between 1150 and 1850,
 
-  vValue = vRef + kpSpeed*vError + kiSpeed*vErrorTotal; 
+  vValue = kpSpeed*vError + kiSpeed*vErrorTotal; 
   Serial.print(" vValue: ");
   Serial.print(vValue);
   motorValue = constrain(mapdouble(vValue,0+buffOut,10,0,topDutyCycleCL),0,topDutyCycleCL); //should topSpeed be in here? or should it be a constant?
