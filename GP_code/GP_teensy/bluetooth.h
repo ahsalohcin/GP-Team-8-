@@ -8,7 +8,7 @@
 
 char messageBuffer[MAX_MESSAGE_SIZE]; // bluetooth message content
 int bufferPos = 0; //keeps track of last char in messageBuffer
-int btPeriod = 100; // ms
+unsigned long int btPeriod = 100; // ms
 unsigned long int prevBtTime = 0;
 
 //Check if complete bluetooth packet was received

@@ -1,11 +1,11 @@
-void steerTx() //needs checking
+void steerTx()
 {
  //get data from Tx 
- servoValueMicro = pulseIn(REC_SERVO,HIGH, 25000);
+ servoValue = pulseIn(REC_SERVO,HIGH, 25000);
 
-  if ( servoValueMicro < 1000 || servoValueMicro > 2000)
+  if ( servoValue < 1000 || servoValue > 2000)
   {
-    servoValueMicro = servoMidMicro;
+    servoValue = servoMid;
   }
   
  //servoValue = map(servoValue,1350,1730,1000,2000); was used for calibration
@@ -14,12 +14,12 @@ void steerTx() //needs checking
       //servoValue = constrain( map( servoValue, 1830, 1160, servoMid - servoRange, servoMid + servoRange ), servoMid - servoRange, servoMid + servoRange );
       //myServo.write(servoValue); 
    //1000-2000
-      //servoValue = constrain(map( servoValue,1830,1160,servoMidMicro - servoRangeMicro, servoMidMicro + servoRangeMicro), servoMidMicro - servoRangeMicro, servoMidMicro + servoRangeMicro );
- servoValueMicro = constrain(servoValueMicro,servoMidMicro-servoRangeMicro,servoMidMicro+servoRangeMicro);
- servoValueMicro = map(servoValueMicro, servoMidMicro-servoRangeMicro,servoMidMicro+servoRangeMicro,servoMidMicro+servoRangeMicro,servoMidMicro-servoRangeMicro);
- myServo.writeMicroseconds(servoValueMicro);
- Serial.print(" servoValueMicro: ");
- Serial.print(servoValueMicro);
+      //servoValue = constrain(map( servoValue,1830,1160,servoMid - servoRange, servoMid + servoRange), servoMid - servoRange, servoMid + servoRange );
+ servoValue = constrain(servoValue,servoMid-servoRange,servoMid+servoRange);
+ servoValue = map(servoValue, servoMid-servoRange,servoMid+servoRange,servoMid+servoRange,servoMid-servoRange);
+ myServo.writeMicroseconds(servoValue);
+ Serial.print(" servoValue: ");
+ Serial.print(servoValue);
 }
 
 void steerCamera(double xRef, double xMeasured)
@@ -31,13 +31,10 @@ void steerCamera(double xRef, double xMeasured)
     //steerValue = servoMid + kSteering*xError; // for full range: 64 pixels --> 35 ms has kSteering = 35/64 = .546875
     //myServo.write(steerValue);
   //1000-2000
-    steerValue = servoMidMicro + kSteeringMicro*xError;
-    steerValue = constrain(steerValue,servoMidMicro-servoRangeMicro, servoMidMicro+servoRangeMicro);
+    steerValue = servoMid + kSteering*xError;
+    steerValue = constrain(steerValue,servoMid-servoRange, servoMid+servoRange);
     myServo.writeMicroseconds(steerValue);
   //does fullrange camera to fullrange servo
   //steerValue = constrain( map( xMeasured, 128, 0, servoMid - servoRange, servoMid + servoRange ), servoMid - servoRange, servoMid + servoRange );
-   
-  Serial.print(" steerValue: ");
-  Serial.print(steerValue);
 }
 

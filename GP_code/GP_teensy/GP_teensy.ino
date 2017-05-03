@@ -73,7 +73,7 @@ void loop() {
   //if (stateCheck()) // 1 if everything is fine
   if(stateCheck() == PLAY)
   {
-    if (mySpeedMode = SPEED_CL)
+    if (mySpeedMode == SPEED_CL)
     getSpeedCL();
     else 
     getSpeedOL();
@@ -91,41 +91,33 @@ void loop() {
     diff(averaged,128,differences);
     xMeasured = center(differences,127);
     
-  if (mySteerMode == AUTO_ST)  
+  if (mySteerMode == STEER_AUTO)  
     {//Get Tx steering input and writes to servo
     steerCamera(xRef,xMeasured);
     }
   else 
     {//Camera feedback to write to servo instead
-    steerTx;
+    steerTx();
     }
     
   //Speed Sensing    
-    if ( (millis()-prevHallTime_R) > hallTimeout )
-    wheelSpeed_R = 0;
+    if ( (millis()-prevHallTime_L) > hallTimeout )
+    wheelSpeed_L = 0;
     
     noInterrupts(); // to prevent memory issues
-    wheelSpeed_R_Copy = wheelSpeed_R;
+    wheelSpeed_L_Copy = wheelSpeed_L;
     interrupts();
 
   //Diagnostics
     //batt voltage runs once in a while (moved to print loop)
-    
-    //reading motor current
-    /*
-    iSenseV = mapdouble(analogRead(I_SENSE),0,1023,0,3.3);
-    iCalc = iConst * iSenseV;
-    Serial.print(" iSenseV: ");
-    Serial.print(iSenseV);
-    Serial.print(" iCalc: ");
-    Serial.print(iCalc); 
-    */
 
    if (millis()-prevBtTime >btPeriod)
    {
    telemetry();
    prevBtTime = millis();
    }
+
+    // can also read backemf and motor current
 
    printAll();
   }
@@ -145,16 +137,22 @@ void loop() {
 
 void printAll()
 {
-  Serial.print(" motor = ");
+  Serial.print(" vRef: ");
+  Serial.print(vRef);
+  
+  Serial.print(" HI ");
   Serial.print(motorValue); //corresponding value of the motor that runs at the value of PotValue
-  Serial.print(" brake = ");
+  Serial.print(" LI ");
   Serial.print(brakeValue);
 
-  Serial.print(" wheelSpeed_R: ");
-  Serial.print(wheelSpeed_R_Copy);
+  Serial.print(" Speed_L: ");
+  Serial.print(wheelSpeed_L_Copy);
   
-  Serial.print(" xMeasured: ");
+  Serial.print(" xMeas: ");
   Serial.print(xMeasured);
+
+  Serial.print(" steere: ");
+  Serial.print(steerValue);
 
   if ( millis() - battPrevTime > battPeriod)
   {

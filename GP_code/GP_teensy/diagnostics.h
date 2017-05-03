@@ -21,3 +21,26 @@
   double iSenseV;
   double iCalc;
   double iConst = 2.5; // 5k /(RS*RL) RS = .02 RL = 100k. unreliable with RL = 100k? RL = 10k better for ADC
+
+    /*
+    //reading emf 
+    emfSenseHigh = mapdouble(analogRead(EMF_SENSE_HIGH),0,1023,0,3.3);
+    emfSenseLow = mapdouble(analogRead(EMF_SENSE_LOW),0,1023,0,3.3);
+    emfHigh = (emfSenseHigh - emfSenseLow)*emfConst;
+    emf = emfHigh-emfSenseLow;
+    Serial.print(" emfSenseLow(V): ");
+    Serial.print(emfSenseLow);
+    Serial.print(" emfSenseHigh(V): ");
+    Serial.print(emfSenseHigh);
+    Serial.print(" emf(V): ");
+    Serial.print(emf);
+*/
+
+    /*
+    iSenseV = mapdouble(analogRead(I_SENSE),0,1023,0,3.3);
+    iCalc = iConst * iSenseV;
+    Serial.print(" iSenseV: ");
+    Serial.print(iSenseV);
+    Serial.print(" iCalc: ");
+    Serial.print(iCalc); 
+    */

@@ -6,6 +6,10 @@
   
   int motorValue = 0;
   int brakeValue = 0;
+  double topSpeed = 10; // in ft/sec
+  int buffOut = 1; // for safety. larger will mess up linearity . may be in units of speed (ft/sec)
+
+  double getVRef();
 
   // allow Tx input fomr channel 3 (left stick vertical)
   int REC_MOTOR = 21; // pin to read signals from reciever
@@ -20,9 +24,7 @@
   double vMeas;
   double vError;
   double vValue; 
-  double topSpeed = 5; // in ft/sec
-  int buffTxOut = 5; // for safety. units of us. (tested)
-  int buffOut = 1; // for safety. larger will mess up linearity . may be in units of speed (ft/sec).(untested)
+
   int topDutyCycleCL = 256*.5; // max speed 
   double kpSpeed = 3.0;
   double kiSpeed = 0.005;

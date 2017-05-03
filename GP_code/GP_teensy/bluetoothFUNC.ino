@@ -1,5 +1,4 @@
 
-
 bool packetAvailable()
 {
   while(BTSERIAL.available() > 0)
