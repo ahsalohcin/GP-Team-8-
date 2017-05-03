@@ -1,6 +1,5 @@
 #include "useful.h"
 #include "drivemodes.h"
-#include "everything.h"
 #include "speedsensing.h"
 #include "motors.h"
 #include "camera.h"
@@ -10,11 +9,13 @@
 #include "bluetooth.h"
 #include "stateflow.h"
 
+void printAll();
+
 void setup() {
   Serial.begin(9600); //setting speed of communication in bits/second
 
   //bluetooth serial
-  BTSERIAL.begin(9600);
+    BTSERIAL.begin(9600);
 
   //state flow
     pinMode(REC_STATE,INPUT);
@@ -72,80 +73,61 @@ void loop() {
   //if (stateCheck()) // 1 if everything is fine
   if(stateCheck() == PLAY)
   {
-    //openloop
-    //getSpeedOL();
-    //closedloop
+    if (mySpeedMode = SPEED_CL)
     getSpeedCL();
+    else 
+    getSpeedOL();
   
   //Write to motor
      analogWrite(HI, motorValue); //HI denotes the pin on which the motor is in; motorValue represents the duty cycle of the PWM
      analogWrite(LI, brakeValue);
-     Serial.print(" motor = ");
-     Serial.print(motorValue); //corresponding value of the motor that runs at the value of PotValue
-     Serial.print(" brake = ");
-     Serial.print(brakeValue); 
   
   //Get a line of camera data
     while(millis()- prevCameraTime < integrationPeriod) {}
     getline(out);
      
   //Determine the center
-    averageElements(out,128,3,averaged);   
+    averageElements(out,128,5,averaged);   
     diff(averaged,128,differences);
     xMeasured = center(differences,127);
-    Serial.print(" xMeasured: ");
-    Serial.print(xMeasured);
     
-  if (mySteerMode == RC_ST)  
+  if (mySteerMode == AUTO_ST)  
     {//Get Tx steering input and writes to servo
-    steerTx();
+    steerCamera(xRef,xMeasured);
     }
   else 
     {//Camera feedback to write to servo instead
-    steerCamera(xRef,xMeasured);
+    steerTx;
     }
     
-  //Speed Sensing
-    Serial.print(" Speed data: ");
-
+  //Speed Sensing    
     if ( (millis()-prevHallTime_R) > hallTimeout )
     wheelSpeed_R = 0;
     
     noInterrupts(); // to prevent memory issues
     wheelSpeed_R_Copy = wheelSpeed_R;
     interrupts();
-    
-    hallValue_R = analogRead(hallPin_R);
 
-    Serial.print(" wheelSpeed_R: ");
-    Serial.print(wheelSpeed_R_Copy);
   //Diagnostics
-    //batt voltage runs once in a while
-    if ( millis() - battPrevTime > battPeriod)
-    {
-      getBattVoltVal();
-    }
-
-    Serial.print(" Batt: ");
-    Serial.print(battVoltVal);
-
+    //batt voltage runs once in a while (moved to print loop)
+    
     //reading motor current
+    /*
     iSenseV = mapdouble(analogRead(I_SENSE),0,1023,0,3.3);
     iCalc = iConst * iSenseV;
     Serial.print(" iSenseV: ");
     Serial.print(iSenseV);
     Serial.print(" iCalc: ");
     Serial.print(iCalc); 
+    */
 
    if (millis()-prevBtTime >btPeriod)
    {
    telemetry();
    prevBtTime = millis();
    }
-  //Print loop time
-    Serial.print(" Looptime: ");    
-    Serial.println(millis()-prevLoop);
-    prevLoop = millis();
+
+   printAll();
   }
 
   else // PAUSE if pause signal is high
@@ -159,5 +141,32 @@ void loop() {
       delay(100);
      }       
   }  
+}
+
+void printAll()
+{
+  Serial.print(" motor = ");
+  Serial.print(motorValue); //corresponding value of the motor that runs at the value of PotValue
+  Serial.print(" brake = ");
+  Serial.print(brakeValue);
+
+  Serial.print(" wheelSpeed_R: ");
+  Serial.print(wheelSpeed_R_Copy);
+  
+  Serial.print(" xMeasured: ");
+  Serial.print(xMeasured);
+
+  if ( millis() - battPrevTime > battPeriod)
+  {
+  getBattVoltVal();
+  }
+  
+  Serial.print(" Batt: ");
+  Serial.print(battVoltVal);
+  
+  //Print loop time
+  Serial.print("L: ");    
+  Serial.println(micros()-prevLoop);
+  prevLoop = micros();
 }
 

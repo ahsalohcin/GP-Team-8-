@@ -13,7 +13,7 @@ throttleMode myThrottleMode = RC_TH;
 
 typedef enum {
   SPEED_OL,
-  SPEEC_CL,
+  SPEED_CL,
 } speedMode;
 
 speedMode mySpeedMode = SPEED_OL;
