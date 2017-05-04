@@ -14,14 +14,14 @@ state stateCheck()
     }
   */
   //If Tx says to pause
-  
+  /*
   stateValue = pulseIn(REC_STATE, HIGH, 25000);
   if (stateValue > 1550 && stateValue < 2000 ) // channel is all the way high
     {myState = PAUSE;
     Serial.print(" stateValueTx: ");
     Serial.println(stateValue);
     return myState;}
-  
+  */
     
   //Check for bluetooth message that might change state
 
@@ -44,7 +44,7 @@ state stateCheck()
   }
   //exceeding top speed 
 
-  
+  /*
   noInterrupts();
   wheelSpeed_L_Copy = wheelSpeed_L;
   interrupts();
@@ -52,6 +52,8 @@ state stateCheck()
   if (wheelSpeed_L_Copy > speedLimit )
     {myState = PAUSE;
     return myState;}
+
+  */
  
   myState = PLAY;
   return myState;

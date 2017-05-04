@@ -66,6 +66,15 @@ void setup() {
     digitalWrite(16,HIGH);
 
     Serial.println("Setup Successful");
+
+    Serial.print(" Modes: ");
+    Serial.print(myThrottleMode);
+    Serial.print(" ");
+    Serial.print(mySpeedMode);
+    Serial.print(" ");
+    Serial.print(myMotorMode);
+    Serial.print(" ");
+    Serial.println(mySteerMode);  
 }
 
 void loop() {
@@ -77,19 +86,28 @@ void loop() {
     getSpeedCL();
     else 
     getSpeedOL();
-  
+  //Serial.print(" 1: ");  
+  //Serial.print(micros());
   //Write to motor
-     analogWrite(HI, motorValue); //HI denotes the pin on which the motor is in; motorValue represents the duty cycle of the PWM
-     analogWrite(LI, brakeValue);
+     //analogWrite(HI, motorValue); //HI denotes the pin on which the motor is in; motorValue represents the duty cycle of the PWM
+     //analogWrite(LI, brakeValue);
   
   //Get a line of camera data
-    while(millis()- prevCameraTime < integrationPeriod) {}
-    getline(out);
+    while (millis()- prevCameraTime < integrationPeriod) 
+    {}
+      getline(out);
+    
+    
+  //Serial.print(" 2: ");  
+  //Serial.print(micros());
      
   //Determine the center
     averageElements(out,128,5,averaged);   
     diff(averaged,128,differences);
     xMeasured = center(differences,127);
+
+     //Serial.print(" 3: ");  
+     //Serial.print(micros());
     
   if (mySteerMode == STEER_AUTO)  
     {//Get Tx steering input and writes to servo
@@ -99,6 +117,8 @@ void loop() {
     {//Camera feedback to write to servo instead
     steerTx();
     }
+  //Serial.print(" 4: ");  
+  //Serial.print(micros());
     
   //Speed Sensing    
     if ( (millis()-prevHallTime_L) > hallTimeout )
@@ -107,7 +127,8 @@ void loop() {
     noInterrupts(); // to prevent memory issues
     wheelSpeed_L_Copy = wheelSpeed_L;
     interrupts();
-
+  //Serial.print(" 5: ");  
+  //Serial.print(micros());
   //Diagnostics
     //batt voltage runs once in a while (moved to print loop)
 
@@ -116,6 +137,8 @@ void loop() {
    telemetry();
    prevBtTime = millis();
    }
+  //Serial.print(" 6: ");  
+  //Serial.print(micros());
 
     // can also read backemf and motor current
 
@@ -137,6 +160,7 @@ void loop() {
 
 void printAll()
 {
+  /*
   Serial.print(" vRef: ");
   Serial.print(vRef);
   
@@ -147,11 +171,12 @@ void printAll()
 
   Serial.print(" Speed_L: ");
   Serial.print(wheelSpeed_L_Copy);
-  
+  */
   Serial.print(" xMeas: ");
   Serial.print(xMeasured);
 
-  Serial.print(" steere: ");
+/*
+  Serial.print(" steer: ");
   Serial.print(steerValue);
 
   if ( millis() - battPrevTime > battPeriod)
@@ -161,8 +186,12 @@ void printAll()
   
   Serial.print(" Batt: ");
   Serial.print(battVoltVal);
-  
+  */
+
+  Serial.print(" delta: ");
+  Serial.print(delta);
   //Print loop time
+ 
   Serial.print("L: ");    
   Serial.println(micros()-prevLoop);
   prevLoop = micros();

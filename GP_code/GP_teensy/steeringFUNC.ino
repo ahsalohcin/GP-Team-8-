@@ -1,6 +1,7 @@
 void steerTx()
 {
- //get data from Tx 
+ //get data from Tx
+ /* 
  servoValue = pulseIn(REC_SERVO,HIGH, 25000);
 
   if ( servoValue < 1000 || servoValue > 2000)
@@ -15,26 +16,43 @@ void steerTx()
       //myServo.write(servoValue); 
    //1000-2000
       //servoValue = constrain(map( servoValue,1830,1160,servoMid - servoRange, servoMid + servoRange), servoMid - servoRange, servoMid + servoRange );
+*/
+ servoValue = servoMid-.4*servoRange;
+ 
  servoValue = constrain(servoValue,servoMid-servoRange,servoMid+servoRange);
  servoValue = map(servoValue, servoMid-servoRange,servoMid+servoRange,servoMid+servoRange,servoMid-servoRange);
+
  myServo.writeMicroseconds(servoValue);
+
  Serial.print(" servoValue: ");
  Serial.print(servoValue);
+}
+
+double getSteeringPID()
+{
+  double steerValue_=
+  steerValue_ = servoMid + kSteering*xError;
+  return steerValue_;
+}
+
+double getSteeringPP(int xError)
+{
+  double delta_;
+  delta_ = atan2( xError*2.0 /l_d/l_d*wheelBase*fovWidth, 128.0); // rads
+  delta_ = delta_ * 57.2958; // degrees
+
+  return delta_; 
+  
 }
 
 void steerCamera(double xRef, double xMeasured)
 {
   double xError;
-  double steerValue;
-  xError = xRef - xMeasured;
-  //0-180
-    //steerValue = servoMid + kSteering*xError; // for full range: 64 pixels --> 35 ms has kSteering = 35/64 = .546875
-    //myServo.write(steerValue);
-  //1000-2000
-    steerValue = servoMid + kSteering*xError;
-    steerValue = constrain(steerValue,servoMid-servoRange, servoMid+servoRange);
-    myServo.writeMicroseconds(steerValue);
-  //does fullrange camera to fullrange servo
-  //steerValue = constrain( map( xMeasured, 128, 0, servoMid - servoRange, servoMid + servoRange ), servoMid - servoRange, servoMid + servoRange );
+  xError = xRef - xMeasured; 
+
+  delta = getSteeringPP(xError);
+
+  steerValue = constrain(steerValue,servoMid-servoRange, servoMid+servoRange);
+  myServo.writeMicroseconds(steerValue);
 }
 
