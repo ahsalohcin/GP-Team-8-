@@ -109,7 +109,7 @@ void loop() {
      //Serial.print(" 3: ");  
      //Serial.print(micros());
     
-  if (mySteerMode == STEER_AUTO)  
+  if (mySteerMode == STEER_PP || mySteerMode == STEER_PID)  
     {//Get Tx steering input and writes to servo
     steerCamera(xRef,xMeasured);
     }

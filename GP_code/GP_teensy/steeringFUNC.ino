@@ -30,7 +30,7 @@ void steerTx()
 
 double getSteeringPID()
 {
-  double steerValue_=
+  double steerValue_;
   steerValue_ = servoMid + kSteering*xError;
   return steerValue_;
 }
@@ -38,19 +38,45 @@ double getSteeringPID()
 double getSteeringPP(int xError)
 {
   double delta_;
+  double deviation_us_;
   delta_ = atan2( xError*2.0 /l_d/l_d*wheelBase*fovWidth, 128.0); // rads
   delta_ = delta_ * 57.2958; // degrees
-  return delta_; 
-  
-}
+  //return delta_; 
 
+  Serial.print(" delta(deg): ");
+  Serial.print(delta_);
+  
+  if (delta_ <= 9.25 && delta_ >= -9.25)
+    {
+      deviation_us_ = 15.676*delta_;
+    }
+    else if ( delta_ > 9.25) 
+    {
+      deviation_us_ = -.6109*delta_*delta_ + 29.1145*delta_ - 60.3992;
+    }
+    else if (delta_ < -9.25)
+    {
+      deviation_us_ = -(-.6109*delta_*delta_ + 29.1145*(-delta_) - 60.3992);
+    }
+  Serial.print(" deviation_us : ");
+  Serial.print(deviation_us_);  
+
+  steerValue = servoMid + deviation_us_;
+  
+  return steerValue; 
+}
 void steerCamera(double xRef, double xMeasured)
 {
   double xError;
-  xError = xRef - xMeasured; 
-
-  delta = getSteeringPP(xError);
-
+  xError = xRef - xMeasured;
+  if (mySteerMode == STEER_PP)
+  {
+    steerValue = getSteeringPP(xError);
+  }
+  else if (mySteerMode == STEER_PID)
+  {
+    steerValue = getSteeringPID();
+  }
   steerValue = constrain(steerValue,servoMid-servoRange, servoMid+servoRange);
   myServo.writeMicroseconds(steerValue);
 }
