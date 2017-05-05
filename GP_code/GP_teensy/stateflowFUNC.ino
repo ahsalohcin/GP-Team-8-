@@ -25,12 +25,12 @@ state stateCheck()
     
   //Check for bluetooth message that might change state
 
-  /*
+  
   if(packetAvailable())
      packetParse();
   if (myState == PAUSE)
      {return myState;}   
-  */
+ 
   // low Batt Warning
   
   if ( getBattVoltVal() < lowBattWarning )
@@ -54,7 +54,7 @@ state stateCheck()
     return myState;}
 
   */
- 
-  myState = PLAY;
+  Serial.println("reached bottom");
+  //myState = PLAY;
   return myState;
 }

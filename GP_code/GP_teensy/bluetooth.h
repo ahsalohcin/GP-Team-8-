@@ -2,8 +2,8 @@
 // BLUETOOTH MODULE COMMUNICATION
 //***********************************************************************
 #define BTSERIAL Serial3
-#define MESSAGE_BEGIN 29
-#define MESSAGE_END 30
+#define MESSAGE_BEGIN 'B'
+#define MESSAGE_END 'Z'
 #define MAX_MESSAGE_SIZE 100
 
 char messageBuffer[MAX_MESSAGE_SIZE]; // bluetooth message content

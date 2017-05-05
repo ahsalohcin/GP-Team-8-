@@ -4,6 +4,7 @@ bool packetAvailable()
   while(BTSERIAL.available() > 0)
     {
       char incomingByte = BTSERIAL.read();
+      //Serial.print(incomingByte);
 
       if(incomingByte == MESSAGE_BEGIN)
       {
