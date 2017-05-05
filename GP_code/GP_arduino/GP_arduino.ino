@@ -64,6 +64,6 @@ void send_data()    {
         Serial.print(send_pixels[i], 0);
         Serial.print(",\t");
     }
-    Serial.print(';\n');
+    Serial.print(";\n");
 
 }

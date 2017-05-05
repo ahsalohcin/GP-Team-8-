@@ -121,8 +121,14 @@ void getSpeedCL()
   //Serial.print(" vValue: ");
   //Serial.print(vValue);
   
-  motorValue = constrain(mapdouble(vValue,0+buffOut,topSpeed,0,topDutyCycleCL),0,topDutyCycleCL); //should topSpeed be in here? or should it be a constant? used 10 for a while 
-  brakeValue = constrain(mapdouble(vValue,0-buffOut,topSpeed,0,topDutyCycleCL),0,topDutyCycleCL);
+  motorValue = constrain(mapdouble(vValue,0+buffOut,50,0,255),0,255); //should topSpeed be in here? or should it be a constant? used 10 for a while 
+  if(motorValue > topDutyCycleCL)    {
+    motorValue = topDutyCycleCL;
+  }
+  brakeValue = constrain(mapdouble(vValue,0-buffOut,-1.0*50,0,255),0,255);
+  if(brakeValue > topDutyCycleCL)    {
+    brakeValue = topDutyCycleCL;
+  }
   
 }
 
