@@ -41,6 +41,8 @@ state stateCheck()
       myState = PAUSE;
       return myState;
     }
+    else 
+    myState = PLAY;
   }
   //exceeding top speed 
 

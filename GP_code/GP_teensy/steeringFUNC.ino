@@ -39,6 +39,7 @@ double getSteeringPP(int xError)
 {
   double delta_;
   double deviation_us_;
+  l_d = kFudge(l_d_actual*(b + mfudge*vMeas))
   delta_ = atan2( xError*2.0 /l_d/l_d*wheelBase*fovWidth, 128.0); // rads
   delta_ = delta_ * 57.2958; // degrees
   //return delta_; 

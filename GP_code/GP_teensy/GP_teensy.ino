@@ -141,9 +141,15 @@ void loop() {
   //Serial.print(micros());
 
     // can also read backemf and motor current
-    Serial.println("running");
+    //Serial.println("running");
 
-   printAll();
+  //Print loop time
+ 
+  Serial.print("L: ");    
+  Serial.println(micros()-prevLoop);
+  prevLoop = micros();
+
+   //printAll();
   }
 
   else // PAUSE if pause signal is high
@@ -192,10 +198,6 @@ void printAll()
 
   Serial.print(" delta: ");
   Serial.print(delta);
-  //Print loop time
- 
-  Serial.print("L: ");    
-  Serial.println(micros()-prevLoop);
-  prevLoop = micros();
+
 }
 

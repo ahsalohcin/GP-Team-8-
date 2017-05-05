@@ -12,11 +12,11 @@ void getline(int lineBuffer[])
     digitalWrite(pinCL, HIGH);
     lineBuffer[i] = analogRead(pinAO);
     digitalWrite(pinCL, LOW);
-    /*
+    
     if (out[i] > threshhold)
     Serial.print("1");
     else 
-    Serial.print("0");*/
+    Serial.print("0");
   }
   //digitalWrite(triggerPin2, LOW);
   prevCameraTime = millis();
