@@ -89,8 +89,8 @@ void loop() {
   //Serial.print(" 1: ");  
   //Serial.print(micros());
   //Write to motor
-     //analogWrite(HI, motorValue); //HI denotes the pin on which the motor is in; motorValue represents the duty cycle of the PWM
-     //analogWrite(LI, brakeValue);
+     analogWrite(HI, motorValue); //HI denotes the pin on which the motor is in; motorValue represents the duty cycle of the PWM
+     analogWrite(LI, brakeValue);
   
   //Get a line of camera data
     while (millis()- prevCameraTime < integrationPeriod) 
@@ -141,6 +141,7 @@ void loop() {
   //Serial.print(micros());
 
     // can also read backemf and motor current
+    Serial.println("running");
 
    printAll();
   }
@@ -153,17 +154,15 @@ void loop() {
      while (stateCheck() == PAUSE)
      {
       Serial.println("PAUSE");
-      delay(100);
+      delay(500);
      }       
   }  
 }
 
 void printAll()
 {
-  /*
   Serial.print(" vRef: ");
   Serial.print(vRef);
-  
   Serial.print(" HI ");
   Serial.print(motorValue); //corresponding value of the motor that runs at the value of PotValue
   Serial.print(" LI ");
@@ -171,11 +170,11 @@ void printAll()
 
   Serial.print(" Speed_L: ");
   Serial.print(wheelSpeed_L_Copy);
-  */
+ 
   Serial.print(" xMeas: ");
   Serial.print(xMeasured);
 
-/*
+
   Serial.print(" steer: ");
   Serial.print(steerValue);
 
@@ -186,7 +185,10 @@ void printAll()
   
   Serial.print(" Batt: ");
   Serial.print(battVoltVal);
-  */
+
+  Serial.print(" vError: ");
+  Serial.print(vError);
+ 
 
   Serial.print(" delta: ");
   Serial.print(delta);

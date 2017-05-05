@@ -24,8 +24,8 @@ void steerTx()
 
  myServo.writeMicroseconds(servoValue);
 
- Serial.print(" servoValue: ");
- Serial.print(servoValue);
+ //Serial.print(" servoValue: ");
+ //Serial.print(servoValue);
 }
 
 double getSteeringPID()
@@ -40,7 +40,6 @@ double getSteeringPP(int xError)
   double delta_;
   delta_ = atan2( xError*2.0 /l_d/l_d*wheelBase*fovWidth, 128.0); // rads
   delta_ = delta_ * 57.2958; // degrees
-
   return delta_; 
   
 }
