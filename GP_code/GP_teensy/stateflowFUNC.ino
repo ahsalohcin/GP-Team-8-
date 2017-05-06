@@ -61,13 +61,16 @@ state stateCheck()
   {
     if (millis() > 1000)
     {
+      digitalWrite(16, HIGH);
       Serial.println("batt volts error");
       myState = PAUSE;
       return myState;
     }
   }
   else 
-    {myState = PLAY;}
+    { digitalWrite(16, LOW);
+      myState = PLAY;
+     }
     
   //exceeding top speed 
 
