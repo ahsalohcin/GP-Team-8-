@@ -10,14 +10,24 @@
 //A0 is connected to ADC0
 uint16_t pixels[NUM_LINES][LINE_WIDTH];
 float send_pixels[LINE_WIDTH];
+float edge_pixel = 0;
+uint8_t edge_loc = 128;
 uint8_t cur_line = 0;
-uint8_t poll_line = 0; //line it was at since last polled
 uint8_t max = 0;
+uint8_t min = 0;
 int last_time = millis();
 
 void setup()    {
+    //setup ports
+    DDRD |= (1<<6); //set PortD pin 7 as output, use as aux
     DDRD |= (1<<7); //set PortD pin 7 as output, use as SI
     DDRB |= (1<<0); //set PortB pin 0 as output, use as CLK
+    //setup ADC prescaler to 16
+    ADCSRA |= 1<<ADPS2;
+    ADCSRA &= ~(1<<ADPS1);
+    ADCSRA &= ~(1<<ADPS0);
+
+    //setup timer
     Timer1.initialize(PERIOD);
     Timer1.attachInterrupt(capture, PERIOD);
     Serial.begin(57600);
@@ -47,14 +57,29 @@ void capture()  {
     PORTB |= (1<<0);    //set CLK high
     PORTB &= ~(1<<0);   //set CLK low
     //increment line count
+    PORTD |= (1<<6);    //set aux high
     cur_line += 1;
     if (cur_line == NUM_LINES)   {
         cur_line = 0;
     }
     //compute sum
+    PORTD &= ~(1<<6);   //set aux low
     for(int i=0; i<LINE_WIDTH; i++) {
-        send_pixels[i] = send_pixels[i]*(NUM_LINES-1.0)/NUM_LINES + pixels[cur_line][i];
+        send_pixels[i] = send_pixels[i]*0.4 + 0.6*pixels[cur_line][i];
     }
+    //find edge
+    PORTD |= (1<<6);    //set aux high
+    for(int i=0; i<LINE_WIDTH; i++) {
+        edge_pixel = -0.5*send_pixels[i-1 >= 0 ? i-1 : 0] + 0.5*send_pixels[i] + 0*send_pixels[i+1 <= LINE_WIDTH ? i+1 : LINE_WIDTH];
+        if(edge_pixel < min)    {
+            min = i;
+        }
+        else if(edge_pixel > max)   {
+            max = i;
+        }
+    }
+    edge_pixel= (min+max)/2.0;
+    PORTD &= ~(1<<6);   //set aux low
 }
 
 void send_data()    {
@@ -65,5 +90,4 @@ void send_data()    {
         Serial.print(",\t");
     }
     Serial.print(";\n");
-
 }

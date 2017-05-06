@@ -4,30 +4,21 @@ void setup(){
   Serial.begin(9600);
   SPIMasterInit();
 }
-float wrsuccess = 0;
-float rdsuccess = 0;
-int trials = 0;
-float wr = 0;
-float rd = 0;
+unsigned long starttime = 0;
+unsigned long delta = 0;
 void loop(){
-  float val = ((float)random(-32768, 32767))+((float)random(0,99))/100;
-  wr += sendData(11, val);
-  float readRes = getData(11);
-  if (!SPIReadError()){
-    rd++;
-  }
-  trials++;
+  sendByte(1, 0xAB);
+  starttime = micros();
+  getByte(1);
+  delta = micros()-starttime;
+  Serial.println(delta);
   
-  wrsuccess = ((float)wr)/trials;
-  rdsuccess = ((float)rd)/trials;
-  Serial.print(wrsuccess);
-  Serial.print(" / ");
-  Serial.println(rdsuccess);
-  Serial.print(val);
-  Serial.print(" / ");
-  Serial.println(readRes);
-  //Serial.println(sendRes);
-  //Serial.println(SPIReadError());
-  Serial.println("-----------------------------------------------------");
-  delay(100);
+  Serial.println(getByte(2), HEX);
+  
+  starttime = micros();
+  getFlt();
+  delta = micros()-starttime;
+  Serial.println(delta);
+  
+  delay(1000);
 }
