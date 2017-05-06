@@ -2,8 +2,8 @@
 // BLUETOOTH MODULE COMMUNICATION
 //***********************************************************************
 #define BTSERIAL Serial3
-#define MESSAGE_BEGIN 'B'
-#define MESSAGE_END 'Z'
+#define MESSAGE_BEGIN 'b'
+#define MESSAGE_END 'z'
 #define MAX_MESSAGE_SIZE 100
 
 char messageBuffer[MAX_MESSAGE_SIZE]; // bluetooth message content
@@ -15,6 +15,7 @@ unsigned long int prevBtTime = 0;
 bool packetAvailable();
 
 //Parse bt packet into name and value
+long int BTStateValue = 1;
 void packetParse();
 
 // Executes bluetooth command 

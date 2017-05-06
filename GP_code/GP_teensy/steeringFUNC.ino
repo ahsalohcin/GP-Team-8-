@@ -37,37 +37,30 @@ double getSteeringPID()
 
 double getSteeringPP(int xError)
 {
-  double delta_;
-  double deviation_us_;
-  delta_ = atan2( xError*2.0 /l_d/l_d*wheelBase*fovWidth, 128.0); // rads
-  delta_ = delta_ * 57.2958; // degrees
-  //return delta_; 
-
-  Serial.print(" delta(deg): ");
-  Serial.print(delta_);
+  l_d = kFudge*(l_d_actual*(bFudge + mFudge*vMeas));
+  delta = atan2( xError*2.0 /l_d/l_d*wheelBase*fovWidth, 128.0); // rads
+  delta = delta * 57.2958; // degrees
   
-  if (delta_ <= 9.25 && delta_ >= -9.25)
+  if (delta <= 9.25 && delta >= -9.25)
     {
-      deviation_us_ = 15.676*delta_;
+      deviation_us = 15.676*delta;
     }
-    else if ( delta_ > 9.25) 
+    else if ( delta > 9.25) 
     {
-      deviation_us_ = -.6109*delta_*delta_ + 29.1145*delta_ - 60.3992;
+      deviation_us = -.6109*delta*delta + 29.1145*delta - 60.3992;
     }
-    else if (delta_ < -9.25)
+    else if (delta < -9.25)
     {
-      deviation_us_ = -(-.6109*delta_*delta_ + 29.1145*(-delta_) - 60.3992);
+      deviation_us = -(-.6109*delta*delta + 29.1145*(-delta) - 60.3992);
     }
-  Serial.print(" deviation_us : ");
-  Serial.print(deviation_us_);  
 
-  steerValue = servoMid + deviation_us_;
+
+  steerValue = servoMid + deviation_us;
   
   return steerValue; 
 }
 void steerCamera(double xRef, double xMeasured)
 {
-  double xError;
   xError = xRef - xMeasured;
   if (mySteerMode == STEER_PP)
   {

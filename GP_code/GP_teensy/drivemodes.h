@@ -17,7 +17,7 @@ typedef enum {
   SPEED_CL,
 } speedMode;
 
-speedMode mySpeedMode = SPEED_OL;
+speedMode mySpeedMode = SPEED_CL;
 
 // In case gate drivers break.
 // if left one breaks, then change mode to MOTOR_REV_HALF and put high side of motor to backup low.
@@ -37,7 +37,7 @@ typedef enum {
   STEER_PID
 } steerMode;
 
-steerMode mySteerMode = STEER_RC;
+steerMode mySteerMode = STEER_PID;
 
 
 

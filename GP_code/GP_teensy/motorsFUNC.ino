@@ -45,19 +45,16 @@ double getVRef()
   
   else if (myThrottleMode == THROTTLE_SWITCHES)
   {
+      //vRef_ = 1*(~digitalRead(SW1)) + 2*(~digitalRead(SW2)) + 4*(~digitalRead(SW3))+14;
     if (digitalRead(SW1) == LOW)
     {
-      vRef_ = 2;
+      vRef_ = 6;
       if (digitalRead(SW2) == LOW)
       {
-        vRef_ = 3;
+        vRef_ = 7;
         if (digitalRead(SW3) == LOW)
         {
-          vRef_ = 4;
-          if (digitalRead(SW4) == LOW)
-          {
-            vRef_ = 5;
-          }
+          vRef_ = 8;
         }
       }
     }
@@ -86,11 +83,12 @@ double getVRef()
 void getSpeedOL()
 {
   vRef = getVRef();
-  
+  vMeas = wheelSpeed_L_Copy;
+  vError = vRef-vMeas;
   //Serial.print(" vValue: ");
   //Serial.print(vValue);
-  motorValue = constrain(mapdouble(vValue,0+buffOut,topSpeed,0,topDutyCycleOL),0,topDutyCycleOL); //should topSpeed be in here? or should it be a constant?. used 10 for a while 
-  brakeValue = constrain(mapdouble(vValue,0-buffOut,-topSpeed,0,topDutyCycleOL),0,topDutyCycleOL);
+  motorValue = constrain(mapdouble(vRef,0+buffOut,topSpeed,0,topDutyCycleOL),0,topDutyCycleOL); //should topSpeed be in here? or should it be a constant?. used 10 for a while 
+  brakeValue = constrain(mapdouble(vRef,0-buffOut,-topSpeed,0,topDutyCycleOL),0,topDutyCycleOL);
 }
 
 void getSpeedCL()
