@@ -4,12 +4,13 @@ typedef enum {
   PLAY,
   PAUSE  
 } state;
-state myState = PLAY;
+state myState = PAUSE;
 
 // for RC controlled state. pause when right stick all the way up
 int stateValue;
 int REC_STATE = 22;
-
+int recStatePeriod = 2000;// ms
+int prevRecStateTime = 0;
 state stateCheck();
 
 unsigned long int saturationStart = 0 ; // 

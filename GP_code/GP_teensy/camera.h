@@ -11,6 +11,7 @@
   int threshhold = 100; // for threshholding technique
   unsigned int integrationPeriod = 2;
   unsigned int prevCameraTime = 0;
+  int lineWidth = 8;
   
   //gets one line of camera data
   void getline(double lineBuffer[]);

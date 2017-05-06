@@ -120,7 +120,7 @@ void loop() {
     diff(averaged,128,differences);
 
     //diff(out,128,differences);
-    xMeasured = center(differences,127);
+    xMeasured = center(differences,127,xMeasured);
 
   Serial.print(" 4: ");  
   Serial.print(micros()-prevMicrooo);
@@ -210,11 +210,11 @@ void printAll()
   Serial.print(" curvature: ");
   Serial.print(curvature);
 
-  Serial.print(" delta(deg): ");
-  Serial.print(delta);
+  //Serial.print(" delta(deg): ");
+  //Serial.print(delta);
 
-  Serial.print(" deviation_us : ");
-  Serial.print(deviation_us);  
+  //Serial.print(" deviation_us : ");
+  //Serial.print(deviation_us);  
 
   Serial.print(" steer: ");
   Serial.print(steerValue);

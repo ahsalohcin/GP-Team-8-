@@ -1,31 +1,29 @@
 void steerTx()
 {
  //get data from Tx
- /* 
- servoValue = pulseIn(REC_SERVO,HIGH, 25000);
+  
+ steerValue = pulseIn(REC_SERVO,HIGH, 25000);
 
-  if ( servoValue < 1000 || servoValue > 2000)
+  if ( steerValue < 1000 || steerValue > 2000)
   {
-    servoValue = servoMid;
+    steerValue = servoMid;
   }
   
- //servoValue = map(servoValue,1350,1730,1000,2000); was used for calibration
+ //steerValue = map(steerValue,1350,1730,1000,2000); was used for calibration
  //map to servo steering range
    // 0-180
-      //servoValue = constrain( map( servoValue, 1830, 1160, servoMid - servoRange, servoMid + servoRange ), servoMid - servoRange, servoMid + servoRange );
-      //myServo.write(servoValue); 
+      //steerValue = constrain( map( steerValue, 1830, 1160, servoMid - servoRange, servoMid + servoRange ), servoMid - servoRange, servoMid + servoRange );
+      //myServo.write(steerValue); 
    //1000-2000
-      //servoValue = constrain(map( servoValue,1830,1160,servoMid - servoRange, servoMid + servoRange), servoMid - servoRange, servoMid + servoRange );
-*/
- servoValue = servoMid-.4*servoRange;
+      //steerValue = constrain(map( steerValue,1830,1160,servoMid - servoRange, servoMid + servoRange), servoMid - servoRange, servoMid + servoRange );
  
- servoValue = constrain(servoValue,servoMid-servoRange,servoMid+servoRange);
- servoValue = map(servoValue, servoMid-servoRange,servoMid+servoRange,servoMid+servoRange,servoMid-servoRange);
+ steerValue = constrain(steerValue,servoMid-servoRange,servoMid+servoRange);
+ steerValue = map(steerValue, servoMid-servoRange,servoMid+servoRange,servoMid+servoRange,servoMid-servoRange);
 
- myServo.writeMicroseconds(servoValue);
+ myServo.writeMicroseconds(steerValue);
 
- //Serial.print(" servoValue: ");
- //Serial.print(servoValue);
+ //Serial.print(" steerValue: ");
+ //Serial.print(steerValue);
 }
 
 double getSteeringPID()
@@ -38,7 +36,7 @@ double getSteeringPID()
 double getSteeringPP(int xError)
 {
   l_d = kFudge*(l_d_actual*(bFudge + mFudge*vMeas));
-  curvature = xError*2.0/l_d/l_d_fovWidth/128;
+  curvature = xError*2.0/l_d/l_d*fovWidth/128;
   delta = atan2( curvature*wheelBase,1); // rads
   delta = delta * 57.2958; // degrees
   

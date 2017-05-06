@@ -71,7 +71,7 @@ void diff(double input[], int arraySize, double result[])
     result[i-1] = input[i] - input[i-1];
 }
 
-double center(double input[], int arraySize)
+double center(double input[], int arraySize, double oldCenter)
 {
   //Index of max and min
   int maxIndex = 0;
@@ -94,8 +94,11 @@ double center(double input[], int arraySize)
     }
   }
 
-  Serial.print(" Max brightness (1024): ");
+  Serial.print(" Max diff (1024): ");
   Serial.print(maxValue);
 
-  return (minIndex + maxIndex) / 2.0;
+  if(abs(maxIndex-minIndex) > lineWidth)
+    return oldCenter;
+  else
+    return (minIndex + maxIndex) / 2.0;
 }

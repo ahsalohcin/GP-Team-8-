@@ -44,7 +44,8 @@ state stateCheck()
   }
   //If Tx says to pause
   
-  /*
+  if (millis() - prevRecStateTime > recStatePeriod)
+  {
   stateValue = pulseIn(REC_STATE, HIGH, 25000);
   Serial.print(" State Value: ");
   Serial.print(stateValue);
@@ -53,7 +54,9 @@ state stateCheck()
     Serial.print(" stateValueTx: ");
     Serial.println(stateValue);
     return myState;}
-  */
+    prevRecStateTime = millis();
+  }
+  
         
   // low Batt Warning
   
