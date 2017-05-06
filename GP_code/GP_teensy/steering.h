@@ -19,6 +19,7 @@
   
   double delta = 0.0;
   double deviation_us = 0.0;
+  double curvature = 0.0;
   double kFudge = 1.0;
   double mFudge = 0; 
   double bFudge = 1.0;

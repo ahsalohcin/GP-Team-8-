@@ -37,7 +37,7 @@ typedef enum {
   STEER_PID
 } steerMode;
 
-steerMode mySteerMode = STEER_PID;
+steerMode mySteerMode = STEER_PP;
 
 
 

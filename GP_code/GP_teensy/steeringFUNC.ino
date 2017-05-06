@@ -38,7 +38,8 @@ double getSteeringPID()
 double getSteeringPP(int xError)
 {
   l_d = kFudge*(l_d_actual*(bFudge + mFudge*vMeas));
-  delta = atan2( xError*2.0 /l_d/l_d*wheelBase*fovWidth, 128.0); // rads
+  curvature = xError*2.0/l_d/l_d_fovWidth/128;
+  delta = atan2( curvature*wheelBase,1); // rads
   delta = delta * 57.2958; // degrees
   
   if (delta <= 9.25 && delta >= -9.25)

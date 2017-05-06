@@ -8,15 +8,15 @@ void getline(double lineBuffer[])
   digitalWrite(pinCL, LOW);
   //Serial.print(" Thresh: ");
   //Serial.print(threshhold);
-  Serial.print(lineBuffer[0],0);
+  //Serial.print(lineBuffer[0],0);
  int i;
   for (i=1;i<128;i++)
   {
     digitalWrite(pinCL, HIGH);
     lineBuffer[i] = 0.0*lineBuffer[i] + 0.8*analogRead(pinAO);
     digitalWrite(pinCL, LOW);
-      Serial.print(',');
-      Serial.print(lineBuffer[i],0);
+      //Serial.print(',');
+      //Serial.print(lineBuffer[i],0);
     /*
     if (out[i] > threshhold)
     Serial.print("1");
@@ -24,8 +24,8 @@ void getline(double lineBuffer[])
     Serial.print("0");
     */
   }
-      Serial.print(';');
-      Serial.print('\n');
+      //Serial.print(';');
+      //Serial.print('\n');
   //digitalWrite(triggerPin2, LOW);
 }
 
