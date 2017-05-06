@@ -115,7 +115,7 @@ void loop() {
   prevMicrooo = micros();
   
   //Determine the center
-    averageElements(out,128,5,averaged);   
+    averageElements(out,128,1,averaged);   
     diff(averaged,128,differences);
 
     //diff(out,128,differences);
@@ -170,7 +170,7 @@ void loop() {
   Serial.println(loopTime);
   prevLoop = micros();
 
-   printAll();
+   //printAll();
   }
 
   else // PAUSE if pause signal is high
