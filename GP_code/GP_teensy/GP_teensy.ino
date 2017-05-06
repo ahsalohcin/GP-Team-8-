@@ -102,7 +102,7 @@ void loop() {
   //Serial.print(micros());
      
   //Determine the center
-    averageElements(out,128,5,averaged);   
+    //averageElements(out,128,5,averaged);   
     diff(averaged,128,differences);
     xMeasured = center(differences,127);
 

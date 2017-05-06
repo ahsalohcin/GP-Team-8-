@@ -6,11 +6,11 @@ void getline(int lineBuffer[])
   lineBuffer[0] = analogRead(pinAO);
   digitalWrite(pinSI, LOW);
   digitalWrite(pinCL, LOW);
- int i;
+  int i;
   for (i=1;i<128;i++)
   {
     digitalWrite(pinCL, HIGH);
-    lineBuffer[i] = analogRead(pinAO);
+    lineBuffer[i] = 0.2*lineBuffer[i] + 0.8*analogRead(pinAO);
     digitalWrite(pinCL, LOW);
     /*
     if (out[i] > threshhold)
