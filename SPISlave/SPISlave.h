@@ -1,5 +1,5 @@
-const char WRITE_CMD = 'w';
-const char READ_CMD = 'r';
+const byte WRITE_CMD = 'w';
+const byte READ_CMD = 'r';
 const byte FLOAT_SIZE = 4;
 
 void init_SPI();

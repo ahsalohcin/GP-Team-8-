@@ -16,6 +16,7 @@ void sendByte(byte addr, byte val){
   SPI.transfer(WRITE_CMD);
   SPI.transfer(addr);
   SPI.transfer(val);
+  //SPI.transfer(0);
   digitalWrite(slaveSelect, HIGH);
   SPI.endTransaction();
 }
@@ -24,11 +25,13 @@ float getFlt(void){
   union Data data;
   digitalWrite(slaveSelect, LOW);
   SPI.beginTransaction(SPISettings(SPI_CLK, MSBFIRST, SPI_MODE0));
+  SPCR |=(1<<SPR0)|(1<<SPR1); 
   SPI.transfer(READ_CMD);
   SPI.transfer(0);
+  SPI.transfer(0);
   for (int i = 0; i < FLOAT_SIZE; i++){
-    data.data_byte[i] = sendReceive(0);
-    Serial.println(data.data_byte[i]);
+    data.data_byte[i] = sendReceive(1);
+    //Serial.println(data.data_byte[i], HEX);
   }
   digitalWrite(slaveSelect, HIGH);
   SPI.endTransaction();
@@ -39,8 +42,10 @@ byte getByte(byte addr){
   byte val = 0;
   digitalWrite(slaveSelect, LOW);
   SPI.beginTransaction(SPISettings(SPI_CLK, MSBFIRST, SPI_MODE0));
+  SPCR |=(1<<SPR0)|(1<<SPR1); 
   SPI.transfer(READ_CMD);
   SPI.transfer(addr);
+  sendReceive(0);
   val = sendReceive(0);
   digitalWrite(slaveSelect, HIGH);
   SPI.endTransaction();
@@ -49,6 +54,6 @@ byte getByte(byte addr){
 
 byte sendReceive(byte data){
   byte a = SPI.transfer(data);
-  delayMicroseconds(30);
+  delayMicroseconds(10);
   return a;
 }

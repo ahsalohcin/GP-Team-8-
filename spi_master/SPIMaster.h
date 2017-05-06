@@ -1,4 +1,4 @@
-#define SPI_CLK 4000
+#define SPI_CLK 1000000
 
 const int slaveSelect = 10;
 const byte FLOAT_SIZE = 4;
@@ -15,4 +15,3 @@ float getFlt(void);
 byte getByte(byte);
 byte sendReceive(byte data);
 void SPIMasterInit();
-boolean SPIReadError();
