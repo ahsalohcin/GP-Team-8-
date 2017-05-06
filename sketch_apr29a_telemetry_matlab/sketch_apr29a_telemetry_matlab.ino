@@ -107,7 +107,7 @@ steerMode mySteerMode = RC_ST;
   int buffTxOut = 5; // for safety. units of us. (tested)
   int buffOut = 1; // for safety. larger will mess up linearity . may be in units of speed (ft/sec).(untested)
   int topDutyCycleCL = 256*.5; // max speed 
-  double kpSpeed = 1.0;
+  double kpSpeed = 3.0;
   double kiSpeed = 0.005;
   double vErrorTotal = 0.0;
   void getSpeedCL();
@@ -731,7 +731,7 @@ void getSpeedCL()
   //Serial.print(" throttleValue (1150 to 1850) = " );     
   //Serial.print(throttleValue); //integer between 1150 and 1850,
 
-  vValue = vRef+ kpSpeed*vError + kiSpeed*vErrorTotal; 
+  vValue = kpSpeed*vError + kiSpeed*vErrorTotal; 
   Serial.print(" vValue: ");
   Serial.print(vValue);
   motorValue = constrain(mapdouble(vValue,0+buffOut,10,0,topDutyCycleCL),0,topDutyCycleCL); //should topSpeed be in here? or should it be a constant?

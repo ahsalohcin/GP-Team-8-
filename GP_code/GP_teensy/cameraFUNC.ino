@@ -6,20 +6,22 @@ void getline(int lineBuffer[])
   lineBuffer[0] = analogRead(pinAO);
   digitalWrite(pinSI, LOW);
   digitalWrite(pinCL, LOW);
+  //Serial.print(" Thresh: ");
+  //Serial.print(threshhold);
  int i;
   for (i=1;i<128;i++)
   {
     digitalWrite(pinCL, HIGH);
     lineBuffer[i] = analogRead(pinAO);
     digitalWrite(pinCL, LOW);
-    
+    /*
     if (out[i] > threshhold)
     Serial.print("1");
     else 
     Serial.print("0");
+    */
   }
   //digitalWrite(triggerPin2, LOW);
-  prevCameraTime = millis();
 }
 
 void averageElements(int input[], int arraySize, int numsToAverage, double result[])
@@ -70,7 +72,7 @@ double center(double input[], int arraySize)
   int maxIndex = 0;
   int minIndex = 0;
   int maxValue = 0;
-  int minValue = 1000.0;  
+  int minValue = 1024.0;  
 
   //Find max and min
   for(int i = 0; i < arraySize; i++)
@@ -86,6 +88,9 @@ double center(double input[], int arraySize)
       maxIndex = i;
     }
   }
+
+  Serial.print(" Max brightness (1024): ");
+  Serial.print(maxValue);
 
   return (minIndex + maxIndex) / 2.0;
 }

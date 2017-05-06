@@ -59,18 +59,15 @@ void packetParse()
 void exec_packet_cmd(char *cmd_name, char* cmd_value)
 {
 
-  char chg_state[] = "change_state";
+  char chg_state[] = "";
   char change_kpSpeed[] = "kpSpeed";
   char change_kiSpeed[] = "kiSpeed";
+  char change_vRef[] = "vRef";
 
   if(strcmp(chg_state, cmd_name) == 0)
   {
-      long int value = strtol(cmd_value, NULL, 10);
-
-      if(value == 1)
-        myState = PLAY;
-      else
-        myState = PAUSE;
+      BTStateValue = strtol(cmd_value, NULL, 10);
+      
   }
   else if(strcmp(change_kpSpeed, cmd_name) == 0)
   {
@@ -83,6 +80,13 @@ void exec_packet_cmd(char *cmd_name, char* cmd_value)
     double value = strtod(cmd_value, NULL);
 
     kiSpeed = value;
+  }
+
+    else if(strcmp(change_vRef, cmd_name) == 0)
+  {
+    double value = strtod(cmd_value, NULL);
+
+    vRef = value;
   }
   
 /*  
@@ -115,7 +119,9 @@ void telemetry()
 
   
   //String strdata = String("mtr:" + String(motorValue) + ";brk:" + String(brakeValue) + ";trst:" + String(throttleValue) + ";srv:" + String(servoValueMicro) + ";spd:" + String(wheelSpeed_R_Copy));
-  String strdata = String( "vRef:" +String(vRef) + ";vError:" + String(vError));
+  //String strdata = String( "vRef:" +String(vRef) + ";vError:" + String(vError)); // takes 21 ms
+  String strdata = String( "vRef:" +String(vRef) + ";vError:" + String(vError) +"L: " +String(loopTime) + "Total Dist: " + String(totalDist_Copy)); // takes 21 ms
+  //String strdata = String( String(vRef) + String(vError)); // takes 7.8 ms 
   //Serial.println("Telemetry data: ");
   //Serial.println(strdata.c_str());
 

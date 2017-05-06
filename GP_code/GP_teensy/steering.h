@@ -18,9 +18,10 @@
   double fovWidth = .64; //m near top, 5th tick
   
   double delta = 0.0;
-  double kFudge =1;
+  double deviation_us = 0.0;
+  double kFudge = 1.0;
   double mFudge = 0; 
-  double bFudge = 1;
+  double bFudge = 1.0;
   double l_d; // l_d = kFudge(l_d_actual*(b + mfudge*vMeas)). we expect a tuning factor and some dependence on velocity
   
   double getSteeringPP(int xError);

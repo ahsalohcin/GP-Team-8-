@@ -9,6 +9,9 @@
 #include "bluetooth.h"
 #include "stateflow.h"
 
+unsigned long int prevMicrooo = 0;
+unsigned long int loopTime = 0;
+
 void printAll();
 
 void setup() {
@@ -79,6 +82,10 @@ void setup() {
 
 void loop() {
 
+  Serial.print(" 0: ");  
+  Serial.print(micros()-prevMicrooo);
+  prevMicrooo = micros();
+
   //if (stateCheck()) // 1 if everything is fine
   if(stateCheck() == PLAY)
   {
@@ -86,28 +93,35 @@ void loop() {
     getSpeedCL();
     else 
     getSpeedOL();
-  //Serial.print(" 1: ");  
-  //Serial.print(micros());
+  Serial.print(" 1: ");  
+  Serial.print(micros()-prevMicrooo);
+  prevMicrooo = micros();
   //Write to motor
      analogWrite(HI, motorValue); //HI denotes the pin on which the motor is in; motorValue represents the duty cycle of the PWM
      analogWrite(LI, brakeValue);
+  Serial.print(" 2: ");  
+  Serial.print(micros()-prevMicrooo);
+  prevMicrooo = micros();
+
   
   //Get a line of camera data
     while (millis()- prevCameraTime < integrationPeriod) 
     {}
       getline(out);
-    
-    
-  //Serial.print(" 2: ");  
-  //Serial.print(micros());
-     
+      prevCameraTime = millis();
+  
+  Serial.print(" 3: ");  
+  Serial.print(micros()-prevMicrooo);
+  prevMicrooo = micros();
+  
   //Determine the center
     averageElements(out,128,5,averaged);   
     diff(averaged,128,differences);
     xMeasured = center(differences,127);
 
-     //Serial.print(" 3: ");  
-     //Serial.print(micros());
+  Serial.print(" 4: ");  
+  Serial.print(micros()-prevMicrooo);
+  prevMicrooo = micros();
     
   if (mySteerMode == STEER_PP || mySteerMode == STEER_PID)  
     {//Get Tx steering input and writes to servo
@@ -117,8 +131,9 @@ void loop() {
     {//Camera feedback to write to servo instead
     steerTx();
     }
-  //Serial.print(" 4: ");  
-  //Serial.print(micros());
+  Serial.print(" 5: ");  
+  Serial.print(micros()-prevMicrooo);
+  prevMicrooo = micros();
     
   //Speed Sensing    
     if ( (millis()-prevHallTime_L) > hallTimeout )
@@ -126,9 +141,12 @@ void loop() {
     
     noInterrupts(); // to prevent memory issues
     wheelSpeed_L_Copy = wheelSpeed_L;
+    totalDist_Copy = totalDist;
     interrupts();
-  //Serial.print(" 5: ");  
-  //Serial.print(micros());
+    
+  Serial.print(" 6: ");  
+  Serial.print(micros()-prevMicrooo);
+  prevMicrooo = micros();
   //Diagnostics
     //batt voltage runs once in a while (moved to print loop)
 
@@ -137,19 +155,20 @@ void loop() {
    telemetry();
    prevBtTime = millis();
    }
-  //Serial.print(" 6: ");  
-  //Serial.print(micros());
-
+  Serial.print(" 7: ");  
+  Serial.print(micros()-prevMicrooo);
+  prevMicrooo = micros();
     // can also read backemf and motor current
-    //Serial.println("running");
+    //Serial.println("running")
 
   //Print loop time
- 
-  Serial.print("L: ");    
-  Serial.println(micros()-prevLoop);
+
+ loopTime = micros()-prevLoop;
+  Serial.print(" L: ");    
+  Serial.println(loopTime);
   prevLoop = micros();
 
-   //printAll();
+   printAll();
   }
 
   else // PAUSE if pause signal is high
@@ -169,17 +188,26 @@ void printAll()
 {
   Serial.print(" vRef: ");
   Serial.print(vRef);
-  Serial.print(" HI ");
-  Serial.print(motorValue); //corresponding value of the motor that runs at the value of PotValue
-  Serial.print(" LI ");
-  Serial.print(brakeValue);
 
   Serial.print(" Speed_L: ");
   Serial.print(wheelSpeed_L_Copy);
  
-  Serial.print(" xMeas: ");
-  Serial.print(xMeasured);
+  Serial.print(" vError: ");
+  Serial.print(vError);
+   
+  Serial.print(" HI ");
+  Serial.print(motorValue); //corresponding value of the motor that runs at the value of PotValue
+  Serial.print(" LI ");
+  Serial.print(brakeValue);
+ 
+  Serial.print(" xError: ");
+  Serial.print(xError);
 
+  Serial.print(" delta(deg): ");
+  Serial.print(delta);
+
+  Serial.print(" deviation_us : ");
+  Serial.print(deviation_us);  
 
   Serial.print(" steer: ");
   Serial.print(steerValue);
@@ -188,16 +216,7 @@ void printAll()
   {
   getBattVoltVal();
   }
-  
   Serial.print(" Batt: ");
   Serial.print(battVoltVal);
-
-  Serial.print(" vError: ");
-  Serial.print(vError);
- 
-
-  Serial.print(" delta: ");
-  Serial.print(delta);
-
 }
 

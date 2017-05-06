@@ -27,6 +27,6 @@
 
   int topDutyCycleCL = 256*.5; // max speed 
   double kpSpeed = 3.0;
-  double kiSpeed = 0.005;
+  double kiSpeed = 0.05;
   double vErrorTotal = 0.0;
   void getSpeedCL();
