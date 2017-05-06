@@ -4,7 +4,7 @@
   int pinCL = 30;
   int pinAO = 31;
   
-  int out[128]; //straight from camera;
+  double out[128]; //straight from camera;
   double averaged[128]; //after moving average filter
   double differences[127];//after taking differences
   
@@ -13,7 +13,7 @@
   unsigned int prevCameraTime = 0;
   
   //gets one line of camera data
-  void getline(int lineBuffer[]);
+  void getline(double lineBuffer[]);
   
   //Calculates average of numsToAverage points around all elements in input
   // and stores each averaged point in result
@@ -22,7 +22,7 @@
   // arraySize: Size of input array
   // numsToAverage: Number of elements around point p to use to calculate the average
   // result[]: Array to return the results
-  void averageElements(int input[], int arraySize, int numsToAverage, double result[]);
+  void averageElements(double input[], int arraySize, int numsToAverage, double result[]);
   
   //Calcualtes difference between adjencents elements of input and stores in result
   //result's size will be arraySize-1

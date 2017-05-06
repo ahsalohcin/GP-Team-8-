@@ -57,7 +57,7 @@ state stateCheck()
         
   // low Batt Warning
   
-  if ( getBattVoltVal() < lowBattWarning )
+  if ( getBattVoltVal() < lowBattWarning && getBattVoltVal() > 1 )
   {
     if (millis() > 1000)
     {

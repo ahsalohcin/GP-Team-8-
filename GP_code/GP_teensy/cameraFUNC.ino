@@ -1,19 +1,22 @@
-void getline(int lineBuffer[])
+void getline(double lineBuffer[])
 { 
   //digitalWrite(triggerPin2, HIGH);
   digitalWrite(pinSI, HIGH);
   digitalWrite(pinCL, HIGH);
-  lineBuffer[0] = analogRead(pinAO);
+  lineBuffer[0] = 0.0*lineBuffer[0] + 0.8*analogRead(pinAO);
   digitalWrite(pinSI, LOW);
   digitalWrite(pinCL, LOW);
   //Serial.print(" Thresh: ");
   //Serial.print(threshhold);
+  Serial.print(lineBuffer[0],0);
  int i;
   for (i=1;i<128;i++)
   {
     digitalWrite(pinCL, HIGH);
-    lineBuffer[i] = 0.2*lineBuffer[i] + 0.8*analogRead(pinAO);
+    lineBuffer[i] = 0.0*lineBuffer[i] + 0.8*analogRead(pinAO);
     digitalWrite(pinCL, LOW);
+      Serial.print(',');
+      Serial.print(lineBuffer[i],0);
     /*
     if (out[i] > threshhold)
     Serial.print("1");
@@ -21,10 +24,12 @@ void getline(int lineBuffer[])
     Serial.print("0");
     */
   }
+      Serial.print(';');
+      Serial.print('\n');
   //digitalWrite(triggerPin2, LOW);
 }
 
-void averageElements(int input[], int arraySize, int numsToAverage, double result[])
+void averageElements(double input[], int arraySize, int numsToAverage, double result[])
 {
   double sum;
   int elementsUsed; //keep track of how many elements were used for sum
