@@ -9,14 +9,14 @@ unsigned long delta = 0;
 void loop(){
   sendByte(1, 0xAB);
   starttime = micros();
-  getByte(1);
+  byte b = getByte(1);
   delta = micros()-starttime;
   Serial.println(delta);
   
   Serial.println(getByte(2), HEX);
   
   starttime = micros();
-  getFlt();
+  float f = getFlt();
   delta = micros()-starttime;
   Serial.println(delta);
   

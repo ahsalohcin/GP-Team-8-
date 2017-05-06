@@ -63,10 +63,10 @@ void setup() {
     digitalWrite(14,HIGH);
 
     pinMode(15, OUTPUT);
-    digitalWrite(15,HIGH);
+    //digitalWrite(15,HIGH);
 
     pinMode(16, OUTPUT);
-    digitalWrite(16,HIGH);
+    //digitalWrite(16,HIGH);
 
     Serial.println("Setup Successful");
 
@@ -89,6 +89,7 @@ void loop() {
   //if (stateCheck()) // 1 if everything is fine
   if(stateCheck() == PLAY)
   {
+    digitalWrite(15, HIGH);
     if (mySpeedMode == SPEED_CL)
     getSpeedCL();
     else 
@@ -175,6 +176,7 @@ void loop() {
 
   else // PAUSE if pause signal is high
   {
+     digitalWrite(15, LOW);
      Serial.print("PAUSE");
      analogWrite(HI, 0);
      analogWrite(LI, 0);
