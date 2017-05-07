@@ -13,7 +13,7 @@
   double wheelSpeed_L;
   double wheelSpeed_L_Copy = 0; //copy to prevent memory issues
   volatile unsigned long int prevHallTime_L; // volatile to prevent memory issues
-  double totalDist = 0;
+  double totalDist = 0; // resolution is wheeldiameter*PI/3 inches;
   double totalDist_Copy = 0;
   void magnet_detect_L();
   

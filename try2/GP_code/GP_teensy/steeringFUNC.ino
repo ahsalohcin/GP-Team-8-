@@ -28,9 +28,19 @@ void steerTx()
 
 double getSteeringPID()
 {
+ 
   double steerValue_;
-  steerValue_ = servoMid + kSteering*xError;
-  return steerValue_;
+  if (mySteerMode == STEER_PID)
+  {
+    steerValue_ = servoMid + kSteering*xError;
+    return steerValue_;
+  }
+
+  if (mySteerMode == STEER_PID_KP_SPEED_DEP)
+  {
+    steerValue_ = servoMid + kSteering*xError*kSteeringM*vMeas;
+    return steerValue_;
+  }
 }
 
 double getSteeringPP(int xError)
@@ -64,7 +74,7 @@ void steerCamera(double xRef, double xMeasured)
   {
     steerValue = getSteeringPP(xError);
   }
-  else if (mySteerMode == STEER_PID)
+  else if (mySteerMode == STEER_PID || mySteerMode == STEER_PID_KP_SPEED_DEP)
   {
     steerValue = getSteeringPID();
   }
