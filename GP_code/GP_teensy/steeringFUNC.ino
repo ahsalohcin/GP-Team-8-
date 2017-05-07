@@ -60,7 +60,6 @@ double getSteeringPP(int xError)
 }
 void steerCamera(double xRef, double xMeasured)
 {
-  xError = xRef - xMeasured;
   if (mySteerMode == STEER_PP)
   {
     steerValue = getSteeringPP(xError);

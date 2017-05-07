@@ -118,13 +118,14 @@ void loop() {
   //Determine the center
     averageElements(out,128,2,averaged);   
     diff(averaged,128,differences);
-
-    //diff(out,128,differences);
     xMeasured = center(differences,127,xMeasured);
 
   Serial.print(" 4: ");  
   Serial.print(micros()-prevMicrooo);
   prevMicrooo = micros();
+
+  xError = xRef-xMeasured;
+  curvature = xError*2.0/l_d_actual/l_d_actual*fovWidth/128;
     
   if (mySteerMode == STEER_PP || mySteerMode == STEER_PID)  
     {//Get Tx steering input and writes to servo
@@ -146,7 +147,7 @@ void loop() {
     wheelSpeed_L_Copy = wheelSpeed_L;
     totalDist_Copy = totalDist;
     interrupts();
-    
+        
   Serial.print(" 6: ");  
   Serial.print(micros()-prevMicrooo);
   prevMicrooo = micros();
