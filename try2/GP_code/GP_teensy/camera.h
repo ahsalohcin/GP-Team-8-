@@ -12,7 +12,7 @@
   unsigned int integrationPeriod = 4;
   unsigned int prevCameraTime = 0;
   int lineMinWidth = 1;
-  int lineMaxWidth = 150 ;
+  int lineMaxWidth = 15 ;
   
   //gets one line of camera data
   void getline(double lineBuffer[]);

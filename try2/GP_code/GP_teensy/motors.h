@@ -21,9 +21,9 @@
 
   // closed loop speed control
   double vRef;
-  int SPEED1 = 8;
-  int SPEED2 = 9;
-  int SPEED3 = 9.5;
+  int SPEED1 = 6;
+  int SPEED2 = 7;
+  int SPEED3 = 8;
   
   double vMeas;
   double vError;
