@@ -20,6 +20,18 @@ void setup() {
   //bluetooth serial
     BTSERIAL.begin(9600);
 
+    
+  if (myMotorMode == MOTOR_FWD_FULL)
+  {
+    HI = 3; //pin numbers
+    LI = 4;
+  }
+  else
+  {  
+    HI = 4; //pin numbers
+    LI = 3;
+  }
+
   //state flow
     pinMode(REC_STATE,INPUT);
     pinMode(SW1,INPUT_PULLUP);
@@ -80,20 +92,34 @@ void setup() {
     Serial.println(mySteerMode);  
 }
 
+unsigned long myTime = 0;
+boolean linearRampInit = true;
+const unsigned long RAMPTIME = 3000;
+
 void loop() {
 
   Serial.print(" 0: ");  
   Serial.print(micros()-prevMicrooo);
   prevMicrooo = micros();
 
+
   //if (stateCheck()) // 1 if everything is fine
   if(stateCheck() == PLAY)
   {
     digitalWrite(15, HIGH);
-    if (mySpeedMode == SPEED_CL)
-    getSpeedCL();
-    else 
-    getSpeedOL();
+    if (mySpeedMode == SPEED_CL){
+      if (linearRampInit){
+        myTime = millis();
+        linearRampInit = false;
+      }
+      if (millis() < RAMPTIME+myTime){
+        getSpeedLinear(millis()-myTime, RAMPTIME);
+      }else{
+        getSpeedCL();
+      }
+     }else {
+      getSpeedOL();
+    }
   Serial.print(" 1: ");  
   Serial.print(micros()-prevMicrooo);
   prevMicrooo = micros();
@@ -183,13 +209,41 @@ void loop() {
   else // PAUSE if pause signal is high
   {
      digitalWrite(15, LOW);
+     linearRampInit = true;
      Serial.print("PAUSE");
      analogWrite(HI, 0);
      analogWrite(LI, 0);
      while (stateCheck() == PAUSE)
      {
+
       Serial.println("PAUSE");
-      delay(500);
+      
+          //Get a line of camera data
+        while (millis()- prevCameraTime < integrationPeriod) 
+        {}
+          getline(out);
+          prevCameraTime = millis();
+  
+          //Determine the center
+            averageElements(out,128,5,averaged);   
+            diff(averaged,128,differences);
+            xMeasured = center(differences,127);
+
+            Serial.print(" 4: ");  
+            Serial.print(micros()-prevMicrooo);
+            prevMicrooo = micros();
+            
+            xError = xRef-xMeasured;
+            curvature = xError*2.0/l_d_actual/l_d_actual*fovWidth/128;
+            
+            if (mySteerMode == STEER_PP || mySteerMode == STEER_PID)  
+            {//Get Tx steering input and writes to servo
+            steerCamera(xRef,xMeasured);
+            }
+            else 
+            {//Camera feedback to write to servo instead
+            steerTx();
+            }
       timeAtPause = millis();
      }       
   }  

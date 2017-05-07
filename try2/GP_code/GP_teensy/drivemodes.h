@@ -30,7 +30,7 @@ typedef enum {
   MOTOR_REV_HALF,
 } motorMode;
 
-motorMode myMotorMode = MOTOR_FWD_FULL;
+motorMode myMotorMode = MOTOR_REV_HALF;
 
 typedef enum {
   STEER_RC,
