@@ -3,6 +3,11 @@
   int pinSI = 29;
   int pinCL = 30;
   int pinAO = 31;
+
+  int lineWidthOld[] = {0,0,0,0,0};
+  int lineWidthNum = 0;
+  double lineWidthAvg = 0;
+  boolean prevLeft = true;
   
   double out[128]; //straight from camera;
   double averaged[128]; //after moving average filter

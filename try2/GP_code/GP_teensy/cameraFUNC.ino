@@ -130,18 +130,31 @@ double center(double input[], int arraySize)
   //Serial.print(" Max diff (1024): ");
   //Serial.print(maxValue);
 
-  Serial.print(" width (pix): ");
-  Serial.print(minIndex -maxIndex);
 
-  if (minIndex -maxIndex > lineMaxWidth || minIndex -maxIndex < lineMinWidth)
+  if (lineWidthNum < 5){
+    lineWidthNum++;
+  }
+  lineWidthAvg = 0;
+  for (int i = 1; i < 5; i++){
+    lineWidthOld[i] = lineWidthOld[i-1];
+    lineWidthAvg += lineWidthOld[i];
+  }
+  lineWidthOld[0] = minIndex-maxIndex;
+  lineWidthAvg += lineWidthOld[0];
+  lineWidthAvg /= lineWidthNum;
+
+  
+  Serial.print(" width (pix): ");
+  Serial.print(lineWidthAvg);
+
+  if (lineWidthAvg > lineMaxWidth || lineWidthAvg < lineMinWidth)
   {
     Serial.print("NOLINE");
-    if (xMeasured > 64+20)
+    if (xMeasured > 115)
     {
       xMeasured = 64+60;
     }
-    else 
-    {
+    else if (xMeasured < 20){
       xMeasured = 64-60;
     }
     return xMeasured;
