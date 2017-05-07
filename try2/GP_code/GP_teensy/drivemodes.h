@@ -35,8 +35,8 @@ motorMode myMotorMode = MOTOR_FWD_FULL;
 typedef enum {
   STEER_RC,
   STEER_PP,
-  STEER_PID
-  STEER_PID_KP_SPEED_DEP
+  STEER_PID,
+  STEER_PID_KP_SPEED_DEP,
 } steerMode;
 
 steerMode mySteerMode = STEER_PID;
