@@ -46,11 +46,13 @@ state motorSaturationTimeout(double vError)
 state stateCheck()
 {
   //Serial.println("checking state");
+  /*
 
   if ( topDutyCycleCL != maxDutyCycleCL)
   {
     softStart();
   }
+  */
   // If pause switch is on  
   if (digitalRead(SW4) == LOW) 
     {

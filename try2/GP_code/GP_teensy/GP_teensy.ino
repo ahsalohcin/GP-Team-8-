@@ -177,7 +177,7 @@ void loop() {
   Serial.println(loopTime);
   prevLoop = micros();
 
-   //printAll();
+   printAll();
   }
 
   else // PAUSE if pause signal is high
@@ -236,5 +236,11 @@ void printAll()
   }
   Serial.print(" Batt: ");
   Serial.print(battVoltVal);
+
+  Serial.print(" topDutyCycleCL: ");
+  Serial.print(topDutyCycleCL);
+
+  Serial.print(" timeAtPause: ");
+  Serial.print(timeAtPause);
 }
 

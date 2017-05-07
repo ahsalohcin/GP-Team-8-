@@ -19,12 +19,12 @@ void getline(double lineBuffer[])
     //Serial.print(" ");
       //Serial.print(',');
       //Serial.print(lineBuffer[i],0);
-    
+    /*
     if (out[i] > threshhold)
     Serial.print("1");
     else 
     Serial.print("0");
-    
+    */
   }
       //Serial.print(';');
       //Serial.print('\n');

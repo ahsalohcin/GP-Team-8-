@@ -30,7 +30,7 @@
   double mCurvature = 4.0;
   double threshCurvature = .5;
 
-  int topDutyCycleCL = 0; // this ramps up to maxDutyCycleCL
+  int topDutyCycleCL = 256*.5; // this ramps up to maxDutyCycleCL
   int maxDutyCycleCL = 256*.5; 
   double kpSpeed = 3.0;
   double kiSpeed = 0.05;

@@ -9,7 +9,7 @@ state myState = PAUSE;
 // for RC controlled state. pause when right stick all the way up
 int stateValue;
 int REC_STATE = 22;
-int recStatePeriod = 2000;// ms
+int recStatePeriod = 1000;// ms
 int prevRecStateTime = 0;
 state stateCheck();
 
