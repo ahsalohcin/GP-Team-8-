@@ -43,12 +43,12 @@ double getVRef()
     }
   }
   
-  else if (myThrottleMode == THROTTLE_SWITCHES)
+  else if (myThrottleMode == THROTTLE_SWITCHES || myThrottleMode == THROTTLE_SWITCHES_CURVATURE)
   {
       //vRef_ = 1*(~digitalRead(SW1)) + 2*(~digitalRead(SW2)) + 4*(~digitalRead(SW3))+14;
     if (digitalRead(SW1) == LOW)
     {
-      vRef_ = 3;
+      vRef_ = 4;
       if (digitalRead(SW2) == LOW)
       {
         vRef_ = 5;
@@ -56,6 +56,17 @@ double getVRef()
         {
           vRef_ = 6;
         }
+      }
+    }
+    if (myThrottleMode == THROTTLE_SWITCHES_CURVATURE)
+    {
+      //option 1:
+      //vRef_ = vRef - mCurvature*curvature;
+      
+      //option 2: 
+      if (curvature > threshCurvature || curvature < -threshCurvature)
+      {
+        vRef_ = vRef -bCurvature;
       }
     }
   }

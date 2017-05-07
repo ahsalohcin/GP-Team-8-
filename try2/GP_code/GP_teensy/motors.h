@@ -25,6 +25,11 @@
   double vError;
   double vValue; 
 
+  //vRef as a function of curvature
+  double bCurvature = 2.0;
+  double mCurvature = 4.0;
+  double threshCurvature = .5;
+
   int topDutyCycleCL = 0; // this ramps up to maxDutyCycleCL
   int maxDutyCycleCL = 256*.5; 
   double kpSpeed = 3.0;

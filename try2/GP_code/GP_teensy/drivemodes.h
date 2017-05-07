@@ -7,6 +7,7 @@ typedef enum {
   THROTTLE_RC,
   THROTTLE_BT,
   THROTTLE_SWITCHES,
+  THROTTLE_SWITCHES_CURVATURE,
   THROTTLE_AUTO, // based on current error, measured curvature, or track memory
 } throttleMode;
 
