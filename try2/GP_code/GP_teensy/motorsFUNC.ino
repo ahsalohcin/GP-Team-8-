@@ -61,13 +61,13 @@ double getVRef()
     if (myThrottleMode == THROTTLE_SWITCHES_CURVATURE)
     {
       //option 1:
-      //vRef_ = vRef_ - mCurvature*curvature;
+     vRef_ = vRef_ - constrain(mCurvature*curvature,0,2);
       
       //option 2: 
-      if (curvature > threshCurvature || curvature < -threshCurvature)
+      /*if (curvature > threshCurvature || curvature < -threshCurvature)
       {
         vRef_ = vRef_ - bCurvature;
-      }
+      }*/
     }
   }
 

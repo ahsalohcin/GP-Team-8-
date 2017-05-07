@@ -31,7 +31,7 @@
 
   //vRef as a function of curvature
   double bCurvature = 1.0;
-  double mCurvature = 4.0;
+  double mCurvature = 5.0/2.0;
   double threshCurvature = .4;
 
   int topDutyCycleCL = 256*.5; // this ramps up to maxDutyCycleCL
