@@ -203,7 +203,7 @@ void loop() {
   Serial.println(loopTime);
   prevLoop = micros();
 
-   printAll();
+   //printAll();
   }
 
   else // PAUSE if pause signal is high

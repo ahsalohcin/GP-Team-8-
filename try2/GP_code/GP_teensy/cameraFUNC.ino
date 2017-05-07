@@ -3,7 +3,7 @@ void getline(double lineBuffer[])
   //digitalWrite(triggerPin2, HIGH);
   digitalWrite(pinSI, HIGH);
   digitalWrite(pinCL, HIGH);
-  lineBuffer[0] = 0.0*lineBuffer[0] + 0.8*analogRead(pinAO);
+  lineBuffer[0] = analogRead(pinAO);
   digitalWrite(pinSI, LOW);
   digitalWrite(pinCL, LOW);
   //Serial.print(" Thresh: ");
