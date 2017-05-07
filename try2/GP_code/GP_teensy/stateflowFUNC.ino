@@ -71,7 +71,7 @@ state stateCheck()
   stateValue = pulseIn(REC_STATE, HIGH, 25000);
   //Serial.print(" State Value: ");
   //Serial.print(stateValue);
-  if (stateValue > 1550 && stateValue < 2000 ) // channel is all the way high
+  if (stateValue > 1790 && stateValue < 2000 ) // channel is all the way high
     {myState = PAUSE;
     Serial.print(" stateValueTx: ");
     Serial.println(stateValue);
@@ -122,7 +122,7 @@ state stateCheck()
   //myState = PLAY;
 
     //Check for bluetooth message that might change state
-    
+    /*
   if(packetAvailable())
   {
     packetParse(); 
@@ -144,6 +144,6 @@ state stateCheck()
         Serial.print(" BT Continue Pause ");
       }
   }
-  
+  */
   return myState;
 }

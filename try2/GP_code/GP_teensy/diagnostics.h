@@ -6,7 +6,7 @@
   double battConst = 2.728*.992; // (R2+R1)/R1; R1 = 2.8k, R2 = 1.62k, also a fudge factor 
   double battPeriod = 10000; 
   double battPrevTime = 0;
-  double lowBattWarning = 6.7;
+  double lowBattWarning = 6;
   double getBattVoltVal();
 
   double EMF_SENSE_HIGH = 19;

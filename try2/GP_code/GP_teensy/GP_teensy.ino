@@ -142,7 +142,8 @@ void loop() {
   prevMicrooo = micros();
   
   //Determine the center
-    averageElements(out,128,5,averaged);   
+    medianArray(5,out,averaged);
+    //averageElements(out,128,9,averaged);   
     diff(averaged,128,differences);
     xMeasured = center(differences,127);
 
@@ -193,6 +194,9 @@ void loop() {
   prevMicrooo = micros();
     // can also read backemf and motor current
     //Serial.println("running")
+
+  Serial.print(" vRef: ");
+  Serial.print(vRef);
   Serial.print(" xError: ");
   Serial.print(xError);
 
@@ -203,7 +207,7 @@ void loop() {
   Serial.println(loopTime);
   prevLoop = micros();
 
-   printAll();
+   //printAll();
   }
 
   else // PAUSE if pause signal is high
@@ -223,9 +227,10 @@ void loop() {
         {}
           getline(out);
           prevCameraTime = millis();
-  
+ 
           //Determine the center
-            averageElements(out,128,5,averaged);   
+            medianArray(5,out,averaged);
+            //averageElements(out,128,9,averaged);   
             diff(averaged,128,differences);
             xMeasured = center(differences,127);
 

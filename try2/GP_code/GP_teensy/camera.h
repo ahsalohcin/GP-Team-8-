@@ -8,11 +8,11 @@
   double averaged[128]; //after moving average filter
   double differences[127];//after taking differences
   
-  int threshhold = 100; // for threshholding technique
+  int threshhold = 300; // for threshholding technique
   unsigned int integrationPeriod = 4;
   unsigned int prevCameraTime = 0;
-  int lineMinWidth = 8;
-  int lineMaxWidth = 20 ;
+  int lineMinWidth = 1;
+  int lineMaxWidth = 150 ;
   
   //gets one line of camera data
   void getline(double lineBuffer[]);
@@ -25,6 +25,9 @@
   // numsToAverage: Number of elements around point p to use to calculate the average
   // result[]: Array to return the results
   void averageElements(double input[], int arraySize, int numsToAverage, double result[]);
+
+// replaces i'th element of array "in" with median of that element with "num" elements to the left and right of i. doesn't change first or last few
+  void medianArray(int num, double in[], double filtered[]);
   
   //Calcualtes difference between adjencents elements of input and stores in result
   //result's size will be arraySize-1

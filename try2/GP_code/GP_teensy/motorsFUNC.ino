@@ -18,7 +18,7 @@ void getSpeedOL()
 
 double getVRef()
 {
-  double vRef_; // underscore for local variable vRef
+  double vRef_ = 0; // underscore for local variable vRef
   if (myThrottleMode == THROTTLE_RC)
   {
     throttleValue = pulseIn(REC_MOTOR, HIGH, 25000); // throttleValue is a Speed setpoint used for closed loop
@@ -45,7 +45,16 @@ double getVRef()
   
   else if (myThrottleMode == THROTTLE_SWITCHES || myThrottleMode == THROTTLE_SWITCHES_CURVATURE)
   {
-      //vRef_ = 1*(~digitalRead(SW1)) + 2*(~digitalRead(SW2)) + 4*(~digitalRead(SW3))+14;
+    /*byte sw1byte = digitalRead(SW1) ? 0 : 1;
+    byte sw2byte = digitalRead(SW2) ? 0 : 1;
+    byte sw3byte = digitalRead(SW3) ? 0 : 1;
+    byte baseSpeed = 0;
+    if (digitalRead(SW1) == LOW || digitalRead(SW2) == LOW || digitalRead(SW3) == LOW){
+      baseSpeed = SPEED1;
+    }else{
+      baseSpeed = 0;
+    }
+     vRef_ = 1*(sw1byte) + 2*(sw2byte) + 4*(sw3byte) + baseSpeed;*/
     if (digitalRead(SW1) == LOW)
     {
       vRef_ = SPEED1;

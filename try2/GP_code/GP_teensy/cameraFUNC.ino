@@ -3,7 +3,7 @@ void getline(double lineBuffer[])
   //digitalWrite(triggerPin2, HIGH);
   digitalWrite(pinSI, HIGH);
   digitalWrite(pinCL, HIGH);
-  lineBuffer[0] = 0.0*lineBuffer[0] + 0.8*analogRead(pinAO);
+  lineBuffer[0] = analogRead(pinAO);
   digitalWrite(pinSI, LOW);
   digitalWrite(pinCL, LOW);
   //Serial.print(" Thresh: ");
@@ -15,8 +15,8 @@ void getline(double lineBuffer[])
     digitalWrite(pinCL, HIGH);
     lineBuffer[i] = analogRead(pinAO);
     digitalWrite(pinCL, LOW);
-    //Serial.print(lineBuffer[i],0);
-    //Serial.print(" ");
+   // Serial.print(lineBuffer[i],0);
+   // Serial.print(" ");
       //Serial.print(',');
       //Serial.print(lineBuffer[i],0);
     /*
@@ -30,6 +30,31 @@ void getline(double lineBuffer[])
       //Serial.print('\n');
   //digitalWrite(triggerPin2, LOW);
 }
+
+void medianArray(int num, double in[], double filtered[])
+// replaces i'th element of array "in" with median of that element with "num" elements to the left and right of i. doesn't change first or last few
+{
+  int i,j,temp[2*num+1];
+  for (i=0;i<num;i++)
+  {
+    filtered[i]=in[i];
+  }
+  for (i=127;i>127-num;i--)
+  {
+    filtered[i]=in[i];
+  }
+  for (i=num;i<128-num;i++)
+  {
+    for (j=0;j<2*num+1;j++)
+    {
+      temp[j]=in[i+j];
+    }
+    filtered[i]=median(temp);
+  }
+  return;
+}
+
+
 
 void averageElements(double input[], int arraySize, int numsToAverage, double result[])
 {
@@ -82,7 +107,7 @@ double center(double input[], int arraySize)
   int minValue = 1024.0;  
 
   //Find max and min
-  for(int i = 0; i < arraySize; i++)
+  for(int i = 0; i < 125; i++)
   {
     if(input[i] < minValue)
     {
@@ -95,6 +120,12 @@ double center(double input[], int arraySize)
       maxIndex = i;
     }
   }
+
+ Serial.print(" minIndex: ");
+ Serial.print(minIndex);
+ Serial.print(" maxIndex: ");
+ Serial.print(maxIndex);
+ 
 
   //Serial.print(" Max diff (1024): ");
   //Serial.print(maxValue);
