@@ -167,6 +167,8 @@ void loop() {
   prevMicrooo = micros();
     // can also read backemf and motor current
     //Serial.println("running")
+  Serial.print(" xError: ");
+  Serial.print(xError);
 
   //Print loop time
 
@@ -175,7 +177,7 @@ void loop() {
   Serial.println(loopTime);
   prevLoop = micros();
 
-   printAll();
+   //printAll();
   }
 
   else // PAUSE if pause signal is high
@@ -209,14 +211,14 @@ void printAll()
   Serial.print(" LI ");
   Serial.print(brakeValue);
 
-  Serial.print(" xMeasured: ");
-  Serial.print(xMeasured);
+  //Serial.print(" xMeasured: ");
+  //Serial.print(xMeasured);
  
   Serial.print(" xError: ");
   Serial.print(xError);
   
 
-  Serial.print(" curvature: ");
+  Serial.print(" curve: ");
   Serial.print(curvature);
 
   //Serial.print(" delta(deg): ");

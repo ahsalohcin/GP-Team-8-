@@ -63,12 +63,12 @@ state stateCheck()
     myState = PLAY;
   }
   //If Tx says to pause
-  /*
+  
   if (millis() - prevRecStateTime > recStatePeriod)
   {
   stateValue = pulseIn(REC_STATE, HIGH, 25000);
-  Serial.print(" State Value: ");
-  Serial.print(stateValue);
+  //Serial.print(" State Value: ");
+  //Serial.print(stateValue);
   if (stateValue > 1550 && stateValue < 2000 ) // channel is all the way high
     {myState = PAUSE;
     Serial.print(" stateValueTx: ");
@@ -76,7 +76,7 @@ state stateCheck()
     return myState;}
     prevRecStateTime = millis();
   }
-  */
+  
   
         
   // low Batt Warning

@@ -8,10 +8,11 @@
   double averaged[128]; //after moving average filter
   double differences[127];//after taking differences
   
-  int threshhold = 250; // for threshholding technique
+  int threshhold = 100; // for threshholding technique
   unsigned int integrationPeriod = 4;
   unsigned int prevCameraTime = 0;
-  int lineWidth = 8;
+  int lineMinWidth = 8;
+  int lineMaxWidth = 20;
   
   //gets one line of camera data
   void getline(double lineBuffer[]);
