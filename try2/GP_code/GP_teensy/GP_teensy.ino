@@ -197,8 +197,8 @@ void loop() {
 
   Serial.print(" vRef: ");
   Serial.print(vRef);
-  Serial.print(" xError: ");
-  Serial.print(xError);
+  Serial.print(" xMeas: ");
+  Serial.print(xMeasured);
 
   //Print loop time
 

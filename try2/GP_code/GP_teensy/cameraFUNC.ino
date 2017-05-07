@@ -150,11 +150,12 @@ double center(double input[], int arraySize)
   if (lineWidthAvg > lineMaxWidth || lineWidthAvg < lineMinWidth)
   {
     Serial.print("NOLINE");
-    if (xMeasured > 115)
+    if (xMeasured > 64)
     {
       xMeasured = 64+60;
     }
-    else if (xMeasured < 20){
+    else 
+    {
       xMeasured = 64-60;
     }
     return xMeasured;
