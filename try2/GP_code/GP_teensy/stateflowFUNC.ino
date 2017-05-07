@@ -82,7 +82,7 @@ state stateCheck()
   
         
   // low Batt Warning
- /* 
+  
   if ( getBattVoltVal() < lowBattWarning && getBattVoltVal() > 1 )
   {
     if (millis() > 1000)
@@ -97,7 +97,7 @@ state stateCheck()
     { digitalWrite(16, LOW);
       myState = PLAY;
      }
-   */ 
+    
   //exceeding top speed 
 
   /*
