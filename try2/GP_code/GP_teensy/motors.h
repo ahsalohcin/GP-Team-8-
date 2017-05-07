@@ -21,14 +21,18 @@
 
   // closed loop speed control
   double vRef;
+  int SPEED1 = 7;
+  int SPEED2 = 8;
+  int SPEED3 = 9;
+  
   double vMeas;
   double vError;
   double vValue; 
 
   //vRef as a function of curvature
-  double bCurvature = 2.0;
+  double bCurvature = 1.0;
   double mCurvature = 4.0;
-  double threshCurvature = .5;
+  double threshCurvature = .4;
 
   int topDutyCycleCL = 256*.5; // this ramps up to maxDutyCycleCL
   int maxDutyCycleCL = 256*.5; 

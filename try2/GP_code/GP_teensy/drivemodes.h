@@ -11,7 +11,7 @@ typedef enum {
   THROTTLE_AUTO, // based on current error, measured curvature, or track memory
 } throttleMode;
 
-throttleMode myThrottleMode = THROTTLE_SWITCHES;
+throttleMode myThrottleMode = THROTTLE_SWITCHES_CURVATURE;
 
 typedef enum {
   SPEED_OL,
@@ -30,7 +30,7 @@ typedef enum {
   MOTOR_REV_HALF,
 } motorMode;
 
-motorMode myMotorMode = MOTOR_REV_HALF;
+motorMode myMotorMode = MOTOR_FWD_FULL;
 
 typedef enum {
   STEER_RC,

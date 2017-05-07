@@ -48,13 +48,13 @@ double getVRef()
       //vRef_ = 1*(~digitalRead(SW1)) + 2*(~digitalRead(SW2)) + 4*(~digitalRead(SW3))+14;
     if (digitalRead(SW1) == LOW)
     {
-      vRef_ = 5;
+      vRef_ = SPEED1;
       if (digitalRead(SW2) == LOW)
       {
-        vRef_ = 6;
+        vRef_ = SPEED2;
         if (digitalRead(SW3) == LOW)
         {
-          vRef_ = 7;
+          vRef_ = SPEED3;
         }
       }
     }
