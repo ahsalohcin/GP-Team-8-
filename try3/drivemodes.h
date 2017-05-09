@@ -41,4 +41,11 @@ typedef enum {
 
 steerMode mySteerMode = STEER_PID;
 
+typedef enum {
+  TIMES_3,
+  TIMES_6,
+} hallMode;
+
+hallMode myHallMode = TIMES_3;
+
  #endif

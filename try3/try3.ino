@@ -58,13 +58,23 @@ void setup() {
     pinMode(REC_SERVO,INPUT);
     myServo.attach(SERVO);
 
-  //speed sensing
-    pinMode(hallPin_L,INPUT);
-    attachInterrupt(digitalPinToInterrupt(hallPin_L), magnet_detect_L, RISING); //set up interrupt function. should work on any teensy pin.
-
-    pinMode(hallPin_R,INPUT);
-    attachInterrupt(digitalPinToInterrupt(hallPin_R), magnet_detect_R, RISING); //set up interrupt function. should work on any teensy pin.
-
+  //speed sensing  
+    if ( myHallMode == TIMES_3)
+    {
+      pinMode(hallPin_L,INPUT);
+      attachInterrupt(digitalPinToInterrupt(hallPin_L), magnet_detect_L, RISING); //set up interrupt function. should work on any teensy pin.
+  
+      pinMode(hallPin_R,INPUT);
+      attachInterrupt(digitalPinToInterrupt(hallPin_R), magnet_detect_R, RISING); //set up interrupt function. should work on any teensy pin.
+    }
+    else 
+    {
+      pinMode(hallPin_L,INPUT);
+      attachInterrupt(digitalPinToInterrupt(hallPin_L), magnet_detect_L, CHANGE); //set up interrupt function. should work on any teensy pin.
+  
+      pinMode(hallPin_R,INPUT);
+      attachInterrupt(digitalPinToInterrupt(hallPin_R), magnet_detect_R, CHANGE); //set up interrupt function. should work on any teensy pin.
+    }
   // diagnostics
     pinMode(BATT_VOLTAGE_SENSE,INPUT);
     
