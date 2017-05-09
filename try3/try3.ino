@@ -160,7 +160,10 @@ void loop() {
   Serial.print(micros()-prevMicrooo);
   prevMicrooo = micros();
 
+  xErrorPrev = xError;
   xError = xRef-xMeasured;
+  xErrorDiff = xError - xErrorPrev;
+  
   curvature = xError*2.0/l_d_actual/l_d_actual*fovWidth/128;
     
   if (mySteerMode == STEER_PP || mySteerMode == STEER_PID)  
