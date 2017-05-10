@@ -114,22 +114,22 @@ double center(double input[], int arraySize)
       maxIndex = i;
     }
   }
-
+/*
  Serial.print(" minIndex: ");
  Serial.print(minIndex);
  Serial.print(" maxIndex: ");
  Serial.print(maxIndex);
- 
+ */
 
-  //Serial.print(" Max diff (1024): ");
-  //Serial.print(maxValue);
+  Serial.print(" Max diff (1024): ");
+  Serial.print(maxValue);
 
-  Serial.print(" width (pix): ");
-  Serial.print(minIndex -maxIndex);
+  //Serial.print(" width (pix): ");
+  //Serial.print(minIndex -maxIndex);
 
   if (minIndex -maxIndex > lineMaxWidth || minIndex -maxIndex < lineMinWidth)
   {
-    Serial.print("NOLINE");
+    //Serial.print("NOLINE");
     if (xMeasured > 64)
     {
       xMeasured = 64+60;

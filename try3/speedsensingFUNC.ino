@@ -1,9 +1,7 @@
 void magnet_detect_1()
-{
-  int this_val, other_val;
-  
-  this_val = analogRead(hallPin_1);
-  other_val = analogRead(hallPin_2);
+{ 
+  hallValue_1 = digitalRead(hallPin_1);
+  hallValue_2= digitalRead(hallPin_2);
   
   if (myHallMode == TIMES_3)
   {
@@ -19,12 +17,12 @@ void magnet_detect_1()
     prevHallTime_1 = millis();
   }
   
-  if ( this_val > 512 && other_val > 512 )
+  if ( hallValue_1 == 1 && hallValue_2 == 1 )
   {
     wheelSpeed_1 = -wheelSpeed_1;
   }
   
-  if (this_val < 512 && other_val < 512)
+  if (hallValue_1 == 0 && hallValue_2 == 0)
   {
     wheelSpeed_1 = -wheelSpeed_1;
   }
@@ -33,8 +31,9 @@ void magnet_detect_1()
 }
 
 void magnet_detect_2()
-{
+{  
   wheelSpeed_2 = (wheelDiameter*PI/12/3)/((millis()-prevHallTime_2)/1000.0); // converts to ft/sec
   prevHallTime_2 = millis();
+  //Serial.print(" magnet_detect_2: ");  
 }
 

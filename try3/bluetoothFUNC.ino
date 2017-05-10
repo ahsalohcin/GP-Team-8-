@@ -120,8 +120,8 @@ void telemetry()
   
   //String strdata = String("mtr:" + String(motorValue) + ";brk:" + String(brakeValue) + ";trst:" + String(throttleValue) + ";srv:" + String(servoValueMicro) + ";spd:" + String(wheelSpeed_2_Copy));
   //String strdata = String( "vRef:" +String(vRef) + ";vError:" + String(vError)); // takes 21 ms
-  String strdata = String( "vRef:" +String(vRef) + ";vError:" + String(vError) +"L: " +String(loopTime) + "Total Dist: " + String(totalDist_Copy) +" steerValue: " + String(steerValue)); // takes 21 ms
-  //String strdata = String( String(vRef) + String(vError)); // takes 7.8 ms 
+  //String strdata = String( "vRef:" +String(vRef) + ";vError:" + String(vError) +"L: " +String(loopTime) + "Total Dist: " + String(totalDist_Copy) +" steerValue: " + String(steerValue)); // takes 21 ms
+  String strdata = String( "vRef:" + String(vRef) + "vError:" + String(vError) ); // takes 7.8 ms 
   //Serial.println("Telemetry data: ");
   //Serial.println(strdata.c_str());
 

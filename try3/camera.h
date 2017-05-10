@@ -9,7 +9,7 @@
   double differences[127];//after taking differences
   
   int threshhold = 300; // for threshholding technique
-  unsigned int integrationPeriod = 4;
+  unsigned int integrationPeriod = 5;
   unsigned int prevCameraTime = 0;
   int lineMinWidth = 1;
   int lineMaxWidth = 15 ;

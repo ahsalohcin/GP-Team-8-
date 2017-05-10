@@ -42,7 +42,7 @@ double getSteeringPID()
     steerValue_ = servoMid + kSteering*xError*(1+kSteeringM*vMeas);
     //return steerValue_;
   }
-  steerValue_ = steerValue +kDSteering*xErrorDiff;
+  steerValue_ = steerValue_ +kDSteering*xErrorDiff;
   return steerValue_;
   
 }

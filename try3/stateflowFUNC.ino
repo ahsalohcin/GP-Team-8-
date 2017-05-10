@@ -78,7 +78,7 @@ state stateCheck()
   //myState = PLAY;
 
     //Check for bluetooth message that might change state
-    /*
+    
   if(packetAvailable())
   {
     packetParse(); 
@@ -100,6 +100,6 @@ state stateCheck()
         Serial.print(" BT Continue Pause ");
       }
   }
-  */
+  
   return myState;
 }

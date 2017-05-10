@@ -46,6 +46,6 @@ typedef enum {
   TIMES_6,
 } hallMode;
 
-hallMode myHallMode = TIMES_3;
+hallMode myHallMode = TIMES_6;
 
  #endif

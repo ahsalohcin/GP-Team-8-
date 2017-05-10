@@ -10,7 +10,7 @@
   //PID
   double kSteering =  9.84;
   double kSteeringM = .1; // dependence of k on vMeas. It is assumed that kSteering should be higher with high vMeas.   
-  double kDSteering = 1; 
+  double kDSteering = 5; 
   double getSteeringPID();
   
   void steerCamera(double xRef, double xMeasured); // steers using camera input 

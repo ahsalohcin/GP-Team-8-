@@ -62,10 +62,10 @@ void setup() {
     if ( myHallMode == TIMES_3)
     {
       pinMode(hallPin_1,INPUT);
-      attachInterrupt(digitalPinToInterrupt(hallPin_1), magnet_detect_1, RISING); //set up interrupt function. should work on any teensy pin.
+      attachInterrupt(digitalPinToInterrupt(hallPin_1), magnet_detect_1, FALLING); //set up interrupt function. should work on any teensy pin.
   
       pinMode(hallPin_2,INPUT);
-      attachInterrupt(digitalPinToInterrupt(hallPin_2), magnet_detect_2, RISING); //set up interrupt function. should work on any teensy pin.
+      attachInterrupt(digitalPinToInterrupt(hallPin_2), magnet_detect_2, FALLING); //set up interrupt function. should work on any teensy pin.
     }
     else 
     {
@@ -142,8 +142,8 @@ void loop() {
   prevMicrooo = micros();
   
   //Write to motor
-     analogWrite(HI, motorValue); //HI denotes the pin on which the motor is in; motorValue represents the duty cycle of the PWM
-     analogWrite(LI, brakeValue);
+     //analogWrite(HI, motorValue); //HI denotes the pin on which the motor is in; motorValue represents the duty cycle of the PWM
+    //analogWrite(LI, brakeValue);
   
   Serial.print(" 2: ");  
   Serial.print(micros()-prevMicrooo);
@@ -161,7 +161,7 @@ void loop() {
   prevMicrooo = micros();
   
   //Determine the center
-    medianArray(5,out,averaged);
+    medianArray(3,out,averaged);
     //averageElements(out,128,9,averaged);   
     diff(averaged,128,differences);
     xMeasured = center(differences,127);
@@ -203,33 +203,29 @@ void loop() {
   //Diagnostics
     //batt voltage runs once in a while (moved to print loop)
 
-    /*
-
    if (millis()-prevBtTime >btPeriod)
    {
    telemetry();
    prevBtTime = millis();
    }
-   */
   Serial.print(" 7: ");  
   Serial.print(micros()-prevMicrooo);
   prevMicrooo = micros();
     // can also read backemf and motor current
     //Serial.println("running")
-
+/*
   Serial.print(" vRef: ");
   Serial.print(vRef);
   Serial.print(" xError: ");
   Serial.print(xError);
-  
-  //printAll();
+  */
+  printAll();
   //Print loop time
-
+  
   loopTime = micros()-prevLoop;
   Serial.print(" L: ");    
   Serial.println(loopTime);
   prevLoop = micros();
-
   }
 
   else // PAUSE if pause signal is high
