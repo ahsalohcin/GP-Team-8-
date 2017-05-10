@@ -58,10 +58,10 @@ state stateCheck()
 
   /*
   noInterrupts();
-  wheelSpeed_L_Copy = wheelSpeed_L;
+  wheelSpeed_1_Copy = wheelSpeed_1;
   interrupts();
     
-  if (wheelSpeed_L_Copy > speedLimit )
+  if (wheelSpeed_1_Copy > speedLimit )
     {myState = PAUSE;
     return myState;}
 

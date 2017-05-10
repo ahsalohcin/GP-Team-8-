@@ -61,19 +61,19 @@ void setup() {
   //speed sensing  
     if ( myHallMode == TIMES_3)
     {
-      pinMode(hallPin_L,INPUT);
-      attachInterrupt(digitalPinToInterrupt(hallPin_L), magnet_detect_L, RISING); //set up interrupt function. should work on any teensy pin.
+      pinMode(hallPin_1,INPUT);
+      attachInterrupt(digitalPinToInterrupt(hallPin_1), magnet_detect_1, RISING); //set up interrupt function. should work on any teensy pin.
   
-      pinMode(hallPin_R,INPUT);
-      attachInterrupt(digitalPinToInterrupt(hallPin_R), magnet_detect_R, RISING); //set up interrupt function. should work on any teensy pin.
+      pinMode(hallPin_2,INPUT);
+      attachInterrupt(digitalPinToInterrupt(hallPin_2), magnet_detect_2, RISING); //set up interrupt function. should work on any teensy pin.
     }
     else 
     {
-      pinMode(hallPin_L,INPUT);
-      attachInterrupt(digitalPinToInterrupt(hallPin_L), magnet_detect_L, CHANGE); //set up interrupt function. should work on any teensy pin.
+      pinMode(hallPin_1,INPUT);
+      attachInterrupt(digitalPinToInterrupt(hallPin_1), magnet_detect_1, CHANGE); //set up interrupt function. should work on any teensy pin.
   
-      pinMode(hallPin_R,INPUT);
-      attachInterrupt(digitalPinToInterrupt(hallPin_R), magnet_detect_R, CHANGE); //set up interrupt function. should work on any teensy pin.
+      pinMode(hallPin_2,INPUT);
+      attachInterrupt(digitalPinToInterrupt(hallPin_2), magnet_detect_2, CHANGE); //set up interrupt function. should work on any teensy pin.
     }
   // diagnostics
     pinMode(BATT_VOLTAGE_SENSE,INPUT);
@@ -189,11 +189,11 @@ void loop() {
   prevMicrooo = micros();
     
   //Speed Sensing    
-    if ( (millis()-prevHallTime_L) > hallTimeout )
-    wheelSpeed_L = 0;
+    if ( (millis()-prevHallTime_1) > hallTimeout )
+    wheelSpeed_1 = 0;
     
     noInterrupts(); // to prevent memory issues
-    wheelSpeed_L_Copy = wheelSpeed_L;
+    wheelSpeed_1_Copy = wheelSpeed_1;
     totalDist_Copy = totalDist;
     interrupts();
         
@@ -276,8 +276,8 @@ void printAll()
   Serial.print(" vRef: ");
   Serial.print(vRef);
 
-  Serial.print(" Speed_L: ");
-  Serial.print(wheelSpeed_L_Copy);
+  Serial.print(" Speed_1: ");
+  Serial.print(wheelSpeed_1_Copy);
  
   Serial.print(" vError: ");
   Serial.print(vError);

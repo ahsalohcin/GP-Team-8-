@@ -93,7 +93,7 @@ double getVRef()
 void getSpeedLinear(unsigned long curTime, unsigned long maxTime){
   double vRef_linear = (((double)curTime)/maxTime)*getVRef();
 
-  vMeas = wheelSpeed_L_Copy;
+  vMeas = wheelSpeed_1_Copy;
   vError = vRef_linear - vMeas; // in ft/sec
   vErrorTotal += vError;
   //Serial.print(" vRef: ");
@@ -132,7 +132,7 @@ void getSpeedLinear(unsigned long curTime, unsigned long maxTime){
 void getSpeedOL()
 {
   vRef = getVRef();
-  vMeas = wheelSpeed_L_Copy;
+  vMeas = wheelSpeed_1_Copy;
   vError = vRef-vMeas;
   //Serial.print(" vValue: ");
   //Serial.print(vValue);
@@ -145,7 +145,7 @@ void getSpeedCL()
   
   vRef = getVRef();
   
-  vMeas = wheelSpeed_L_Copy;
+  vMeas = wheelSpeed_1_Copy;
   vError = vRef-vMeas; // in ft/sec
   vErrorTotal += vError;
   //Serial.print(" vRef: ");
