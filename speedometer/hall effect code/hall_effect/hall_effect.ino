@@ -1,6 +1,6 @@
 //two magnets in wheel. one N outwards, one S outwards. Hall effect sensor is latching. Up when N passes, stays up until S passes and then goes down. Repeats. Interrupt function is called on rising edges, so once per revolution.  
 
-int hallPin = 16;
+int hallPin = 1;
 int hallValue;
 
 double wheelDiameter = 1.8; //inches
@@ -14,7 +14,7 @@ void magnet_detect();
 void setup() {
   // put your setup code here, to run once:
   pinMode(hallPin,INPUT);
-  attachInterrupt(digitalPinToInterrupt(hallPin), magnet_detect, RISING); //set up interrupt function. should work on any teensy pin. 
+  attachInterrupt(digitalPinToInterrupt(hallPin), magnet_detect, CHANGE); //set up interrupt function. should work on any teensy pin. 
   Serial.begin(9600);
   pinMode(13,OUTPUT); // indicator LED showing teensy is on
   digitalWrite(13,HIGH);
@@ -30,7 +30,6 @@ void loop() {
   noInterrupts();
   wheelSpeedCopy = wheelSpeed;
   interrupts();
-  hallValue = analogRead(hallPin);
   Serial.print(" hallPin: ");
   Serial.print(hallValue);
   Serial.print(" ");
@@ -41,6 +40,7 @@ void loop() {
 
 void magnet_detect()
 {
+  hallValue = digitalRead(hallPin);
   wheelSpeed = (wheelDiameter*PI/12)/((millis()-prevHallTime)/1000.0); // converts to ft/sec
   prevHallTime = millis();
 }
