@@ -1,4 +1,4 @@
-# Grand PrIEEE
+# Grand PrIEEE (senior year of undergrad, 2016-2017)
 
 Led a team of 5 for IEEE-sponsored competition for designing a line-following RC car from scratch.
 
