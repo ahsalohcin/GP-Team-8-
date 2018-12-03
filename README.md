@@ -2,7 +2,7 @@
 
 Led a team of 5 for IEEE-sponsored competition for designing a line-following RC car from scratch.
 
-![](/images/track.PNG)
+![1](/images/track.PNG)
 
 
 ## Competition videos: 
