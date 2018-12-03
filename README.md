@@ -2,8 +2,10 @@
 
 Led a team of 5 for IEEE-sponsored competition for designing a line-following RC car from scratch.
 
-![1](/images/track.PNG)
-
+![](/images/track.JPG)
+![](/images/iso.JPG)
+![](/images/side.JPG)
+![](/images/PCB.JPG)
 
 ## Competition videos: 
 * UC San Diego (3rd place): https://www.youtube.com/watch?v=oybaJ443wYY 
