@@ -13,10 +13,10 @@ Led a team of 5 for IEEE-sponsored competition for designing a line-following RC
 
 ## Overview: 
 * 1/12 scale RC car + custom PCB
-* microcontroller: Teensy (Arduino based)
-* sensors: line camera and hall effect speed sensor
-* actuators: servo and custom designed motor driver circuit
-* controllers: PD for steering, PI for speed
+* __Microcontroller__: Teensy (Arduino based)
+* __Sensors__: line camera and hall effect speed sensor
+* __Actuators__: servo and custom designed motor driver circuit
+* __Controllers__: PD for steering, PI for speed
 
 ## Skills learned: 
 * Project management
@@ -25,4 +25,5 @@ Led a team of 5 for IEEE-sponsored competition for designing a line-following RC
 * Control design and tuning
 
 ## Main code: 
-
+GP-Team-8-/Code_5_7/GP_teensy/GP_teensy.ino
+      
