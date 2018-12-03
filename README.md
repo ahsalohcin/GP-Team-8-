@@ -4,8 +4,8 @@ Led a team of 5 for IEEE-sponsored competition for designing a line-following RC
 
 ![](/images/track.JPG)
 ![](/images/iso.JPG)
-![](/images/side.JPG)
-![](/images/PCB.JPG)
+![](/images/side.jpg)
+![](/images/PCB.jpg)
 
 ## Competition videos: 
 * UC San Diego (3rd place): https://www.youtube.com/watch?v=oybaJ443wYY 
