@@ -25,5 +25,5 @@ Led a team of 5 for IEEE-sponsored competition for designing a line-following RC
 * Control design and tuning
 
 ## Main code: 
-GP-Team-8-/Code_5_7/GP_teensy/GP_teensy.ino
+https://github.com/ahsalohcin/GP-Team-8-/blob/master/Code_5_7/GP_teensy/GP_teensy.ino
       
