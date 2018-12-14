@@ -15,7 +15,7 @@ Led a team of 5 for IEEE-sponsored competition for designing a line-following RC
 * 1/12 scale RC car + custom PCB
 * __Microcontroller__: Teensy (Arduino based)
 * __Sensors__: line camera and hall effect speed sensor
-* __Actuators__: servo and custom designed motor driver circuit for brushed DC motor
+* __Actuators__: servo and brushed DC motor (with custom designed motor driver circuit)
 * __Controllers__: PD for steering, PI for speed
 
 ## Skills learned: 
